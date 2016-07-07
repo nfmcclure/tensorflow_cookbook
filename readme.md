@@ -9,7 +9,7 @@
 
 ## [Ch 1: Getting Started with Tensorflow](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction)
 
-  1. [General Outline of TF Algorithms](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works)
+ 1. [General Outline of TF Algorithms](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works)
  2. [Creating and Using Tensors](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/02_Creating_and_Using_Tensors)
  3. [Using Variables and Placeholders](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/03_Using_Variables_and_Placeholders)
  4. [Working with Matrices](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/04_Working_with_Matrices)
@@ -20,7 +20,7 @@
 
 ## [Ch 2: The Tensorflow Way](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way)
 
-  1. [One Operation as a Computational Graph](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/01_Operations_as_a_Computational_Graph)
+ 1. [One Operation as a Computational Graph](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/01_Operations_as_a_Computational_Graph)
  2. [Layering Nested Operations](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/02_Layering_Nested_Operations)
  3. [Working with Multiple Layers](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/03_Working_with_Multiple_Layers)
  4. [Implmenting Loss Functions](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/04_Implementing_Loss_Functions)
@@ -31,7 +31,7 @@
 
 ## [Ch 3: Linear Regression](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression)
 
-  1. [Using the Matrix Inverse Method](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/01_Using_the_Matrix_Inverse_Method)
+ 1. [Using the Matrix Inverse Method](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/01_Using_the_Matrix_Inverse_Method)
  2. [Implementing a Decomposition Method](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/02_Implementing_a_Decomposition_Method)
  3. [Learning the Tensorflow Way of Linear Regression](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/03_Tensorflow_Way_of_Linear_Regression)
  4. [Understanding Loss Functions in Linear Regression](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/04_Loss_Functions_in_Linear_Regressions)
