@@ -10,6 +10,7 @@
 *.xlsx
 .gitignore~
 .Rhistory
+Readme.md~
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
