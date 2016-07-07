@@ -16,7 +16,7 @@
  7. [Working with Data Sources](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/06_data_gathering.py)
  8. Additional Resources
 
-## Ch 2: The Tensorflow Way
+## [Ch 2: The Tensorflow Way](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way)
 
  1. [One Operation as a Computational Graph](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/01_operations_on_a_graph.py)
  2. [Layering Nested Operations](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/02_layering_nested_operations.py)
@@ -27,7 +27,7 @@
  7. [Combining Everything Together](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/07_combining_everything_together.py)
  8. [Evaluating Models](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/08_evaluating_models.py)
 
-## Ch 3: Linear Regression
+## [Ch 3: Linear Regression](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression)
 
  1. [Using the Matrix Inverse Method](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/01_lin_reg_inverse.py)
  2. [Implementing a Decomposition Method](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/02_lin_reg_decomposition.py)
@@ -38,7 +38,7 @@
  7. [Implementing Elastic Net Regression](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/07_elasticnet_regression.py)
  8. [Implementing Logistic Regression](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/08_logistic_regression.py)
 
-## Ch 4: Support Vector Machines
+## [Ch 4: Support Vector Machines](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines)
 
  1. Introduction
  2. [Working with Linear SVMs](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/01_linear_svm.py)
@@ -47,7 +47,7 @@
  5. [Implmenting Non-Linear SVMs](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/04_nonlinear_svm.py)
  6. [Implementing Multi-class SVMs](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/05_multiclass_svm.py)
 
-## Ch 5: Nearest Neighbor Methods
+## [Ch 5: Nearest Neighbor Methods](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods)
 
  1. Introduction
  2. [Working with Nearest Neighbors](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/05_Nearest_Neighbor_Methods/01_nearest_neighbor.py)
@@ -56,7 +56,7 @@
  5. [Using Address Matching](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/05_Nearest_Neighbor_Methods/04_address_matching.py)
  6. [Using Nearest Neighbors for Image Recognition](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/05_Nearest_Neighbor_Methods/05_image_recognition.py)
 
-## Ch 6: Neural Networks
+## [Ch 6: Neural Networks](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks)
 
  1. Introduction
  2. [Implementing Operational Gates](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/01_gates.py)
