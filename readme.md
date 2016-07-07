@@ -5,7 +5,7 @@
 
 ---
 
-## Ch 1: Getting Started with Tensorflow
+## [Ch 1: Getting Started with Tensorflow](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction)
 
  1. General Outline of TF Algorithms
  2. [Creating and Using Tensors](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/01_tensors.py)
