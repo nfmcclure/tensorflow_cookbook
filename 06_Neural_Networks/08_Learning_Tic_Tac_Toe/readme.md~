@@ -38,5 +38,16 @@ So for example, the board:
 ```
 is equivalent to the row: [1, 1, 0, 0, -1, 0, 0, -1, 0].
 
+## Important Functions
 
+There are a few important functions in the beginning of the code.
+
+ 1. print\\_board(): takes a board vector and shows it as a tic-tac-toe board.
+ 2. get_symmetry(): takes a board, the preferred response index, and a transformation.  It then applies the transformation to the board and response to get a new vector.
+
+At the end of the code, we loop through an actual game.  This allows the user to actually play the model they created.
+
+## Notes
+
+ - It is important to note that we are allowing the computer to cheat.  There is nothing in the code that prevents the computer from putting it's mark on an already occupied space. The counter argument to this is that with sufficient training the model will learn not to.  I haven't noticed it yet.  On the other hand, I have noticed that the computer regularly makes non-optimal moves.
 

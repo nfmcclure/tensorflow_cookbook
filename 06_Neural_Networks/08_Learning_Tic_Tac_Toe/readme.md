@@ -42,7 +42,7 @@ is equivalent to the row: [1, 1, 0, 0, -1, 0, 0, -1, 0].
 
 There are a few important functions in the beginning of the code.
 
- 1. print\\_board(): takes a board vector and shows it as a tic-tac-toe board.
+ 1. print_board(): takes a board vector and shows it as a tic-tac-toe board.
  2. get_symmetry(): takes a board, the preferred response index, and a transformation.  It then applies the transformation to the board and response to get a new vector.
 
 At the end of the code, we loop through an actual game.  This allows the user to actually play the model they created.
