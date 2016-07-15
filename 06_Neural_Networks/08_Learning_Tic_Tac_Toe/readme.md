@@ -18,7 +18,7 @@ All tic-tac-toe boards can be reduced down to a small number of boards, if we co
 
 All possible boards can be generated from the base board with at most 2 transformations.
 
-The file base\\_tic\\_tac\\_toe\\_moves.csv contains rows, each of which represents a unique board representation with the desired best play tactic.
+The file base\_tic\_tac\_toe\_moves.csv contains rows, each of which represents a unique board representation with the desired best play tactic.
 
 We denote the board spaces as such, 'X' = 1, 'O'= -1, and an empty space will have a zero in it.  The last column is the index of the best play response.  A board will be indexed as follows:
 ```
