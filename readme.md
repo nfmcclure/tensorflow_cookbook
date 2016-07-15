@@ -65,9 +65,9 @@
  3. [Working with Gates and Activation Functions](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/03_Working_with_Activation_Functions)
  4. [Implmenting a One Layer Neural Network](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/04_Single_Hidden_Layer_Network)
  5. [Implementing Different Layers](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/05_Implementing_Different_Layers)
- 6. Using Multi-layer Neural Networks
- 7. Improving Predictions of Linear Models
- 8. Learning to Play Tic-Tac-Toe
+ 6. [Using Multi-layer Neural Networks](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/06_Using_Multiple_Layers)
+ 7. [Improving Predictions of Linear Models](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/07_Improving_Linear_Regression)
+ 8. [Learning to Play Tic-Tac-Toe](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/08_Learning_Tic_Tac_Toe)
 
 ## Ch 7: Natural Language Processing
 
