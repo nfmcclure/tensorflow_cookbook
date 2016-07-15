@@ -51,3 +51,34 @@ At the end of the code, we loop through an actual game.  This allows the user to
 
  - It is important to note that we are allowing the computer to cheat.  There is nothing in the code that prevents the computer from putting it's mark on an already occupied space. The counter argument to this is that with sufficient training the model will learn not to.  I haven't noticed it yet.  On the other hand, I have noticed that the computer regularly makes non-optimal moves.
 
+## Sample Game Output
+
+Here is a sample of the output of playing against the trained model. Human = X's and the model = O's.
+
+```
+Input index of your move (0-8): 4
+Model has moved
+ O |   | 
+___________
+   | X | 
+___________
+   |   | 
+
+Input index of your move (0-8): 6
+Model has moved
+ O |   | 
+___________
+   | X | 
+___________
+ X | O | 
+
+Input index of your move (0-8): 2
+Model has moved
+ O |   | X
+___________
+   | X | O
+___________
+ X | O | 
+Game Over!
+```
+
