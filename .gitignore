@@ -12,6 +12,7 @@
 .gitignore~
 .Rhistory
 Readme.md~
+readme.md~
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
