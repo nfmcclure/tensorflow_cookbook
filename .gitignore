@@ -1,5 +1,6 @@
 # Standard python gitignore file
 *.csv
+!/06_Neural_Networks/08_Learning_Tic_Tac_Toe/base_tic_tac_toe_moves.csv
 *.tsv
 *.Rdata
 *.rdata
