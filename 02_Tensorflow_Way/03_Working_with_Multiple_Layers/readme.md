@@ -7,9 +7,9 @@ In this script, we will perform a 1D spatial moving average across a vector.  Th
 ## The Spatial Moving Window Layer
 We will create a layer that takes a spatial moving window average. Our window will be 2x2 with a stride of 2 for height and width. The filter value will be 0.25 because we want the average of the 2x2 window
 ```
-my\_filter = tf.constant(0.25, shape=[2, 2, 1, 1])
-my\_strides = [1, 2, 2, 1]
-mov\_avg\_layer= tf.nn.conv2d(x\_data, my\_filter, my\_strides, padding='SAME', name='Moving\_Avg\_Window')
+my_filter = tf.constant(0.25, shape=[2, 2, 1, 1])
+my_strides = [1, 2, 2, 1]
+mov_avg_layer= tf.nn.conv2d(x_data, my_filter, my_strides, padding='SAME', name='Moving_Avg_Window')
 ```
 
 ## Custom Layer
