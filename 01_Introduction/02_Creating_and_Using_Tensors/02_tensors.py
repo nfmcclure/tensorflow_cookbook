@@ -59,10 +59,10 @@ sequence_var = tf.Variable(tf.range(start=6, limit=15, delta=3)) # Generates [6,
 initialize_op = tf.initialize_all_variables()
 
 # Add summaries to tensorboard
-#merged = tf.merge_all_summaries()
+merged = tf.merge_all_summaries()
 
 # Initialize graph writer:
-#writer = tf.train.SummaryWriter("/tmp/variable_logs", sess.graph_def)
+writer = tf.train.SummaryWriter("/tmp/variable_logs", sess.graph_def)
 
 # Run initialization of variable
 sess.run(initialize_op)
