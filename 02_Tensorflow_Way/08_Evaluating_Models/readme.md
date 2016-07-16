@@ -10,7 +10,7 @@ The regression model is from a prior section.  We will generate input data which
 
 ## Classification Model
 
-The classification model will be half values from Normal(mean=-1, sd=1) and half from Normal(mean=1, sd=1).  There will be some overlap in the distributions.  The classification model will optimize on predicting a middle point, of which is will classify everything less than it as the first distribution and everything greater than it as the latter distribution.  Theoretically, we know that the ideal cutoff is between the two normals at x = 0.
+The classification model will be half values from Normal(mean=-1, sd=1) and half from Normal(mean=2, sd=1).  There will be some overlap in the distributions.  The classification model will optimize on predicting a middle point, of which is will classify everything less than it as the first distribution and everything greater than it as the latter distribution.  Theoretically, we know that the ideal cutoff is between the two normals at x = 0.5.
 
 ## Outline
 
