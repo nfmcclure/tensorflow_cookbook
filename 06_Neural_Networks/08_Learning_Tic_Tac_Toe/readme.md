@@ -47,10 +47,6 @@ There are a few important functions in the beginning of the code.
 
 At the end of the code, we loop through an actual game.  This allows the user to actually play the model they created.
 
-## Notes
-
- - It is important to note that we are allowing the computer to cheat.  There is nothing in the code that prevents the computer from putting it's mark on an already occupied space. The counter argument to this is that with sufficient training the model will learn not to.  I haven't noticed it yet.  On the other hand, I have noticed that the computer regularly makes non-optimal moves.
-
 ## Sample Game Output
 
 Here is a sample of the output of playing against the trained model. Human = X's and the model = O's.

@@ -160,7 +160,7 @@ init = tf.initialize_all_variables()
 sess.run(init)
 
 loss_vec = []
-for i in range(9000):
+for i in range(10000):
     rand_indices = np.random.choice(range(len(train_set)), batch_size, replace=False)
     batch_data = [train_set[i] for i in rand_indices]
     x_input = [x[0] for x in batch_data]
@@ -207,8 +207,12 @@ while not win_logical:
     # Add player move to game
     game_tracker[int(player_index)] = 1.
     
-    # Get model's move
-    [model_move] = sess.run(prediction, feed_dict={X: [game_tracker]})
+    # Get model's move by first getting all the logits for each index
+    [potential_moves] = sess.run(model_output, feed_dict={X: [game_tracker]})
+    # Now find allowed moves (where game tracker values = 0.0)
+    allowed_moves = [ix for ix,x in enumerate(game_tracker) if x==0.0]
+    # Find best move by taking argmax of logits if they are in allowed moves
+    model_move = np.argmax([x if ix in allowed_moves else -999.0 for ix,x in enumerate(potential_moves)])
     
     # Add model move to game
     game_tracker[int(model_move)] = -1.
