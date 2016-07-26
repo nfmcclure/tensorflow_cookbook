@@ -21,5 +21,3 @@ Running the script should result in a similar loss.
 
 
 # MSE of Train and Test Sets
-
-
