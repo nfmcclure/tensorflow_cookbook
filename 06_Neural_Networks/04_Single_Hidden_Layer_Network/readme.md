@@ -14,10 +14,8 @@ We will use the ReLU activation functions.
 
 For the loss function, we will use the average MSE across the batch.
 
-# Graph of Loss Function
+# Graph of Loss Function (Average Batch MSE)
 
 Running the script should result in a similar loss.
 
-
-
-# MSE of Train and Test Sets
+![Batch MSE](http://fromdata.org/wp-content/uploads/2016/07/B05480_06_single_layer_loss.png "Batch MSE")
