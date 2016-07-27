@@ -47,7 +47,7 @@ batch_size = 50
 x_data = tf.placeholder(shape=[None, 3], dtype=tf.float32)
 y_target = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 
-# Create variables for linear regression
+# Create variables for both NN layers
 hidden_layer_nodes = 10
 A1 = tf.Variable(tf.random_normal(shape=[3,hidden_layer_nodes])) # inputs -> hidden nodes
 b1 = tf.Variable(tf.random_normal(shape=[hidden_layer_nodes]))   # one biases for each hidden node
@@ -59,8 +59,7 @@ b2 = tf.Variable(tf.random_normal(shape=[1]))   # 1 bias for the output
 hidden_output = tf.nn.relu(tf.add(tf.matmul(x_data, A1), b1))
 final_output = tf.nn.relu(tf.add(tf.matmul(hidden_output, A2), b2))
 
-# Declare loss function (Cross Entropy loss)
-#loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(model_output, y_target))
+# Declare loss function (MSE)
 loss = tf.reduce_mean(tf.square(y_target - final_output))
 
 # Initialize variables
@@ -93,6 +92,7 @@ for i in range(500):
 plt.plot(loss_vec, 'k-', label='Train Loss')
 plt.plot(test_loss, 'r--', label='Test Loss')
 plt.title('Loss (MSE) per Generation')
+plt.legend(loc='upper right')
 plt.xlabel('Generation')
 plt.ylabel('Loss')
 plt.show()
