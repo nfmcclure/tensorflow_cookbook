@@ -72,32 +72,58 @@ Here we show how to implement various linear regression techniques in Tensorflow
 
 ## [Ch 4: Support Vector Machines](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines)
 
+This chapter shows how to implement various SVM methods with Tensorflow.  We first create a linear SVM and also show how it can be used for regression.  We then introduce kernels (RBF Gaussian kernel) and show how to use it to split up non-linear data. We finish with a multi-dimensional implementation of non-linear SVMs to work with multiple classes.
+
  1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/01_Introduction)
+  * We introduce the concept of SVMs and how we will go about implementing them in the Tensorflow framework.
  2. [Working with Linear SVMs](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/02_Working_with_Linear_SVMs)
+  * We create a linear SVM to separate sepal length and pedal width in the Iris data set.
  3. [Reduction to Linear Regression](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/03_Reduction_to_Linear_Regression)
+  * The heart of SVMs is separating classes with a line.  We change tweek the algorithm slightly to perform SVM regression.
  4. [Working with Kernels in Tensorflow](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/04_Working_with_Kernels)
+  * In order to extend SVMs into non-linear data, we explain and show how to implement different kernels in Tensorflow.
  5. [Implmenting Non-Linear SVMs](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/05_Implementing_Nonlinear_SVMs)
+  * We use the Gaussian kernel (RBF) to separate non-linear classes.
  6. [Implementing Multi-class SVMs](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/06_Implementing_Multiclass_SVMs)
+  * SVMs are inherently binary predictors.  We show how to extend them in a one-vs-all strategy in Tensorflow.
 
 ## [Ch 5: Nearest Neighbor Methods](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods)
 
+Nearest Neighbor methods are a very popular ML algorithm.  We show how to implement k-Nearest Neighbors, weighted k-Nearest Neighbors, and k-Nearest Neighbors with mixed distance functions.  In this chapter we also show how to use the Levenshtein distance (edit distance) in Tensorflow, and use it to calculate the distance between strings. We end this chapter with showing how to use k-Nearest Neighbors for categorical prediction with the MNIST handwritten digit recognition.
+
  1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/01_Introduction)
+  * We introduce the concepts and methods needed for performing k-Nearest Neighbors in Tensorflow.
  2. [Working with Nearest Neighbors](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/02_Working_with_Nearest_Neighbors)
+  * We create a nearest neighbor algorithm that tries to predict housing worth (regression).
  3. [Working with Text Based Distances](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/03_Working_with_Text_Distances)
+  * In order to use a distance function on text, we show how to use edit distances in Tensorflow.
  4. [Computing Mixing Distance Functions](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/04_Computing_with_Mixed_Distance_Functions)
+  * Here we implement scaling of the distance function by the standard deviation of the input feature for k-Nearest Neighbors.
  5. [Using Address Matching](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/05_An_Address_Matching_Example)
+  * We use a mixed distance function to match addresses. We use numerical distance for zip codes, and string edit distance for street names. The street names are allowed to have typos.
  6. [Using Nearest Neighbors for Image Recognition](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/06_Nearest_Neighbors_for_Image_Recognition)
+  * The MNIST digit image collection is a great data set for illustration of how to perform k-Nearest Neighbors for an image classification task.
 
 ## [Ch 6: Neural Networks](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks)
 
+Neural Networks are very important in machine learning and growing in popularity due to the major breakthroughs in prior unsolved problems.  We must start with introducing 'shallow' neural networks, which are very powerful and can help us improve our prior ML algorithm results.  We start by introducing the very basic NN unit, the operational gate.  We gradually add more and more to the neural network and end with training a model to play tic-tac-toe.
+
  1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/01_Introduction)
+  * We introduce the concept of neural networks and how Tensorflow is built to easily handle these algorithms.
  2. [Implementing Operational Gates](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/02_Implementing_an_Operational_Gate)
+  * We implement an operational gate with one operation. Then we show how to extend this to multiple nested operations.
  3. [Working with Gates and Activation Functions](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/03_Working_with_Activation_Functions)
+  * Now we have to introduce activation functions on the gates.  We show how different activation functions operate.
  4. [Implmenting a One Layer Neural Network](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/04_Single_Hidden_Layer_Network)
+  * We have all the pieces to start implementing our first neural network.  We do so here with regression on the Iris data set.
  5. [Implementing Different Layers](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/05_Implementing_Different_Layers)
+  * This section introduces the convolution layer and the max-pool layer.  We show how to chain these together in a 1D and 2D example with fully connected layers as well.
  6. [Using Multi-layer Neural Networks](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/06_Using_Multiple_Layers)
+  * Here we show how to functionalize different layers and variables for a cleaner multi-layer neural network.
  7. [Improving Predictions of Linear Models](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/07_Improving_Linear_Regression)
+  * We show how we can improve the convergence of our prior logistic regression with a set of hidden layers.
  8. [Learning to Play Tic-Tac-Toe](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/08_Learning_Tic_Tac_Toe)
+  * Given a set of tic-tac-toe boards and corresponding optimal moves, we train a neural network classification model to play.  At the end of the script, you can attempt to play against the trained model.
 
 ## Ch 7: Natural Language Processing
 
