@@ -17,4 +17,4 @@ Neural Networks are very important in machine learning and growing in popularity
  7. [Improving Predictions of Linear Models](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/07_Improving_Linear_Regression)
   * We show how we can improve the convergence of our prior logistic regression with a set of hidden layers.
  8. [Learning to Play Tic-Tac-Toe](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/08_Learning_Tic_Tac_Toe)
-  * Given a set of tic-tac-toe boards and corresponding optimal moves, we train a neural network classification model to play.  At the end of the script, you can attempt to play against the trained model.
+  * Given a set of tic-tac-toe boards and corresponding optimal moves, we train a neural network classification model to play.  At the end of the script, we can attempt to play against the trained model.
