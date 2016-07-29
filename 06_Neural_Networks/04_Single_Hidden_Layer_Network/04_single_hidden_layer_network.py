@@ -62,13 +62,13 @@ final_output = tf.nn.relu(tf.add(tf.matmul(hidden_output, A2), b2))
 # Declare loss function (MSE)
 loss = tf.reduce_mean(tf.square(y_target - final_output))
 
-# Initialize variables
-init = tf.initialize_all_variables()
-sess.run(init)
-
 # Declare optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.005)
 train_step = my_opt.minimize(loss)
+
+# Initialize variables
+init = tf.initialize_all_variables()
+sess.run(init)
 
 # Training loop
 loss_vec = []
