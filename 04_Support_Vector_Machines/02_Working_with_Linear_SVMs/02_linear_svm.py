@@ -55,7 +55,7 @@ model_output = tf.sub(tf.matmul(x_data, A), b)
 l2_norm = tf.reduce_sum(tf.square(A))
 
 # Declare loss function
-# = max(0, 1-pred*actual) + alpha * L2_norm(A)^2
+# Loss = max(0, 1-pred*actual) + alpha * L2_norm(A)^2
 # L2 regularization parameter, alpha
 alpha = tf.constant([0.01])
 # Margin term in loss
