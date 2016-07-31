@@ -77,7 +77,7 @@ This chapter shows how to implement various SVM methods with Tensorflow.  We fir
  1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/01_Introduction)
   * We introduce the concept of SVMs and how we will go about implementing them in the Tensorflow framework.
  2. [Working with Linear SVMs](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/02_Working_with_Linear_SVMs)
-  * We create a linear SVM to separate sepal length and pedal width in the Iris data set.
+  * We create a linear SVM to separate I. setosa based on sepal length and pedal width in the Iris data set.
  3. [Reduction to Linear Regression](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/03_Reduction_to_Linear_Regression)
   * The heart of SVMs is separating classes with a line.  We change tweek the algorithm slightly to perform SVM regression.
  4. [Working with Kernels in Tensorflow](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/04_Working_with_Kernels)
