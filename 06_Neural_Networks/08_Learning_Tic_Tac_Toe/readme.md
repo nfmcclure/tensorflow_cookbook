@@ -30,13 +30,15 @@ We denote the board spaces as such, 'X' = 1, 'O'= -1, and an empty space will ha
 ```
 So for example, the board:
 ```
- X | X | 
+ O |   | 
  ---------
-   | O | 
+ X | O | O
  ---------
-   | O |
+   |   | X
 ```
-is equivalent to the row: [1, 1, 0, 0, -1, 0, 0, -1, 0].
+is equivalent to the row: [-1, 0, 0, 1, -1, -1, 0, 0, 1].
+
+![TicTacToeIndexing](http://fromdata.org/wp-content/uploads/2016/08/B05480_06_09.png "TicTacToeIndexing")
 
 ## Important Functions
 
