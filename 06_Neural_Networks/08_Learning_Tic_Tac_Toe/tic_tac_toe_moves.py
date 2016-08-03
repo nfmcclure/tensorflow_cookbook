@@ -2,8 +2,8 @@
 #---------------------------------------
 #
 # We will build a one-hidden layer neural network
-#  to predict the fourth attribute, Petal Width from
-#  the other three (Sepal length, Sepal width, Petal length).
+#  to predict the optimal response given a set
+#  of tic-tac-toe boards.
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import csv
