@@ -1,7 +1,7 @@
 ## [Ch 7: Natural Language Processing](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing)
 
  1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/01_Introduction)
-  * Here we use Tensorflow to do a one-hot-encoding of words called bag-of-words.  We use this method and logistic regression to predict if a text message is spam or ham.
+  * We introduce methods for turning text into numerical vectors. We introduce the Tensorflow 'embedding' feature as well.
  2. [Working with Bag-of-Words](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/02_Working_with_Bag_of_Words)
   * Here we use Tensorflow to do a one-hot-encoding of words called bag-of-words.  We use this method and logistic regression to predict if a text message is spam or ham.
  3. [Implementing TF-IDF](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/03_Implementing_tf_idf)
