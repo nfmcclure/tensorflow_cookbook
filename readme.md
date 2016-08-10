@@ -125,9 +125,18 @@ Neural Networks are very important in machine learning and growing in popularity
  8. [Learning to Play Tic-Tac-Toe](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/08_Learning_Tic_Tac_Toe)
   * Given a set of tic-tac-toe boards and corresponding optimal moves, we train a neural network classification model to play.  At the end of the script, you can attempt to play against the trained model.
 
-## Ch 7: Natural Language Processing
+## [Ch 7: Natural Language Processing](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing)
 
-TBA
+ 1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/01_Introduction)
+  * Here we use Tensorflow to do a one-hot-encoding of words called bag-of-words.  We use this method and logistic regression to predict if a text message is spam or ham.
+ 2. [Working with Bag-of-Words](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/02_Working_with_Bag_of_Words)
+  * Here we use Tensorflow to do a one-hot-encoding of words called bag-of-words.  We use this method and logistic regression to predict if a text message is spam or ham.
+ 3. [Implementing TF-IDF](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/03_Implementing_tf_idf)
+  * We implement Text Frequency - Inverse Document Frequency (TFIDF) with a combination of Sci-kit Learn and Tensorflow. We perform logistic regression on TFIDF vectors to improve on our spam/ham text-message predictions.
+ 4. Working with CBOW
+ 5. Working with Skip-Gram
+ 6. Implementing Word2Vec Example
+ 7. Performing Sentiment Analysis
 
 ## Ch 8: Convolutional Neural Networks
 
