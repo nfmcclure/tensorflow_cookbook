@@ -139,7 +139,7 @@ Neural Networks are very important in machine learning and growing in popularity
   * Next, we implement a form of Word2Vec called, "CBOW" (Continuous Bag of Words) on a movie review database.  We also introduce method to saving and loading word embeddings.
  6. [Implementing Word2Vec Example](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/06_Using_Word2Vec_Embeddings)
   * In this example, we use the prior saved CBOW word embeddings to improve on our TF-IDF logistic regression of movie review sentiment.
- 7. [Performing Sentiment Analysis](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/07_Sentiment_Analysis_With_Doc2Vec)
+ 7. [Performing Sentiment Analysis with Doc2Vec](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/07_Sentiment_Analysis_With_Doc2Vec)
   * Here, we introduce a Doc2Vec method (concatenation of doc and word emebeddings) to improve out logistic model of movie review sentiment.
 
 ## Ch 8: Convolutional Neural Networks
