@@ -25,7 +25,7 @@ ops.reset_default_graph()
 sess = tf.Session()
 
 # Check if data was downloaded, otherwise download it and save for future use
-save_file_name = 'temp_spam_data.csv'
+save_file_name = os.path.join('temp','temp_spam_data.csv')
 if os.path.isfile(save_file_name):
     text_data = []
     with open(save_file_name, 'r') as temp_output_file:
@@ -126,19 +126,20 @@ init = tf.initialize_all_variables()
 sess.run(init)
 
 # Start Logistic Regression
+print('Starting Training Over {} Sentences.'.format(len(texts_train)))
 loss_vec = []
 train_acc_all = []
 train_acc_avg = []
 for ix, t in enumerate(vocab_processor.fit_transform(texts_train)):
     y_data = [[target_train[ix]]]
     
-    sess.run(train_step, feed_dict={x_data: t, y_target: y_data})
     
+    sess.run(train_step, feed_dict={x_data: t, y_target: y_data})
     temp_loss = sess.run(loss, feed_dict={x_data: t, y_target: y_data})
     loss_vec.append(temp_loss)
     
     if (ix+1)%10==0:
-        print('Generation #' + str(ix+1) + ': Loss = ' + str(temp_loss))
+        print('Training Observation #' + str(ix+1) + ': Loss = ' + str(temp_loss))
         
     # Keep trailing average of past 50 observations accuracy
     # Get prediction of single observation
@@ -150,7 +151,7 @@ for ix, t in enumerate(vocab_processor.fit_transform(texts_train)):
         train_acc_avg.append(np.mean(train_acc_all[-50:]))
 
 # Get test set accuracy
-print('Getting Test Set Accuracy')
+print('Getting Test Set Accuracy For {} Sentences.'.format(len(texts_test)))
 test_acc_all = []
 for ix, t in enumerate(vocab_processor.fit_transform(texts_test)):
     y_data = [[target_test[ix]]]
@@ -166,3 +167,10 @@ for ix, t in enumerate(vocab_processor.fit_transform(texts_test)):
     test_acc_all.append(test_acc_temp)
 
 print('\nOverall Test Accuracy: {}'.format(np.mean(test_acc_all)))
+
+# Plot training accuracy over time
+plt.plot(range(len(train_acc_avg)), train_acc_avg, 'k-', label='Train Accuracy')
+plt.title('Avg Training Acc Over Past 50 Generations')
+plt.xlabel('Generation')
+plt.ylabel('Training Accuracy')
+plt.show()
