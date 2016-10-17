@@ -1,6 +1,6 @@
 ## [Ch 8: Convolutional Neural Networks](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks)
 
- 1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/01_Introduction)
+ 1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/01_Intro_to_CNN)
   * We introduce convolutional neural networks (CNN), and how we can use them in Tensorflow.
  2. [Implementing a Simple CNN.](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/02_Intro_to_CNN_MNIST)
   * Here, we show how to create a CNN architecture that performs well on the MNIST digit recognition task.
