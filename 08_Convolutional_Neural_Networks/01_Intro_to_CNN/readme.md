@@ -10,4 +10,4 @@ CNNs generally follow a structure.  The main convolutional setup is (input array
 
 ![Convolutional Filter](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/08_Convolutional_Neural_Networks/images/01_intro_cnn2.png)
 
-After the max pooling, there is generally an activation layer.  One of the more common activation layers is the ReLU (Rectified Linear Unit).  See [Chapter 1, Section 6]() for examples.
+After the max pooling, there is generally an activation layer.  One of the more common activation layers is the ReLU (Rectified Linear Unit).  See [Chapter 1, Section 6](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/06_Implementing_Activation_Functions) for examples.
