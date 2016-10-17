@@ -7,7 +7,7 @@
  3. [Implementing an Advanced CNN.](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/03_CNN_CIFAR10)
   * In this example, we show how to replicate an architecture for the CIFAR-10 image recognition task.
  4. [Retraining an Existing Architecture.](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/04_Retraining_Current_Architectures)
-  * We show how to download and setup the CIFAR-10 data for the Tensorflow retraining/fine-tuning tutorial.
+  * We show how to download and setup the CIFAR-10 data for the [Tensorflow retraining/fine-tuning tutorial.](https://github.com/tensorflow/models/tree/master/inception)
  5. [Using Stylenet/NeuralStyle.](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/05_Stylenet_NeuralStyle)
   * In this recipe, we show a basic implementation of using Stylenet or Neuralstyle.
  6. [Implementing Deep Dream.](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/06_Deepdream)
