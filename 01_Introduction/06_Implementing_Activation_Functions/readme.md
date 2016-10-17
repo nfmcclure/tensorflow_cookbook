@@ -2,9 +2,9 @@
 
 This script plots many various activation functions in Tensorflow.
 
-![Activation Functions](http://fromdata.org/wp-content/uploads/2016/07/B05480_01_03.png "Activation Functions")
+![Activation Functions](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/06_activation_funs1.png "Activation Functions")
 
-![Activation Functions](http://fromdata.org/wp-content/uploads/2016/07/B05480_01_04.png "Activation Functions")
+![Activation Functions](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/06_activation_funs2.png "Activation Functions")
 
 ### TO DO
 
