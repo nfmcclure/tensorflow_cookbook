@@ -9,7 +9,7 @@
 Table of Contents
 =================
 
-  * [<a href="https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook">Tensorflow Machine Learning Cookbook</a>](#tensorflow-machine-learning-cookbook) [<a href="https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook">A Packt Publishing Book due out Jan. 2017.</a>](#a-packt-publishing-book-due-out-jan-2017)
+  * [<a href="https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook">Tensorflow Machine Learning Cookbook</a>](#tensorflow-machine-learning-cookbook) [<a href="https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook">(A Packt Publishing Book due out Jan. 2017.)</a>](#a-packt-publishing-book-due-out-jan-2017)
     * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction">Ch 1: Getting Started with Tensorflow</a>](#ch-1-getting-started-with-tensorflow)
     * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way">Ch 2: The Tensorflow Way</a>](#ch-2-the-tensorflow-way)
     * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression">Ch 3: Linear Regression</a>](#ch-3-linear-regression)
