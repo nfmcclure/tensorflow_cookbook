@@ -4,6 +4,26 @@
 ## [A Packt Publishing Book due out Jan. 2017.](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
 ### By Nick McClure
+===================
+
+Table of Contents
+=================
+
+  * [<a href="https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook">Tensorflow Machine Learning Cookbook</a>](#tensorflow-machine-learning-cookbook)
+    * [<a href="https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook">A Packt Publishing Book due out Jan. 2017.</a>](#a-packt-publishing-book-due-out-jan-2017)
+      * [By Nick McClure](#by-nick-mcclure)
+    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction">Ch 1: Getting Started with Tensorflow</a>](#ch-1-getting-started-with-tensorflow)
+    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way">Ch 2: The Tensorflow Way</a>](#ch-2-the-tensorflow-way)
+    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression">Ch 3: Linear Regression</a>](#ch-3-linear-regression)
+    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines">Ch 4: Support Vector Machines</a>](#ch-4-support-vector-machines)
+    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods">Ch 5: Nearest Neighbor Methods</a>](#ch-5-nearest-neighbor-methods)
+    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks">Ch 6: Neural Networks</a>](#ch-6-neural-networks)
+    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing">Ch 7: Natural Language Processing</a>](#ch-7-natural-language-processing)
+    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks">Ch 8: Convolutional Neural Networks</a>](#ch-8-convolutional-neural-networks)
+    * [Ch 9: Recurrent Neural Networks](#ch-9-recurrent-neural-networks)
+    * [Ch 10: Taking Tensorflow to Production](#ch-10-taking-tensorflow-to-production)
+    * [Ch 11: More with Tensorflow](#ch-11-more-with-tensorflow)
+
 
 ---
 
