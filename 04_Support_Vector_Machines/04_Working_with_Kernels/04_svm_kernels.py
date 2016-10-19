@@ -138,8 +138,3 @@ plt.title('Loss per Generation')
 plt.xlabel('Generation')
 plt.ylabel('Loss')
 plt.show()
-
-# sess.run(prediction_output, feed_dict={x_data: rand_x, y_target: rand_y, prediction_grid: grid_points})
-# sess.run(pred_kernel, feed_dict={x_data: rand_x, y_target: rand_y, prediction_grid: grid_points})
-# sess.run(model_output, feed_dict={x_data:rand_x, y_target: rand_y})
-# sess.run(second_term, feed_dict={x_data:rand_x, y_target: rand_y})
