@@ -8,4 +8,4 @@ In this script, we create an array and feed it into a placeholder.  We then mult
 
 Viewing the computational graph in Tensorboard, as created by the script:
 
-![One Operation](http://fromdata.org/wp-content/uploads/2016/07/B05480_02_01.png "An Operation on a Graph")
+![One Operation](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/01_Operations_on_a_Graph.png "An Operation on a Graph")

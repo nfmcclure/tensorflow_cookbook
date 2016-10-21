@@ -20,4 +20,4 @@ The idea is that we want to split our labeled data set into a training and test 
 
 Here is the classification results visualized as a histogram:
 
-![Classification Results](http://fromdata.org/wp-content/uploads/2016/07/B05480_02_08.png "Classification Results")
+![Classification Results](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/08_Evaluating_Models.png "Classification Results")

@@ -8,14 +8,18 @@ It is worth noting that due to the small data set and the randomness of separati
 
 We will aim to maximize the margin width, 2/||A||, or minimize ||A||.  We allow for a soft margin by having an error term in the loss function which is the max(0, 1-pred*actual).
 
-![Linear Separator](http://fromdata.org/wp-content/uploads/2016/07/B05480_04_01.png "Linear Separator")
+![Linear Separator](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/images/01_introduction.png "Linear Separator")
 
 # Graph of Linear SVM
 
 Here is a plot of the linear SVM separator of I. setosa based on petal width and sepal length.
 
-![Linear SVM Output](http://fromdata.org/wp-content/uploads/2016/07/B05480_04_02.png "Linear SVM Output")
+![Linear SVM Output](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/images/02_linear_svm_loss.png "Linear SVM Output")
 
 The accuracy is below, plotted over each iteration.
 
-![Linear SVM Accuracy](http://fromdata.org/wp-content/uploads/2016/07/B05480_04_03.png "Linear SVM Accuracy")
+![Linear SVM Accuracy](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/images/02_linear_svm_accuracy.png "Linear SVM Accuracy")
+
+An important observation is that while we achieve the linear separator rather quickly (100% accuracy), the loss function continues to decrease.  This is because we are trying to optimize for the maximal linear separator between the two classes.
+
+Ideally, we would have enough data to do a cross validation technique, or even to separate the data into train and test sets before optimization.
