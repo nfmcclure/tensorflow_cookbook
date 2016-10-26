@@ -55,6 +55,8 @@ There are a few important functions in the beginning of the code.
 
 At the end of the code, we loop through an actual game.  This allows the user to actually play the model they created.
 
+[See Code Here](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/08_Learning_Tic_Tac_Toe/tic_tac_toe_moves.py)
+
 ## Sample Game Output
 
 Here is a sample of the output of playing against the trained model. Human = X's and the model = O's.
