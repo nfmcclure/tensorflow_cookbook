@@ -38,7 +38,13 @@ So for example, the board:
 ```
 is equivalent to the row: [-1, 0, 0, 1, -1, -1, 0, 0, 1].
 
-![TicTacToeIndexing](http://fromdata.org/wp-content/uploads/2016/08/B05480_06_09.png "TicTacToeIndexing")
+![TicTacToeIndexing](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/images/08_tictactoe_layout.png "TicTacToeIndexing")
+
+## Neural Network Architecture
+
+We will keep it simple and have only one hidden layer that is fully connected.  The hidden layer will be composed of 81 hidden nodes. If only because square numbers are appealing.  See the below diagram for the NN we will construct.
+
+![TicTacToe Architecture](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/images/08_tic_tac_toe_architecture.png "TicTacToe Architecture")
 
 ## Important Functions
 
@@ -79,4 +85,8 @@ ___________
  X | O | 
 Game Over!
 ```
+
+## Loss Output
+
+![TicTacToe Loss](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/images/08_tictactoe_loss.png "TicTacToe Loss")
 
