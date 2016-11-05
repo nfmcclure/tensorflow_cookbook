@@ -28,7 +28,7 @@ print(sess.run(tf.cross([1.,0.,0.],[0.,1.,0.])))
 # Trig functions
 print(sess.run(tf.sin(3.1416)))
 print(sess.run(tf.cos(3.1416)))
-# Tangemt
+# Tangent
 print(sess.run(tf.div(tf.sin(3.1416/4.), tf.cos(3.1416/4.))))
 
 # Custom operation
