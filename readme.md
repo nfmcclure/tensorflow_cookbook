@@ -175,9 +175,13 @@ Neural Networks are very important in machine learning and growing in popularity
  6. [Implementing Deep Dream.](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/06_Deepdream)
   * This script shows a line-by-line explanation of Tensorflow's deepdream tutorial. Taken from [Deepdream on Tensorflow](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/deepdream). Note that the code here is converted to Python 3.
 
-## Ch 9: Recurrent Neural Networks
+## [Ch 9: Recurrent Neural Networks](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks)
 
-TBA
+ 1. Introduction
+ 2. Implmenting an RNN Model for Spam Prediction
+ 3. Imlementing an LSTM Model for Text Generation
+ 4. Stacking Multiple LSTM Layers
+ 5. Creating a Sequence to Sequence Translation Model (Seq2Seq)
 
 ## Ch 10: Taking Tensorflow to Production
 
