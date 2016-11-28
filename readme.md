@@ -145,6 +145,8 @@ Neural Networks are very important in machine learning and growing in popularity
 
 ## [Ch 7: Natural Language Processing](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing)
 
+Natural Language Processing (NLP) is a way of processing textual information into numerical summaries, features, or models. In this chapter we will motivate and explain how to best deal with text in Tensorflow.  We show how to implement the classic 'Bag-of-Words' and show that there may be better ways to embed text based on the problem at hand. There are neural network embeddings called Word2Vec (CBOW and Skip-Gram) and Doc2Vec.  We show how to implement all of these in Tensorflow.
+
  1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/01_Introduction)
   * We introduce methods for turning text into numerical vectors. We introduce the Tensorflow 'embedding' feature as well.
  2. [Working with Bag-of-Words](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/02_Working_with_Bag_of_Words)
@@ -162,6 +164,8 @@ Neural Networks are very important in machine learning and growing in popularity
 
 ## [Ch 8: Convolutional Neural Networks](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks)
 
+Convolutional Neural Networks (CNNs) are ways of getting neural networks to deal with image data. CNN derive their name from the use of a convolutional layer that applies a fixed size filter across a larger image, recognizing a pattern in any part of the image. There are many other tools that they use (max-pooling, dropout, etc...) that we show how to implement with Tensorflow.  We also show how to retrain an existing architecture and take CNNs further with Stylenet and Deep Dream.
+
  1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/01_Intro_to_CNN)
   * We introduce convolutional neural networks (CNN), and how we can use them in Tensorflow.
  2. [Implementing a Simple CNN.](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/02_Intro_to_CNN_MNIST)
@@ -176,6 +180,8 @@ Neural Networks are very important in machine learning and growing in popularity
   * This script shows a line-by-line explanation of Tensorflow's deepdream tutorial. Taken from [Deepdream on Tensorflow](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/deepdream). Note that the code here is converted to Python 3.
 
 ## [Ch 9: Recurrent Neural Networks](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks)
+
+Recurrent Neural Networks (RNNs) are very similar to regular neural networks except that they allow 'recurrent' connections, or loops that depend on the prior states of the network. This allows RNNs to efficiently deal with sequential data, whereas other types of networks cannot. We then motivate the usage of LSTM (Long Short Term Memory) networks as a way of addressing regular RNN problems. Then we show how easy it is to implement these RNN types in Tensorflow.
 
  1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/01_Introduction)
   * We introduce Recurrent Neural Networks and how they are able to feed in a sequence and predict either a fixed target (categorical/numerical) or another sequence (sequence to sequence).
