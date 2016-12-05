@@ -194,10 +194,25 @@ Recurrent Neural Networks (RNNs) are very similar to regular neural networks exc
  5. [Creating a Sequence to Sequence Translation Model (Seq2Seq)](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/05_Creating_A_Sequence_To_Sequence_Model)
   * We show how to use Tensorflow's sequence-to-sequence models to train an English-German translation model.
 
-## Ch 10: Taking Tensorflow to Production
+## [Ch 10:Taking Tensorflow to Production](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production)
 
-TBA
+ 1. Implementing Unit Tests
 
-## Ch 11: More with Tensorflow
+ 2. Using Multiple Executors (Devices)
 
-TBA
+ 3. Parallelizing Tensorflow
+
+ 4. Tips for Tensorflow in Production
+
+ 5. An Example of Productionalizing Tensorflow
+
+## [Ch 11: More with Tensorflow](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/11_More_with_Tensorflow)
+
+ 1. Visualizing Computational Graphs (with Tensorboard)
+
+ 2. Clustering Using K-means
+
+ 3. Working with a Genetic Algorithm
+
+ 4. Solving a System of ODEs
+
