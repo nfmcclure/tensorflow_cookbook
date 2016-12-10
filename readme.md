@@ -186,25 +186,26 @@ Recurrent Neural Networks (RNNs) are very similar to regular neural networks exc
  1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/01_Introduction)
   * We introduce Recurrent Neural Networks and how they are able to feed in a sequence and predict either a fixed target (categorical/numerical) or another sequence (sequence to sequence).
  2. [Implmenting an RNN Model for Spam Prediction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/02_Implementing_RNN_for_Spam_Prediction)
-  * We create an RNN model to improve on our spam/ham SMS text predictions.
+  * In this example, we create an RNN model to improve on our spam/ham SMS text predictions.
  3. [Imlementing an LSTM Model for Text Generation](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/03_Implementing_LSTM)
   * We show how to implement a LSTM (Long Short Term Memory) RNN for Shakespeare language generation. (Word level vocabulary)
  4. [Stacking Multiple LSTM Layers](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/04_Stacking_Multiple_LSTM_Layers)
   * We stack multiple LSTM layers to improve on our Shakespeare language generation. (Character level vocabulary)
  5. [Creating a Sequence to Sequence Translation Model (Seq2Seq)](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/05_Creating_A_Sequence_To_Sequence_Model)
-  * We show how to use Tensorflow's sequence-to-sequence models to train an English-German translation model.
+  * Here, we use Tensorflow's sequence-to-sequence models to train an English-German translation model.
 
 ## [Ch 10:Taking Tensorflow to Production](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production)
 
- 1. Implementing Unit Tests
-
- 2. Using Multiple Executors (Devices)
-
- 3. Parallelizing Tensorflow
-
- 4. Tips for Tensorflow in Production
-
- 5. An Example of Productionalizing Tensorflow
+ 1. [Implementing Unit Tests](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production/01_Implementing_Unit_Tests)
+  * We show how to implement different types of unit tests on tensors (placeholders and variables).
+ 2. [Using Multiple Executors (Devices)](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production/02_Using_Multiple_Devices)
+  * How to use a machine with multiple devices.  E.g., a machine with a CPU, and one or more GPUs.
+ 3. [Parallelizing Tensorflow](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production/03_Parallelizing_Tensorflow)
+  * How to setup and use Tensorflow distributed on multiple machines.
+ 4. [Tips for Tensorflow in Production](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production/04_Production_Tips)
+  * Various tips for devloping with Tensorflow
+ 5. [An Example of Productionalizing Tensorflow](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production/05_Production_Example)
+  * We show how to do take the RNN model for predicting ham/spam (from Chapter 9, recipe #2) and put it in two production level files: training and evaluation.
 
 ## [Ch 11: More with Tensorflow](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/11_More_with_Tensorflow)
 
