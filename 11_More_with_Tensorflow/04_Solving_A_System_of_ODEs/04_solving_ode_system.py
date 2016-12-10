@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Apr 13 10:09:16 2016
+# Solving a Sytem of ODEs
+#----------------------------------
+#
+# In this script, we use Tensorflow to solve a sytem
+#   of ODEs.
+#
+# The system of ODEs we will solve is the Lotka-Volterra
+#   predator-prey system.
 
-@author: nick
-"""
 
 # Declaring Operations
 import matplotlib.pyplot as plt
@@ -14,7 +18,7 @@ ops.reset_default_graph()
 # Open interactive graph session
 sess = tf.Session()
 
-# Discrete Lotka Volterra predator/prey equations
+# Discrete Lotka-Volterra predator/prey equations
 #
 # X(t+1) = X(t) + (aX(t) + bX(t)Y(t)) * t_delta # Prey
 #
