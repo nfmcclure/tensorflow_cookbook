@@ -48,7 +48,6 @@ truth = np.sin(2*np.pi*(np.arange(features, dtype=np.float32))/features)
 population = tf.Variable(np.random.randn(pop_size, features), dtype=tf.float32)
 
 # Initialize placeholders
-#population_ph = tf.placeholder(tf.float32, [pop_size, features])
 truth_ph = tf.placeholder(tf.float32, [1, features])
 crossover_mat_ph = tf.placeholder(tf.float32, [num_children, features])
 mutation_val_ph = tf.placeholder(tf.float32, [num_children, features])
