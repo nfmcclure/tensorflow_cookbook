@@ -32,7 +32,9 @@ This chapter intends to introduce the main objects and concepts in Tensorflow.  
 
  1. [General Outline of TF Algorithms](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works)
   * Here we introduce Tensorflow and the general outline of how most Tensorflow algorithms work.
-  <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/01_outline.png" align="left" height="24" width="48" ></a></kbd>
+
+  <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/01_outline.png" align="center" height="24" width="48" ></a></kbd>
+
  2. [Creating and Using Tensors](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/02_Creating_and_Using_Tensors)
   * How to create and initialize tensors in Tensorflow.  We also depict how these operations appear in Tensorboard.
  3. [Using Variables and Placeholders](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/03_Using_Variables_and_Placeholders)
