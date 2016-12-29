@@ -27,7 +27,7 @@ Table of Contents
 
 ## [Ch 1: Getting Started with Tensorflow](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction)
 
-<img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/01_outline.png" height="24" width="48">
+<kbd><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/01_outline.png" height="24" width="48"></kbd>
 
 This chapter intends to introduce the main objects and concepts in Tensorflow.  We also introduce how to access the data for the rest of the book and provide additional resources for learning about Tensorflow.
 
