@@ -28,15 +28,86 @@ Table of Contents
 <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/08_Evaluating_Models"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/08_Evaluating_Models.png" align="center" height="45" width="90"></a></kbd>
 
   * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression">Ch 3: Linear Regression</a>](#ch-3-linear-regression)
-  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines">Ch 4: Support Vector Machines</a>](#ch-4-support-vector-machines)
-  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods">Ch 5: Nearest Neighbor Methods</a>](#ch-5-nearest-neighbor-methods)
-  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks">Ch 6: Neural Networks</a>](#ch-6-neural-networks)
-  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing">Ch 7: Natural Language Processing</a>](#ch-7-natural-language-processing)
-  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks">Ch 8: Convolutional Neural Networks</a>](#ch-8-convolutional-neural-networks)
-  * [Ch 9: Recurrent Neural Networks](#ch-9-recurrent-neural-networks)
-  * [Ch 10: Taking Tensorflow to Production](#ch-10-taking-tensorflow-to-production)
-  * [Ch 11: More with Tensorflow](#ch-11-more-with-tensorflow)
 
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/01_Using_the_Matrix_Inverse_Method"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/01_Inverse_Matrix_Method.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/02_Implementing_a_Decomposition_Method"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/02_Cholesky_Decomposition.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/03_Tensorflow_Way_of_Linear_Regression"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/03_lin_reg_fit.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/04_Loss_Functions_in_Linear_Regressions"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/04_L1_L2_learningrates.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/05_Implementing_Deming_Regression"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/05_demming_vs_linear_reg.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/06_Implementing_Lasso_and_Ridge_Regression"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/07_elasticnet_reg_loss.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/07_Implementing_Elasticnet_Regression"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/07_elasticnet_reg_loss.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression/08_Implementing_Logistic_Regression"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/08_logistic_reg_acc.png" align="center" height="45" width="90"></a></kbd>
+
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines">Ch 4: Support Vector Machines</a>](#ch-4-support-vector-machines)
+
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/01_Introduction"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/images/01_introduction.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/02_Working_with_Linear_SVMs"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/images/02_linear_svm_output.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/03_Reduction_to_Linear_Regression"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/images/03_svm_regression_output.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/04_Working_with_Kernels"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/images/04_linear_svm_gaussian.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/05_Implementing_Nonlinear_SVMs"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/images/05_non_linear_svms.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/06_Implementing_Multiclass_SVMs"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/04_Support_Vector_Machines/images/06_multiclass_svm.png" align="center" height="45" width="90"></a></kbd>
+
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods">Ch 5: Nearest Neighbor Methods</a>](#ch-5-nearest-neighbor-methods)
+
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/01_Introduction"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/02_Working_with_Nearest_Neighbors"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/05_Nearest_Neighbor_Methods/images/02_nn_histogram.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/03_Working_with_Text_Distances"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/04_Computing_with_Mixed_Distance_Functions"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/05_An_Address_Matching_Example"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods/06_Nearest_Neighbors_for_Image_Recognition"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks">Ch 6: Neural Networks</a>](#ch-6-neural-networks)
+
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/01_Introduction"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/02_Implementing_an_Operational_Gate"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/03_Working_with_Activation_Functions"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/04_Single_Hidden_Layer_Network"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/05_Implementing_Different_Layers"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/06_Using_Multiple_Layers"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/07_Improving_Linear_Regression"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/08_Learning_Tic_Tac_Toe"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing">Ch 7: Natural Language Processing</a>](#ch-7-natural-language-processing)
+
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/01_Introduction"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/02_Working_with_Bag_of_Words"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/03_Implementing_tf_idf"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/04_Working_With_Skip_Gram_Embeddings"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/05_Working_With_CBOW_Embeddings"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/06_Using_Word2Vec_Embeddings"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing/07_Sentiment_Analysis_With_Doc2Vec"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks">Ch 8: Convolutional Neural Networks</a>](#ch-8-convolutional-neural-networks)
+
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/01_Intro_to_CNN"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/02_Intro_to_CNN_MNIST"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/03_CNN_CIFAR10"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/04_Retraining_Current_Architectures"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/05_Stylenet_NeuralStyle"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks/06_Deepdream"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks">Ch 9: Recurrent Neural Networks</a>](#ch-9-recurrent-neural-networks)
+
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/01_Introduction"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/02_Implementing_RNN_for_Spam_Prediction"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/03_Implementing_LSTM"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/04_Stacking_Multiple_LSTM_Layers"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/05_Creating_A_Sequence_To_Sequence_Model"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production">Ch 10: Taking Tensorflow to Production</a>](#ch-10-taking-tensorflow-to-production)
+
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production/01_Implementing_Unit_Tests"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production/02_Using_Multiple_Devices"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production/03_Parallelizing_Tensorflow"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production/04_Production_Tips"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production/05_Production_Example"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/11_More_with_Tensorflow">Ch 11: More with Tensorflow</a>](#ch-11-more-with-tensorflow)
+
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/11_More_with_Tensorflow/01_Visualizing_Computational_Graphs"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/11_More_with_Tensorflow/03_Clustering_Using_KMeans"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/11_More_with_Tensorflow/02_Working_with_a_Genetic_Algorithm"><img src="image.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/11_More_with_Tensorflow/04_Solving_A_System_of_ODEs"><img src="image.png" align="center" height="45" width="90"></a></kbd>
 
 ---
 
