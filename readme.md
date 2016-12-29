@@ -4,22 +4,29 @@
 ## [A Packt Publishing Book due out Jan. 2017.](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
 ### By Nick McClure
-===================
-
-[<a href="https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook">Tensorflow Machine Learning Cookbook</a>](#tensorflow-machine-learning-cookbook)
 
 Table of Contents
 =================
 
   * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction">Ch 1: Getting Started with Tensorflow</a>](#ch-1-getting-started-with-tensorflow)
 
-<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/01_outline.png" align="center" height="24" width="48" ></a></kbd>
-<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/02_Creating_and_Using_Tensors"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/02_variable.png" align="center" height="24" width="48" ></a></kbd>
-<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/03_Using_Variables_and_Placeholders"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/03_placeholder.png" align="center" height="24" width="48" ></a></kbd>
-<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/06_Implementing_Activation_Functions"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/06_activation_funs1.png" align="center" height="24" width="48" ></a></kbd>
-<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/06_Implementing_Activation_Functions"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/06_activation_funs2.png" align="center" height="24" width="48" ></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/01_outline.png" align="center" height="36" width="72" ></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/02_Creating_and_Using_Tensors"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/02_variable.png" align="center" height="36" width="72" ></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/03_Using_Variables_and_Placeholders"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/03_placeholder.png" align="center" height="36" width="72" ></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/06_Implementing_Activation_Functions"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/06_activation_funs1.png" align="center" height="36" width="72" ></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/06_Implementing_Activation_Functions"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/06_activation_funs2.png" align="center" height="36" width="72" ></a></kbd>
 
   * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way">Ch 2: The Tensorflow Way</a>](#ch-2-the-tensorflow-way)
+
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/01_Operations_as_a_Computational_Graph"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/01_Operations_on_a_Graph.png" align="center" height="24" width="48"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/02_Layering_Nested_Operations"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/02_Multiple_Operations.png" align="center" height="24" width="48"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/03_Working_with_Multiple_Layers"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/03_Multiple_Layers.png" align="center" height="24" width="48"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/04_Implementing_Loss_Functions"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/04_loss_fun1.png" align="center" height="24" width="48"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/05_Implementing_Back_Propagation"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/04_loss_fun2.png" align="center" height="24" width="48"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/06_Working_with_Batch_and_Stochastic_Training"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/06_Back_Propagation.png" align="center" height="24" width="48"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/07_Combining_Everything_Together"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/07_Combing_Everything_Together.png" align="center" height="24" width="48"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way/08_Evaluating_Models"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/08_Evaluating_Models.png" align="center" height="24" width="48"></a></kbd>
+
   * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression">Ch 3: Linear Regression</a>](#ch-3-linear-regression)
   * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines">Ch 4: Support Vector Machines</a>](#ch-4-support-vector-machines)
   * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods">Ch 5: Nearest Neighbor Methods</a>](#ch-5-nearest-neighbor-methods)
