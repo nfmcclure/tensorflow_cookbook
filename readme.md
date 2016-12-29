@@ -6,26 +6,29 @@
 ### By Nick McClure
 ===================
 
+[<a href="https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook">Tensorflow Machine Learning Cookbook</a>](#tensorflow-machine-learning-cookbook)
+
 Table of Contents
 =================
 
-  * [<a href="https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook">Tensorflow Machine Learning Cookbook</a>](#tensorflow-machine-learning-cookbook)
-    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction">Ch 1: Getting Started with Tensorflow</a>](#ch-1-getting-started-with-tensorflow)
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction">Ch 1: Getting Started with Tensorflow</a>](#ch-1-getting-started-with-tensorflow)
+
 <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/01_outline.png" align="center" height="24" width="48" ></a></kbd>
 <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/02_Creating_and_Using_Tensors"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/02_variable.png" align="center" height="24" width="48" ></a></kbd>
 <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/03_Using_Variables_and_Placeholders"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/03_placeholder.png" align="center" height="24" width="48" ></a></kbd>
 <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/06_Implementing_Activation_Functions"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/06_activation_funs1.png" align="center" height="24" width="48" ></a></kbd>
 <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/06_Implementing_Activation_Functions"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/06_activation_funs2.png" align="center" height="24" width="48" ></a></kbd>
-    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way">Ch 2: The Tensorflow Way</a>](#ch-2-the-tensorflow-way)
-    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression">Ch 3: Linear Regression</a>](#ch-3-linear-regression)
-    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines">Ch 4: Support Vector Machines</a>](#ch-4-support-vector-machines)
-    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods">Ch 5: Nearest Neighbor Methods</a>](#ch-5-nearest-neighbor-methods)
-    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks">Ch 6: Neural Networks</a>](#ch-6-neural-networks)
-    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing">Ch 7: Natural Language Processing</a>](#ch-7-natural-language-processing)
-    * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks">Ch 8: Convolutional Neural Networks</a>](#ch-8-convolutional-neural-networks)
-    * [Ch 9: Recurrent Neural Networks](#ch-9-recurrent-neural-networks)
-    * [Ch 10: Taking Tensorflow to Production](#ch-10-taking-tensorflow-to-production)
-    * [Ch 11: More with Tensorflow](#ch-11-more-with-tensorflow)
+
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/02_Tensorflow_Way">Ch 2: The Tensorflow Way</a>](#ch-2-the-tensorflow-way)
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/03_Linear_Regression">Ch 3: Linear Regression</a>](#ch-3-linear-regression)
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines">Ch 4: Support Vector Machines</a>](#ch-4-support-vector-machines)
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/05_Nearest_Neighbor_Methods">Ch 5: Nearest Neighbor Methods</a>](#ch-5-nearest-neighbor-methods)
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks">Ch 6: Neural Networks</a>](#ch-6-neural-networks)
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/07_Natural_Language_Processing">Ch 7: Natural Language Processing</a>](#ch-7-natural-language-processing)
+  * [<a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/08_Convolutional_Neural_Networks">Ch 8: Convolutional Neural Networks</a>](#ch-8-convolutional-neural-networks)
+  * [Ch 9: Recurrent Neural Networks](#ch-9-recurrent-neural-networks)
+  * [Ch 10: Taking Tensorflow to Production](#ch-10-taking-tensorflow-to-production)
+  * [Ch 11: More with Tensorflow](#ch-11-more-with-tensorflow)
 
 
 ---
