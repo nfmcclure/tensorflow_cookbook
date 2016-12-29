@@ -2,7 +2,7 @@
 
 This chapter intends to introduce the main objects and concepts in Tensorflow.  We also introduce how to access the data for the rest of the book and provide additional resources for learning about Tensorflow.
 
- 1. [General Outline of TF Algorithms](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works)
+ 1. [How Tensorflow Works (General Outline of TF Algorithms)](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works)
   * Here we introduce Tensorflow and the general outline of how most Tensorflow algorithms work.
  2. [Creating and Using Tensors](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/02_Creating_and_Using_Tensors)
   * How to create and initialize tensors in Tensorflow.  We also depict how these operations appear in Tensorboard.

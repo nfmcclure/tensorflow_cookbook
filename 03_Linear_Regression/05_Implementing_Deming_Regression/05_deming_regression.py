@@ -44,13 +44,13 @@ demming_numerator = tf.abs(tf.sub(y_target, tf.add(tf.matmul(x_data, A), b)))
 demming_denominator = tf.sqrt(tf.add(tf.square(A),1))
 loss = tf.reduce_mean(tf.truediv(demming_numerator, demming_denominator))
 
-# Initialize variables
-init = tf.initialize_all_variables()
-sess.run(init)
-
 # Declare optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.1)
 train_step = my_opt.minimize(loss)
+
+# Initialize variables
+init = tf.initialize_all_variables()
+sess.run(init)
 
 # Training loop
 loss_vec = []

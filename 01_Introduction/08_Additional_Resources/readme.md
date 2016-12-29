@@ -2,9 +2,9 @@
 
 ###Official Resources:
 
- - [Tensorflow Python API](https://www.tensorflow.org/versions/r0.9/api_docs/python/index.html)
+ - [Tensorflow Python API](https://www.tensorflow.org/api_docs/python/)
  - [Tensorflow on Github](https://github.com/tensorflow/tensorflow)
- - [Tensorflow Tutorials](https://www.tensorflow.org/versions/r0.9/tutorials/index.html)
+ - [Tensorflow Tutorials](https://www.tensorflow.org/tutorials/)
  - [Udacity Deep Learning Class](https://www.udacity.com/course/deep-learning--ud730)
  - [Tensorflow Playground](http://playground.tensorflow.org/)
 

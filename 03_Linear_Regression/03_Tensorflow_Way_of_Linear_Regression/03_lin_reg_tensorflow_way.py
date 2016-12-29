@@ -42,13 +42,13 @@ model_output = tf.add(tf.matmul(x_data, A), b)
 # Declare loss function (L2 loss)
 loss = tf.reduce_mean(tf.square(y_target - model_output))
 
-# Initialize variables
-init = tf.initialize_all_variables()
-sess.run(init)
-
 # Declare optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.05)
 train_step = my_opt.minimize(loss)
+
+# Initialize variables
+init = tf.initialize_all_variables()
+sess.run(init)
 
 # Training loop
 loss_vec = []

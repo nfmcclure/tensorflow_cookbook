@@ -63,13 +63,13 @@ model_output = tf.add(tf.matmul(x_data, A), b)
 # Declare loss function (Cross Entropy loss)
 loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(model_output, y_target))
 
-# Initialize variables
-init = tf.initialize_all_variables()
-sess.run(init)
-
 # Declare optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.01)
 train_step = my_opt.minimize(loss)
+
+# Initialize variables
+init = tf.initialize_all_variables()
+sess.run(init)
 
 # Actual Prediction
 prediction = tf.round(tf.sigmoid(model_output))
