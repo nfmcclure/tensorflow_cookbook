@@ -29,6 +29,9 @@ Table of Contents
 
 <kbd><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/01_outline.png" height="24" width="48"></kbd>
 
+[![Section 1](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/01_outline.png)](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works)
+
+
 This chapter intends to introduce the main objects and concepts in Tensorflow.  We also introduce how to access the data for the rest of the book and provide additional resources for learning about Tensorflow.
 
  1. [General Outline of TF Algorithms](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/01_Introduction/01_How_Tensorflow_Works)
