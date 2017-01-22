@@ -21,7 +21,7 @@ for x_val in x_vals:
     print(sess.run(prod, feed_dict={x_data: x_val}))
 
 merged = tf.merge_all_summaries()
-if not os.path.exists('tensorboard_logs/')
+if not os.path.exists('tensorboard_logs/'):
     os.makedirs('tensorboard_logs/')
 
 my_writer = tf.train.SummaryWriter('tensorboard_logs/', sess.graph)
