@@ -245,6 +245,7 @@ Convolutional Neural Networks (CNNs) are ways of getting neural networks to deal
 <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/03_Implementing_LSTM"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/09_Recurrent_Neural_Networks/images/03_LSTM_Loss.png" align="center" height="45" width="90"></a></kbd>
 <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/04_Stacking_Multiple_LSTM_Layers"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/09_Recurrent_Neural_Networks/images/04_MultipleRNN_Architecture.png" align="center" height="45" width="90"></a></kbd>
 <kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/05_Creating_A_Sequence_To_Sequence_Model"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/09_Recurrent_Neural_Networks/images/05_Seq2Seq_Loss.png" align="center" height="45" width="90"></a></kbd>
+<kbd><a href="https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/06_Training_A_Siamese_Similarity_Measure"><img src="https://github.com/nfmcclure/tensorflow_cookbook/blob/master/09_Recurrent_Neural_Networks/images/06_Similarity_RNN.png" align="center" height="45" width="90"></a></kbd>
 
 Recurrent Neural Networks (RNNs) are very similar to regular neural networks except that they allow 'recurrent' connections, or loops that depend on the prior states of the network. This allows RNNs to efficiently deal with sequential data, whereas other types of networks cannot. We then motivate the usage of LSTM (Long Short Term Memory) networks as a way of addressing regular RNN problems. Then we show how easy it is to implement these RNN types in Tensorflow.
 
@@ -258,6 +259,8 @@ Recurrent Neural Networks (RNNs) are very similar to regular neural networks exc
   * We stack multiple LSTM layers to improve on our Shakespeare language generation. (Character level vocabulary)
  5. [Creating a Sequence to Sequence Translation Model (Seq2Seq)](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/05_Creating_A_Sequence_To_Sequence_Model)
   * Here, we use Tensorflow's sequence-to-sequence models to train an English-German translation model.
+ 6. [Training a Siamese Similarity Measure](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/06_Training_A_Siamese_Similarity_Measure)
+  * Here, we implement a Siamese RNN to predict the similarity of addresses and use it for record matching.  Using RNNs for record matching is very versatile, as we do not have a fixed set of target categories and can use the trained model to predict similarities across new addresses.
 
 ## [Ch 10: Taking Tensorflow to Production](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/10_Taking_Tensorflow_to_Production)
 
