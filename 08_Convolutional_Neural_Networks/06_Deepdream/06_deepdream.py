@@ -1,4 +1,4 @@
-# Using Tensorflow for Deep Dream
+# Using TensorFlow for Deep Dream
 #---------------------------------------
 # From: Alexander Mordvintsev
 #      --https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/deepdream

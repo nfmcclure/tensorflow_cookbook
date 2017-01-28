@@ -1,4 +1,4 @@
-# Evaluating models in Tensorflow
+# Evaluating models in TensorFlow
 #
 # This code will implement two models.  The first
 #  is a simple regression model, we will show how to

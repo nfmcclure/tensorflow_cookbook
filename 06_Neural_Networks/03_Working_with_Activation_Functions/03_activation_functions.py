@@ -3,7 +3,7 @@
 #
 # This function shows how to implement
 # various gates with activation functions
-# in Tensorflow
+# in TensorFlow
 #
 # This function is an extension of the
 # prior gates, but with various activation

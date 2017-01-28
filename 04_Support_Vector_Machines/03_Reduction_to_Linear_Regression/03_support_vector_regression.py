@@ -1,7 +1,7 @@
 # SVM Regression
 #----------------------------------
 #
-# This function shows how to use Tensorflow to
+# This function shows how to use TensorFlow to
 # solve support vector regression. We are going
 # to find the line that has the maximum margin
 # which INCLUDES as many points as possible

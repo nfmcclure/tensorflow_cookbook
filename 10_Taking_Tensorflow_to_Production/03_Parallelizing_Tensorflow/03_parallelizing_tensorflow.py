@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Parallelizing Tensorflow
+# Parallelizing TensorFlow
 #----------------------------------
 #
-# We will show how to use Tensorflow distributed
+# We will show how to use TensorFlow distributed
 
 import tensorflow as tf
 

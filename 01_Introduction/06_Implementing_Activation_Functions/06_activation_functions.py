@@ -2,7 +2,7 @@
 #----------------------------------
 #
 # This function introduces activation
-# functions in Tensorflow
+# functions in TensorFlow
 
 # Implementing Activation Functions
 import matplotlib.pyplot as plt

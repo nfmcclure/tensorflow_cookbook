@@ -1,6 +1,6 @@
 # Using the Matrix Inverse Method
 
-Here we implement solving 2D linear regression via the matrix inverse method in Tensorflow.
+Here we implement solving 2D linear regression via the matrix inverse method in TensorFlow.
 
 # Model
 

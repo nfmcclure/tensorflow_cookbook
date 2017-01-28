@@ -2,7 +2,7 @@
 #----------------------------------
 #
 # This function introduces various ways to create
-# tensors in Tensorflow
+# tensors in TensorFlow
 
 import tensorflow as tf
 from tensorflow.python.framework import ops

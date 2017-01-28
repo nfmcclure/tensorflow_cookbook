@@ -3,7 +3,7 @@
 #
 # This function illustrates how to use
 # the Levenstein distance (edit distance)
-# in Tensorflow.
+# in TensorFlow.
 
 import tensorflow as tf
 

@@ -2,7 +2,7 @@
 # Solving a Sytem of ODEs
 #----------------------------------
 #
-# In this script, we use Tensorflow to solve a sytem
+# In this script, we use TensorFlow to solve a sytem
 #   of ODEs.
 #
 # The system of ODEs we will solve is the Lotka-Volterra

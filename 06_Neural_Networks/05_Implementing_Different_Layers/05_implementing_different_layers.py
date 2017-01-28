@@ -2,7 +2,7 @@
 #---------------------------------------
 #
 # We will illustrate how to use different types
-# of layers in Tensorflow
+# of layers in TensorFlow
 #
 # The layers of interest are:
 #  (1) Convolutional Layer
@@ -40,7 +40,7 @@ x_input_1d = tf.placeholder(dtype=tf.float32, shape=[data_size])
 
 #--------Convolution--------
 def conv_layer_1d(input_1d, my_filter):
-    # Tensorflow's 'conv2d()' function only works with 4D arrays:
+    # TensorFlow's 'conv2d()' function only works with 4D arrays:
     # [batch#, width, height, channels], we have 1 batch, and
     # width = 1, but height = the length of the input, and 1 channel.
     # So next we create the 4D array by inserting dimension 1's.
@@ -141,7 +141,7 @@ x_input_2d = tf.placeholder(dtype=tf.float32, shape=data_size)
 
 # Convolution
 def conv_layer_2d(input_2d, my_filter):
-    # Tensorflow's 'conv2d()' function only works with 4D arrays:
+    # TensorFlow's 'conv2d()' function only works with 4D arrays:
     # [batch#, width, height, channels], we have 1 batch, and
     # 1 channel, but we do have width AND height this time.
     # So next we create the 4D array by inserting dimension 1's.

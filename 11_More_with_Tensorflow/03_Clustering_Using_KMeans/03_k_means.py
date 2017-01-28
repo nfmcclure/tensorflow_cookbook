@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# K-means with Tensorflow
+# K-means with TensorFlow
 #----------------------------------
 #
-# This script shows how to do k-means with Tensorflow
+# This script shows how to do k-means with TensorFlow
 
 import numpy as np
 import matplotlib.pyplot as plt

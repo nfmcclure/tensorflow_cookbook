@@ -1,7 +1,7 @@
-# Implementing an RNN in Tensorflow
+# Implementing an RNN in TensorFlow
 #----------------------------------
 #
-# We implement an RNN in Tensorflow to predict spam/ham from texts
+# We implement an RNN in TensorFlow to predict spam/ham from texts
 #
 
 import os

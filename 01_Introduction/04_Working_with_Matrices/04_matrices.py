@@ -2,7 +2,7 @@
 #----------------------------------
 #
 # This function introduces various ways to create
-# matrices and how to use them in Tensorflow
+# matrices and how to use them in TensorFlow
 
 import numpy as np
 import tensorflow as tf

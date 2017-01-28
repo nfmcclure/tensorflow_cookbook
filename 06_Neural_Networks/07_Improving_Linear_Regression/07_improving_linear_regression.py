@@ -1,7 +1,7 @@
 # Improving Linear Regression with Neural Networks (Logistic Regression)
 #----------------------------------
 #
-# This function shows how to use Tensorflow to
+# This function shows how to use TensorFlow to
 # solve logistic regression with a multiple layer neural network
 # y = sigmoid(A3 * sigmoid(A2* sigmoid(A1*x + b1) + b2) + b3)
 #

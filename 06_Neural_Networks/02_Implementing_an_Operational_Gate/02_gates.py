@@ -2,11 +2,11 @@
 #----------------------------------
 #
 # This function shows how to implement
-# various gates in Tensorflow
+# various gates in TensorFlow
 #
 # One gate will be one operation with
 # a variable and a placeholder.
-# We will ask Tensorflow to change the
+# We will ask TensorFlow to change the
 # variable based on our loss function
 
 import tensorflow as tf

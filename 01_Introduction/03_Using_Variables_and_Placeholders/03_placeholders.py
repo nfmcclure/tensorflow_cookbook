@@ -2,7 +2,7 @@
 #----------------------------------
 #
 # This function introduces how to 
-# use placeholders in Tensorflow
+# use placeholders in TensorFlow
 
 import numpy as np
 import tensorflow as tf

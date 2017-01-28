@@ -1,3 +1,3 @@
-# Creating a Sequence to Sequence Model with Tensorflow (Seq2Seq)
+# Creating a Sequence to Sequence Model with TensorFlow (Seq2Seq)
 
 Placeholder for future purposes

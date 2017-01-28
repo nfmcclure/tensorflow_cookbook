@@ -1,7 +1,7 @@
 # Linear Regression: Decomposition Method
 #----------------------------------
 #
-# This function shows how to use Tensorflow to
+# This function shows how to use TensorFlow to
 # solve linear regression via the matrix inverse.
 #
 # Given Ax=b, and a Cholesky decomposition such that

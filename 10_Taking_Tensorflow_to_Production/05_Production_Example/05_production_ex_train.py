@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Tensorflow Production Example (Training)
+# TensorFlow Production Example (Training)
 #----------------------------------
 #
 # We pull together everything and create an example
@@ -109,7 +109,7 @@ def get_accuracy(logits, actuals):
 
 # Define main program
 def main(args):
-    # Set verbosity to get more information from Tensorflow
+    # Set verbosity to get more information from TensorFlow
     tf.logging.set_verbosity(tf.logging.INFO)
     
     # Create a visualizer object for Tensorboard viewing

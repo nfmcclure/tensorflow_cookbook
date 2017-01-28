@@ -16,7 +16,7 @@ The loss function we will use will be the mean of the cross-entropy loss:
 
 loss = mean( - y * log(predicted) + (1-y) * log(1-predicted) )
 
-Tensorflow has this cross entropy built in, and we can use the function, 'tf.nn.sigmoid\_cross\_entropy\_with\_logits()'
+TensorFlow has this cross entropy built in, and we can use the function, 'tf.nn.sigmoid\_cross\_entropy\_with\_logits()'
 
 We will then iterate through random batch size selections of the data.
 

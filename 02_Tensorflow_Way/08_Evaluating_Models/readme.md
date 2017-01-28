@@ -2,7 +2,7 @@
 
 ## Summary
 
-Here we will perform two modeling tasks: regression and classification.  We will show how to evaluate the models in the Tensorflow algorithm
+Here we will perform two modeling tasks: regression and classification.  We will show how to evaluate the models in the TensorFlow algorithm
 
 ## Regression Model
 
@@ -20,4 +20,4 @@ The idea is that we want to split our labeled data set into a training and test 
 
 Here is the classification results visualized as a histogram:
 
-![Classification Results](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/08_Evaluating_Models.png "Classification Results")
+![Classification Results](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_TensorFlow_Way/images/08_Evaluating_Models.png "Classification Results")

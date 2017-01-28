@@ -1,3 +1,3 @@
-# Parallelizing Tensorflow
+# Parallelizing TensorFlow
 
 Placeholder for future purposes

@@ -2,7 +2,7 @@
 #---------------------------------------
 #
 # We will illustrate how to use a Multiple
-# Layer Network in Tensorflow
+# Layer Network in TensorFlow
 #
 # Low Birthrate data:
 #

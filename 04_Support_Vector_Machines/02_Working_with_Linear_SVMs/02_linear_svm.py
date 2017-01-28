@@ -1,7 +1,7 @@
 # Linear Support Vector Machine: Soft Margin
 #----------------------------------
 #
-# This function shows how to use Tensorflow to
+# This function shows how to use TensorFlow to
 # create a soft margin SVM
 #
 # We will use the iris data, specifically:

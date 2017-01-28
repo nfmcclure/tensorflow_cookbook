@@ -1,6 +1,6 @@
-# Learning the Tensorflow Way of Regression
+# Learning the TensorFlow Way of Regression
 
-In this section we will implement linear regression as an iterative computational graph in Tensorflow.  To make this more pertinent, instead of using generated data, we will instead use the Iris data set.  Our x will be the Petal Width, our y will be the Sepal Length.  Viewing the data in these two dimensions suggests a linear relationship.
+In this section we will implement linear regression as an iterative computational graph in TensorFlow.  To make this more pertinent, instead of using generated data, we will instead use the Iris data set.  Our x will be the Petal Width, our y will be the Sepal Length.  Viewing the data in these two dimensions suggests a linear relationship.
 
 # Model
 

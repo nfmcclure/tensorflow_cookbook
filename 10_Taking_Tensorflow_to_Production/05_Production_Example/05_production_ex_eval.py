@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Tensorflow Production Example (Evaluating)
+# TensorFlow Production Example (Evaluating)
 #----------------------------------
 #
 # We pull together everything and create an example
@@ -60,7 +60,7 @@ class clean_test(tf.test.TestCase):
     # Make sure cleaning function behaves correctly
     def clean_string_test(self):
         with self.test_session():
-            test_input = '--Tensorflow\'s so Great! Don\t you think so?   '
+            test_input = '--TensorFlow\'s so Great! Don\t you think so?   '
             test_expected = 'tensorflows so great don you think so'
             test_out = clean_text(test_input)
             self.assertEqual(test_expected, test_out)

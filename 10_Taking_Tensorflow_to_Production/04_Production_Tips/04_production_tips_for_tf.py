@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Tips for Tensorflow to Production
+# Tips for TensorFlow to Production
 #----------------------------------
 #
-# Various Tips for Taking Tensorflow to Production
+# Various Tips for Taking TensorFlow to Production
 
 ############################################
 #
@@ -59,7 +59,7 @@ saver = tf.train.Saver({"my_var": my_variable})
 conv_weights = tf.Variable(tf.random_normal(), name='conv_weights')
 loss = tf.reduce_mean(... , name='loss')
 
-# Instead of tyring argparse and main(), Tensorflow provides an 'app' function
+# Instead of tyring argparse and main(), TensorFlow provides an 'app' function
 #  to handle running and loading of arguments
 
 # At the beginning of the file, define the flags.
@@ -75,12 +75,12 @@ def main(_):
     generations = FLAGS.generations
     run_unit_tests = FLAGS.run_unit_tests
 
-# Run the Tensorflow app
+# Run the TensorFlow app
 if __name__ == "__main__":
     tf.app.run()
 
 
-# Use of Tensorflow's built in logging:
+# Use of TensorFlow's built in logging:
 # Five levels: DEBUG, INFO, WARN, ERROR, and FATAL
 tf.logging.set_verbosity(tf.logging.WARN)
 # WARN is the default value, but to see more information, you can set it to

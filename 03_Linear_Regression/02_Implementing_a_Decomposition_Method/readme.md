@@ -1,6 +1,6 @@
 # Using the Cholesky Decomposition Method
 
-Here we implement solving 2D linear regression via the Cholesky decomposition in Tensorflow.
+Here we implement solving 2D linear regression via the Cholesky decomposition in TensorFlow.
 
 # Model
 

@@ -1,4 +1,4 @@
-# Using Tensorflow for Stylenet/NeuralStyle
+# Using TensorFlow for Stylenet/NeuralStyle
 #---------------------------------------
 #
 # We use two images, an original image and a style image

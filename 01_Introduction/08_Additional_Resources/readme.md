@@ -2,18 +2,18 @@
 
 ###Official Resources:
 
- - [Tensorflow Python API](https://www.tensorflow.org/api_docs/python/)
- - [Tensorflow on Github](https://github.com/tensorflow/tensorflow)
- - [Tensorflow Tutorials](https://www.tensorflow.org/tutorials/)
+ - [TensorFlow Python API](https://www.tensorflow.org/api_docs/python/)
+ - [TensorFlow on Github](https://github.com/tensorflow/tensorflow)
+ - [TensorFlow Tutorials](https://www.tensorflow.org/tutorials/)
  - [Udacity Deep Learning Class](https://www.udacity.com/course/deep-learning--ud730)
- - [Tensorflow Playground](http://playground.tensorflow.org/)
+ - [TensorFlow Playground](http://playground.tensorflow.org/)
 
 ###Github Tutorials and Examples:
 
  - [Tutorials by pkmital](https://github.com/pkmital/tensorflow_tutorials)
  - [Tutorials by nlintz](https://github.com/nlintz/TensorFlow-Tutorials)
  - [Examples by americdamien](https://github.com/aymericdamien/TensorFlow-Examples)
- - [Tensorflow Workshop by amygdala](https://github.com/amygdala/tensorflow-workshop)
+ - [TensorFlow Workshop by amygdala](https://github.com/amygdala/tensorflow-workshop)
 
 ###Deep Learning Resources
 
@@ -27,7 +27,7 @@
 
 ###Additional Resources
 
- - [A Curated List of Dedicated Tensorflow Resources](https://github.com/jtoy/awesome-tensorflow/)
+ - [A Curated List of Dedicated TensorFlow Resources](https://github.com/jtoy/awesome-tensorflow/)
 
 ###Arxiv Papers
 

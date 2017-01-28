@@ -2,7 +2,7 @@
 #----------------------------------
 #
 # This function introduces various operations
-# in Tensorflow
+# in TensorFlow
 
 # Declaring Operations
 import matplotlib.pyplot as plt
@@ -44,6 +44,6 @@ print(sess.run(custom_polynomial(11)))
 expected_output = [3*x*x-x+10 for x in test_nums]
 print(expected_output)
 
-# Tensorflow custom function output
+# TensorFlow custom function output
 for num in test_nums:
     print(sess.run(custom_polynomial(num)))

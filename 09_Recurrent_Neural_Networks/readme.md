@@ -9,6 +9,6 @@
  4. [Stacking Multiple LSTM Layers](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/04_Stacking_Multiple_LSTM_Layers)
   * We stack multiple LSTM layers to improve on our Shakespeare language generation. (Character level vocabulary)
  5. [Creating a Sequence to Sequence Translation Model (Seq2Seq)](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/05_Creating_A_Sequence_To_Sequence_Model)
-  * We show how to use Tensorflow's sequence-to-sequence models to train an English-German translation model.
+  * We show how to use TensorFlow's sequence-to-sequence models to train an English-German translation model.
  6. [Training a Siamese Similarity Measure](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/09_Recurrent_Neural_Networks/06_Training_A_Siamese_Similarity_Measure)
   * Here, we implement a Siamese RNN to predict the similarity of addresses and use it for record matching.  Using RNNs for record matching is very versatile, as we do not have a fixed set of target categories and can use the trained model to predict similarities across new addresses.

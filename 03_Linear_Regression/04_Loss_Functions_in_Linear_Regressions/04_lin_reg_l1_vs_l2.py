@@ -1,7 +1,7 @@
 # Linear Regression: L1 vs L2
 #----------------------------------
 #
-# This function shows how to use Tensorflow to
+# This function shows how to use TensorFlow to
 # solve linear regression via the matrix inverse.
 
 import matplotlib.pyplot as plt

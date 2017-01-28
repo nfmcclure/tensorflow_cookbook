@@ -1,7 +1,7 @@
-Deepdream in Tensorflow
+Deepdream in TensorFlow
 =======================
 
-Note: There is no new code in this script.  It originates from the Tensorflow tutorial [located here](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/deepdream).  However, this code is modified slightly to run on Python 3.  The code is also commented very heavily to explain, line-by-line, what occurs in the deepdream demo.
+Note: There is no new code in this script.  It originates from the TensorFlow tutorial [located here](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/deepdream).  However, this code is modified slightly to run on Python 3.  The code is also commented very heavily to explain, line-by-line, what occurs in the deepdream demo.
 
 Here are some potential outputs.
 

@@ -3,7 +3,7 @@
 #----------------------------------
 #
 # This function gives us the ways to use
-#  multiple devices (executors) in Tensorflow.
+#  multiple devices (executors) in TensorFlow.
 
 import tensorflow as tf
 from tensorflow.python.framework import ops

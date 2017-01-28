@@ -1,3 +1,3 @@
-# Introduction To RNNs in Tensorflow
+# Introduction To RNNs in TensorFlow
 
 Placeholder for future purposes

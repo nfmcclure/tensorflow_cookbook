@@ -1,7 +1,7 @@
 # Lasso and Ridge Regression
 #----------------------------------
 #
-# This function shows how to use Tensorflow to
+# This function shows how to use TensorFlow to
 # solve lasso or ridge regression.
 # y = Ax + b
 #

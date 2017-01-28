@@ -1,7 +1,7 @@
 Stylenet / Neural-Style
 =======================
 
-The purpose of this script is to illustrate how to do stylenet in Tensorflow.  We reference the following [paper](https://arxiv.org/abs/1508.06576) for this algorithm.
+The purpose of this script is to illustrate how to do stylenet in TensorFlow.  We reference the following [paper](https://arxiv.org/abs/1508.06576) for this algorithm.
 
 ## Prerequisites
  * Download the VGG-verydeep-19.mat file [here](http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydeep-19.mat).

@@ -2,7 +2,7 @@
 #----------------------------------
 #
 # This function wll illustrate how to
-# implement various kernels in Tensorflow.
+# implement various kernels in TensorFlow.
 #
 # Linear Kernel:
 # K(x1, x2) = t(x1) * x2

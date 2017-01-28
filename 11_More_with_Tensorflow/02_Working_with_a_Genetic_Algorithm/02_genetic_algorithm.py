@@ -2,7 +2,7 @@
 # Implementing a Genetic Algorithm
 # -------------------------------
 #
-# Genetic Algorithm Optimization in Tensorflow
+# Genetic Algorithm Optimization in TensorFlow
 #
 # We are going to implement a genetic algorithm
 #   to optimize to a ground truth array.  The ground
@@ -14,12 +14,12 @@
 #   point numbers and the fitness will be the average
 #   mean squared error from the ground truth.
 #
-# We will use Tensorflow's update function to run the
+# We will use TensorFlow's update function to run the
 #   different parts of the genetic algorithm.
 #
-# While Tensorflow isn't really the best for GA's,
+# While TensorFlow isn't really the best for GA's,
 #   this example shows that we can implement different
-#   procedural algorithms with Tensorflow operations.
+#   procedural algorithms with TensorFlow operations.
 
 import os
 import numpy as np

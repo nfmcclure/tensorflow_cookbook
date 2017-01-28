@@ -1,6 +1,6 @@
 # Loss Functions in Linear Regression
 
-The choice of loss function can significantly impact the convergence of Tensorflow algorithms.  We will compare and contrast using the L1 and L2 loss functions for linear regression.
+The choice of loss function can significantly impact the convergence of TensorFlow algorithms.  We will compare and contrast using the L1 and L2 loss functions for linear regression.
 
 # L1 Loss
 

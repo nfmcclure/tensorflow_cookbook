@@ -3,7 +3,7 @@
 Neural Networks are very important in machine learning and growing in popularity due to the major breakthroughs in prior unsolved problems.  We must start with introducing 'shallow' neural networks, which are very powerful and can help us improve our prior ML algorithm results.  We start by introducing the very basic NN unit, the operational gate.  We gradually add more and more to the neural network and end with training a model to play tic-tac-toe.
 
  1. [Introduction](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/01_Introduction)
-  * We introduce the concept of neural networks and how Tensorflow is built to easily handle these algorithms.
+  * We introduce the concept of neural networks and how TensorFlow is built to easily handle these algorithms.
  2. [Implementing Operational Gates](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/02_Implementing_an_Operational_Gate)
   * We implement an operational gate with one operation. Then we show how to extend this to multiple nested operations.
  3. [Working with Gates and Activation Functions](https://github.com/nfmcclure/tensorflow_cookbook/tree/master/06_Neural_Networks/03_Working_with_Activation_Functions)

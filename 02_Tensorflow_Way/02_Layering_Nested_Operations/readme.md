@@ -10,4 +10,4 @@ output = (input) * (m1) * (m2) + (a1)
 
 Viewing the computational graph in Tensorboard:
 
-![Multiple Operations](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_Tensorflow_Way/images/02_Multiple_Operations.png "Multiple Operations on a Graph")
+![Multiple Operations](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_TensorFlow_Way/images/02_Multiple_Operations.png "Multiple Operations on a Graph")

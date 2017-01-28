@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Siamese Address Similarity with Tensorflow (Driver File)
+# Siamese Address Similarity with TensorFlow (Driver File)
 #------------------------------------------
 #
 # Here, we show how to perform address matching

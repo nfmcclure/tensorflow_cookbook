@@ -1,7 +1,7 @@
-# Linear Regression: Tensorflow Way
+# Linear Regression: TensorFlow Way
 #----------------------------------
 #
-# This function shows how to use Tensorflow to
+# This function shows how to use TensorFlow to
 # solve linear regression.
 # y = Ax + b
 #

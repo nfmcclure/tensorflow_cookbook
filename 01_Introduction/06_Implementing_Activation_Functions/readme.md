@@ -1,6 +1,6 @@
 # Activation Functions
 
-This script plots many various activation functions in Tensorflow.
+This script plots many various activation functions in TensorFlow.
 
 ![Activation Functions](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/images/06_activation_funs1.png "Activation Functions")
 
