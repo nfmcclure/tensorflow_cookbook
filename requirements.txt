@@ -2,6 +2,4 @@ tensorflow
 numpy
 sklearn
 requests
-zipfile
-tarfile
-io
+jupyter
