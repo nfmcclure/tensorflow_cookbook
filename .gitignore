@@ -9,6 +9,7 @@
 *.docx
 *.xls
 *.xlsx
+*.gz
 .gitignore~
 .Rhistory
 Readme.md~
