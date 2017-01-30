@@ -1,5 +1,7 @@
 # Introduction to How TensorFlow Graphs Work
 
+For more detail, see the [Jupyter Notebook](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/01_Introduction/01_How_Tensorflow_Works/01_How_TensorFlow_Works.ipynb).
+
 TensorFlow has a unique way of solving problems. This unique way allows for solving of machine learning problems very efficiently.  There are a few common steps to most TensorFlow algorithms.
 
  1. Import data, generate data, or setup a data-pipeline through placeholders.
