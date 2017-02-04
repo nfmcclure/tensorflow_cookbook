@@ -1,4 +1,4 @@
-## [Ch 1: Getting Started with TensorFlow](#ch-1:-getting-started-with-tensorflow)
+## [Ch 1: Getting Started with TensorFlow](#ch-1-getting-started-with-tensorflow)
 
 This chapter intends to introduce the main objects and concepts in TensorFlow.  We also introduce how to access the data for the rest of the book and provide additional resources for learning about TensorFlow.
 
