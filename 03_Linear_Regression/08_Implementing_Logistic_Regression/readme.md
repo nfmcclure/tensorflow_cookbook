@@ -24,8 +24,8 @@ We will then iterate through random batch size selections of the data.
 
 Running the script should result in a similar loss and accuracy output.
 
-![Logistic Regression Loss](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/08_logistic_reg_loss.png "Logistic Regression Loss")
+![Logistic Regression Loss](../images/08_logistic_reg_loss.png "Logistic Regression Loss")
 
 # Accuracy of Train and Test Sets
 
-![Logistic Regression Accuracy](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/08_logistic_reg_acc.png "Logistic Regression Accuracy")
+![Logistic Regression Accuracy](../images/08_logistic_reg_acc.png "Logistic Regression Accuracy")

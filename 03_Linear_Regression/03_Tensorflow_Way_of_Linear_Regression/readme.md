@@ -18,8 +18,8 @@ We will then iterate through random batch size selections of the data.
 
 # Graph of Loss Function
 
-![Regression Loss](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/03_lin_reg_loss.png "Regression Loss")
+![Regression Loss](../images/03_lin_reg_loss.png "Regression Loss")
 
 # Graph of Linear Fit
 
-![TF Regression](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/02_Cholesky_Decomposition.png "TF Regression")
+![TF Regression](../images/02_Cholesky_Decomposition.png "TF Regression")
