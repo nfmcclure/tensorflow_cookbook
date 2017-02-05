@@ -5,7 +5,7 @@ Note: There is no new code in this script.  It originates from the TensorFlow tu
 
 Here are some potential outputs.
 
-![deepdream outputs](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/08_Convolutional_Neural_Networks/images/06_deepdream_ex.png)
+![deepdream outputs](../images/06_deepdream_ex.png)
 > Deepdream results on four features with the book's cover image.
 
 Our interpretation so far:

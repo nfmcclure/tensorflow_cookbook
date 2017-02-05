@@ -5,10 +5,8 @@ The purpose of this script is to illustrate how to do stylenet in TensorFlow.  W
 
 ## Prerequisites
  * Download the VGG-verydeep-19.mat file [here](http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydeep-19.mat).
- * You must download two images, a [style image](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/08_Convolutional_Neural_Networks/images/starry_night.jpg) and a [content image](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/08_Convolutional_Neural_Networks/images/book_cover.jpg) for the algorithm to blend. (Image links are to the images used in the book.)
+ * You must download two images, a [style image](../images/starry_night.jpg) and a [content image](../images/book_cover.jpg) for the algorithm to blend. (Image links are to the images used in the book.)
 
 The algorithm will output temporary images during training.
 
-![Stylenet Example](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/08_Convolutional_Neural_Networks/images/05_stylenet_ex.png)
-
-
+![Stylenet Example](../images/05_stylenet_ex.png)
