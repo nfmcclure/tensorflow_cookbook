@@ -24,19 +24,19 @@ L2(y,p) = (y - p)^2
 
 # Graph of L1 vs L2 Loss Functions
 
-![L1 and L2 Loss](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/04_L1_L2_loss.png "L1 and L2 Loss")
+![L1 and L2 Loss](../images/04_L1_L2_loss.png "L1 and L2 Loss")
 
 # Graph of L1 vs L2 Loss Functions (L2 not converging)
 
 Here is an example of the L2 function not converging.  Despite a large learning rate, L1 has converged but L2 has not.
 
-![L2 Not Converging](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/04_L1_L2_loss2.png "L2 Not Converging")
+![L2 Not Converging](../images/04_L1_L2_loss2.png "L2 Not Converging")
 
 # Graphical Summary of L1 and L2 with Learning Rates
 
 Here is a plot of a 1D example of L1 and L2 loss with a small and large learning rate.
 
-![L1 and L2](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/04_L1_L2_learningrates.png "L1 and L2")
+![L1 and L2](../images/04_L1_L2_learningrates.png "L1 and L2")
 
 To note:
 

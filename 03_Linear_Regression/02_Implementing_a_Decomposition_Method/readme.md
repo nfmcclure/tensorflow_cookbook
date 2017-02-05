@@ -10,4 +10,4 @@ Given A * x = b, and a Cholesky decomposition such that A = L*L' then we can get
 
 # Graph of linear fit
 
-![Cholesky decomposition](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/02_Cholesky_Decomposition.png "Cholesky decomposition")
+![Cholesky decomposition](../images/02_Cholesky_Decomposition.png "Cholesky decomposition")

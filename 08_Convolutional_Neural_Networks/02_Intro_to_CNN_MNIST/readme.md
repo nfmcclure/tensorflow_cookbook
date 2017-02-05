@@ -5,11 +5,11 @@ Here we illustrate how to use a simple CNN with three convolutional units to pre
 
 When the script is done training the model, you should see similar output to the following graphs.
 
-![Loss and Accuracy](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/08_Convolutional_Neural_Networks/images/02_cnn1_loss_acc.png "Loss and Accuracy")
+![Loss and Accuracy](../images/02_cnn1_loss_acc.png "Loss and Accuracy")
 
 Training and test loss (left) and test batch accuracy (right).
 
 
-![Sample Test Batch](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/08_Convolutional_Neural_Networks/images/02_cnn1_mnist_output.png "Sample of 6 Images")
+![Sample Test Batch](../images/02_cnn1_mnist_output.png "Sample of 6 Images")
 
 A random set of 6 digits with actuals and predicted labels. You can see a prediction failure in the lower right box.

@@ -30,7 +30,7 @@ We denote the board spaces as such, 'X' = 1, 'O'= -1, and an empty space will ha
 ```
 So for example, the board:
 ```
- O |   | 
+ O |   |
  ---------
  X | O | O
  ---------
@@ -38,13 +38,13 @@ So for example, the board:
 ```
 is equivalent to the row: [-1, 0, 0, 1, -1, -1, 0, 0, 1].
 
-![TicTacToeIndexing](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/images/08_tictactoe_layout.png "TicTacToeIndexing")
+![TicTacToeIndexing](../images/08_tictactoe_layout.png "TicTacToeIndexing")
 
 ## Neural Network Architecture
 
 We will keep it simple and have only one hidden layer that is fully connected.  The hidden layer will be composed of 81 hidden nodes. If only because square numbers are appealing.  See the below diagram for the NN we will construct.
 
-![TicTacToe Architecture](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/images/08_tic_tac_toe_architecture.png "TicTacToe Architecture")
+![TicTacToe Architecture](../images/08_tic_tac_toe_architecture.png "TicTacToe Architecture")
 
 ## Important Functions
 
@@ -55,7 +55,7 @@ There are a few important functions in the beginning of the code.
 
 At the end of the code, we loop through an actual game.  This allows the user to actually play the model they created.
 
-[See Code Here](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/08_Learning_Tic_Tac_Toe/tic_tac_toe_moves.py)
+[See Code Here](tic_tac_toe_moves.py)
 
 ## Sample Game Output
 
@@ -64,19 +64,19 @@ Here is a sample of the output of playing against the trained model. Human = X's
 ```
 Input index of your move (0-8): 4
 Model has moved
- O |   | 
+ O |   |
 ___________
-   | X | 
+   | X |
 ___________
-   |   | 
+   |   |
 
 Input index of your move (0-8): 6
 Model has moved
- O |   | 
+ O |   |
 ___________
-   | X | 
+   | X |
 ___________
- X | O | 
+ X | O |
 
 Input index of your move (0-8): 2
 Model has moved
@@ -84,11 +84,10 @@ Model has moved
 ___________
    | X | O
 ___________
- X | O | 
+ X | O |
 Game Over!
 ```
 
 ## Loss Output
 
-![TicTacToe Loss](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/images/08_tictactoe_loss.png "TicTacToe Loss")
-
+![TicTacToe Loss](../images/08_tictactoe_loss.png "TicTacToe Loss")

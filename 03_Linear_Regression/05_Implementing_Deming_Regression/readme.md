@@ -2,7 +2,7 @@
 
 Deming regression, also known as total regression, is regular regression that minimizes the shortest distance to the line. Contrast this to regular regression, in which we aim to minimize the vertical distance between the model output and the y-target values.
 
-![Deming Regression](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/05_demming_vs_linear_reg.png "Deming Regression")
+![Deming Regression](../images/05_demming_vs_linear_reg.png "Deming Regression")
 
 # Model
 
@@ -16,4 +16,4 @@ loss = |y\_target - (A * x\_input + b)| / sqrt(A^2 + 1)
 
 # Graph of Linear Fit
 
-![Deming Output](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/05_demming_reg.png "Deming Output")
+![Deming Output](../images/05_demming_reg.png "Deming Output")
