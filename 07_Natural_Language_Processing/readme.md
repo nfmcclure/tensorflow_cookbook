@@ -13,4 +13,4 @@
  6. [Implementing Word2Vec Example](06_Using_Word2Vec_Embeddings)
   * In this example, we use the prior saved CBOW word embeddings to improve on our TF-IDF logistic regression of movie review sentiment.
  7. [Performing Sentiment Analysis with Doc2Vec](07_Sentiment_Analysis_With_Doc2Vec)
-  * Here, we introduce a Doc2Vec method (concatenation of doc and word emebeddings) to improve out logistic model of movie review sentiment.
+  * Here, we introduce a Doc2Vec method (concatenation of doc and word embeddings) to improve out logistic model of movie review sentiment.

@@ -11,10 +11,10 @@ Here we show how to implement various linear regression techniques in TensorFlow
  4. [Understanding Loss Functions in Linear Regression](04_Loss_Functions_in_Linear_Regressions)
   * L2 vs L1 loss in linear regression.  We talk about the benefits and limitations of both.
  5. [Implementing Deming Regression (Total Regression)](05_Implementing_Deming_Regression)
-  * Deming (total) regression implmented in TensorFlow by changing the loss function.
+  * Deming (total) regression implemented in TensorFlow by changing the loss function.
  6. [Implementing Lasso and Ridge Regression](06_Implementing_Lasso_and_Ridge_Regression)
   * Lasso and Ridge regression are ways of regularizing the coefficients. We implement both of these in TensorFlow via changing the loss functions.
  7. [Implementing Elastic Net Regression](07_Implementing_Elasticnet_Regression)
   * Elastic net is a regularization technique that combines the L2 and L1 loss for coefficients.  We show how to implement this in TensorFlow.
  8. [Implementing Logistic Regression](08_Implementing_Logistic_Regression)
-  * We implment logistic regression by the use of an activation function in our computational graph.
+  * We implement logistic regression by the use of an activation function in our computational graph.

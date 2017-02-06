@@ -68,9 +68,9 @@ After we have established the basic objects and methods in TensorFlow, we now wa
   * We show how to create multiple operations on a computational graph and how to visualize them using Tensorboard.
  3. [Working with Multiple Layers](02_TensorFlow_Way/03_Working_with_Multiple_Layers)
   * Here we extend the usage of the computational graph to create multiple layers and show how they appear in Tensorboard.
- 4. [Implmenting Loss Functions](02_TensorFlow_Way/04_Implementing_Loss_Functions)
+ 4. [Implementing Loss Functions](02_TensorFlow_Way/04_Implementing_Loss_Functions)
   * In order to train a model, we must be able to evaluate how well it is doing. This is given by loss functions. We plot various loss functions and talk about the benefits and limitations of some.
- 5. [Implmenting Back Propagation](02_TensorFlow_Way/05_Implementing_Back_Propagation)
+ 5. [Implementing Back Propagation](02_TensorFlow_Way/05_Implementing_Back_Propagation)
   * Here we show how to use loss functions to iterate through data and back propagate errors for regression and classification.
  6. [Working with Stochastic and Batch Training](02_TensorFlow_Way/06_Working_with_Batch_and_Stochastic_Training)
   * TensorFlow makes it easy to use both batch and stochastic training. We show how to implement both and talk about the benefits and limitations of each.
@@ -101,13 +101,13 @@ Here we show how to implement various linear regression techniques in TensorFlow
  4. [Understanding Loss Functions in Linear Regression](03_Linear_Regression/04_Loss_Functions_in_Linear_Regressions)
   * L2 vs L1 loss in linear regression.  We talk about the benefits and limitations of both.
  5. [Implementing Deming Regression (Total Regression)](03_Linear_Regression/05_Implementing_Deming_Regression)
-  * Deming (total) regression implmented in TensorFlow by changing the loss function.
+  * Deming (total) regression implemented in TensorFlow by changing the loss function.
  6. [Implementing Lasso and Ridge Regression](03_Linear_Regression/06_Implementing_Lasso_and_Ridge_Regression)
   * Lasso and Ridge regression are ways of regularizing the coefficients. We implement both of these in TensorFlow via changing the loss functions.
  7. [Implementing Elastic Net Regression](03_Linear_Regression/07_Implementing_Elasticnet_Regression)
   * Elastic net is a regularization technique that combines the L2 and L1 loss for coefficients.  We show how to implement this in TensorFlow.
  8. [Implementing Logistic Regression](03_Linear_Regression/08_Implementing_Logistic_Regression)
-  * We implment logistic regression by the use of an activation function in our computational graph.
+  * We implement logistic regression by the use of an activation function in our computational graph.
 
 ## [Ch 4: Support Vector Machines](04_Support_Vector_Machines)
 
@@ -128,7 +128,7 @@ This chapter shows how to implement various SVM methods with TensorFlow.  We fir
   * The heart of SVMs is separating classes with a line.  We change tweek the algorithm slightly to perform SVM regression.
  4. [Working with Kernels in TensorFlow](04_Support_Vector_Machines/04_Working_with_Kernels)
   * In order to extend SVMs into non-linear data, we explain and show how to implement different kernels in TensorFlow.
- 5. [Implmenting Non-Linear SVMs](04_Support_Vector_Machines/05_Implementing_Nonlinear_SVMs)
+ 5. [Implementing Non-Linear SVMs](04_Support_Vector_Machines/05_Implementing_Nonlinear_SVMs)
   * We use the Gaussian kernel (RBF) to separate non-linear classes.
  6. [Implementing Multi-class SVMs](04_Support_Vector_Machines/06_Implementing_Multiclass_SVMs)
   * SVMs are inherently binary predictors.  We show how to extend them in a one-vs-all strategy in TensorFlow.
@@ -176,7 +176,7 @@ Neural Networks are very important in machine learning and growing in popularity
   * We implement an operational gate with one operation. Then we show how to extend this to multiple nested operations.
  3. [Working with Gates and Activation Functions](06_Neural_Networks/03_Working_with_Activation_Functions)
   * Now we have to introduce activation functions on the gates.  We show how different activation functions operate.
- 4. [Implmenting a One Layer Neural Network](06_Neural_Networks/04_Single_Hidden_Layer_Network)
+ 4. [Implementing a One Layer Neural Network](06_Neural_Networks/04_Single_Hidden_Layer_Network)
   * We have all the pieces to start implementing our first neural network.  We do so here with regression on the Iris data set.
  5. [Implementing Different Layers](06_Neural_Networks/05_Implementing_Different_Layers)
   * This section introduces the convolution layer and the max-pool layer.  We show how to chain these together in a 1D and 2D example with fully connected layers as well.
@@ -212,7 +212,7 @@ Natural Language Processing (NLP) is a way of processing textual information int
  6. [Implementing Word2Vec Example](07_Natural_Language_Processing/06_Using_Word2Vec_Embeddings)
   * In this example, we use the prior saved CBOW word embeddings to improve on our TF-IDF logistic regression of movie review sentiment.
  7. [Performing Sentiment Analysis with Doc2Vec](07_Natural_Language_Processing/07_Sentiment_Analysis_With_Doc2Vec)
-  * Here, we introduce a Doc2Vec method (concatenation of doc and word emebeddings) to improve out logistic model of movie review sentiment.
+  * Here, we introduce a Doc2Vec method (concatenation of doc and word embeddings) to improve out logistic model of movie review sentiment.
 
 ## [Ch 8: Convolutional Neural Networks](08_Convolutional_Neural_Networks)
 
@@ -251,9 +251,9 @@ Recurrent Neural Networks (RNNs) are very similar to regular neural networks exc
 
  1. [Introduction](09_Recurrent_Neural_Networks/01_Introduction)
   * We introduce Recurrent Neural Networks and how they are able to feed in a sequence and predict either a fixed target (categorical/numerical) or another sequence (sequence to sequence).
- 2. [Implmenting an RNN Model for Spam Prediction](09_Recurrent_Neural_Networks/02_Implementing_RNN_for_Spam_Prediction)
+ 2. [Implementing an RNN Model for Spam Prediction](09_Recurrent_Neural_Networks/02_Implementing_RNN_for_Spam_Prediction)
   * In this example, we create an RNN model to improve on our spam/ham SMS text predictions.
- 3. [Imlementing an LSTM Model for Text Generation](09_Recurrent_Neural_Networks/03_Implementing_LSTM)
+ 3. [Implementing an LSTM Model for Text Generation](09_Recurrent_Neural_Networks/03_Implementing_LSTM)
   * We show how to implement a LSTM (Long Short Term Memory) RNN for Shakespeare language generation. (Word level vocabulary)
  4. [Stacking Multiple LSTM Layers](09_Recurrent_Neural_Networks/04_Stacking_Multiple_LSTM_Layers)
   * We stack multiple LSTM layers to improve on our Shakespeare language generation. (Character level vocabulary)
@@ -279,7 +279,7 @@ Of course there is more to TensorFlow than just creating and fitting machine lea
  3. [Parallelizing TensorFlow](10_Taking_TensorFlow_to_Production/03_Parallelizing_TensorFlow)
   * How to setup and use TensorFlow distributed on multiple machines.
  4. [Tips for TensorFlow in Production](10_Taking_TensorFlow_to_Production/04_Production_Tips)
-  * Various tips for devloping with TensorFlow
+  * Various tips for developing with TensorFlow
  5. [An Example of Productionalizing TensorFlow](10_Taking_TensorFlow_to_Production/05_Production_Example)
   * We show how to do take the RNN model for predicting ham/spam (from Chapter 9, recipe #2) and put it in two production level files: training and evaluation.
 
@@ -300,4 +300,3 @@ To illustrate how versatile TensorFlow is, we will show additional examples in t
   * We create a genetic algorithm to optimize an individual (array of 50 numbers) toward the ground truth function.
  4. [Solving a System of ODEs](11_More_with_TensorFlow/04_Solving_A_System_of_ODEs)
   * Here, we show how to use TensorFlow to solve a system of ODEs.  The system of concern is the Lotka-Volterra predator-prey system.
-

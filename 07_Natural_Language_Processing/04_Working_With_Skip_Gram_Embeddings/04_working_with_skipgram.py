@@ -201,7 +201,7 @@ def generate_batch_data(sentences, batch_size, window_size, method='skip_gram'):
             # Make it in to a big list of tuples (target word, surrounding word)
             tuple_data = [(x_, y) for x,y in batch_and_labels for x_ in x]
         else:
-            raise ValueError('Method {} not implmented yet.'.format(method))
+            raise ValueError('Method {} not implemented yet.'.format(method))
             
         # extract batch and labels
         batch, labels = [list(x) for x in zip(*tuple_data)]
