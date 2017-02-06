@@ -24,4 +24,4 @@ output = sigmoid( input * A + b )
 
 Viewing the computational graph in Tensorboard:
 
-![Multiple Layers](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_TensorFlow_Way/images/03_Multiple_Layers.png "Multiple Layers on a Graph")
+![Multiple Layers](../images/03_Multiple_Layers.png "Multiple Layers on a Graph")

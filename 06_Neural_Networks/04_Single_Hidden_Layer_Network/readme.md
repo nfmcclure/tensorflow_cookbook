@@ -8,7 +8,7 @@ The four flower attributes are (1) sepal length, (2) sepal width, (3) pedal leng
 
 The model will have one hidden layer.  If the hidden layer has 10 nodes, then the model will look like the following:
 
-![One Hidden Layer Network](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/images/04_nn_layout.png "One Hidden Layer Network")
+![One Hidden Layer Network](../images/04_nn_layout.png "One Hidden Layer Network")
 
 We will use the ReLU activation functions.
 
@@ -18,4 +18,4 @@ For the loss function, we will use the average MSE across the batch.
 
 Running the script should result in a similar loss.
 
-![Batch MSE](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/06_Neural_Networks/images/04_nn_loss.png "Batch MSE")
+![Batch MSE](../images/04_nn_loss.png "Batch MSE")

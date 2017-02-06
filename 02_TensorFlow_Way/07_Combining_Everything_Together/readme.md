@@ -11,4 +11,4 @@ We use the sigmoid cross entropy loss because we are predicting a binary class (
 
 Viewing the resulting graph and separable line:
 
-![Isetosa](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_TensorFlow_Way/images/07_Combing_Everything_Together.png "I setosa Seperability")
+![Isetosa](../images/07_Combing_Everything_Together.png "I setosa Seperability")

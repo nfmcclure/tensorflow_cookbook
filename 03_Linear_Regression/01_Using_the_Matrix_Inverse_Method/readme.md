@@ -14,4 +14,4 @@ Here, note that t(A) is the transpose of A.
 
 # Graph of linear fit
 
-![Matrix Inverse Method](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/03_Linear_Regression/images/01_Inverse_Matrix_Method.png "Matrix Inverse Method")
+![Matrix Inverse Method](../images/01_Inverse_Matrix_Method.png "Matrix Inverse Method")

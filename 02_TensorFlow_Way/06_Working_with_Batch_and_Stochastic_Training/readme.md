@@ -15,4 +15,4 @@ It is important to note that TensorFlow works well with many dimensional matrice
 
 Here we plot the loss function of stochastic and batch training on the same graph.  Notice how stochastic training is less smooth in the convergence of a solution.  This may sound like a bad thing, but it can help explore sample spaces and be less likely to be stuck in local minima.
 
-![Stochastic and Batch](https://github.com/nfmcclure/tensorflow_cookbook/blob/master/02_TensorFlow_Way/images/06_Back_Propagation.png "Stochastic and Batch Loss")
+![Stochastic and Batch](../images/06_Back_Propagation.png "Stochastic and Batch Loss")

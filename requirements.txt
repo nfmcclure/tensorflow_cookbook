@@ -1,0 +1,5 @@
+tensorflow
+numpy
+sklearn
+requests
+jupyter
