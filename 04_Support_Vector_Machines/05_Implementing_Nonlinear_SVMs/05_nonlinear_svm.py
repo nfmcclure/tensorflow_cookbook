@@ -45,7 +45,6 @@ sq_dists = tf.mul(2., tf.matmul(x_data, tf.transpose(x_data)))
 my_kernel = tf.exp(tf.mul(gamma, tf.abs(sq_dists)))
 
 # Compute SVM Model
-model_output = tf.matmul(b, my_kernel)
 first_term = tf.reduce_sum(b)
 b_vec_cross = tf.matmul(tf.transpose(b), b)
 y_target_cross = tf.matmul(y_target, tf.transpose(y_target))
