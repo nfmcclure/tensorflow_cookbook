@@ -1,4 +1,5 @@
-# Layering Nested Operations
+# Working with Multiple Layers
+
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
