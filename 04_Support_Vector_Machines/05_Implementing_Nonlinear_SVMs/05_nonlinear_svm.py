@@ -41,9 +41,7 @@ b = tf.Variable(tf.random_normal(shape=[1,batch_size]))
 
 # Gaussian (RBF) kernel
 gamma = tf.constant(-25.0)
-dist = tf.reduce_sum(tf.square(x_data), 1)
-dist = tf.reshape(dist, [-1,1])
-sq_dists = tf.add(tf.sub(dist, tf.mul(2., tf.matmul(x_data, tf.transpose(x_data)))), tf.transpose(dist))
+sq_dists = tf.mul(2., tf.matmul(x_data, tf.transpose(x_data)))
 my_kernel = tf.exp(tf.mul(gamma, tf.abs(sq_dists)))
 
 # Compute SVM Model
