@@ -25,6 +25,14 @@ checkpoint
 *.pos
 **/temp/
 **/temp
+*/tensorboard_logs/*
+*/tensorboard_logs/
+*/tensorboard_logs
+***/tensorboard_logs/*
+**/tensorboard_logs/
+**/tensorboard_logs
+tensorboard_logs/
+tensorboard_logs/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
