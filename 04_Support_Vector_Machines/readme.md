@@ -10,7 +10,7 @@ This chapter shows how to implement various SVM methods with TensorFlow.  We fir
   * The heart of SVMs is separating classes with a line.  We change tweek the algorithm slightly to perform SVM regression.
  4. [Working with Kernels in TensorFlow](04_Working_with_Kernels)
   * In order to extend SVMs into non-linear data, we explain and show how to implement different kernels in TensorFlow.
- 5. [Implmenting Non-Linear SVMs](05_Implementing_Nonlinear_SVMs)
+ 5. [Implementing Non-Linear SVMs](05_Implementing_Nonlinear_SVMs)
   * We use the Gaussian kernel (RBF) to separate non-linear classes.
  6. [Implementing Multi-class SVMs](06_Implementing_Multiclass_SVMs)
   * SVMs are inherently binary predictors.  We show how to extend them in a one-vs-all strategy in TensorFlow.

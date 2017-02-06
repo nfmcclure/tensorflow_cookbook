@@ -2,9 +2,9 @@
 
  1. [Introduction](01_Introduction)
   * We introduce Recurrent Neural Networks and how they are able to feed in a sequence and predict either a fixed target (categorical/numerical) or another sequence (sequence to sequence).
- 2. [Implmenting an RNN Model for Spam Prediction](02_Implementing_RNN_for_Spam_Prediction)
+ 2. [Implementing an RNN Model for Spam Prediction](02_Implementing_RNN_for_Spam_Prediction)
   * We create an RNN model to improve on our spam/ham SMS text predictions.
- 3. [Imlementing an LSTM Model for Text Generation](03_Implementing_LSTM)
+ 3. [Implementing an LSTM Model for Text Generation](03_Implementing_LSTM)
   * We show how to implement a LSTM (Long Short Term Memory) RNN for Shakespeare language generation. (Word level vocabulary)
  4. [Stacking Multiple LSTM Layers](04_Stacking_Multiple_LSTM_Layers)
   * We stack multiple LSTM layers to improve on our Shakespeare language generation. (Character level vocabulary)

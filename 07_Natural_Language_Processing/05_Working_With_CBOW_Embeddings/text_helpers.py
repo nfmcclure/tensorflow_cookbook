@@ -102,7 +102,7 @@ def generate_batch_data(sentences, batch_size, window_size, method='skip_gram'):
             # Add document index to batch!! Remember that we must extract the last index in batch for the doc-index
             batch = [x + [rand_sentence_ix] for x in batch]
         else:
-            raise ValueError('Method {} not implmented yet.'.format(method))
+            raise ValueError('Method {} not implemented yet.'.format(method))
             
         # extract batch and labels
         batch_data.extend(batch[:batch_size])

@@ -8,9 +8,9 @@ After we have established the basic objects and methods in TensorFlow, we now wa
   * We show how to create multiple operations on a computational graph and how to visualize them using Tensorboard.
  3. [Working with Multiple Layers](03_Working_with_Multiple_Layers)
   * Here we extend the usage of the computational graph to create multiple layers and show how they appear in Tensorboard.
- 4. [Implmenting Loss Functions](04_Implementing_Loss_Functions)
+ 4. [Implementing Loss Functions](04_Implementing_Loss_Functions)
   * In order to train a model, we must be able to evaluate how well it is doing. This is given by loss functions. We plot various loss functions and talk about the benefits and limitations of some.
- 5. [Implmenting Back Propagation](05_Implementing_Back_Propagation)
+ 5. [Implementing Back Propagation](05_Implementing_Back_Propagation)
   * Here we show how to use loss functions to iterate through data and back propagate errors for regression and classification.
  6. [Working with Stochastic and Batch Training](06_Working_with_Batch_and_Stochastic_Training)
   * TensorFlow makes it easy to use both batch and stochastic training. We show how to implement both and talk about the benefits and limitations of each.

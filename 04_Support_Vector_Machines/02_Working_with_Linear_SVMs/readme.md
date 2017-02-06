@@ -1,6 +1,6 @@
 # Working with Linear SVMs
 
-We introduce a linear SVM on a binary set, which will be a subset of the Iris data.  We know for I. setosa, that petal width and sepal length are completely seperable. We will create a linear SVM to predict I. setosa based on two features: petal width and sepal length.
+We introduce a linear SVM on a binary set, which will be a subset of the Iris data.  We know for I. setosa, that petal width and sepal length are completely separable. We will create a linear SVM to predict I. setosa based on two features: petal width and sepal length.
 
 It is worth noting that due to the small data set and the randomness of separating into train/test sets, that it may appear that a few points can end up on the wrong side of the line.  This is because they are in the test set, and this will result in a lower test accuracy.
 
