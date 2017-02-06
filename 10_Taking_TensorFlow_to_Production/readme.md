@@ -7,6 +7,6 @@
  3. [Parallelizing TensorFlow](03_Parallelizing_TensorFlow)
   * How to setup and use TensorFlow distributed on multiple machines.
  4. [Tips for TensorFlow in Production](04_Production_Tips)
-  * Various tips for devloping with TensorFlow
+  * Various tips for developing with TensorFlow
  5. [An Example of Productionalizing TensorFlow](05_Production_Example)
   * We show how to do take the RNN model for predicting ham/spam (from Chapter 9, recipe #2) and put it in two production level files: training and evaluation.

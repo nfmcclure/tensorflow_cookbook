@@ -8,7 +8,7 @@ Neural Networks are very important in machine learning and growing in popularity
   * We implement an operational gate with one operation. Then we show how to extend this to multiple nested operations.
  3. [Working with Gates and Activation Functions](03_Working_with_Activation_Functions)
   * Now we have to introduce activation functions on the gates.  We show how different activation functions operate.
- 4. [Implmenting a One Layer Neural Network](04_Single_Hidden_Layer_Network)
+ 4. [Implementing a One Layer Neural Network](04_Single_Hidden_Layer_Network)
   * We have all the pieces to start implementing our first neural network.  We do so here with regression on the Iris data set.
  5. [Implementing Different Layers](05_Implementing_Different_Layers)
   * This section introduces the convolution layer and the max-pool layer.  We show how to chain these together in a 1D and 2D example with fully connected layers as well.

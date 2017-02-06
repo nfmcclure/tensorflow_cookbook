@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Implmenting an LSTM RNN Model
+# Implementing an LSTM RNN Model
 #------------------------------
 #  Here we implement an LSTM model on all a data set of Shakespeare works.
 #

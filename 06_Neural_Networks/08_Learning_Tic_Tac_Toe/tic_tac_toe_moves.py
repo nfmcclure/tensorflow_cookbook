@@ -83,7 +83,7 @@ def get_symmetry(board, response, transformation):
         new_board = board[::-1]
         return(new_board[6:9] +  new_board[3:6] + new_board[0:3], new_response)
     else:
-        raise ValueError('Method not implmented.')
+        raise ValueError('Method not implemented.')
 
 
 ## Read in board move csv file
