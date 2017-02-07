@@ -1,7 +1,7 @@
 # Combining Everything Together
 #----------------------------------
 # This file will perform binary classification on the
-# class if iris dataset. We will only predict if a flower is
+# iris dataset. We will only predict if a flower is
 # I.setosa or not.
 #
 # We will create a simple binary classifier by creating a line
@@ -45,7 +45,6 @@ b = tf.Variable(tf.random_normal(shape=[1, 1]))
 my_mult = tf.matmul(x2_data, A)
 my_add = tf.add(my_mult, b)
 my_output = tf.sub(x1_data, my_add)
-#my_output = tf.sub(x_data[0], tf.add(tf.matmul(x_data[1], A), b))
 
 # Add classification loss (cross entropy)
 xentropy = tf.nn.sigmoid_cross_entropy_with_logits(my_output, y_target)

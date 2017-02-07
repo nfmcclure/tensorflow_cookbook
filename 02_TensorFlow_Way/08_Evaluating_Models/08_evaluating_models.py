@@ -53,13 +53,13 @@ my_output = tf.matmul(x_data, A)
 # Add L2 loss operation to graph
 loss = tf.reduce_mean(tf.square(my_output - y_target))
 
-# Initialize variables
-init = tf.initialize_all_variables()
-sess.run(init)
-
 # Create Optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.02)
 train_step = my_opt.minimize(loss)
+
+# Initialize variables
+init = tf.initialize_all_variables()
+sess.run(init)
 
 # Run Loop
 for i in range(100):
@@ -117,16 +117,16 @@ A = tf.Variable(tf.random_normal(mean=10, shape=[1]))
 # Note, the sigmoid() part is in the loss function
 my_output = tf.add(x_data, A)
 
-# Initialize variables
-init = tf.initialize_all_variables()
-sess.run(init)
-
 # Add classification loss (cross entropy)
 xentropy = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(my_output, y_target))
 
 # Create Optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.05)
 train_step = my_opt.minimize(xentropy)
+
+# Initialize variables
+init = tf.initialize_all_variables()
+sess.run(init)
 
 # Run loop
 for i in range(1800):
