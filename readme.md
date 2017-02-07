@@ -243,7 +243,7 @@ This chapter shows how to implement various SVM methods with TensorFlow.  We fir
 ## [Ch 5: Nearest Neighbor Methods](05_Nearest_Neighbor_Methods)
 <kbd>
   <a href="05_Nearest_Neighbor_Methods/01_Introduction">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="05_Nearest_Neighbor_Methods/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
@@ -253,7 +253,7 @@ This chapter shows how to implement various SVM methods with TensorFlow.  We fir
 </kbd>
 <kbd>
   <a href="05_Nearest_Neighbor_Methods/03_Working_with_Text_Distances">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="05_Nearest_Neighbor_Methods/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
@@ -263,7 +263,7 @@ This chapter shows how to implement various SVM methods with TensorFlow.  We fir
 </kbd>
 <kbd>
   <a href="05_Nearest_Neighbor_Methods/05_An_Address_Matching_Example">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="05_Nearest_Neighbor_Methods/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
@@ -291,7 +291,7 @@ Nearest Neighbor methods are a very popular ML algorithm.  We show how to implem
 
 <kbd>
   <a href="06_Neural_Networks/01_Introduction">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="06_Neural_Networks/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
@@ -311,7 +311,7 @@ Nearest Neighbor methods are a very popular ML algorithm.  We show how to implem
 </kbd>
 <kbd>
   <a href="06_Neural_Networks/05_Implementing_Different_Layers">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="06_Neural_Networks/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
@@ -353,7 +353,7 @@ Neural Networks are very important in machine learning and growing in popularity
 
 <kbd>
   <a href="07_Natural_Language_Processing/01_Introduction">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="07_Natural_Language_Processing/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
@@ -423,7 +423,7 @@ Natural Language Processing (NLP) is a way of processing textual information int
 </kbd>
 <kbd>
   <a href="08_Convolutional_Neural_Networks/04_Retraining_Current_Architectures">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="08_Convolutional_Neural_Networks/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
@@ -503,27 +503,27 @@ Recurrent Neural Networks (RNNs) are very similar to regular neural networks exc
 ## [Ch 10: Taking TensorFlow to Production](10_Taking_TensorFlow_to_Production)
 <kbd>
   <a href="10_Taking_TensorFlow_to_Production/01_Implementing_Unit_Tests">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="10_Taking_TensorFlow_to_Production/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
   <a href="10_Taking_TensorFlow_to_Production/02_Using_Multiple_Devices">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="10_Taking_TensorFlow_to_Production/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
   <a href="10_Taking_TensorFlow_to_Production/03_Parallelizing_TensorFlow">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="10_Taking_TensorFlow_to_Production/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
   <a href="10_Taking_TensorFlow_to_Production/04_Production_Tips">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="10_Taking_TensorFlow_to_Production/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
   <a href="10_Taking_TensorFlow_to_Production/05_Production_Example">
-    <img src="image.png" align="center" height="45" width="90">
+    <img src="10_Taking_TensorFlow_to_Production/images/image.png" align="center" height="45" width="90">
   </a>
 </kbd>
 
