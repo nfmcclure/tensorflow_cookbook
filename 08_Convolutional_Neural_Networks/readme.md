@@ -1,4 +1,4 @@
-## [Ch 8: Convolutional Neural Networks](#ch-8-convolutional-neural-networks)
+## Ch 8: Convolutional Neural Networks
 
  1. [Introduction](01_Intro_to_CNN)
   * We introduce convolutional neural networks (CNN), and how we can use them in TensorFlow.

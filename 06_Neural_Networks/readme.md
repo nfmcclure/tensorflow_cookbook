@@ -1,4 +1,4 @@
-## [Ch 6: Neural Networks](#ch-6-neural-networks)
+## Ch 6: Neural Networks
 
 Neural Networks are very important in machine learning and growing in popularity due to the major breakthroughs in prior unsolved problems.  We must start with introducing 'shallow' neural networks, which are very powerful and can help us improve our prior ML algorithm results.  We start by introducing the very basic NN unit, the operational gate.  We gradually add more and more to the neural network and end with training a model to play tic-tac-toe.
 

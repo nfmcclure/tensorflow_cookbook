@@ -1,4 +1,4 @@
-## [Ch 7: Natural Language Processing](#ch-7-natural-language-processing)
+## Ch 7: Natural Language Processing
 
  1. [Introduction](01_Introduction)
   * We introduce methods for turning text into numerical vectors. We introduce the TensorFlow 'embedding' feature as well.

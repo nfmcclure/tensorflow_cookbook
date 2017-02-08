@@ -1,4 +1,4 @@
-## [Ch 5: Nearest Neighbor Methods](#ch-5-nearest-neighbor-methods)
+## Ch 5: Nearest Neighbor Methods
 
 Nearest Neighbor methods are a very popular ML algorithm.  We show how to implement k-Nearest Neighbors, weighted k-Nearest Neighbors, and k-Nearest Neighbors with mixed distance functions.  In this chapter we also show how to use the Levenshtein distance (edit distance) in TensorFlow, and use it to calculate the distance between strings. We end this chapter with showing how to use k-Nearest Neighbors for categorical prediction with the MNIST handwritten digit recognition.
 

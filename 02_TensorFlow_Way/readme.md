@@ -1,4 +1,4 @@
-## [Ch 2: The TensorFlow Way](#ch-2-the-tensorflow-way)
+## Ch 2: The TensorFlow Way
 
 After we have established the basic objects and methods in TensorFlow, we now want to establish the components that make up TensorFlow algorithms.  We start by introducing computational graphs, and then move to loss functions and back propagation.  We end with creating a simple classifier and then show an example of evaluating regression and classification algorithms.
 

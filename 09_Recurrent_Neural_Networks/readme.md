@@ -1,4 +1,4 @@
-## [Ch 9: Recurrent Neural Networks](#ch-9-recurrent-neural-networks)
+## Ch 9: Recurrent Neural Networks
 
  1. [Introduction](01_Introduction)
   * We introduce Recurrent Neural Networks and how they are able to feed in a sequence and predict either a fixed target (categorical/numerical) or another sequence (sequence to sequence).

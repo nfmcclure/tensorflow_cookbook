@@ -1,4 +1,4 @@
-## [Ch 4: Support Vector Machines](#ch-4-support-vector-machines)
+## Ch 4: Support Vector Machines
 
 This chapter shows how to implement various SVM methods with TensorFlow.  We first create a linear SVM and also show how it can be used for regression.  We then introduce kernels (RBF Gaussian kernel) and show how to use it to split up non-linear data. We finish with a multi-dimensional implementation of non-linear SVMs to work with multiple classes.
 

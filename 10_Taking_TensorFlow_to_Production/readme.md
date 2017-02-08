@@ -1,4 +1,4 @@
-## [Ch 10:Taking TensorFlow to Production](#ch-10-taking-tensorflow-to-production)
+## Ch 10:Taking TensorFlow to Production
 
  1. [Implementing Unit Tests](01_Implementing_Unit_Tests)
   * We show how to implement different types of unit tests on tensors (placeholders and variables).

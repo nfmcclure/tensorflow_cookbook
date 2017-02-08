@@ -1,4 +1,4 @@
-## [Ch 3: Linear Regression](#ch-3-linear-regression)
+## Ch 3: Linear Regression
 
 Here we show how to implement various linear regression techniques in TensorFlow.  The first two sections show how to do standard matrix linear regression solving in TensorFlow.  The remaining six sections depict how to implement various types of regression using computational graphs in TensorFlow.
 

@@ -1,4 +1,4 @@
-## [Ch 11: More with TensorFlow](#ch-11-more-with-tensorflow)
+## Ch 11: More with TensorFlow
 
  1. [Visualizing Computational Graphs (with Tensorboard)](01_Visualizing_Computational_Graphs)
   * An example of using histograms, scalar summaries, and creating images in Tensorboard.
