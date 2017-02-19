@@ -73,8 +73,8 @@ rand_parent2_ix = np.random.choice(num_parents, num_children)
 # Gather parents by shuffled indices, expand back out to pop_size too
 rand_parent1 = tf.gather(parents, rand_parent1_ix)
 rand_parent2 = tf.gather(parents, rand_parent2_ix)
-rand_parent1_sel = tf.mul(rand_parent1, crossover_mat_ph)
-rand_parent2_sel = tf.mul(rand_parent2, tf.sub(1., crossover_mat_ph))
+rand_parent1_sel = tf.multiply(rand_parent1, crossover_mat_ph)
+rand_parent2_sel = tf.multiply(rand_parent2, tf.sub(1., crossover_mat_ph))
 children_after_sel = tf.add(rand_parent1_sel, rand_parent2_sel)
 
 # Mutate Children
@@ -85,7 +85,7 @@ new_population = tf.concat(0, [parents, mutated_children])
 
 step = tf.group(population.assign(new_population))
 
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Run through generations

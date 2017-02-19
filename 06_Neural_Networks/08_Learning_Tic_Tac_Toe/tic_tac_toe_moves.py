@@ -156,7 +156,7 @@ train_step = tf.train.GradientDescentOptimizer(0.025).minimize(loss)
 prediction = tf.argmax(model_output, 1)
 
 sess = tf.Session()
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 loss_vec = []

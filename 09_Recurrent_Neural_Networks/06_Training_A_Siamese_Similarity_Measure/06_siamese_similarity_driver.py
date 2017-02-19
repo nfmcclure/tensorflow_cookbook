@@ -119,7 +119,7 @@ optimizer = tf.train.AdamOptimizer(0.01)
 train_op = optimizer.minimize(batch_loss)
 
 # Initialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Train loop

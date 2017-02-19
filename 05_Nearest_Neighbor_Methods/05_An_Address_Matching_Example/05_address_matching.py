@@ -72,7 +72,7 @@ address_sim = tf.sub(1., address_dist)
 # Combine distance functions
 address_weight = 0.5
 zip_weight = 1. - address_weight
-weighted_sim = tf.add(tf.transpose(tf.mul(address_weight, address_sim)), tf.mul(zip_weight, zip_sim))
+weighted_sim = tf.add(tf.transpose(tf.multiply(address_weight, address_sim)), tf.multiply(zip_weight, zip_sim))
 
 # Predict: Get max similarity entry
 top_match_index = tf.argmax(weighted_sim, 1)

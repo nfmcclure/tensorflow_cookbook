@@ -39,7 +39,7 @@ loss1 = tf.reduce_mean(tf.square(tf.sub(sigmoid_activation, 0.75)))
 loss2 = tf.reduce_mean(tf.square(tf.sub(relu_activation, 0.75)))
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Declare optimizer

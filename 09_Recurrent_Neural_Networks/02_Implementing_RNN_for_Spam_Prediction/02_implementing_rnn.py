@@ -124,7 +124,7 @@ accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(logits_out, 1), tf.cast(y_o
 optimizer = tf.train.RMSPropOptimizer(learning_rate)
 train_step = optimizer.minimize(loss)
 
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 train_loss = []

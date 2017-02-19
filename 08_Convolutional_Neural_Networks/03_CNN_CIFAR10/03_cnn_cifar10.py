@@ -261,7 +261,7 @@ train_op = train_step(loss, generation_num)
 
 # Initialize Variables
 print('Initializing the Variables.')
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Initialize queue (This queue will feed into the model, so no placeholders necessary)

@@ -129,7 +129,7 @@ similarity = tf.matmul(valid_embeddings, normalized_embeddings, transpose_b=True
 saver = tf.train.Saver({"embeddings": embeddings, "doc_embeddings": doc_embeddings})
 
 #Add variable initializer.
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Run the skip gram model.
@@ -233,7 +233,7 @@ logistic_opt = tf.train.GradientDescentOptimizer(learning_rate=0.01)
 logistic_train_step = logistic_opt.minimize(logistic_loss, var_list=[A, b])
 
 # Intitialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Start Logistic Regression

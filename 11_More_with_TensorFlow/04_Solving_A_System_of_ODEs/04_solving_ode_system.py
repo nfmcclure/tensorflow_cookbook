@@ -46,7 +46,7 @@ step = tf.group(
   X_t1.assign(X_t2),
   Y_t1.assign(Y_t2))
   
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Run the ODE

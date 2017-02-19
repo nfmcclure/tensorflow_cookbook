@@ -227,7 +227,7 @@ batches = np.array_split(s_text_ix, num_batches)
 batches = [np.resize(x, [batch_size, training_seq_len]) for x in batches]
 
 # Initialize all variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Train model

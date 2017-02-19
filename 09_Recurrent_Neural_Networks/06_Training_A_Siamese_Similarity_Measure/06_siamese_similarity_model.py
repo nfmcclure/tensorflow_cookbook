@@ -76,12 +76,12 @@ def loss(scores, y_target, margin):
     pos_loss_term = 0.25 * tf.square(tf.sub(1., scores))
     
     # If y-target is -1 to 1, then do the following
-    #pos_mult = tf.add(tf.mul(0.5, y_target), 0.5)
+    #pos_mult = tf.add(tf.multiply(0.5, y_target), 0.5)
     # Else if y-target is 0 to 1, then do the folloing
     pos_mult = tf.cast(y_target, tf.float32)
     
     # Make sure positive losses are on similar strings
-    positive_loss = tf.mul(pos_mult, pos_loss_term)
+    positive_loss = tf.multiply(pos_mult, pos_loss_term)
     
     # Calculate negative losses, then make sure on dissimilar strings
     
@@ -107,7 +107,7 @@ def loss(scores, y_target, margin):
     both_logical = tf.cast(both_logical, tf.float32)
     # If both are true, then multiply by (1-1)=0.
     multiplicative_factor = tf.cast(1. - both_logical, tf.float32)
-    total_loss = tf.mul(loss, multiplicative_factor)
+    total_loss = tf.multiply(loss, multiplicative_factor)
     
     # Average loss over batch
     avg_loss = tf.reduce_mean(total_loss)

@@ -196,7 +196,7 @@ def main(args):
         # Create a graph/Variable saving/loading operations
         saver = tf.train.Saver()    
     
-        init = tf.initialize_all_variables()
+        init = tf.global_variables_initializer()
         sess.run(init)
     
         # Start training

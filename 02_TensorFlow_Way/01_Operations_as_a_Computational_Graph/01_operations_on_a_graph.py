@@ -16,7 +16,7 @@ x_data = tf.placeholder(tf.float32)
 m = tf.constant(3.)
 
 # Multiplication
-prod = tf.mul(x_data, m)
+prod = tf.multiply(x_data, m)
 for x_val in x_vals:
     print(sess.run(prod, feed_dict={x_data: x_val}))
 
