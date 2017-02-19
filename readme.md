@@ -1,7 +1,7 @@
 <img src="http://fromdata.org/wp-content/uploads/2016/07/B05480_MockupCover_Normal_New.jpg" data-canonical-src="http://fromdata.org/wp-content/uploads/2016/07/B05480_MockupCover_Normal_New.jpg" width="200" height="250" />
 
 # [TensorFlow Machine Learning Cookbook](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
-## [A Packt Publishing Book due out Jan. 2017.](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
+## [A Packt Publishing Book](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
 ### By Nick McClure
 
