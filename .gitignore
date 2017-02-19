@@ -33,6 +33,14 @@ checkpoint
 **/tensorboard_logs
 tensorboard_logs/
 tensorboard_logs/*
+*/tensorboard/*
+*/tensorboard/
+*/tensorboard
+***/tensorboard/*
+**/tensorboard/
+**/tensorboard
+tensorboard/
+tensorboard/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
