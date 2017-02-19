@@ -126,7 +126,7 @@ my_optimizer = tf.train.MomentumOptimizer(learning_rate, 0.9)
 train_step = my_optimizer.minimize(loss)
 
 # Initialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Check values of tensors!

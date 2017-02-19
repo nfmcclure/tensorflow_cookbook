@@ -58,7 +58,7 @@ means = data_group_avg(centroid_group, data_points)
 
 update = tf.group(centroids.assign(means), cluster_labels.assign(centroid_group))
 
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 
 sess.run(init)
 

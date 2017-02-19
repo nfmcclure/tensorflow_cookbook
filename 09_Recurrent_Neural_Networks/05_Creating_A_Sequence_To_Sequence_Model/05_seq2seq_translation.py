@@ -196,7 +196,7 @@ with tf.variable_scope('translate_model') as scope:
     test_model.batch_size = 1
 
 # Initialize all model variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Start training

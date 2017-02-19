@@ -107,7 +107,7 @@ my_full_output = fully_connected(my_maxpool_output, 5)
 
 # Run graph
 # Initialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 feed_dict = {x_input_1d: data_1d}
@@ -210,7 +210,7 @@ my_full_output = fully_connected(my_maxpool_output, 5)
 
 # Run graph
 # Initialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 feed_dict = {x_input_2d: data_2d}

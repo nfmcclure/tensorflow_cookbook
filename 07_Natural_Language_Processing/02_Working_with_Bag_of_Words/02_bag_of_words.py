@@ -122,7 +122,7 @@ my_opt = tf.train.GradientDescentOptimizer(0.001)
 train_step = my_opt.minimize(loss)
 
 # Intitialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Start Logistic Regression

@@ -33,7 +33,7 @@ my_output = tf.mul(x_data, A)
 loss = tf.square(my_output - y_target)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Create Optimizer
@@ -78,7 +78,7 @@ my_output = tf.matmul(x_data, A)
 loss = tf.reduce_mean(tf.square(my_output - y_target))
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Create Optimizer

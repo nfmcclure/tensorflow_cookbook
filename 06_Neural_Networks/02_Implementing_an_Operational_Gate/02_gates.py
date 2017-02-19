@@ -37,7 +37,7 @@ multiplication = tf.mul(a, x_data)
 loss = tf.square(tf.sub(multiplication, 50.))
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Declare optimizer
@@ -81,7 +81,7 @@ two_gate = tf.add(tf.mul(a, x_data), b)
 loss = tf.square(tf.sub(two_gate, 50.))
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Declare optimizer

@@ -16,7 +16,7 @@ import tensorflow as tf
 sess = tf.Session()
 
 # Create a visualizer object
-summary_writer = tf.train.SummaryWriter('tensorboard', tf.get_default_graph())
+summary_writer = tf.summary.FileWriter('tensorboard', tf.get_default_graph())
 
 # Create tensorboard folder if not exists
 if not os.path.exists('tensorboard'):
@@ -53,23 +53,23 @@ y_graph_input = tf.placeholder(tf.float32, [None])
 m = tf.Variable(tf.random_normal([1], dtype=tf.float32), name='Slope')
 
 # Declare model
-output = tf.mul(m, x_graph_input, name='Batch_Multiplication')
+output = tf.multiply(m, x_graph_input, name='Batch_Multiplication')
 
 # Declare loss function (L1)
 residuals = output - y_graph_input
-l2_loss = tf.reduce_mean(tf.abs(residuals), name="L2_Loss")
+l1_loss = tf.reduce_mean(tf.abs(residuals), name="L1_Loss")
 
 # Declare optimization function
 my_optim = tf.train.GradientDescentOptimizer(0.01)
-train_step = my_optim.minimize(l2_loss)
+train_step = my_optim.minimize(l1_loss)
 
 # Visualize a scalar
 with tf.name_scope('Slope_Estimate'):
-    tf.scalar_summary('Slope_Estimate', tf.squeeze(m))
+    tf.summary.scalar('Slope_Estimate', tf.squeeze(m))
     
 # Visualize a histogram (errors)
 with tf.name_scope('Loss_and_Residuals'):
-    tf.histogram_summary('Histogram_Errors', l2_loss)
+    tf.histogram_summary('Histogram_Errors', l1_loss)
     tf.histogram_summary('Histogram_Residuals', residuals)
 
 
@@ -78,18 +78,18 @@ with tf.name_scope('Loss_and_Residuals'):
 summary_op = tf.merge_all_summaries()
 
 # Initialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 for i in range(generations):
     batch_indices = np.random.choice(len(x_data_train), size=batch_size)
     x_batch = x_data_train[batch_indices]
     y_batch = y_data_train[batch_indices]
-    _, train_loss, summary = sess.run([train_step, l2_loss, summary_op],
+    _, train_loss, summary = sess.run([train_step, l1_loss, summary_op],
                              feed_dict={x_graph_input: x_batch,
                                         y_graph_input: y_batch})
     
-    test_loss, test_resids = sess.run([l2_loss, residuals], feed_dict={x_graph_input: x_data_test,
+    test_loss, test_resids = sess.run([l1_loss, residuals], feed_dict={x_graph_input: x_data_test,
                                                                        y_graph_input: y_data_test})
     
     if (i+1)%10==0:
@@ -118,7 +118,7 @@ image = tf.image.decode_png(plot_buf.getvalue(), channels=4)
 # Add the batch dimension
 image = tf.expand_dims(image, 0)
 # Add image summary
-image_summary_op = tf.image_summary("Linear Plot", image)
+image_summary_op = tf.summary.image("Linear_Plot", image)
 image_summary = sess.run(image_summary_op)
 log_writer.add_summary(image_summary, i)
 log_writer.close()

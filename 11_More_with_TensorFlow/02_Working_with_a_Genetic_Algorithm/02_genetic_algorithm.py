@@ -85,7 +85,7 @@ new_population = tf.concat(0, [parents, mutated_children])
 
 step = tf.group(population.assign(new_population))
 
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Run through generations

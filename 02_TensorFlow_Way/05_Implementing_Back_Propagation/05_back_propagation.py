@@ -37,7 +37,7 @@ my_output = tf.mul(x_data, A)
 loss = tf.square(my_output - y_target)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Create Optimizer
@@ -88,7 +88,7 @@ my_output_expanded = tf.expand_dims(my_output, 0)
 y_target_expanded = tf.expand_dims(y_target, 0)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Add classification loss (cross entropy)
