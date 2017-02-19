@@ -30,7 +30,7 @@ a = tf.Variable(tf.constant(4.))
 x_val = 5.
 x_data = tf.placeholder(dtype=tf.float32)
 
-multiplication = tf.mul(a, x_data)
+multiplication = tf.multiply(a, x_data)
 
 # Declare the loss function as the difference between
 # the output and a target value, 50.
@@ -74,7 +74,7 @@ b = tf.Variable(tf.constant(1.))
 x_val = 5.
 x_data = tf.placeholder(dtype=tf.float32)
 
-two_gate = tf.add(tf.mul(a, x_data), b)
+two_gate = tf.add(tf.multiply(a, x_data), b)
 
 # Declare the loss function as the difference between
 # the output and a target value, 50.

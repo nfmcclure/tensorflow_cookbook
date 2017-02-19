@@ -59,9 +59,9 @@ l2_norm = tf.reduce_sum(tf.square(A))
 # L2 regularization parameter, alpha
 alpha = tf.constant([0.01])
 # Margin term in loss
-classification_term = tf.reduce_mean(tf.maximum(0., tf.sub(1., tf.mul(model_output, y_target))))
+classification_term = tf.reduce_mean(tf.maximum(0., tf.sub(1., tf.multiply(model_output, y_target))))
 # Put terms together
-loss = tf.add(classification_term, tf.mul(alpha, l2_norm))
+loss = tf.add(classification_term, tf.multiply(alpha, l2_norm))
 
 # Declare prediction function
 prediction = tf.sign(model_output)

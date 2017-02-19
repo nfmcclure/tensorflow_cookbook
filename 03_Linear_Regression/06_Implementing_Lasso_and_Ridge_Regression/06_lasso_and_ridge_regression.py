@@ -42,16 +42,19 @@ model_output = tf.add(tf.matmul(x_data, A), b)
 # Declare Lasso loss function
 # Lasso Loss = L2_Loss + heavyside_step,
 # Where heavyside_step ~ 0 if A < constant, otherwise ~ 99
+
+# For Lasso, uncomment the following four lines (and comment out the Ridge Regression loss)
+
 #lasso_param = tf.constant(0.9)
-#heavyside_step = tf.truediv(1., tf.add(1., tf.exp(tf.mul(-100., tf.sub(A, lasso_param)))))
-#regularization_param = tf.mul(heavyside_step, 99.)
+#heavyside_step = tf.truediv(1., tf.add(1., tf.exp(tf.multiply(-100., tf.sub(A, lasso_param)))))
+#regularization_param = tf.multiply(heavyside_step, 99.)
 #loss = tf.add(tf.reduce_mean(tf.square(y_target - model_output)), regularization_param)
 
 # Declare the Ridge loss function
 # Ridge loss = L2_loss + L2 norm of slope
 ridge_param = tf.constant(1.)
 ridge_loss = tf.reduce_mean(tf.square(A))
-loss = tf.expand_dims(tf.add(tf.reduce_mean(tf.square(y_target - model_output)), tf.mul(ridge_param, ridge_loss)), 0)
+loss = tf.expand_dims(tf.add(tf.reduce_mean(tf.square(y_target - model_output)), tf.multiply(ridge_param, ridge_loss)), 0)
 
 # Declare optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.001)
