@@ -116,7 +116,7 @@ bias = tf.Variable(tf.constant(0.1, shape=[2]))
 logits_out = tf.nn.softmax(tf.matmul(last, weight) + bias)
 
 # Loss function
-losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits_out, y_output) # logits=float32, labels=int32
+losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits_out, labels=y_output) # logits=float32, labels=int32
 loss = tf.reduce_mean(losses)
 
 accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(logits_out, 1), tf.cast(y_output, tf.int64)), tf.float32))

@@ -71,22 +71,22 @@ y_target_test = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 
 # Declare weighted distance metric
 # Weighted - L2 = sqrt((x-y)^T * A * (x-y))
-subtraction_term =  tf.sub(x_data_train, tf.expand_dims(x_data_test,1))
-first_product = tf.batch_matmul(subtraction_term, tf.tile(tf.expand_dims(weight_matrix,0), [batch_size,1,1]))
-second_product = tf.batch_matmul(first_product, tf.transpose(subtraction_term, perm=[0,2,1]))
+subtraction_term =  tf.subtract(x_data_train, tf.expand_dims(x_data_test,1))
+first_product = tf.matmul(subtraction_term, tf.tile(tf.expand_dims(weight_matrix,0), [batch_size,1,1]))
+second_product = tf.matmul(first_product, tf.transpose(subtraction_term, perm=[0,2,1]))
 distance = tf.sqrt(tf.batch_matrix_diag_part(second_product))
 
 # Predict: Get min distance index (Nearest neighbor)
-top_k_xvals, top_k_indices = tf.nn.top_k(tf.neg(distance), k=k)
+top_k_xvals, top_k_indices = tf.nn.top_k(tf.negative(distance), k=k)
 x_sums = tf.expand_dims(tf.reduce_sum(top_k_xvals, 1),1)
 x_sums_repeated = tf.matmul(x_sums,tf.ones([1, k], tf.float32))
 x_val_weights = tf.expand_dims(tf.div(top_k_xvals,x_sums_repeated), 1)
 
 top_k_yvals = tf.gather(y_target_train, top_k_indices)
-prediction = tf.squeeze(tf.batch_matmul(x_val_weights,top_k_yvals), squeeze_dims=[1])
+prediction = tf.squeeze(tf.matmul(x_val_weights,top_k_yvals), axis=[1])
 
 # Calculate MSE
-mse = tf.div(tf.reduce_sum(tf.square(tf.sub(prediction, y_target_test))), batch_size)
+mse = tf.div(tf.reduce_sum(tf.square(tf.subtract(prediction, y_target_test))), batch_size)
 
 # Calculate how many loops over training data
 num_loops = int(np.ceil(len(x_vals_test)/batch_size))

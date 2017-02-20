@@ -92,7 +92,7 @@ init = tf.global_variables_initializer()
 sess.run(init)
 
 # Add classification loss (cross entropy)
-xentropy = tf.nn.sigmoid_cross_entropy_with_logits(my_output_expanded, y_target_expanded)
+xentropy = tf.nn.sigmoid_cross_entropy_with_logits(logits=my_output_expanded, labels=y_target_expanded)
 
 # Create Optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.05)

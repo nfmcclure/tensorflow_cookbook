@@ -113,7 +113,7 @@ def main(args):
     tf.logging.set_verbosity(tf.logging.INFO)
     
     # Create a visualizer object for Tensorboard viewing
-    summary_writer = tf.train.SummaryWriter('tensorboard', tf.get_default_graph())
+    summary_writer = tf.summary.FileWriter('tensorboard', tf.get_default_graph())
     # Create tensorboard folder if not exists
     if not os.path.exists('tensorboard'):
         os.makedirs('tensorboard')
@@ -174,7 +174,7 @@ def main(args):
         rnn_prediction = tf.nn.softmax(rnn_model_outputs, name="probability_outputs")
         
         # Loss function
-        losses = tf.nn.sparse_softmax_cross_entropy_with_logits(rnn_model_outputs, y_output_ph)
+        losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=rnn_model_outputs, labels=y_output_ph)
         # Remember that for this loss function, logits=float32, labels=int32
         loss = tf.reduce_mean(losses, name="loss")
 
@@ -183,15 +183,15 @@ def main(args):
     
         # Add scalar summaries for Tensorboard
         with tf.name_scope('Scalar_Summaries'):
-                tf.scalar_summary('Loss', loss)
-                tf.scalar_summary('Accuracy', accuracy)
+                tf.summary.scalar('Loss', loss)
+                tf.summary.scalar('Accuracy', accuracy)
     
         # Declare Optimizer/train step
         optimizer = tf.train.GradientDescentOptimizer(learning_rate)
         train_step = optimizer.minimize(loss)
         
         # Declare summary merging operation
-        summary_op = tf.merge_all_summaries()
+        summary_op = tf.summary.merge_all()
     
         # Create a graph/Variable saving/loading operations
         saver = tf.train.Saver()    
@@ -221,7 +221,7 @@ def main(args):
                               dropout_keep_prob:0.5}
                 _, summary = sess.run([train_step, summary_op], feed_dict=train_dict)
                 
-                summary_writer = tf.train.SummaryWriter('tensorboard')
+                summary_writer = tf.summary.FileWriter('tensorboard')
                 summary_writer.add_summary(summary, i)
         
             # Run loss and accuracy for training

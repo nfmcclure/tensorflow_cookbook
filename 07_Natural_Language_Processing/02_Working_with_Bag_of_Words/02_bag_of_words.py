@@ -112,7 +112,7 @@ x_col_sums_2D = tf.expand_dims(x_col_sums, 0)
 model_output = tf.add(tf.matmul(x_col_sums_2D, A), b)
 
 # Declare loss function (Cross Entropy loss)
-loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(model_output, y_target))
+loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=model_output, labels=y_target))
 
 # Prediction operation
 prediction = tf.sigmoid(model_output)

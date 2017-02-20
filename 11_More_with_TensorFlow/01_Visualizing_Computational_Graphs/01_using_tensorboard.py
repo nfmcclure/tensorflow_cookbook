@@ -69,13 +69,13 @@ with tf.name_scope('Slope_Estimate'):
     
 # Visualize a histogram (errors)
 with tf.name_scope('Loss_and_Residuals'):
-    tf.histogram_summary('Histogram_Errors', l1_loss)
-    tf.histogram_summary('Histogram_Residuals', residuals)
+    tf.summary.histogram('Histogram_Errors', l1_loss)
+    tf.summary.histogram('Histogram_Residuals', residuals)
 
 
 
 # Declare summary merging operation
-summary_op = tf.merge_all_summaries()
+summary_op = tf.summary.merge_all()
 
 # Initialize Variables
 init = tf.global_variables_initializer()
@@ -95,7 +95,7 @@ for i in range(generations):
     if (i+1)%10==0:
         print('Generation {} of {}. Train Loss: {:.3}, Test Loss: {:.3}.'.format(i+1, generations, train_loss, test_loss))
 
-    log_writer = tf.train.SummaryWriter('tensorboard')
+    log_writer = tf.summary.FileWriter('tensorboard')
     log_writer.add_summary(summary, i)
     time.sleep(0.5)
 

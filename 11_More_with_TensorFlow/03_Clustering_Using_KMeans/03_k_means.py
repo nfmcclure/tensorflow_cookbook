@@ -39,7 +39,7 @@ centroids = tf.Variable(rand_starts)
 centroid_matrix = tf.reshape(tf.tile(centroids, [num_pts, 1]), [num_pts, k, num_feats])
 # Then we reshape the data points into k (3) repeats
 point_matrix = tf.reshape(tf.tile(data_points, [1, k]), [num_pts, k, num_feats])
-distances = tf.reduce_sum(tf.square(point_matrix - centroid_matrix), reduction_indices=2)
+distances = tf.reduce_sum(tf.square(point_matrix - centroid_matrix), axis=2)
 
 #Find the group it belongs to with tf.argmin()
 centroid_group = tf.argmin(distances, 1)

@@ -25,8 +25,8 @@ def snn(address1, address2, dropout_keep_prob,
         lstm_backward_cell = tf.nn.rnn_cell.DropoutWrapper(lstm_backward_cell, output_keep_prob=dropout_keep_prob)
     
         # Split title into a character sequence
-        input_embed_split = tf.split(1, input_length, input_vector)
-        input_embed_split = [tf.squeeze(x, squeeze_dims=[1]) for x in input_embed_split]
+        input_embed_split = tf.split(axis=1, num_or_size_splits=input_length, value=input_vector)
+        input_embed_split = [tf.squeeze(x, axis=[1]) for x in input_embed_split]
         
         # Create bidirectional layer
         outputs, _, _ = tf.nn.bidirectional_rnn(lstm_forward_cell,
@@ -61,7 +61,7 @@ def snn(address1, address2, dropout_keep_prob,
     output2 = tf.nn.l2_normalize(output2, 1)
     # Return cosine distance
     #   in this case, the dot product of the norms is the same.
-    dot_prod = tf.reduce_sum(tf.mul(output1, output2), 1)
+    dot_prod = tf.reduce_sum(tf.multiply(output1, output2), 1)
     
     return(dot_prod)
 
@@ -73,7 +73,7 @@ def get_predictions(scores):
 
 def loss(scores, y_target, margin):
     # Calculate the positive losses
-    pos_loss_term = 0.25 * tf.square(tf.sub(1., scores))
+    pos_loss_term = 0.25 * tf.square(tf.subtract(1., scores))
     
     # If y-target is -1 to 1, then do the following
     #pos_mult = tf.add(tf.multiply(0.5, y_target), 0.5)
@@ -88,7 +88,7 @@ def loss(scores, y_target, margin):
     # If y-target is -1 to 1, then do the following:
     #neg_mult = tf.add(tf.mul(-0.5, y_target), 0.5)
     # Else if y-target is 0 to 1, then do the following
-    neg_mult = tf.sub(1., tf.cast(y_target, tf.float32))
+    neg_mult = tf.subtract(1., tf.cast(y_target, tf.float32))
     
     negative_loss = neg_mult*tf.square(scores)
     
