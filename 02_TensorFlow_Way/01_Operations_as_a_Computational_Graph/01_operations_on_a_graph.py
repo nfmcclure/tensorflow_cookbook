@@ -20,8 +20,8 @@ prod = tf.multiply(x_data, m)
 for x_val in x_vals:
     print(sess.run(prod, feed_dict={x_data: x_val}))
 
-merged = tf.merge_all_summaries()
+merged = tf.summary.merge_all()
 if not os.path.exists('tensorboard_logs/'):
     os.makedirs('tensorboard_logs/')
 
-my_writer = tf.train.SummaryWriter('tensorboard_logs/', sess.graph)
+my_writer = tf.summary.FileWriter('tensorboard_logs/', sess.graph)

@@ -40,7 +40,7 @@ b = tf.Variable(tf.random_normal(shape=[1,1]))
 model_output = tf.add(tf.matmul(x_data, A), b)
 
 # Declare Demming loss function
-demming_numerator = tf.abs(tf.sub(y_target, tf.add(tf.matmul(x_data, A), b)))
+demming_numerator = tf.abs(tf.subtract(y_target, tf.add(tf.matmul(x_data, A), b)))
 demming_denominator = tf.sqrt(tf.add(tf.square(A),1))
 loss = tf.reduce_mean(tf.truediv(demming_numerator, demming_denominator))
 

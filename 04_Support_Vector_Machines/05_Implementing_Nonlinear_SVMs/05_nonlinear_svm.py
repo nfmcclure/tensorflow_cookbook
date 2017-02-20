@@ -49,12 +49,12 @@ first_term = tf.reduce_sum(b)
 b_vec_cross = tf.matmul(tf.transpose(b), b)
 y_target_cross = tf.matmul(y_target, tf.transpose(y_target))
 second_term = tf.reduce_sum(tf.multiply(my_kernel, tf.multiply(b_vec_cross, y_target_cross)))
-loss = tf.neg(tf.sub(first_term, second_term))
+loss = tf.negative(tf.subtract(first_term, second_term))
 
 # Gaussian (RBF) prediction kernel
 rA = tf.reshape(tf.reduce_sum(tf.square(x_data), 1),[-1,1])
 rB = tf.reshape(tf.reduce_sum(tf.square(prediction_grid), 1),[-1,1])
-pred_sq_dist = tf.add(tf.sub(rA, tf.multiply(2., tf.matmul(x_data, tf.transpose(prediction_grid)))), tf.transpose(rB))
+pred_sq_dist = tf.add(tf.subtract(rA, tf.multiply(2., tf.matmul(x_data, tf.transpose(prediction_grid)))), tf.transpose(rB))
 pred_kernel = tf.exp(tf.multiply(gamma, tf.abs(pred_sq_dist)))
 
 prediction_output = tf.matmul(tf.multiply(tf.transpose(y_target),b), pred_kernel)

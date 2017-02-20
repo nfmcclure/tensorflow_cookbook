@@ -93,7 +93,7 @@ def read_cifar_files(filename_queue, distort_images = True):
         final_image = tf.image.random_contrast(final_image,lower=0.2, upper=1.8)
 
     # Normalize whitening
-    final_image = tf.image.per_image_whitening(final_image)
+    final_image = tf.image.per_image_standardization(final_image)
     return(final_image, image_label)
 
 
@@ -199,7 +199,7 @@ def cifar_loss(logits, targets):
     # Get rid of extra dimensions and cast targets into integers
     targets = tf.squeeze(tf.cast(targets, tf.int32))
     # Calculate cross entropy from logits and targets
-    cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits, targets)
+    cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits, labels=targets)
     # Take the average loss across batch size
     cross_entropy_mean = tf.reduce_mean(cross_entropy, name='cross_entropy')
     return(cross_entropy_mean)

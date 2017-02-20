@@ -151,7 +151,7 @@ bias2 = init_weights([9])
 
 model_output = model(X, A1, A2, bias1, bias2)
 
-loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(model_output, Y))
+loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(logits=model_output, labels=Y))
 train_step = tf.train.GradientDescentOptimizer(0.025).minimize(loss)
 prediction = tf.argmax(model_output, 1)
 

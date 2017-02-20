@@ -150,7 +150,7 @@ class LSTM_Model():
                                             tf.float32, tf.random_normal_initializer())
                                             
             embedding_output = tf.nn.embedding_lookup(embedding_mat, self.x_data)
-            rnn_inputs = tf.split(1, self.training_seq_len, embedding_output)
+            rnn_inputs = tf.split(axis=1, num_or_size_splits=self.training_seq_len, value=embedding_output)
             rnn_inputs_trimmed = [tf.squeeze(x, [1]) for x in rnn_inputs]
         
         decoder = tf.nn.seq2seq.rnn_decoder
@@ -159,7 +159,7 @@ class LSTM_Model():
                                       self.lstm_cell)
         
         # RNN outputs
-        output = tf.reshape(tf.concat(1, outputs), [-1, rnn_size])
+        output = tf.reshape(tf.concat(axis=1, values=outputs), [-1, rnn_size])
         # Logits and output
         self.logit_output = tf.matmul(output, W) + b
         self.model_output = tf.nn.softmax(self.logit_output)
@@ -207,7 +207,7 @@ with tf.variable_scope('lstm_model') as scope:
 
 
 # Create model saver
-saver = tf.train.Saver(tf.all_variables())
+saver = tf.train.Saver(tf.global_variables())
 
 # Create batches for each epoch
 num_batches = int(len(s_text_ix)/(batch_size * training_seq_len)) + 1

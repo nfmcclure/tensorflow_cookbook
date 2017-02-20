@@ -58,7 +58,7 @@ ref_address = tf.sparse_placeholder(dtype=tf.string)
 ref_zip = tf.placeholder(shape=[None, n], dtype=tf.float32)
 
 # Declare Zip code distance for a test zip and reference set
-zip_dist = tf.square(tf.sub(ref_zip, test_zip))
+zip_dist = tf.square(tf.subtract(ref_zip, test_zip))
 
 # Declare Edit distance for address
 address_dist = tf.edit_distance(test_address, ref_address, normalize=True)
@@ -66,8 +66,8 @@ address_dist = tf.edit_distance(test_address, ref_address, normalize=True)
 # Create similarity scores
 zip_max = tf.gather(tf.squeeze(zip_dist), tf.argmax(zip_dist, 1))
 zip_min = tf.gather(tf.squeeze(zip_dist), tf.argmin(zip_dist, 1))
-zip_sim = tf.div(tf.sub(zip_max, zip_dist), tf.sub(zip_max, zip_min))
-address_sim = tf.sub(1., address_dist)
+zip_sim = tf.div(tf.subtract(zip_max, zip_dist), tf.subtract(zip_max, zip_min))
+address_sim = tf.subtract(1., address_dist)
 
 # Combine distance functions
 address_weight = 0.5
