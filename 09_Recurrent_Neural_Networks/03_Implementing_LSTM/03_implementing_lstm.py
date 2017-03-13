@@ -133,7 +133,7 @@ class LSTM_Model():
             self.batch_size = batch_size
             self.training_seq_len = training_seq_len
         
-        self.lstm_cell = tf.nn.rnn_cell.BasicLSTMCell(rnn_size)
+        self.lstm_cell = tf.contrib.rnn.BasicLSTMCell(rnn_size)
         self.initial_state = self.lstm_cell.zero_state(self.batch_size, tf.float32)
         
         self.x_data = tf.placeholder(tf.int32, [self.batch_size, self.training_seq_len])
@@ -163,7 +163,7 @@ class LSTM_Model():
             output = tf.nn.embedding_lookup(embedding_mat, prev_symbol)
             return(output)
         
-        decoder = tf.nn.seq2seq.rnn_decoder
+        decoder = tf.contrib.legacy_seq2seq.rnn_decoder
         outputs, last_state = decoder(rnn_inputs_trimmed,
                                       self.initial_state,
                                       self.lstm_cell,
@@ -174,7 +174,7 @@ class LSTM_Model():
         self.logit_output = tf.matmul(output, W) + b
         self.model_output = tf.nn.softmax(self.logit_output)
         
-        loss_fun = tf.nn.seq2seq.sequence_loss_by_example
+        loss_fun = tf.contrib.legacy_seq2seq.sequence_loss_by_example
         loss = loss_fun([self.logit_output],[tf.reshape(self.y_output, [-1])],
                 [tf.ones([self.batch_size * self.training_seq_len])],
                 self.vocab_size)
@@ -207,11 +207,12 @@ class LSTM_Model():
             out_sentence = out_sentence + ' ' + word
         return(out_sentence)
 
-with tf.variable_scope('lstm_model') as scope:
-    # Define LSTM Model
-    lstm_model = LSTM_Model(rnn_size, batch_size, learning_rate,
-                            training_seq_len, vocab_size)
-    scope.reuse_variables()
+# Define LSTM Model
+lstm_model = LSTM_Model(rnn_size, batch_size, learning_rate,
+                        training_seq_len, vocab_size)
+
+# Tell TensorFlow we are reusing the scope for the testing
+with tf.variable_scope(tf.get_variable_scope(), reuse=True):
     test_lstm_model = LSTM_Model(rnn_size, batch_size, learning_rate,
                                  training_seq_len, vocab_size, infer_sample=True)
 
