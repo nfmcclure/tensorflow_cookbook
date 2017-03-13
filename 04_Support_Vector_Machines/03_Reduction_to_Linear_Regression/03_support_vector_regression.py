@@ -53,14 +53,14 @@ model_output = tf.add(tf.matmul(x_data, A), b)
 # 1/2 margin width parameter = epsilon
 epsilon = tf.constant([0.5])
 # Margin term in loss
-loss = tf.reduce_mean(tf.maximum(0., tf.sub(tf.abs(tf.sub(model_output, y_target)), epsilon)))
+loss = tf.reduce_mean(tf.maximum(0., tf.subtract(tf.abs(tf.subtract(model_output, y_target)), epsilon)))
 
 # Declare optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.075)
 train_step = my_opt.minimize(loss)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Training loop

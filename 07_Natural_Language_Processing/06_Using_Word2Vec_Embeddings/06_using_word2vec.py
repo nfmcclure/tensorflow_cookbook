@@ -92,7 +92,7 @@ embed_avg = tf.reduce_mean(embed, 1)
 model_output = tf.add(tf.matmul(embed_avg, A), b)
 
 # Declare loss function (Cross Entropy loss)
-loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(model_output, y_target))
+loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=model_output, labels=y_target))
 
 # Actual Prediction
 prediction = tf.round(tf.sigmoid(model_output))
@@ -104,7 +104,7 @@ my_opt = tf.train.AdagradOptimizer(0.005)
 train_step = my_opt.minimize(loss)
 
 # Intitialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Load model embeddings

@@ -37,7 +37,7 @@ test_nums = range(15)
 #print(sess.run(tf.equal(test_num, 3)))
 def custom_polynomial(x_val):
     # Return 3x^2 - x + 10
-    return(tf.sub(3 * tf.square(x_val), x_val) + 10)
+    return(tf.subtract(3 * tf.square(x_val), x_val) + 10)
 
 print(sess.run(custom_polynomial(11)))
 # What should we get with list comprehension

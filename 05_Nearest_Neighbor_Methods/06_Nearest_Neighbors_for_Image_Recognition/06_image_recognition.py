@@ -48,17 +48,17 @@ y_target_test = tf.placeholder(shape=[None, 10], dtype=tf.float32)
 
 # Declare distance metric
 # L1
-distance = tf.reduce_sum(tf.abs(tf.sub(x_data_train, tf.expand_dims(x_data_test,1))), reduction_indices=2)
+distance = tf.reduce_sum(tf.abs(tf.subtract(x_data_train, tf.expand_dims(x_data_test,1))), axis=2)
 
 # L2
 #distance = tf.sqrt(tf.reduce_sum(tf.square(tf.sub(x_data_train, tf.expand_dims(x_data_test,1))), reduction_indices=1))
 
 # Predict: Get min distance index (Nearest neighbor)
-top_k_xvals, top_k_indices = tf.nn.top_k(tf.neg(distance), k=k)
+top_k_xvals, top_k_indices = tf.nn.top_k(tf.negative(distance), k=k)
 prediction_indices = tf.gather(y_target_train, top_k_indices)
 # Predict the mode category
-count_of_predictions = tf.reduce_sum(prediction_indices, reduction_indices=1)
-prediction = tf.argmax(count_of_predictions, dimension=1)
+count_of_predictions = tf.reduce_sum(prediction_indices, axis=1)
+prediction = tf.argmax(count_of_predictions, axis=1)
 
 # Calculate how many loops over training data
 num_loops = int(np.ceil(len(x_vals_test)/batch_size))

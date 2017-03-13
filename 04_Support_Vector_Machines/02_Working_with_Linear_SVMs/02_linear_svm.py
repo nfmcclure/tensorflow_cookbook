@@ -49,7 +49,7 @@ A = tf.Variable(tf.random_normal(shape=[2,1]))
 b = tf.Variable(tf.random_normal(shape=[1,1]))
 
 # Declare model operations
-model_output = tf.sub(tf.matmul(x_data, A), b)
+model_output = tf.subtract(tf.matmul(x_data, A), b)
 
 # Declare vector L2 'norm' function squared
 l2_norm = tf.reduce_sum(tf.square(A))
@@ -59,9 +59,9 @@ l2_norm = tf.reduce_sum(tf.square(A))
 # L2 regularization parameter, alpha
 alpha = tf.constant([0.01])
 # Margin term in loss
-classification_term = tf.reduce_mean(tf.maximum(0., tf.sub(1., tf.mul(model_output, y_target))))
+classification_term = tf.reduce_mean(tf.maximum(0., tf.subtract(1., tf.multiply(model_output, y_target))))
 # Put terms together
-loss = tf.add(classification_term, tf.mul(alpha, l2_norm))
+loss = tf.add(classification_term, tf.multiply(alpha, l2_norm))
 
 # Declare prediction function
 prediction = tf.sign(model_output)
@@ -72,7 +72,7 @@ my_opt = tf.train.GradientDescentOptimizer(0.01)
 train_step = my_opt.minimize(loss)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Training loop

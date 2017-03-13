@@ -44,8 +44,8 @@ elastic_param1 = tf.constant(1.)
 elastic_param2 = tf.constant(1.)
 l1_a_loss = tf.reduce_mean(tf.abs(A))
 l2_a_loss = tf.reduce_mean(tf.square(A))
-e1_term = tf.mul(elastic_param1, l1_a_loss)
-e2_term = tf.mul(elastic_param2, l2_a_loss)
+e1_term = tf.multiply(elastic_param1, l1_a_loss)
+e2_term = tf.multiply(elastic_param2, l2_a_loss)
 loss = tf.expand_dims(tf.add(tf.add(tf.reduce_mean(tf.square(y_target - model_output)), e1_term), e2_term), 0)
 
 # Declare optimizer
@@ -53,7 +53,7 @@ my_opt = tf.train.GradientDescentOptimizer(0.001)
 train_step = my_opt.minimize(loss)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Training loop

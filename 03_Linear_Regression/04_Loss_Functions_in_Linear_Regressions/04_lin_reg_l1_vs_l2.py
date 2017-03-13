@@ -44,7 +44,7 @@ my_opt_l1 = tf.train.GradientDescentOptimizer(learning_rate)
 train_step_l1 = my_opt_l1.minimize(loss_l1)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Training loop
@@ -82,7 +82,7 @@ model_output = tf.add(tf.matmul(x_data, A), b)
 loss_l2 = tf.reduce_mean(tf.square(y_target - model_output))
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Declare optimizers

@@ -103,7 +103,7 @@ model_output = my_conv_net(x_input)
 test_model_output = my_conv_net(eval_input)
 
 # Declare Loss Function (softmax cross entropy)
-loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(model_output, y_target))
+loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(logits=model_output, labels=y_target))
 
 # Create a prediction function
 prediction = tf.nn.softmax(model_output)
@@ -120,7 +120,7 @@ my_optimizer = tf.train.MomentumOptimizer(learning_rate, 0.9)
 train_step = my_optimizer.minimize(loss)
 
 # Initialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Start training loop

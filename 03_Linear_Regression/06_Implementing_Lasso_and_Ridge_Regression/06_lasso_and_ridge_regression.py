@@ -51,14 +51,14 @@ model_output = tf.add(tf.matmul(x_data, A), b)
 # Ridge loss = L2_loss + L2 norm of slope
 ridge_param = tf.constant(1.)
 ridge_loss = tf.reduce_mean(tf.square(A))
-loss = tf.expand_dims(tf.add(tf.reduce_mean(tf.square(y_target - model_output)), tf.mul(ridge_param, ridge_loss)), 0)
+loss = tf.expand_dims(tf.add(tf.reduce_mean(tf.square(y_target - model_output)), tf.multiply(ridge_param, ridge_loss)), 0)
 
 # Declare optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.001)
 train_step = my_opt.minimize(loss)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Training loop

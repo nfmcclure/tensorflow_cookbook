@@ -35,11 +35,11 @@ relu_activation = tf.nn.relu(tf.add(tf.matmul(x_data, a2), b2))
 
 # Declare the loss function as the difference between
 # the output and a target value, 0.75.
-loss1 = tf.reduce_mean(tf.square(tf.sub(sigmoid_activation, 0.75)))
-loss2 = tf.reduce_mean(tf.square(tf.sub(relu_activation, 0.75)))
+loss1 = tf.reduce_mean(tf.square(tf.subtract(sigmoid_activation, 0.75)))
+loss2 = tf.reduce_mean(tf.square(tf.subtract(relu_activation, 0.75)))
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Declare optimizer

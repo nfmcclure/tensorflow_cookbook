@@ -30,14 +30,14 @@ a = tf.Variable(tf.constant(4.))
 x_val = 5.
 x_data = tf.placeholder(dtype=tf.float32)
 
-multiplication = tf.mul(a, x_data)
+multiplication = tf.multiply(a, x_data)
 
 # Declare the loss function as the difference between
 # the output and a target value, 50.
-loss = tf.square(tf.sub(multiplication, 50.))
+loss = tf.square(tf.subtract(multiplication, 50.))
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Declare optimizer
@@ -74,14 +74,14 @@ b = tf.Variable(tf.constant(1.))
 x_val = 5.
 x_data = tf.placeholder(dtype=tf.float32)
 
-two_gate = tf.add(tf.mul(a, x_data), b)
+two_gate = tf.add(tf.multiply(a, x_data), b)
 
 # Declare the loss function as the difference between
 # the output and a target value, 50.
-loss = tf.square(tf.sub(two_gate, 50.))
+loss = tf.square(tf.subtract(two_gate, 50.))
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Declare optimizer

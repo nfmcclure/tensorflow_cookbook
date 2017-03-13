@@ -86,7 +86,7 @@ class Seq2Seq(object):
                                                               global_step=self.global_step)
                 self.update_funs.append(temp_optimizer)
 
-        self.saver = tf.train.Saver(tf.all_variables())
+        self.saver = tf.train.Saver(tf.global_variables())
         
     # Define how to step forward (or backward) in the model
     def step(self, session, encoder_inputs, decoder_inputs, target_weights,

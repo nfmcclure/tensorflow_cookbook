@@ -248,7 +248,7 @@ valid_embeddings = tf.nn.embedding_lookup(normalized_embeddings, valid_dataset)
 similarity = tf.matmul(valid_embeddings, normalized_embeddings, transpose_b=True)
 
 #Add variable initializer.
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Run the skip gram model.

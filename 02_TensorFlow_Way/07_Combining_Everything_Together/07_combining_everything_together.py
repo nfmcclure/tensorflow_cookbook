@@ -44,17 +44,17 @@ b = tf.Variable(tf.random_normal(shape=[1, 1]))
 # x1 - A*x2 + b
 my_mult = tf.matmul(x2_data, A)
 my_add = tf.add(my_mult, b)
-my_output = tf.sub(x1_data, my_add)
+my_output = tf.subtract(x1_data, my_add)
 
 # Add classification loss (cross entropy)
-xentropy = tf.nn.sigmoid_cross_entropy_with_logits(my_output, y_target)
+xentropy = tf.nn.sigmoid_cross_entropy_with_logits(logits=my_output, labels=y_target)
 
 # Create Optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.05)
 train_step = my_opt.minimize(xentropy)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Run Loop

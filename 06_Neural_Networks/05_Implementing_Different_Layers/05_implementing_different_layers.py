@@ -90,7 +90,7 @@ my_maxpool_output = max_pool(my_activation_output, width=5)
 def fully_connected(input_layer, num_outputs):
     # First we find the needed shape of the multiplication weight matrix:
     # The dimension will be (length of input) by (num_outputs)
-    weight_shape = tf.squeeze(tf.pack([tf.shape(input_layer),[num_outputs]]))
+    weight_shape = tf.squeeze(tf.stack([tf.shape(input_layer),[num_outputs]]))
     # Initialize such weight
     weight = tf.random_normal(weight_shape, stddev=0.1)
     # Initialize the bias
@@ -107,7 +107,7 @@ my_full_output = fully_connected(my_maxpool_output, 5)
 
 # Run graph
 # Initialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 feed_dict = {x_input_1d: data_1d}
@@ -192,7 +192,7 @@ def fully_connected(input_layer, num_outputs):
     flat_input = tf.reshape(input_layer, [-1])
     # We then find out how long it is, and create an array for the shape of
     # the multiplication weight = (WxH) by (num_outputs)
-    weight_shape = tf.squeeze(tf.pack([tf.shape(flat_input),[num_outputs]]))
+    weight_shape = tf.squeeze(tf.stack([tf.shape(flat_input),[num_outputs]]))
     # Initialize the weight
     weight = tf.random_normal(weight_shape, stddev=0.1)
     # Initialize the bias
@@ -210,7 +210,7 @@ my_full_output = fully_connected(my_maxpool_output, 5)
 
 # Run graph
 # Initialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 feed_dict = {x_input_2d: data_2d}

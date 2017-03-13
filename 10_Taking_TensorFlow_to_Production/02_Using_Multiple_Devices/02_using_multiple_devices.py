@@ -59,5 +59,5 @@ if tf.test.is_built_with_cuda():
             d = tf.matmul(b,a)
             flat_d = tf.reshape(d, [-1])
         
-        combined = tf.mul(c, flat_d)
+        combined = tf.multiply(c, flat_d)
     print(sess.run(combined))

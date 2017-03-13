@@ -53,7 +53,7 @@ crossover_mat_ph = tf.placeholder(tf.float32, [num_children, features])
 mutation_val_ph = tf.placeholder(tf.float32, [num_children, features])
 
 # Calculate fitness (MSE)
-fitness = -tf.reduce_mean(tf.square(tf.sub(population, truth_ph)), 1)
+fitness = -tf.reduce_mean(tf.square(tf.subtract(population, truth_ph)), 1)
 top_vals, top_ind = tf.nn.top_k(fitness, k=pop_size)
 
 # Get best fit individual
@@ -73,19 +73,19 @@ rand_parent2_ix = np.random.choice(num_parents, num_children)
 # Gather parents by shuffled indices, expand back out to pop_size too
 rand_parent1 = tf.gather(parents, rand_parent1_ix)
 rand_parent2 = tf.gather(parents, rand_parent2_ix)
-rand_parent1_sel = tf.mul(rand_parent1, crossover_mat_ph)
-rand_parent2_sel = tf.mul(rand_parent2, tf.sub(1., crossover_mat_ph))
+rand_parent1_sel = tf.multiply(rand_parent1, crossover_mat_ph)
+rand_parent2_sel = tf.multiply(rand_parent2, tf.subtract(1., crossover_mat_ph))
 children_after_sel = tf.add(rand_parent1_sel, rand_parent2_sel)
 
 # Mutate Children
 mutated_children = tf.add(children_after_sel, mutation_val_ph)
 
 # Combine children and parents into new population
-new_population = tf.concat(0, [parents, mutated_children])
+new_population = tf.concat(axis=0, values=[parents, mutated_children])
 
 step = tf.group(population.assign(new_population))
 
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Run through generations

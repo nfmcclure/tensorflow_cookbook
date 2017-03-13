@@ -31,13 +31,13 @@ y_target = tf.placeholder(shape=[1], dtype=tf.float32)
 A = tf.Variable(tf.random_normal(shape=[1]))
 
 # Add operation to graph
-my_output = tf.mul(x_data, A)
+my_output = tf.multiply(x_data, A)
 
 # Add L2 loss operation to graph
 loss = tf.square(my_output - y_target)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Create Optimizer
@@ -88,11 +88,11 @@ my_output_expanded = tf.expand_dims(my_output, 0)
 y_target_expanded = tf.expand_dims(y_target, 0)
 
 # Initialize variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Add classification loss (cross entropy)
-xentropy = tf.nn.sigmoid_cross_entropy_with_logits(my_output_expanded, y_target_expanded)
+xentropy = tf.nn.sigmoid_cross_entropy_with_logits(logits=my_output_expanded, labels=y_target_expanded)
 
 # Create Optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.05)

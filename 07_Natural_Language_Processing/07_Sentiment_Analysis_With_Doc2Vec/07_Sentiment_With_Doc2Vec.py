@@ -109,7 +109,7 @@ doc_indices = tf.slice(x_inputs, [0,window_size],[batch_size,1])
 doc_embed = tf.nn.embedding_lookup(doc_embeddings,doc_indices)
 
 # concatenate embeddings
-final_embed = tf.concat(1, [embed, tf.squeeze(doc_embed)])
+final_embed = tf.concat(axis=1, values=[embed, tf.squeeze(doc_embed)])
 
 # Get loss from prediction
 loss = tf.reduce_mean(tf.nn.nce_loss(nce_weights, nce_biases, final_embed, y_target,
@@ -129,7 +129,7 @@ similarity = tf.matmul(valid_embeddings, normalized_embeddings, transpose_b=True
 saver = tf.train.Saver({"embeddings": embeddings, "doc_embeddings": doc_embeddings})
 
 #Add variable initializer.
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Run the skip gram model.
@@ -210,7 +210,7 @@ log_doc_indices = tf.slice(log_x_inputs, [0,max_words],[logistic_batch_size,1])
 log_doc_embed = tf.nn.embedding_lookup(doc_embeddings,log_doc_indices)
 
 # concatenate embeddings
-log_final_embed = tf.concat(1, [log_embed, tf.squeeze(log_doc_embed)])
+log_final_embed = tf.concat(axis=1, values=[log_embed, tf.squeeze(log_doc_embed)])
 
 # Define model:
 # Create variables for logistic regression
@@ -221,7 +221,7 @@ b = tf.Variable(tf.random_normal(shape=[1,1]))
 model_output = tf.add(tf.matmul(log_final_embed, A), b)
 
 # Declare loss function (Cross Entropy loss)
-logistic_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(model_output, tf.cast(log_y_target, tf.float32)))
+logistic_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=model_output, labels=tf.cast(log_y_target, tf.float32)))
 
 # Actual Prediction
 prediction = tf.round(tf.sigmoid(model_output))
@@ -233,7 +233,7 @@ logistic_opt = tf.train.GradientDescentOptimizer(learning_rate=0.01)
 logistic_train_step = logistic_opt.minimize(logistic_loss, var_list=[A, b])
 
 # Intitialize Variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess.run(init)
 
 # Start Logistic Regression
