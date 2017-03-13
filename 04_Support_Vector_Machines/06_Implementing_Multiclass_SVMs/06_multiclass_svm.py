@@ -57,7 +57,7 @@ b = tf.Variable(tf.random_normal(shape=[3,batch_size]))
 gamma = tf.constant(-10.0)
 dist = tf.reduce_sum(tf.square(x_data), 1)
 dist = tf.reshape(dist, [-1,1])
-sq_dists = tf.add(tf.subtract(dist, tf.multiply(2., tf.matmul(x_data, tf.transpose(x_data)))), tf.transpose(dist))
+sq_dists = dist, tf.multiply(2., tf.matmul(x_data, tf.transpose(x_data)))
 my_kernel = tf.exp(tf.multiply(gamma, tf.abs(sq_dists)))
 
 # Declare function to do reshape/batch multiplication
@@ -67,7 +67,6 @@ def reshape_matmul(mat):
     return(tf.matmul(v2, v1))
 
 # Compute SVM Model
-model_output = tf.matmul(b, my_kernel)
 first_term = tf.reduce_sum(b)
 b_vec_cross = tf.matmul(tf.transpose(b), b)
 y_target_cross = reshape_matmul(y_target)
