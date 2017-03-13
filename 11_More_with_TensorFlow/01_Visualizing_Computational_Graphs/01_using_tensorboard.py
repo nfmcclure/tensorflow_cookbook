@@ -57,11 +57,11 @@ output = tf.multiply(m, x_graph_input, name='Batch_Multiplication')
 
 # Declare loss function (L1)
 residuals = output - y_graph_input
-l2_loss = tf.reduce_mean(tf.abs(residuals), name="L2_Loss")
+l1_loss = tf.reduce_mean(tf.abs(residuals), name="L1_Loss")
 
 # Declare optimization function
 my_optim = tf.train.GradientDescentOptimizer(0.01)
-train_step = my_optim.minimize(l2_loss)
+train_step = my_optim.minimize(l1_loss)
 
 # Visualize a scalar
 with tf.name_scope('Slope_Estimate'):
@@ -69,7 +69,7 @@ with tf.name_scope('Slope_Estimate'):
     
 # Visualize a histogram (errors)
 with tf.name_scope('Loss_and_Residuals'):
-    tf.summary.histogram('Histogram_Errors', l2_loss)
+    tf.summary.histogram('Histogram_Errors', l1_loss)
     tf.summary.histogram('Histogram_Residuals', residuals)
 
 
@@ -85,11 +85,11 @@ for i in range(generations):
     batch_indices = np.random.choice(len(x_data_train), size=batch_size)
     x_batch = x_data_train[batch_indices]
     y_batch = y_data_train[batch_indices]
-    _, train_loss, summary = sess.run([train_step, l2_loss, summary_op],
+    _, train_loss, summary = sess.run([train_step, l1_loss, summary_op],
                              feed_dict={x_graph_input: x_batch,
                                         y_graph_input: y_batch})
     
-    test_loss, test_resids = sess.run([l2_loss, residuals], feed_dict={x_graph_input: x_data_test,
+    test_loss, test_resids = sess.run([l1_loss, residuals], feed_dict={x_graph_input: x_data_test,
                                                                        y_graph_input: y_data_test})
     
     if (i+1)%10==0:
