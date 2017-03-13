@@ -63,11 +63,12 @@ hinge_y_out = sess.run(hinge_y_vals)
 xentropy_y_vals = - tf.multiply(target, tf.log(x_vals)) - tf.multiply((1. - target), tf.log(1. - x_vals))
 xentropy_y_out = sess.run(xentropy_y_vals)
 
-# Sigmoid entropy loss
 # L = -actual * (log(sigmoid(pred))) - (1-actual)(log(1-sigmoid(pred)))
 # or
 # L = max(actual, 0) - actual * pred + log(1 + exp(-abs(actual)))
-xentropy_sigmoid_y_vals = tf.nn.sigmoid_cross_entropy_with_logits(logits=x_vals, labels=targets)
+x_val_input = tf.expand_dims(x_vals, 1)
+target_input = tf.expand_dims(targets, 1)
+xentropy_sigmoid_y_vals = tf.nn.softmax_cross_entropy_with_logits(logits=x_val_input, labels=target_input)
 xentropy_sigmoid_y_out = sess.run(xentropy_sigmoid_y_vals)
 
 # Weighted (softmax) cross entropy loss
@@ -93,7 +94,8 @@ plt.show()
 # L = -actual * (log(softmax(pred))) - (1-actual)(log(1-softmax(pred)))
 unscaled_logits = tf.constant([[1., -3., 10.]])
 target_dist = tf.constant([[0.1, 0.02, 0.88]])
-softmax_xentropy = tf.nn.softmax_cross_entropy_with_logits(logits=unscaled_logits, labels=target_dist)
+softmax_xentropy = tf.nn.softmax_cross_entropy_with_logits(logits=unscaled_logits,
+                                                           labels=target_dist)
 print(sess.run(softmax_xentropy))
 
 # Sparse entropy loss
@@ -101,5 +103,6 @@ print(sess.run(softmax_xentropy))
 # L = sum( -actual * log(pred) )
 unscaled_logits = tf.constant([[1., -3., 10.]])
 sparse_target_dist = tf.constant([2])
-sparse_xentropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=unscaled_logits, labels=sparse_target_dist)
+sparse_xentropy =  tf.nn.sparse_softmax_cross_entropy_with_logits(logits=unscaled_logits,
+                                                                  labels=sparse_target_dist)
 print(sess.run(sparse_xentropy))
