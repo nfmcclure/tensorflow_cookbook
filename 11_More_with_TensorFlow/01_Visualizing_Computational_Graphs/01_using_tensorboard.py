@@ -118,7 +118,7 @@ image = tf.image.decode_png(plot_buf.getvalue(), channels=4)
 # Add the batch dimension
 image = tf.expand_dims(image, 0)
 # Add image summary
-image_summary_op = tf.summary.image("Linear_Plot", image)
+image_summary_op = tf.summary.image("Linear Plot", image)
 image_summary = sess.run(image_summary_op)
 log_writer.add_summary(image_summary, i)
 log_writer.close()
