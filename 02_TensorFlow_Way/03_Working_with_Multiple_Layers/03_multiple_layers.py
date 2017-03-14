@@ -46,7 +46,7 @@ with tf.name_scope('Custom_Layer') as scope:
 # After custom operation, size is now 2x2 (squeezed out size 1 dims)
 print(sess.run(custom_layer1, feed_dict={x_data: x_val}))
 
-merged = tf.summary.merge_all()
+merged = tf.summary.merge_all(key='summaries')
 
 if not os.path.exists('tensorboard_logs/'):
     os.makedirs('tensorboard_logs/')
