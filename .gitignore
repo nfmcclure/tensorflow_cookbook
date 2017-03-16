@@ -42,6 +42,10 @@ tensorboard_logs/*
 tensorboard/
 tensorboard/*
 
+**/12_Reinforcement_Learning/
+**/12_Reinforcement_Learning
+**/12_Reinforcement_Learning/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
