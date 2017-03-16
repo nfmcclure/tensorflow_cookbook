@@ -26,6 +26,11 @@ sess = tf.Session()
 
 # Check if data was downloaded, otherwise download it and save for future use
 save_file_name = os.path.join('temp','temp_spam_data.csv')
+
+# Create directory if it doesn't exist
+if not os.path.exists('temp'):
+    os.makedirs('temp')
+
 if os.path.isfile(save_file_name):
     text_data = []
     with open(save_file_name, 'r') as temp_output_file:
