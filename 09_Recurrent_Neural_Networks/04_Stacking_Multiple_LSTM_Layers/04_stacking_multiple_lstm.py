@@ -133,8 +133,8 @@ class LSTM_Model():
             self.batch_size = batch_size
             self.training_seq_len = training_seq_len
         
-        self.lstm_cell = tf.nn.rnn_cell.BasicLSTMCell(rnn_size)
-        self.lstm_cell = tf.nn.rnn_cell.MultiRNNCell([self.lstm_cell] * self.num_layers)
+        self.lstm_cell = tf.contrib.rnn.BasicLSTMCell(rnn_size)
+        self.lstm_cell = tf.contrib.rnn.MultiRNNCell([self.lstm_cell] * self.num_layers)
         self.initial_state = self.lstm_cell.zero_state(self.batch_size, tf.float32)
         
         self.x_data = tf.placeholder(tf.int32, [self.batch_size, self.training_seq_len])
@@ -153,7 +153,7 @@ class LSTM_Model():
             rnn_inputs = tf.split(axis=1, num_or_size_splits=self.training_seq_len, value=embedding_output)
             rnn_inputs_trimmed = [tf.squeeze(x, [1]) for x in rnn_inputs]
         
-        decoder = tf.nn.seq2seq.rnn_decoder
+        decoder = tf.contrib.legacy_seq2seq.rnn_decoder
         outputs, last_state = decoder(rnn_inputs_trimmed,
                                       self.initial_state,
                                       self.lstm_cell)
@@ -164,7 +164,7 @@ class LSTM_Model():
         self.logit_output = tf.matmul(output, W) + b
         self.model_output = tf.nn.softmax(self.logit_output)
         
-        loss_fun = tf.nn.seq2seq.sequence_loss_by_example
+        loss_fun = tf.contrib.legacy_seq2seq.sequence_loss_by_example
         loss = loss_fun([self.logit_output],[tf.reshape(self.y_output, [-1])],
                 [tf.ones([self.batch_size * self.training_seq_len])],
                 self.vocab_size)
