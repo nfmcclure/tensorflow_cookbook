@@ -1,0 +1,15 @@
+machine:
+  python:
+    version: 3.6.0
+
+dependencies:
+  post:
+    - pip install -U -r requirements.txt
+
+test:
+  override:
+    - 01_Introduction/02_Creating_and_Using_Tensors/02_tensors.py
+    - 01_Introduction/03_Using_Variables_and_Placeholders/03_placeholders.py
+    - 01_Introduction/04_Working_with_Matrices/04_matrices.py
+    - 01_Introduction/05_Declaring_Operations/05_operations.py
+    - 01_Introduction/06_Implementing_Activation_Functions/06_activation_functions.py
