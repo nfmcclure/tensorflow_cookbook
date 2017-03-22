@@ -14,25 +14,31 @@ def snn(address1, address2, dropout_keep_prob,
     
     # Define the siamese double RNN with a fully connected layer at the end
     def siamese_nn(input_vector, num_hidden):
-        cell_unit = tf.nn.rnn_cell.BasicLSTMCell
+        cell_unit = tf.contrib.rnn.BasicLSTMCell#tf.nn.rnn_cell.BasicLSTMCell
         
         # Forward direction cell
         lstm_forward_cell = cell_unit(num_hidden, forget_bias=1.0)
-        lstm_forward_cell = tf.nn.rnn_cell.DropoutWrapper(lstm_forward_cell, output_keep_prob=dropout_keep_prob)
+        lstm_forward_cell = tf.contrib.rnn.DropoutWrapper(lstm_forward_cell, output_keep_prob=dropout_keep_prob)
         
         # Backward direction cell
         lstm_backward_cell = cell_unit(num_hidden, forget_bias=1.0)
-        lstm_backward_cell = tf.nn.rnn_cell.DropoutWrapper(lstm_backward_cell, output_keep_prob=dropout_keep_prob)
+        lstm_backward_cell = tf.contrib.rnn.DropoutWrapper(lstm_backward_cell, output_keep_prob=dropout_keep_prob)
     
         # Split title into a character sequence
         input_embed_split = tf.split(axis=1, num_or_size_splits=input_length, value=input_vector)
         input_embed_split = [tf.squeeze(x, axis=[1]) for x in input_embed_split]
         
         # Create bidirectional layer
-        outputs, _, _ = tf.nn.bidirectional_rnn(lstm_forward_cell,
-                                                lstm_backward_cell,
-                                                input_embed_split,
-                                                dtype=tf.float32)
+        try:
+            outputs, _, _ = tf.contrib.rnn.static_bidirectional_rnn(lstm_forward_cell,
+                                                                    lstm_backward_cell,
+                                                                    input_embed_split,
+                                                                    dtype=tf.float32)
+        except Exception:
+            outputs = tf.contrib.rnn.static_bidirectional_rnn(lstm_forward_cell,
+                                                              lstm_backward_cell,
+                                                              input_embed_split,
+                                                              dtype=tf.float32)
         # Average The output over the sequence
         temporal_mean = tf.add_n(outputs) / input_length
         
@@ -49,12 +55,10 @@ def snn(address1, address2, dropout_keep_prob,
         
         return(final_output)
         
-    
-    with tf.variable_scope("siamese") as scope:
-            output1 = siamese_nn(address1, num_features)
-            # Declare that we will use the same variables on the second string
-            scope.reuse_variables()
-            output2 = siamese_nn(address2, num_features)
+    output1 = siamese_nn(address1, num_features)
+    # Declare that we will use the same variables on the second string
+    with tf.variable_scope(tf.get_variable_scope(), reuse=True):
+        output2 = siamese_nn(address2, num_features)
     
     # Unit normalize the outputs
     output1 = tf.nn.l2_normalize(output1, 1)
