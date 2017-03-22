@@ -2,10 +2,6 @@ machine:
   python:
     version: 3.6.0
 
-dependencies:
-  post:
-    - pip install -U -r requirements.txt
-
 test:
   override:
     - python 01_Introduction/02_Creating_and_Using_Tensors/02_tensors.py

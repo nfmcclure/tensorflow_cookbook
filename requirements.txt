@@ -3,3 +3,4 @@ numpy
 sklearn
 requests
 jupyter
+matplotlib

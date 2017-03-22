@@ -8,6 +8,13 @@
 
 ### By Nick McClure
 
+=================
+
+Build: [![CircleCI branch](https://img.shields.io/circleci/project/github/nfmcclure/tensorflow_cookbook/master.svg)](https://circleci.com/gh/nfmcclure/tensorflow_cookbook/master)
+
+=================
+
+
 Table of Contents
 =================
 
