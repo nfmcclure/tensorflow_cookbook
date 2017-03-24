@@ -41,6 +41,7 @@ tensorboard_logs/*
 **/tensorboard
 tensorboard/
 tensorboard/*
+temp_*
 
 **/12_Reinforcement_Learning/
 **/12_Reinforcement_Learning
