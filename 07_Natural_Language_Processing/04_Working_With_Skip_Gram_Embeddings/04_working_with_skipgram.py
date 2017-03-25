@@ -24,6 +24,7 @@ import string
 import requests
 import collections
 import io
+import gzip
 import tarfile
 import urllib.request
 from nltk.corpus import stopwords
@@ -57,52 +58,42 @@ valid_words = ['cliche', 'love', 'hate', 'silly', 'sad']
 # Check if data was downloaded, otherwise download it and save for future use
 def load_movie_data():
     save_folder_name = 'temp'
-    pos_file = os.path.join(save_folder_name, 'rt-polarity.pos')
-    neg_file = os.path.join(save_folder_name, 'rt-polarity.neg')
+    pos_file = os.path.join(save_folder_name, 'rt-polaritydata', 'rt-polarity.pos')
+    neg_file = os.path.join(save_folder_name, 'rt-polaritydata', 'rt-polarity.neg')
 
     # Check if files are already downloaded
-    if os.path.exists(save_folder_name):
-        pos_data = []
-        with open(pos_file, 'r') as temp_pos_file:
-            for row in temp_pos_file:
-                pos_data.append(row)
-        neg_data = []
-        with open(neg_file, 'r') as temp_neg_file:
-            for row in temp_neg_file:
-                neg_data.append(row)
-    else: # If not downloaded, download and save
+    if not os.path.exists(os.path.join(save_folder_name, 'rt-polaritydata')):
         movie_data_url = 'http://www.cs.cornell.edu/people/pabo/movie-review-data/rt-polaritydata.tar.gz'
-        stream_data = urllib.request.urlopen(movie_data_url)
-        tmp = io.BytesIO()
-        while True:
-            s = stream_data.read(16384)
-            if not s:  
-                break
-            tmp.write(s)
-            stream_data.close()
-            tmp.seek(0)
+
+        # Save tar.gz file
+        req = requests.get(movie_data_url, stream=True)
+        with open('temp_movie_review_temp.tar.gz', 'wb') as f:
+            for chunk in req.iter_content(chunk_size=1024):
+                if chunk:
+                    f.write(chunk)
+                    f.flush()
+        # Extract tar.gz file into temp folder
+        tar = tarfile.open('temp_movie_review_temp.tar.gz', "r:gz")
+        tar.extractall(path='temp')
+        tar.close()
+
+    pos_data = []
+    with open(pos_file, 'r', encoding='latin-1') as f:
+        for line in f:
+            pos_data.append(line.encode('ascii',errors='ignore').decode())
+    f.close()
+    pos_data = [x.rstrip() for x in pos_data]
+
+    neg_data = []
+    with open(neg_file, 'r', encoding='latin-1') as f:
+        for line in f:
+            neg_data.append(line.encode('ascii',errors='ignore').decode())
+    f.close()
+    neg_data = [x.rstrip() for x in neg_data]
     
-        tar_file = tarfile.open(fileobj=tmp, mode="r:gz")
-        pos = tar_file.extractfile('rt-polaritydata/rt-polarity.pos')
-        neg = tar_file.extractfile('rt-polaritydata/rt-polarity.neg')
-        # Save pos/neg reviews
-        pos_data = []
-        for line in pos:
-            pos_data.append(line.decode('ISO-8859-1').encode('ascii',errors='ignore').decode())
-        neg_data = []
-        for line in neg:
-            neg_data.append(line.decode('ISO-8859-1').encode('ascii',errors='ignore').decode())
-        tar_file.close()
-        # Write to file
-        if not os.path.exists(save_folder_name):
-            os.makedirs(save_folder_name)
-        # Save files
-        with open(pos_file, "w") as pos_file_handler:
-            pos_file_handler.write(''.join(pos_data))
-        with open(neg_file, "w") as neg_file_handler:
-            neg_file_handler.write(''.join(neg_data))
     texts = pos_data + neg_data
     target = [1]*len(pos_data) + [0]*len(neg_data)
+    
     return(texts, target)
 
 texts, target = load_movie_data()
@@ -235,8 +226,12 @@ valid_dataset = tf.constant(valid_examples, dtype=tf.int32)
 embed = tf.nn.embedding_lookup(embeddings, x_inputs)
 
 # Get loss from prediction
-loss = tf.reduce_mean(tf.nn.nce_loss(nce_weights, nce_biases, embed, y_target,
-                                     num_sampled, vocabulary_size))
+loss = tf.reduce_mean(tf.nn.nce_loss(weights=nce_weights,
+                                     biases=nce_biases,
+                                     labels=y_target,
+                                     inputs=embed,
+                                     num_sampled=num_sampled,
+                                     num_classes=vocabulary_size))
                                      
 # Create optimizer
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=1.0).minimize(loss)

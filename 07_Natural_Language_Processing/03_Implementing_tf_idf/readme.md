@@ -12,7 +12,7 @@ We first want to take into consideration the word frequency.  Here we consider t
 
 But words like “the” and “and” may appear very frequently in every entry. We want to down weight the importance of these words, so we can imagine that multiplying the above text frequency (TF) by the inverse of the whole document frequency might help find important words.  But since a collection of texts (a corpus) may be quite large, it is common to take the logarithm of the inverse document frequency.  This leaves us with the following formula for TF-IDF for each word in each document entry.
 
-$$]
+$$
 w_{tf-idf}=w_{tf} \cdot \frac{1}{log(w_{df})}
 $$
 
