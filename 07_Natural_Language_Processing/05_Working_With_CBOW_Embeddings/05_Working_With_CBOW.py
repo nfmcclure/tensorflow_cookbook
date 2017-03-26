@@ -57,7 +57,7 @@ valid_words = ['love', 'hate', 'happy', 'sad', 'man', 'woman']
 
 # Load the movie review data
 print('Loading Data')
-texts, target = text_helpers.load_movie_data(data_folder_name)
+texts, target = text_helpers.load_movie_data()
 
 # Normalize text
 print('Normalizing Text Data')
@@ -97,8 +97,12 @@ for element in range(2*window_size):
     embed += tf.nn.embedding_lookup(embeddings, x_inputs[:, element])
 
 # Get loss from prediction
-loss = tf.reduce_mean(tf.nn.nce_loss(nce_weights, nce_biases, embed, y_target,
-                                     num_sampled, vocabulary_size))
+loss = tf.reduce_mean(tf.nn.nce_loss(weights=nce_weights,
+                                     biases=nce_biases,
+                                     labels=y_target,
+                                     inputs=embed,
+                                     num_sampled=num_sampled,
+                                     num_classes=vocabulary_size))
                                      
 # Create optimizer
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=model_learning_rate).minimize(loss)
@@ -116,7 +120,10 @@ saver = tf.train.Saver({"embeddings": embeddings})
 init = tf.global_variables_initializer()
 sess.run(init)
 
-# Run the skip gram model.
+# Filter out sentences that aren't long enough:
+text_data = [x for x in text_data if len(x)>=(2*window_size+1)]
+
+# Run the CBOW model.
 print('Starting Training')
 loss_vec = []
 loss_x_vec = []
