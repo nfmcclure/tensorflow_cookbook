@@ -40,7 +40,7 @@ stops = stopwords.words('english')
 # Load Data
 print('Loading Data')
 data_folder_name = 'temp'
-texts, target = text_helpers.load_movie_data(data_folder_name)
+texts, target = text_helpers.load_movie_data()
 
 # Normalize text
 print('Normalizing Text Data')
@@ -59,7 +59,7 @@ target_train = np.array([x for ix, x in enumerate(target) if ix in train_indices
 target_test = np.array([x for ix, x in enumerate(target) if ix in test_indices])
 
 # Load dictionary and embedding matrix
-dict_file = os.path.join(data_folder_name, 'movie_vocab.pkl')
+dict_file = os.path.join( '..', '05_Working_With_CBOW_Embeddings', 'temp', 'movie_vocab.pkl')
 word_dictionary = pickle.load(open(dict_file, 'rb'))
 
 # Convert texts to lists of indices
@@ -108,7 +108,8 @@ init = tf.global_variables_initializer()
 sess.run(init)
 
 # Load model embeddings
-model_checkpoint_path = os.path.join(data_folder_name,'cbow_movie_embeddings.ckpt')
+model_checkpoint_path = os.path.join( '..', '05_Working_With_CBOW_Embeddings',
+                                     'temp','cbow_movie_embeddings.ckpt')
 saver = tf.train.Saver({"embeddings": embeddings})
 saver.restore(sess, model_checkpoint_path)
 

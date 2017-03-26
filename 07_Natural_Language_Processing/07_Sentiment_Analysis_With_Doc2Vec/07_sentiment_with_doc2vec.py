@@ -8,7 +8,7 @@
 # Document vectors.  From these document vectors, we will split the
 # documents into train/test and use these doc vectors to do sentiment
 # analysis on the movie review dataset.
-#
+
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
@@ -112,8 +112,12 @@ doc_embed = tf.nn.embedding_lookup(doc_embeddings,doc_indices)
 final_embed = tf.concat(axis=1, values=[embed, tf.squeeze(doc_embed)])
 
 # Get loss from prediction
-loss = tf.reduce_mean(tf.nn.nce_loss(nce_weights, nce_biases, final_embed, y_target,
-                                     num_sampled, vocabulary_size))
+loss = tf.reduce_mean(tf.nn.nce_loss(weights=nce_weights,
+                                     biases=nce_biases,
+                                     labels=y_target,
+                                     inputs=final_embed,
+                                     num_sampled=num_sampled,
+                                     num_classes=vocabulary_size))
                                      
 # Create optimizer
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=model_learning_rate)
@@ -132,7 +136,7 @@ saver = tf.train.Saver({"embeddings": embeddings, "doc_embeddings": doc_embeddin
 init = tf.global_variables_initializer()
 sess.run(init)
 
-# Run the skip gram model.
+# Run the doc2vec model.
 print('Starting Training')
 loss_vec = []
 loss_x_vec = []
