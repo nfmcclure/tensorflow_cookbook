@@ -10,7 +10,7 @@
 # Need to download the model 'imagenet-vgg-verydee-19.mat' from:
 #   http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydeep-19.mat
 
-import os
+import scipy.io
 import scipy.misc
 import numpy as np
 import tensorflow as tf
@@ -20,14 +20,14 @@ ops.reset_default_graph()
 # Start a graph session
 sess = tf.Session()
 
-os.chdir('/home/nick/OneDrive/Documents/tensor_flow_book/Code/8_Convolutional_Neural_Networks')
 
 # Image Files
-original_image_file = 'temp/book_cover.jpg'
-style_image_file = 'temp/starry_night.jpg'
+original_image_file = '../images/book_cover.jpg'
+style_image_file = '../images/starry_night.jpg'
 
-# Saved VGG Network path
-vgg_path = '/home/nick/Documents/tensorflow/vgg_19_models/imagenet-vgg-verydeep-19.mat'
+# Saved VGG Network path under the current project dir.
+vgg_path = 'imagenet-vgg-verydeep-19.mat'
+
 
 # Default Arguments
 original_image_weight = 5.0
