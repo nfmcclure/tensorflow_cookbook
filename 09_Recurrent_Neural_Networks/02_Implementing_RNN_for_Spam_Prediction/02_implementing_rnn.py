@@ -100,9 +100,13 @@ embedding_mat = tf.Variable(tf.random_uniform([vocab_size, embedding_size], -1.0
 embedding_output = tf.nn.embedding_lookup(embedding_mat, x_data)
 #embedding_output_expanded = tf.expand_dims(embedding_output, -1)
 
-
 # Define the RNN cell
-cell = tf.nn.rnn_cell.BasicRNNCell(num_units = rnn_size)
+#tensorflow change >= 1.0, rnn is put into tensorflow.contrib directory. Prior version not test.
+if tf.__version__[0]>='1':
+    cell=tf.contrib.rnn.BasicRNNCell(num_units = rnn_size)
+else:
+    cell = tf.nn.rnn_cell.BasicRNNCell(num_units = rnn_size)
+
 output, state = tf.nn.dynamic_rnn(cell, embedding_output, dtype=tf.float32)
 output = tf.nn.dropout(output, dropout_keep_prob)
 
