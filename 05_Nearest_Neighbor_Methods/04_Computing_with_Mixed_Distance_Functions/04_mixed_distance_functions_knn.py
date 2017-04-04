@@ -74,7 +74,7 @@ y_target_test = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 subtraction_term =  tf.subtract(x_data_train, tf.expand_dims(x_data_test,1))
 first_product = tf.matmul(subtraction_term, tf.tile(tf.expand_dims(weight_matrix,0), [batch_size,1,1]))
 second_product = tf.matmul(first_product, tf.transpose(subtraction_term, perm=[0,2,1]))
-distance = tf.sqrt(tf.batch_matrix_diag_part(second_product))
+distance = tf.sqrt(tf.matrix_diag_part(second_product))
 
 # Predict: Get min distance index (Nearest neighbor)
 top_k_xvals, top_k_indices = tf.nn.top_k(tf.negative(distance), k=k)
