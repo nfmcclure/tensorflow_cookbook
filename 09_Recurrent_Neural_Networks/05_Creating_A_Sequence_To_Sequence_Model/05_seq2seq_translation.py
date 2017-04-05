@@ -7,21 +7,23 @@
 #
 
 import os
-import re
-import string
 import requests
 import io
 import numpy as np
-import collections
-import random
-import pickle
+
 import string
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from zipfile import ZipFile
 from collections import Counter
-from tensorflow.models.rnn.translate import data_utils
-from tensorflow.models.rnn.translate import seq2seq_model
+
+if tf.__version__[0]<'1':
+    from tensorflow.models.rnn.translate import seq2seq_model
+else:
+    #models can be retrieved from github: https://github.com/tensorflow/models.git
+    #put the models dir under python search lib path.
+    from models.tutorials.rnn.translate import seq2seq_model
+
 from tensorflow.python.framework import ops
 ops.reset_default_graph()
 
