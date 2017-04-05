@@ -27,6 +27,7 @@ sess = tf.Session()
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 # Random sample
+np.random.seed(13)  # set seed for reproducibility
 train_size = 1000
 test_size = 102
 rand_train_indices = np.random.choice(len(mnist.train.images), train_size, replace=False)
@@ -51,7 +52,7 @@ y_target_test = tf.placeholder(shape=[None, 10], dtype=tf.float32)
 distance = tf.reduce_sum(tf.abs(tf.subtract(x_data_train, tf.expand_dims(x_data_test,1))), axis=2)
 
 # L2
-#distance = tf.sqrt(tf.reduce_sum(tf.square(tf.sub(x_data_train, tf.expand_dims(x_data_test,1))), reduction_indices=1))
+#distance = tf.sqrt(tf.reduce_sum(tf.square(tf.subtract(x_data_train, tf.expand_dims(x_data_test,1))), reduction_indices=1))
 
 # Predict: Get min distance index (Nearest neighbor)
 top_k_xvals, top_k_indices = tf.nn.top_k(tf.negative(distance), k=k)
