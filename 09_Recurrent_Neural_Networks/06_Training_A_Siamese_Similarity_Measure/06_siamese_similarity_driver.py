@@ -5,7 +5,6 @@
 # Here, we show how to perform address matching
 #   with a Siamese RNN model
 
-import os
 import random
 import string
 import numpy as np
@@ -178,3 +177,4 @@ plt.ylabel('Accuracy and Loss')
 plt.title('Accuracy and Loss of Siamese RNN')
 plt.grid()
 plt.legend(loc='lower right')
+plt.show()

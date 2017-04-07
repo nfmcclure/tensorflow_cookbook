@@ -5,7 +5,6 @@
 # Here, we show how to perform address matching
 #   with a Siamese RNN model
 
-import numpy as np
 import tensorflow as tf
 
 
@@ -81,7 +80,7 @@ def loss(scores, y_target, margin):
     
     # If y-target is -1 to 1, then do the following
     #pos_mult = tf.add(tf.multiply(0.5, y_target), 0.5)
-    # Else if y-target is 0 to 1, then do the folloing
+    # Else if y-target is 0 to 1, then do the following
     pos_mult = tf.cast(y_target, tf.float32)
     
     # Make sure positive losses are on similar strings
@@ -99,7 +98,7 @@ def loss(scores, y_target, margin):
     # Combine similar and dissimilar losses
     loss = tf.add(positive_loss, negative_loss)
     
-    # Create the margin term.  This is when the targets are 0., 
+    # Create the margin term.  This is when the targets are 0.,
     #  and the scores are less than m, return 0.
     
     # Check if target is zero (dissimilar strings)
