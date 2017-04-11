@@ -51,6 +51,7 @@ x_vals = np.array([[x for i,x in enumerate(y) if housing_header[i] in cols_used]
 x_vals = (x_vals - x_vals.min(0)) / x_vals.ptp(0)
 
 # Split the data into train and test sets
+np.random.seed(13)  #make results reproducible
 train_indices = np.random.choice(len(x_vals), round(len(x_vals)*0.8), replace=False)
 test_indices = np.array(list(set(range(len(x_vals))) - set(train_indices)))
 x_vals_train = x_vals[train_indices]
