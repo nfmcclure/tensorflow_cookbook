@@ -52,6 +52,7 @@ weight_diagonal = x_vals.std(0)
 weight_matrix = tf.cast(tf.diag(weight_diagonal), dtype=tf.float32)
 
 # Split the data into train and test sets
+np.random.seed(13)   # reproducible results
 train_indices = np.random.choice(len(x_vals), round(len(x_vals)*0.8), replace=False)
 test_indices = np.array(list(set(range(len(x_vals))) - set(train_indices)))
 x_vals_train = x_vals[train_indices]
