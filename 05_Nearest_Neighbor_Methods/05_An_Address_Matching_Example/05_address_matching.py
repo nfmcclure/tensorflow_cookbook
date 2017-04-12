@@ -23,6 +23,8 @@ ops.reset_default_graph()
 n = 10
 street_names = ['abbey', 'baker', 'canal', 'donner', 'elm']
 street_types = ['rd', 'st', 'ln', 'pass', 'ave']
+
+random.seed(31)  #make results reproducible
 rand_zips = [random.randint(65000,65999) for i in range(5)]
 
 # Function to randomly create one typo in a string w/ a probability
