@@ -16,6 +16,17 @@ import requests
 from tensorflow.python.framework import ops
 ops.reset_default_graph()
 
+# reset computational graph
+ops.reset_default_graph()
+
+# set for reproducible results
+seed = 99
+np.random.seed(seed)
+tf.set_random_seed(seed)
+
+# Declare batch size
+batch_size = 90
+
 # Create graph
 sess = tf.Session()
 
@@ -45,9 +56,6 @@ def normalize_cols(m):
     
 x_vals_train = np.nan_to_num(normalize_cols(x_vals_train))
 x_vals_test = np.nan_to_num(normalize_cols(x_vals_test))
-
-# Declare batch size
-batch_size = 90
 
 # Initialize placeholders
 x_data = tf.placeholder(shape=[None, 7], dtype=tf.float32)
