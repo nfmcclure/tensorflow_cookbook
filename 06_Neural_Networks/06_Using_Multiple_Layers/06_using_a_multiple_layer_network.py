@@ -80,7 +80,7 @@ sess = tf.Session()
 batch_size = 100
 
 # make results reproducible
-seed = 13
+seed = 3
 np.random.seed(seed)
 tf.set_random_seed(seed)
 
@@ -161,7 +161,7 @@ sess.run(init)
 # Training loop
 loss_vec = []
 test_loss = []
-for i in range(1000):
+for i in range(200):
     rand_index = np.random.choice(len(x_vals_train), size=batch_size)
     rand_x = x_vals_train[rand_index]
     rand_y = np.transpose([y_vals_train[rand_index]])
@@ -172,7 +172,7 @@ for i in range(1000):
     
     test_temp_loss = sess.run(loss, feed_dict={x_data: x_vals_test, y_target: np.transpose([y_vals_test])})
     test_loss.append(test_temp_loss)
-    if (i+1)%200==0:
+    if (i+1) % 25 == 0:
         print('Generation: ' + str(i+1) + '. Loss = ' + str(temp_loss))
 
 
