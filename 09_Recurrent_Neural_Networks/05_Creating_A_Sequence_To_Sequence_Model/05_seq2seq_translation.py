@@ -7,25 +7,38 @@
 #
 
 import os
+import re
+import sys
+import string
 import requests
 import io
 import numpy as np
-
+import collections
+import random
+import pickle
 import string
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from zipfile import ZipFile
 from collections import Counter
+from tensorflow.python.framework import ops
+ops.reset_default_graph()
+
+local_repository = 'temp'
 
 if tf.__version__[0]<'1':
     from tensorflow.models.rnn.translate import seq2seq_model
 else:
     #models can be retrieved from github: https://github.com/tensorflow/models.git
     #put the models dir under python search lib path.
-    from models.tutorials.rnn.translate import seq2seq_model
-
-from tensorflow.python.framework import ops
-ops.reset_default_graph()
+    
+    if not os.path.exists(local_repository):
+        from git import Repo
+        tf_model_repository = 'https://github.com/tensorflow/models'
+        Repo.clone_from(tf_model_repository, local_repository)
+        sys.path.insert(0, 'temp/tutorials/rnn/translate/')
+        import seq2seq_model as seq2seq_model
+        import data_utils as data_utils
 
 # Start a session
 sess = tf.Session()
@@ -86,6 +99,7 @@ else:
     with open(os.path.join(data_dir, data_file), 'r') as in_conn:
         for row in in_conn:
             eng_ger_data.append(row[:-1])
+print('Done!')
 
 # Remove punctuation
 eng_ger_data = [''.join(char for char in sent if char not in punct) for sent in eng_ger_data]
@@ -184,17 +198,31 @@ def translation_model(sess, input_vocab_size, output_vocab_size,
 print('Creating Translation Model')
 input_vocab_size = vocab_size
 output_vocab_size = vocab_size
-with tf.variable_scope('translate_model') as scope:
-    translate_model = translation_model(sess, vocab_size, vocab_size,
-                                        buckets, rnn_size, num_layers,
-                                        max_gradient, learning_rate,
-                                        lr_decay_rate, False)
+
+translate_model = translation_model(sess=sess,
+                                    input_vocab_size=vocab_size,
+                                    output_vocab_size=vocab_size,
+                                    buckets=buckets,
+                                    rnn_size=rnn_size,
+                                    num_layers=num_layers,
+                                    max_gradient=max_gradient,
+                                    learning_rate=learning_rate,
+                                    lr_decay_rate=lr_decay_rate,
+                                    forward_only=False)
+
+# Tell TensorFlow to reuse the variables for the test model
+with tf.variable_scope(tf.get_variable_scope(), reuse=True):
     #Reuse the variables for the test model
-    scope.reuse_variables()
-    test_model = translation_model(sess, vocab_size, vocab_size,
-                                   buckets, rnn_size, num_layers,
-                                   max_gradient, learning_rate,
-                                   lr_decay_rate, True)
+    test_model = translation_model(sess=sess,
+                                    input_vocab_size=vocab_size,
+                                    output_vocab_size=vocab_size,
+                                    buckets=buckets,
+                                    rnn_size=rnn_size,
+                                    num_layers=num_layers,
+                                    max_gradient=max_gradient,
+                                    learning_rate=learning_rate,
+                                    lr_decay_rate=lr_decay_rate,
+                                    forward_only=True)
     test_model.batch_size = 1
 
 # Initialize all model variables
