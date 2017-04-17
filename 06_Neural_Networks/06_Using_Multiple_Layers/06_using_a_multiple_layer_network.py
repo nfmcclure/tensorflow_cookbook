@@ -34,19 +34,26 @@ import numpy as np
 import random
 import requests
 from tensorflow.python.framework import ops
-ops.reset_default_graph()
 
-#birthdata_url = 'https://www.umass.edu/statdata/statdata/data/lowbwt.dat'
-#birth_file = requests.get(birthdata_url)
-#birth_data = birth_file.text.split('\r\n')[5:]
-#birth_header = [x for x in birth_data[0].split(' ') if len(x)>=1]
-#birth_data = [[float(x) for x in y.split(' ') if len(x)>=1] for y in birth_data[1:] if len(y)>=1]
+# name of data file
+birth_weight_file = 'birth_weight.csv'
 
-os.chdir('/home/nick/OneDrive/Documents/tensor_flow_book/Code/6_Neural_Networks/')
-out_file = 'birth_weight.csv'
+# download data and create data file if file does not exist in current directory
+if not os.path.exists(birth_weight_file):
+    birthdata_url = 'https://www.umass.edu/statdata/statdata/data/lowbwt.dat'
+    birth_file = requests.get(birthdata_url)
+    birth_data = birth_file.text.split('\r\n')[5:]
+    #birth_header = [x for x in birth_data[0].split(' ') if len(x)>=1]
+    birth_data = [lr for lr in [row.split() for row in birth_data] if len(lr) > 1]
+    with open(birth_weight_file, "w") as f:
+        writer = csv.writer(f)
+        writer.writerows(birth_data)
+        f.close()
 
+
+# read birth weight data into memory
 birth_data = []
-with open(out_file, newline='') as csvfile:
+with open(birth_weight_file, newline='') as csvfile:
      csv_reader = csv.reader(csvfile)
      birth_header = next(csv_reader)
      for row in csv_reader:
@@ -55,8 +62,6 @@ with open(out_file, newline='') as csvfile:
 birth_data = [[float(x) for x in row] for row in birth_data]
 
 
-batch_size = 100
-
 # Extract y-target (birth weight)
 y_vals = np.array([x[10] for x in birth_data])
 
@@ -64,8 +69,20 @@ y_vals = np.array([x[10] for x in birth_data])
 cols_of_interest = ['AGE', 'LWT', 'RACE', 'SMOKE', 'PTL', 'HT', 'UI', 'FTV']
 x_vals = np.array([[x[ix] for ix, feature in enumerate(birth_header) if feature in cols_of_interest] for x in birth_data])
 
+
+# reset the graph for new run
+ops.reset_default_graph()
+
 # Create graph session 
 sess = tf.Session()
+
+# set batch size for training
+batch_size = 100
+
+# make results reproducible
+seed = 3
+np.random.seed(seed)
+tf.set_random_seed(seed)
 
 # Split data into train/test = 80%/20%
 train_indices = np.random.choice(len(x_vals), round(len(x_vals)*0.8), replace=False)
@@ -144,7 +161,7 @@ sess.run(init)
 # Training loop
 loss_vec = []
 test_loss = []
-for i in range(1000):
+for i in range(200):
     rand_index = np.random.choice(len(x_vals_train), size=batch_size)
     rand_x = x_vals_train[rand_index]
     rand_y = np.transpose([y_vals_train[rand_index]])
@@ -155,7 +172,7 @@ for i in range(1000):
     
     test_temp_loss = sess.run(loss, feed_dict={x_data: x_vals_test, y_target: np.transpose([y_vals_test])})
     test_loss.append(test_temp_loss)
-    if (i+1)%200==0:
+    if (i+1) % 25 == 0:
         print('Generation: ' + str(i+1) + '. Loss = ' + str(temp_loss))
 
 
@@ -163,6 +180,7 @@ for i in range(1000):
 plt.plot(loss_vec, 'k-', label='Train Loss')
 plt.plot(test_loss, 'r--', label='Test Loss')
 plt.title('Loss (MSE) per Generation')
+plt.legend(loc='upper right')
 plt.xlabel('Generation')
 plt.ylabel('Loss')
 plt.show()
