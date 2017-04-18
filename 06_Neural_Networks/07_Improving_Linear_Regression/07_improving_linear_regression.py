@@ -13,11 +13,42 @@ import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 import requests
+import os.path
+import csv
 from tensorflow.python.framework import ops
-ops.reset_default_graph()
 
 # reset computational graph
 ops.reset_default_graph()
+
+# name of data file
+birth_weight_file = 'birth_weight.csv'
+
+# download data and create data file if file does not exist in current directory
+if not os.path.exists(birth_weight_file):
+    birthdata_url = 'https://www.umass.edu/statdata/statdata/data/lowbwt.dat'
+    birth_file = requests.get(birthdata_url)
+    birth_data = birth_file.text.split('\r\n')[5:]
+    #birth_header = [x for x in birth_data[0].split(' ') if len(x)>=1]
+    birth_data = [lr for lr in [row.split() for row in birth_data] if len(lr) > 1]
+    with open(birth_weight_file, "w") as f:
+        writer = csv.writer(f)
+        writer.writerows(birth_data)
+        f.close()
+
+# read birth weight data into memory
+birth_data = []
+with open(birth_weight_file, newline='') as csvfile:
+     csv_reader = csv.reader(csvfile)
+     birth_header = next(csv_reader)
+     for row in csv_reader:
+         birth_data.append(row)
+
+birth_data = [[float(x) for x in row] for row in birth_data]
+
+# Pull out target variable
+y_vals = np.array([x[1] for x in birth_data])
+# Pull out predictor variables (not id, not target, and not birthweight)
+x_vals = np.array([x[2:9] for x in birth_data])
 
 # set for reproducible results
 seed = 99
@@ -26,19 +57,6 @@ tf.set_random_seed(seed)
 
 # Declare batch size
 batch_size = 90
-
-# Create graph
-sess = tf.Session()
-
-birthdata_url = 'https://www.umass.edu/statdata/statdata/data/lowbwt.dat'
-birth_file = requests.get(birthdata_url)
-birth_data = birth_file.text.split('\r\n')[5:]
-birth_header = [x for x in birth_data[0].split(' ') if len(x)>=1]
-birth_data = [[float(x) for x in y.split(' ') if len(x)>=1] for y in birth_data[1:] if len(y)>=1]
-# Pull out target variable
-y_vals = np.array([x[1] for x in birth_data])
-# Pull out predictor variables (not id, not target, and not birthweight)
-x_vals = np.array([x[2:9] for x in birth_data])
 
 # Split data into train/test = 80%/20%
 train_indices = np.random.choice(len(x_vals), round(len(x_vals)*0.8), replace=False)
@@ -56,6 +74,10 @@ def normalize_cols(m):
     
 x_vals_train = np.nan_to_num(normalize_cols(x_vals_train))
 x_vals_test = np.nan_to_num(normalize_cols(x_vals_test))
+
+
+# Create graph
+sess = tf.Session()
 
 # Initialize placeholders
 x_data = tf.placeholder(shape=[None, 7], dtype=tf.float32)
