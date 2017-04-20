@@ -23,6 +23,11 @@ y_vals = np.array([x[3] for x in iris.data])
 # Create graph session 
 sess = tf.Session()
 
+# make results reproducible
+seed = 2
+tf.set_random_seed(seed)
+np.random.seed(seed)  
+
 # Split data into train/test = 80%/20%
 train_indices = np.random.choice(len(x_vals), round(len(x_vals)*0.8), replace=False)
 test_indices = np.array(list(set(range(len(x_vals))) - set(train_indices)))
