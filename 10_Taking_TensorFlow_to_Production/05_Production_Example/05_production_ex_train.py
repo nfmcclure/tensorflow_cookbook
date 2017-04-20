@@ -28,6 +28,8 @@ tf.app.flags.DEFINE_integer('max_sequence_length', 20, 'Max sentence length in w
 tf.app.flags.DEFINE_integer('rnn_size', 15, 'RNN feature size.')
 tf.app.flags.DEFINE_integer('embedding_size', 25, 'Word embedding size.')
 tf.app.flags.DEFINE_integer('min_word_frequency', 20, 'Word frequency cutoff.')
+tf.app.flags.DEFINE_boolean('run_unit_tests', False, 'If true, run tests.')
+
 FLAGS = tf.app.flags.FLAGS
 
 # Define how to get data
@@ -75,6 +77,16 @@ def clean_text(text_string):
     return(text_string)
 
 
+# Test clean_text function
+class clean_test(tf.test.TestCase):
+    # Make sure cleaning function behaves correctly
+    def clean_string_test(self):
+        with self.test_session():
+            test_input = '--TensorFlow\'s so Great! Don\t you think so?   '
+            test_expected = 'tensorflows so great don you think so'
+            test_out = clean_text(test_input)
+            self.assertEqual(test_expected, test_out)
+
 # Define RNN Model
 def rnn_model(x_data_ph, max_sequence_length, vocab_size, embedding_size,
               rnn_size, dropout_keep_prob):
@@ -83,7 +95,7 @@ def rnn_model(x_data_ph, max_sequence_length, vocab_size, embedding_size,
     embedding_output = tf.nn.embedding_lookup(embedding_mat, x_data_ph)
 
     # Define the RNN cell
-    cell = tf.nn.rnn_cell.BasicRNNCell(num_units = rnn_size)
+    cell = tf.contrib.rnn.BasicRNNCell(num_units = rnn_size)
     output, state = tf.nn.dynamic_rnn(cell, embedding_output, dtype=tf.float32)
     output = tf.nn.dropout(output, dropout_keep_prob)
 
@@ -121,7 +133,6 @@ def main(args):
     # Set model parameters
     storage_folder = FLAGS.storage_folder
     learning_rate = FLAGS.learning_rate
-    epochs = FLAGS.epochs
     run_unit_tests = FLAGS.run_unit_tests
     epochs = FLAGS.epochs
     batch_size = FLAGS.batch_size
@@ -226,10 +237,12 @@ def main(args):
         
             # Run loss and accuracy for training
             temp_train_loss, temp_train_acc = sess.run([loss, accuracy], feed_dict=train_dict)
+
             test_dict = {x_data_ph: x_test, y_output_ph: y_test, dropout_keep_prob:1.0}
             temp_test_loss, temp_test_acc = sess.run([loss, accuracy], feed_dict=test_dict)
             
             # Print Epoch Summary
+            print('Epoch: {}, Train Loss:{:.2}, Train Acc: {:.2}'.format(epoch+1, temp_train_loss, temp_train_acc))
             print('Epoch: {}, Test Loss: {:.2}, Test Acc: {:.2}'.format(epoch+1, temp_test_loss, temp_test_acc))
             
             # Save model every epoch
@@ -237,4 +250,9 @@ def main(args):
 
 # Run main module/tf App
 if __name__ == "__main__":
-    tf.app.run()
+    if FLAGS.run_unit_tests:
+        # Perform unit tests
+        tf.test.main()
+    else:
+        # Run evaluation
+        tf.app.run()
