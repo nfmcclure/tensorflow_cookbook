@@ -32,6 +32,11 @@ batch_size = 50
 x_data = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 y_target = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 
+# make results reproducible
+seed = 31
+np.random.seed(seed)
+tf.set_random_seed(seed)
+
 # Create variables for linear regression
 A = tf.Variable(tf.random_normal(shape=[1,1]))
 b = tf.Variable(tf.random_normal(shape=[1,1]))
@@ -45,16 +50,16 @@ model_output = tf.add(tf.matmul(x_data, A), b)
 
 # For Lasso, uncomment the following four lines (and comment out the Ridge Regression loss)
 
-#lasso_param = tf.constant(0.9)
-#heavyside_step = tf.truediv(1., tf.add(1., tf.exp(tf.multiply(-100., tf.sub(A, lasso_param)))))
-#regularization_param = tf.multiply(heavyside_step, 99.)
-#loss = tf.add(tf.reduce_mean(tf.square(y_target - model_output)), regularization_param)
+lasso_param = tf.constant(0.9)
+heavyside_step = tf.truediv(1., tf.add(1., tf.exp(tf.multiply(-100., tf.subtract(A, lasso_param)))))
+regularization_param = tf.multiply(heavyside_step, 99.)
+loss = tf.add(tf.reduce_mean(tf.square(y_target - model_output)), regularization_param)
 
 # Declare the Ridge loss function
 # Ridge loss = L2_loss + L2 norm of slope
-ridge_param = tf.constant(1.)
-ridge_loss = tf.reduce_mean(tf.square(A))
-loss = tf.expand_dims(tf.add(tf.reduce_mean(tf.square(y_target - model_output)), tf.multiply(ridge_param, ridge_loss)), 0)
+#ridge_param = tf.constant(1.)
+#ridge_loss = tf.reduce_mean(tf.square(A))
+#loss = tf.expand_dims(tf.add(tf.reduce_mean(tf.square(y_target - model_output)), tf.multiply(ridge_param, ridge_loss)), 0)
 
 # Declare optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.001)
