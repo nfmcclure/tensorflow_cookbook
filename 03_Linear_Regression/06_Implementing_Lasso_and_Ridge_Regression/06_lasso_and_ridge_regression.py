@@ -1,29 +1,43 @@
-# Lasso and Ridge Regression
-#----------------------------------
-#
-# This function shows how to use TensorFlow to
-# solve lasso or ridge regression.
+# LASSO and Ridge Regression
+# 
+# This function shows how to use TensorFlow to solve LASSO or 
+# Ridge regression for 
 # y = Ax + b
-#
-# We will use the iris data, specifically:
-#  y = Sepal Length
-#  x = Petal Width
+# 
+# We will use the iris data, specifically: 
+#   y = Sepal Length 
+#   x = Petal Width
 
+# import required libraries
 import matplotlib.pyplot as plt
+import sys
 import numpy as np
 import tensorflow as tf
 from sklearn import datasets
 from tensorflow.python.framework import ops
+
+
+# Specify 'Ridge' or 'LASSO'
+regression_type = 'LASSO'
+
+# clear out old graph
 ops.reset_default_graph()
 
 # Create graph
 sess = tf.Session()
 
-# Load the data
+###
+# Load iris data
+###
+
 # iris.data = [(Sepal Length, Sepal Width, Petal Length, Petal Width)]
 iris = datasets.load_iris()
 x_vals = np.array([x[3] for x in iris.data])
 y_vals = np.array([y[0] for y in iris.data])
+
+###
+# Model Parameters
+###
 
 # Declare batch size
 batch_size = 50
@@ -32,6 +46,11 @@ batch_size = 50
 x_data = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 y_target = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 
+# make results reproducible
+seed = 13
+np.random.seed(seed)
+tf.set_random_seed(seed)
+
 # Create variables for linear regression
 A = tf.Variable(tf.random_normal(shape=[1,1]))
 b = tf.Variable(tf.random_normal(shape=[1,1]))
@@ -39,26 +58,43 @@ b = tf.Variable(tf.random_normal(shape=[1,1]))
 # Declare model operations
 model_output = tf.add(tf.matmul(x_data, A), b)
 
-# Declare Lasso loss function
-# Lasso Loss = L2_Loss + heavyside_step,
-# Where heavyside_step ~ 0 if A < constant, otherwise ~ 99
+###
+# Loss Functions
+###
 
-# For Lasso, uncomment the following four lines (and comment out the Ridge Regression loss)
+# Select appropriate loss function based on regression type
 
-#lasso_param = tf.constant(0.9)
-#heavyside_step = tf.truediv(1., tf.add(1., tf.exp(tf.multiply(-100., tf.sub(A, lasso_param)))))
-#regularization_param = tf.multiply(heavyside_step, 99.)
-#loss = tf.add(tf.reduce_mean(tf.square(y_target - model_output)), regularization_param)
+if regression_type == 'LASSO':
+    # Declare Lasso loss function
+    # Lasso Loss = L2_Loss + heavyside_step,
+    # Where heavyside_step ~ 0 if A < constant, otherwise ~ 99
+    lasso_param = tf.constant(0.9)
+    heavyside_step = tf.truediv(1., tf.add(1., tf.exp(tf.multiply(-50., tf.subtract(A, lasso_param)))))
+    regularization_param = tf.multiply(heavyside_step, 99.)
+    loss = tf.add(tf.reduce_mean(tf.square(y_target - model_output)), regularization_param)
 
-# Declare the Ridge loss function
-# Ridge loss = L2_loss + L2 norm of slope
-ridge_param = tf.constant(1.)
-ridge_loss = tf.reduce_mean(tf.square(A))
-loss = tf.expand_dims(tf.add(tf.reduce_mean(tf.square(y_target - model_output)), tf.multiply(ridge_param, ridge_loss)), 0)
+elif regression_type == 'Ridge':
+    # Declare the Ridge loss function
+    # Ridge loss = L2_loss + L2 norm of slope
+    ridge_param = tf.constant(1.)
+    ridge_loss = tf.reduce_mean(tf.square(A))
+    loss = tf.expand_dims(tf.add(tf.reduce_mean(tf.square(y_target - model_output)), tf.multiply(ridge_param, ridge_loss)), 0)
+    
+else:
+    print('Invalid regression_type parameter value',file=sys.stderr)
+
+
+###
+# Optimizer
+###
 
 # Declare optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.001)
 train_step = my_opt.minimize(loss)
+
+###
+# Run regression
+###
 
 # Initialize variables
 init = tf.global_variables_initializer()
@@ -76,6 +112,11 @@ for i in range(1500):
     if (i+1)%300==0:
         print('Step #' + str(i+1) + ' A = ' + str(sess.run(A)) + ' b = ' + str(sess.run(b)))
         print('Loss = ' + str(temp_loss))
+        print('\n')
+
+###
+# Extract regression results
+###
 
 # Get the optimal coefficients
 [slope] = sess.run(A)
@@ -86,7 +127,12 @@ best_fit = []
 for i in x_vals:
   best_fit.append(slope*i+y_intercept)
 
-# Plot the result
+
+###
+# Plot results
+###
+
+# Plot regression line against data points
 plt.plot(x_vals, y_vals, 'o', label='Data Points')
 plt.plot(x_vals, best_fit, 'r-', label='Best fit line', linewidth=3)
 plt.legend(loc='upper left')
@@ -97,7 +143,8 @@ plt.show()
 
 # Plot loss over time
 plt.plot(loss_vec, 'k-')
-plt.title('L2 Loss per Generation')
+plt.title(regression_type + ' Loss per Generation')
 plt.xlabel('Generation')
-plt.ylabel('L2 Loss')
+plt.ylabel('Loss')
 plt.show()
+
