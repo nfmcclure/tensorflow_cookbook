@@ -31,11 +31,13 @@ vgg_path = 'imagenet-vgg-verydeep-19.mat'
 
 # Default Arguments
 original_image_weight = 5.0
-style_image_weight = 200.0
-regularization_weight = 50.0
-learning_rate = 0.1
-generations = 10000
-output_generations = 500
+style_image_weight = 500.0
+regularization_weight = 100
+learning_rate = 10.0
+generations = 1000
+output_generations = 100
+beta1 = 0.9
+beta2 = 0.999
 
 # Read in images
 original_image = scipy.misc.imread(original_image_file)
@@ -79,13 +81,13 @@ def vgg_network(network_weights, init_image):
     image = init_image
 
     for i, layer in enumerate(vgg_layers):
-        if layer[1] == 'c':
+        if layer[0] == 'c':
             weights, bias = network_weights[i][0][0][0][0]
             weights = np.transpose(weights, (1, 0, 2, 3))
             bias = bias.reshape(-1)
             conv_layer = tf.nn.conv2d(image, tf.constant(weights), (1, 1, 1, 1), 'SAME')
             image = tf.nn.bias_add(conv_layer, bias)
-        elif layer[1] == 'r':
+        elif layer[0] == 'r':
             image = tf.nn.relu(image)
         else:
             image = tf.nn.max_pool(image, (1, 2, 2, 1), (1, 2, 2, 1), 'SAME')
@@ -127,7 +129,7 @@ for layer in style_layers:
     style_features[layer] = style_gram_matrix
 
 # Make Combined Image
-initial = tf.random_normal(shape) * 0.05
+initial = tf.random_normal(shape) * 0.256
 image = tf.Variable(initial)
 vgg_net = vgg_network(network_weights, image)
 
@@ -161,7 +163,7 @@ total_variation_loss = first_term * (second_term + third_term)
 loss = original_loss + style_loss + total_variation_loss
 
 # Declare Optimization Algorithm
-optimizer = tf.train.GradientDescentOptimizer(learning_rate)
+optimizer = tf.train.AdamOptimizer(learning_rate,beta1,beta2)
 train_step = optimizer.minimize(loss)
 
 # Initialize Variables and start Training
@@ -172,7 +174,7 @@ for i in range(generations):
 
     # Print update and save temporary output
     if (i+1) % output_generations == 0:
-        print('Generation {} out of {}'.format(i + 1, generations))
+        print('Generation {} out of {}, loss: {}'.format(i + 1, generations,sess.run(loss)))
         image_eval = sess.run(image)
         best_image_add_mean = image_eval.reshape(shape[1:]) + normalization_mean
         output_file = 'temp_output_{}.jpg'.format(i)
