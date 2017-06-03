@@ -53,6 +53,25 @@ print(len(mnist.test.images))
 print(len(mnist.validation.images))
 print(mnist.train.labels[1,:])
 
+# CIFAR-10 Image Category Dataset
+# The CIFAR-10 data ( https://www.cs.toronto.edu/~kriz/cifar.html ) contains 60,000 32x32 color images of 10 classes.
+# It was collected by Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton.
+# Alex Krizhevsky maintains the page referenced here.
+# This is such a common dataset, that there are built in functions in TensorFlow to access this data.
+
+# Running this command requires an internet connection and a few minutes to download all the images.
+(X_train, y_train), (X_test, y_test) = tf.contrib.keras.datasets.cifar10.load_data()
+
+print(X_train.shape)
+print(y_train.shape)
+print(y_train[0,]) # this is a frog
+
+# Plot the 0-th image (a frog)
+from PIL import Image
+%matplotlib inline
+img = Image.fromarray(X_train[0,:,:,:])
+plt.imshow(img)
+
 
 # Ham/Spam Text Data
 import requests
