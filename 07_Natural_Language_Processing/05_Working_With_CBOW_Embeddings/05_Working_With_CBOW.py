@@ -38,7 +38,7 @@ batch_size = 500
 embedding_size = 200
 vocabulary_size = 2000
 generations = 50000
-model_learning_rate = 0.001
+model_learning_rate = 0.5
 
 num_sampled = int(batch_size/2)    # Number of negative examples to sample.
 window_size = 3       # How many words to consider left and right.

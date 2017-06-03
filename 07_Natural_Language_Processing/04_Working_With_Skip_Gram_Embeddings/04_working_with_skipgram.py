@@ -37,11 +37,11 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 sess = tf.Session()
 
 # Declare model parameters
-batch_size = 50
+batch_size = 100
 embedding_size = 200
 vocabulary_size = 10000
-generations = 50000
-print_loss_every = 500
+generations = 100000
+print_loss_every = 2000
 
 num_sampled = int(batch_size/2)    # Number of negative examples to sample.
 window_size = 2       # How many words to consider left and right.
@@ -50,7 +50,7 @@ window_size = 2       # How many words to consider left and right.
 stops = stopwords.words('english')
 
 # We pick five test words. We are expecting synonyms to appear
-print_valid_every = 2000
+print_valid_every = 5000
 valid_words = ['cliche', 'love', 'hate', 'silly', 'sad']
 # Later we will have to transform these into indices
 
@@ -152,7 +152,7 @@ def text_to_numbers(sentences, word_dict):
     for sentence in sentences:
         sentence_data = []
         # For each word, either use selected index or rare word index
-        for word in sentence:
+        for word in sentence.split(' '):
             if word in word_dict:
                 word_ix = word_dict[word]
             else:

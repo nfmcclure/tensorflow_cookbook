@@ -62,7 +62,7 @@ def text_to_numbers(sentences, word_dict):
     for sentence in sentences:
         sentence_data = []
         # For each word, either use selected index or rare word index
-        for word in sentence.split():
+        for word in sentence.split(' '):
             if word in word_dict:
                 word_ix = word_dict[word]
             else:
