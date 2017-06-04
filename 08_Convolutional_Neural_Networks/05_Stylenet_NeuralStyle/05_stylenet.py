@@ -33,9 +33,9 @@ vgg_path = 'imagenet-vgg-verydeep-19.mat'
 original_image_weight = 5.0
 style_image_weight = 500.0
 regularization_weight = 100
-learning_rate = 10.0
-generations = 1000
-output_generations = 100
+learning_rate = 0.001
+generations = 5000
+output_generations = 250
 beta1 = 0.9
 beta2 = 0.999
 
