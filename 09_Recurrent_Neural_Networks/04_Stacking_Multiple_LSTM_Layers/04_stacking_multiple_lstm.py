@@ -134,7 +134,7 @@ class LSTM_Model():
             self.training_seq_len = training_seq_len
         
         self.lstm_cell = tf.contrib.rnn.BasicLSTMCell(rnn_size)
-        self.lstm_cell = tf.contrib.rnn.MultiRNNCell([self.lstm_cell] * self.num_layers)
+        self.lstm_cell = tf.contrib.rnn.MultiRNNCell([self.lstm_cell for _ in range(self.num_layers)])
         self.initial_state = self.lstm_cell.zero_state(self.batch_size, tf.float32)
         
         self.x_data = tf.placeholder(tf.int32, [self.batch_size, self.training_seq_len])
