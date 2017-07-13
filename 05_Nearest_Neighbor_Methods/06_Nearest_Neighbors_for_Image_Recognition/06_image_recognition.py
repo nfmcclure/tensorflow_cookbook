@@ -92,3 +92,5 @@ for i in range(len(actuals)):
     frame = plt.gca()
     frame.axes.get_xaxis().set_visible(False)
     frame.axes.get_yaxis().set_visible(False)
+    
+plt.show()
