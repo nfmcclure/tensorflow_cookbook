@@ -19,3 +19,10 @@ For the loss function, we will use the average MSE across the batch.
 Running the script should result in a similar loss.
 
 ![Batch MSE](../images/04_nn_loss.png "Batch MSE")
+
+
+# Graph of Loss Function (Average Batch MSE) Comparison between ReLU, sigmoid and sofsign Activation Function
+
+Running the script should result in a similar loss.
+
+![Batch MSE 3](https://github.com/bkm009/tensorflow_cookbook/blob/master/06_Neural_Networks/images/04-Implementing-One-Layer-NN.png)
