@@ -86,8 +86,8 @@ min_word_freq = 3
 vocab_processor = learn.preprocessing.VocabularyProcessor(sentence_size, min_frequency=min_word_freq)
 
 # Have to fit transform to get length of unique words.
-vocab_processor.fit_transform(texts)
-embedding_size = len(vocab_processor.vocabulary_)
+vocab_processor.transform(texts)
+embedding_size = len([x for x in vocab_processor.transform(texts)])
 
 # Split up data set into train/test
 train_indices = np.random.choice(len(texts), round(len(texts)*0.8), replace=False)
