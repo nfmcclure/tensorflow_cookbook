@@ -25,7 +25,8 @@ sess = tf.Session()
 
 # Set RNN Parameters
 min_word_freq = 5 # Trim the less frequent words off
-rnn_size = 128 # RNN Model size, has to equal embedding size
+rnn_size = 128 # RNN Model size
+embedding_size = 100 # Word embedding size
 epochs = 10 # Number of epochs to cycle through data
 batch_size = 100 # Train on this many examples at once
 learning_rate = 0.001 # Learning rate
@@ -119,8 +120,9 @@ s_text_ix = np.array(s_text_ix)
 
 # Define LSTM RNN Model
 class LSTM_Model():
-    def __init__(self, rnn_size, batch_size, learning_rate,
+    def __init__(self, embedding_size, rnn_size, batch_size, learning_rate,
                  training_seq_len, vocab_size, infer_sample=False):
+        self.embedding_size = embedding_size
         self.rnn_size = rnn_size
         self.vocab_size = vocab_size
         self.infer_sample = infer_sample
@@ -133,7 +135,7 @@ class LSTM_Model():
             self.batch_size = batch_size
             self.training_seq_len = training_seq_len
         
-        self.lstm_cell = tf.contrib.rnn.BasicLSTMCell(rnn_size)
+        self.lstm_cell = tf.contrib.rnn.BasicLSTMCell(self.rnn_size)
         self.initial_state = self.lstm_cell.zero_state(self.batch_size, tf.float32)
         
         self.x_data = tf.placeholder(tf.int32, [self.batch_size, self.training_seq_len])
@@ -145,7 +147,7 @@ class LSTM_Model():
             b = tf.get_variable('b', [self.vocab_size], tf.float32, tf.constant_initializer(0.0))
         
             # Define Embedding
-            embedding_mat = tf.get_variable('embedding_mat', [self.vocab_size, self.rnn_size],
+            embedding_mat = tf.get_variable('embedding_mat', [self.vocab_size, self.embedding_size],
                                             tf.float32, tf.random_normal_initializer())
                                             
             embedding_output = tf.nn.embedding_lookup(embedding_mat, self.x_data)
@@ -208,12 +210,12 @@ class LSTM_Model():
         return(out_sentence)
 
 # Define LSTM Model
-lstm_model = LSTM_Model(rnn_size, batch_size, learning_rate,
+lstm_model = LSTM_Model(embedding_size, rnn_size, batch_size, learning_rate,
                         training_seq_len, vocab_size)
 
 # Tell TensorFlow we are reusing the scope for the testing
 with tf.variable_scope(tf.get_variable_scope(), reuse=True):
-    test_lstm_model = LSTM_Model(rnn_size, batch_size, learning_rate,
+    test_lstm_model = LSTM_Model(embedding_size, rnn_size, batch_size, learning_rate,
                                  training_seq_len, vocab_size, infer_sample=True)
 
 
