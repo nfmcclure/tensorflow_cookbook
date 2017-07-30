@@ -39,6 +39,7 @@ if not os.path.exists(birth_weight_file):
     birth_data = [[float(x) for x in y.split('\t') if len(x)>=1] for y in birth_data[1:] if len(y)>=1]
     with open(birth_weight_file, "w") as f:
         writer = csv.writer(f)
+        writer.writerow(birth_header)
         writer.writerows(birth_data)
         f.close()
 
@@ -53,9 +54,9 @@ with open(birth_weight_file, newline='') as csvfile:
 birth_data = [[float(x) for x in row] for row in birth_data]
 
 # Pull out target variable
-y_vals = np.array([x[1] for x in birth_data])
+y_vals = np.array([x[0] for x in birth_data])
 # Pull out predictor variables (not id, not target, and not birthweight)
-x_vals = np.array([x[2:9] for x in birth_data])
+x_vals = np.array([x[1:8] for x in birth_data])
 
 # set for reproducible results
 seed = 99
