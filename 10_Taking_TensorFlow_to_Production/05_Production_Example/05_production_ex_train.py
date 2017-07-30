@@ -106,7 +106,7 @@ def rnn_model(x_data_ph, max_sequence_length, vocab_size, embedding_size,
 
     weight = tf.Variable(tf.truncated_normal([rnn_size, 2], stddev=0.1))
     bias = tf.Variable(tf.constant(0.1, shape=[2]))
-    logits_out = tf.nn.softmax(tf.matmul(last, weight) + bias)
+    logits_out = tf.matmul(last, weight) + bias
     
     return(logits_out)
 

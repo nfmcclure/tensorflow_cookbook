@@ -117,7 +117,7 @@ last = tf.gather(output, int(output.get_shape()[0]) - 1)
 
 weight = tf.Variable(tf.truncated_normal([rnn_size, 2], stddev=0.1))
 bias = tf.Variable(tf.constant(0.1, shape=[2]))
-logits_out = tf.nn.softmax(tf.matmul(last, weight) + bias)
+logits_out = tf.matmul(last, weight) + bias
 
 # Loss function
 losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits_out, labels=y_output) # logits=float32, labels=int32
