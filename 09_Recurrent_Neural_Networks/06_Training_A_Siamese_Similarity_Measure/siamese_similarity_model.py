@@ -79,7 +79,7 @@ def loss(scores, y_target, margin):
     pos_loss_term = 0.25 * tf.square(tf.subtract(1., scores))
     
     # If y-target is -1 to 1, then do the following
-    #pos_mult = tf.add(tf.multiply(0.5, y_target), 0.5)
+    pos_mult = tf.add(tf.multiply(0.5, tf.cast(y_target, tf.float32)), 0.5)
     # Else if y-target is 0 to 1, then do the following
     pos_mult = tf.cast(y_target, tf.float32)
     
@@ -89,7 +89,7 @@ def loss(scores, y_target, margin):
     # Calculate negative losses, then make sure on dissimilar strings
     
     # If y-target is -1 to 1, then do the following:
-    #neg_mult = tf.add(tf.mul(-0.5, y_target), 0.5)
+    neg_mult = tf.add(tf.multiply(-0.5, tf.cast(y_target, tf.float32)), 0.5)
     # Else if y-target is 0 to 1, then do the following
     neg_mult = tf.subtract(1., tf.cast(y_target, tf.float32))
     
