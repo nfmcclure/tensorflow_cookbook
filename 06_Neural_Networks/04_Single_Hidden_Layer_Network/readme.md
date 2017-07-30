@@ -25,4 +25,4 @@ Running the script should result in a similar loss.
 
 Running the script should result in a similar loss.
 
-![Batch MSE 3](https://github.com/bkm009/tensorflow_cookbook/blob/master/06_Neural_Networks/images/04-Implementing-One-Layer-NN.png)
+![Batch MSE 3](../images/04-Implementing-One-Layer-NN.png)
