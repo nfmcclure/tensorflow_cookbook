@@ -178,8 +178,7 @@ class LSTM_Model():
         
         loss_fun = tf.contrib.legacy_seq2seq.sequence_loss_by_example
         loss = loss_fun([self.logit_output],[tf.reshape(self.y_output, [-1])],
-                [tf.ones([self.batch_size * self.training_seq_len])],
-                self.vocab_size)
+                [tf.ones([self.batch_size * self.training_seq_len])])
         self.cost = tf.reduce_sum(loss) / (self.batch_size * self.training_seq_len)
         self.final_state = last_state
         gradients, _ = tf.clip_by_global_norm(tf.gradients(self.cost, tf.trainable_variables()), 4.5)
