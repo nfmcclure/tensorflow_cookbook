@@ -4,7 +4,6 @@
 # This python function shows how to implement back propagation
 # in regression and classification models.
 
-import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.framework import ops
@@ -36,13 +35,13 @@ my_output = tf.multiply(x_data, A)
 # Add L2 loss operation to graph
 loss = tf.square(my_output - y_target)
 
-# Initialize variables
-init = tf.global_variables_initializer()
-sess.run(init)
-
 # Create Optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.02)
 train_step = my_opt.minimize(loss)
+
+# Initialize variables
+init = tf.global_variables_initializer()
+sess.run(init)
 
 # Run Loop
 for i in range(100):
@@ -108,7 +107,7 @@ for i in range(1400):
     if (i+1)%200==0:
         print('Step #' + str(i+1) + ' A = ' + str(sess.run(A)))
         print('Loss = ' + str(sess.run(xentropy, feed_dict={x_data: rand_x, y_target: rand_y})))
-        
+
 # Evaluate Predictions
 predictions = []
 for i in range(len(x_vals)):

@@ -25,6 +25,8 @@ checkpoint
 *.pos
 **/temp/
 **/temp
+**/tmp/
+**/tmp
 */tensorboard_logs/*
 */tensorboard_logs/
 */tensorboard_logs
@@ -137,8 +139,13 @@ celerybeat-schedule
 venv/
 ENV/
 
-# Spyder project settings
+# Spyder/pycharm project settings
 .spyderproject
+.idea/
 
 # Rope project settings
 .ropeproject
+
+# Ignore data sources
+*/MNIST_data/*
+*/birthweight_data/*

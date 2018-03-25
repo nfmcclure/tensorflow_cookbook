@@ -150,7 +150,7 @@ print('Accuracy on test set: ' + str(acc_value_test))
 # Plot classification result
 A_result = -sess.run(A)
 bins = np.linspace(-5, 5, 50)
-plt.hist(x_vals[0:50], bins, alpha=0.5, label='N(-1,1)', color='white')
+plt.hist(x_vals[0:50], bins, alpha=0.5, label='N(-1,1)', color='blue')
 plt.hist(x_vals[50:100], bins[0:50], alpha=0.5, label='N(2,1)', color='red')
 plt.plot((A_result, A_result), (0, 8), 'k--', linewidth=3, label='A = '+ str(np.round(A_result, 2)))
 plt.legend(loc='upper right')

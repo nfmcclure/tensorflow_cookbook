@@ -32,13 +32,13 @@ my_output = tf.multiply(x_data, A)
 # Add L2 loss operation to graph
 loss = tf.square(my_output - y_target)
 
-# Initialize variables
-init = tf.global_variables_initializer()
-sess.run(init)
-
 # Create Optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.02)
 train_step = my_opt.minimize(loss)
+
+# Initialize variables
+init = tf.global_variables_initializer()
+sess.run(init)
 
 loss_stochastic = []
 # Run Loop
@@ -77,13 +77,13 @@ my_output = tf.matmul(x_data, A)
 # Add L2 loss operation to graph
 loss = tf.reduce_mean(tf.square(my_output - y_target))
 
-# Initialize variables
-init = tf.global_variables_initializer()
-sess.run(init)
-
 # Create Optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.02)
 train_step = my_opt.minimize(loss)
+
+# Initialize variables
+init = tf.global_variables_initializer()
+sess.run(init)
 
 loss_batch = []
 # Run Loop

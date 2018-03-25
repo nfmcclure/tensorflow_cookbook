@@ -1,7 +1,8 @@
-tensorflow
-numpy
-scipy
-sklearn
-requests
-jupyter
-matplotlib
+tensorflow==1.6.0
+numpy==1.14.2
+scipy==1.0.0
+sklearn==0.19.1
+jupyter==1.0.0
+matplotlib==2.2.2
+requests==2.18.4
+Pillow==5.0.0

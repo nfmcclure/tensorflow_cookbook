@@ -1,6 +1,5 @@
 # Working with Multiple Layers
 
-import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 import os
@@ -41,7 +40,7 @@ with tf.name_scope('Custom_Layer') as scope:
     custom_layer1 = custom_layer(mov_avg_layer)
 
 # The output should be an array that is 2x2, but size (1,2,2,1)
-#print(sess.run(mov_avg_layer, feed_dict={x_data: x_val}))
+print(sess.run(mov_avg_layer, feed_dict={x_data: x_val}))
 
 # After custom operation, size is now 2x2 (squeezed out size 1 dims)
 print(sess.run(custom_layer1, feed_dict={x_data: x_val}))

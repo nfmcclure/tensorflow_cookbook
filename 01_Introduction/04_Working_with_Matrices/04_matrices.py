@@ -28,8 +28,7 @@ print(sess.run(B))
 
 # 3x2 random uniform matrix
 C = tf.random_uniform([3,2])
-print(sess.run(C))
-print(sess.run(C)) # Note that we are reinitializing, hence the new random variabels
+print(sess.run(C))  # Note that we are reinitializing, hence the new random variables
 
 # Create matrix from np array
 D = tf.convert_to_tensor(np.array([[1., 2., 3.], [-3., -7., -1.], [0., 5., -2.]]))

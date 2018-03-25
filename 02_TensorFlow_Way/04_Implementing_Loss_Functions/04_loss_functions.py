@@ -44,6 +44,7 @@ plt.plot(x_array, phuber1_y_out, 'k-.', label='P-Huber Loss (0.25)')
 plt.plot(x_array, phuber2_y_out, 'g:', label='P-Huber Loss (5.0)')
 plt.ylim(-0.2, 0.4)
 plt.legend(loc='lower right', prop={'size': 11})
+plt.grid()
 plt.show()
 
 
@@ -68,7 +69,8 @@ xentropy_y_out = sess.run(xentropy_y_vals)
 # L = max(actual, 0) - actual * pred + log(1 + exp(-abs(actual)))
 x_val_input = tf.expand_dims(x_vals, 1)
 target_input = tf.expand_dims(targets, 1)
-xentropy_sigmoid_y_vals = tf.nn.softmax_cross_entropy_with_logits(logits=x_val_input, labels=target_input)
+xentropy_sigmoid_y_vals = tf.nn.softmax_cross_entropy_with_logits_v2(logits=x_val_input,
+                                                                     labels=target_input)
 xentropy_sigmoid_y_out = sess.run(xentropy_sigmoid_y_vals)
 
 # Weighted (softmax) cross entropy loss
@@ -76,7 +78,9 @@ xentropy_sigmoid_y_out = sess.run(xentropy_sigmoid_y_vals)
 # or
 # L = (1 - pred) * actual + (1 + (weights - 1) * pred) * log(1 + exp(-actual))
 weight = tf.constant(0.5)
-xentropy_weighted_y_vals = tf.nn.weighted_cross_entropy_with_logits(x_vals, targets, weight)
+xentropy_weighted_y_vals = tf.nn.weighted_cross_entropy_with_logits(logits=x_vals,
+                                                                    targets=targets,
+                                                                    pos_weight=weight)
 xentropy_weighted_y_out = sess.run(xentropy_weighted_y_vals)
 
 # Plot the output
@@ -87,6 +91,7 @@ plt.plot(x_array, xentropy_sigmoid_y_out, 'k-.', label='Cross Entropy Sigmoid Lo
 plt.plot(x_array, xentropy_weighted_y_out, 'g:', label='Weighted Cross Entropy Loss (x0.5)')
 plt.ylim(-1.5, 3)
 #plt.xlim(-1, 3)
+plt.grid()
 plt.legend(loc='lower right', prop={'size': 11})
 plt.show()
 
@@ -94,8 +99,8 @@ plt.show()
 # L = -actual * (log(softmax(pred))) - (1-actual)(log(1-softmax(pred)))
 unscaled_logits = tf.constant([[1., -3., 10.]])
 target_dist = tf.constant([[0.1, 0.02, 0.88]])
-softmax_xentropy = tf.nn.softmax_cross_entropy_with_logits(logits=unscaled_logits,
-                                                           labels=target_dist)
+softmax_xentropy = tf.nn.softmax_cross_entropy_with_logits_v2(logits=unscaled_logits,
+                                                              labels=target_dist)
 print(sess.run(softmax_xentropy))
 
 # Sparse entropy loss
