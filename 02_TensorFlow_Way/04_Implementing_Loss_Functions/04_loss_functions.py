@@ -69,8 +69,8 @@ xentropy_y_out = sess.run(xentropy_y_vals)
 # L = max(actual, 0) - actual * pred + log(1 + exp(-abs(actual)))
 x_val_input = tf.expand_dims(x_vals, 1)
 target_input = tf.expand_dims(targets, 1)
-xentropy_sigmoid_y_vals = tf.nn.softmax_cross_entropy_with_logits_v2(logits=x_val_input,
-                                                                     labels=target_input)
+xentropy_sigmoid_y_vals = tf.nn.sigmoid_cross_entropy_with_logits(logits=x_val_input,
+                                                                  labels=target_input)
 xentropy_sigmoid_y_out = sess.run(xentropy_sigmoid_y_vals)
 
 # Weighted (softmax) cross entropy loss
