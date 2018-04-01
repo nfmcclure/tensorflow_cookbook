@@ -27,23 +27,23 @@ sess = tf.Session()
 # Obtain and prepare data for modeling
 ###
 
-# name of data file
+# Set name of data file
 birth_weight_file = 'birth_weight.csv'
 
-# download data and create data file if file does not exist in current directory
+# Download data and create data file if file does not exist in current directory
 if not os.path.exists(birth_weight_file):
     birthdata_url = 'https://github.com/nfmcclure/tensorflow_cookbook/raw/master/01_Introduction/07_Working_with_Data_Sources/birthweight_data/birthweight.dat'
     birth_file = requests.get(birthdata_url)
     birth_data = birth_file.text.split('\r\n')
     birth_header = birth_data[0].split('\t')
     birth_data = [[float(x) for x in y.split('\t') if len(x)>=1] for y in birth_data[1:] if len(y)>=1]
-    with open(birth_weight_file, "w") as f:
+    with open(birth_weight_file, 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(birth_header)
         writer.writerows(birth_data)
         f.close()
 
-# read birth weight data into memory
+# Read birth weight data into memory
 birth_data = []
 with open(birth_weight_file, newline='') as csvfile:
      csv_reader = csv.reader(csvfile)
@@ -58,7 +58,7 @@ y_vals = np.array([x[0] for x in birth_data])
 # Pull out predictor variables (not id, not target, and not birthweight)
 x_vals = np.array([x[1:8] for x in birth_data])
 
-# set for reproducible results
+# Set for reproducible results
 seed = 99
 np.random.seed(seed)
 tf.set_random_seed(seed)

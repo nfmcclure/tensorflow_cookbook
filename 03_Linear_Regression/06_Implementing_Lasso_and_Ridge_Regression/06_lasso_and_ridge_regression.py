@@ -18,7 +18,8 @@ from tensorflow.python.framework import ops
 
 
 # Specify 'Ridge' or 'LASSO'
-regression_type = 'LASSO'
+#regression_type = 'LASSO'
+regression_type = 'Ridge'
 
 # clear out old graph
 ops.reset_default_graph()
