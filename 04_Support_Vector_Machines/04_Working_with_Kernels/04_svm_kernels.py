@@ -137,3 +137,19 @@ plt.title('Loss per Generation')
 plt.xlabel('Generation')
 plt.ylabel('Loss')
 plt.show()
+
+# Evaluate on new/unseen data points
+# New data points:
+new_points = np.array([(-0.75, -0.75),
+                       (-0.5, -0.5),
+                       (-0.25, -0.25),
+                       (0.25, 0.25),
+                       (0.5, 0.5),
+                       (0.75, 0.75)])
+
+[evaluations] = sess.run(prediction, feed_dict={x_data: x_vals,
+                                                y_target: np.transpose([y_vals]),
+                                                prediction_grid: new_points})
+
+for ix, p in enumerate(new_points):
+    print('{} : class={}'.format(p, evaluations[ix]))
