@@ -2,7 +2,7 @@
 
 # [TensorFlow Machine Learning Cookbook](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
-## (Code is slowly becoming TensorFlow-v1.0.1 compliant.)
+## (Code is slowly becoming TensorFlow-v1.7 compliant.)
 
 ## [A Packt Publishing Book](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
@@ -253,7 +253,7 @@ This chapter shows how to implement various SVM methods with TensorFlow.  We fir
 ## [Ch 5: Nearest Neighbor Methods](05_Nearest_Neighbor_Methods#ch-5-nearest-neighbor-methods)
 <kbd>
   <a href="05_Nearest_Neighbor_Methods/01_Introduction#nearest-neighbor-methods-introduction">
-    <img src="05_Nearest_Neighbor_Methods/images/image.png" align="center" height="45" width="90">
+    <img src="05_Nearest_Neighbor_Methods/images/nearest_neighbor_intro.jpg" align="center" height="45" width="90">
   </a>
 </kbd>
 <kbd>
