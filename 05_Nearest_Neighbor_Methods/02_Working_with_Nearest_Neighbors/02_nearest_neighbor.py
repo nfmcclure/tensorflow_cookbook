@@ -85,7 +85,6 @@ x_val_weights = tf.expand_dims(tf.div(top_k_xvals,x_sums_repeated), 1)
 
 top_k_yvals = tf.gather(y_target_train, top_k_indices)
 prediction = tf.squeeze(tf.matmul(x_val_weights,top_k_yvals), axis=[1])
-#prediction = tf.reduce_mean(top_k_yvals, 1)
 
 # Calculate MSE
 mse = tf.div(tf.reduce_sum(tf.square(tf.subtract(prediction, y_target_test))), batch_size)

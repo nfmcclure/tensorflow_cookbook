@@ -38,7 +38,7 @@ t2 = tf.SparseTensor([[0,0,0], [0,0,1], [0,0,2], [0,0,3], [0,0,4], [0,1,0], [0,1
 print(sess.run(tf.edit_distance(h2, t2, normalize=True)))
 
 #----------------------------------
-# Now compute distance between four words and 'beers' more efficiently:
+# Now compute distance between four words and 'beers' more efficiently with sparse tensors:
 hypothesis_words = ['bear','bar','tensor','flow']
 truth_word = ['beers']
 
