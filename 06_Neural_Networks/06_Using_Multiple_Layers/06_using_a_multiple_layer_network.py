@@ -1,47 +1,49 @@
-# Using a Multiple Layer Network
-#---------------------------------------
-#
-# We will illustrate how to use a Multiple
-# Layer Network in TensorFlow
-#
-# Low Birthrate data:
-#
-#Columns    Variable                                              Abbreviation
-#-----------------------------------------------------------------------------
-# Low Birth Weight (0 = Birth Weight >= 2500g,            LOW
-#                          1 = Birth Weight < 2500g)
-# Age of the Mother in Years                              AGE
-# Weight in Pounds at the Last Menstrual Period           LWT
-# Race (1 = White, 2 = Black, 3 = Other)                  RACE
-# Smoking Status During Pregnancy (1 = Yes, 0 = No)       SMOKE
-# History of Premature Labor (0 = None  1 = One, etc.)    PTL
-# History of Hypertension (1 = Yes, 0 = No)               HT
-# Presence of Uterine Irritability (1 = Yes, 0 = No)      UI
-# Birth Weight in Grams                                   BWT
-#------------------------------
-# The multiple neural network layer we will create will be composed of
-# three fully connected hidden layers, with node sizes 50, 25, and 5
+"""
+Using a Multiple Layer Network
+------------------------------
+We will illustrate how to use a Multiple
+Layer Network in TensorFlow
 
+Low Birthrate data:
+
+Columns    Variable                                Abbreviation
+----------------------------------------------------------------
+Low Birth Weight (0 = Birth Weight >= 2500g,            LOW
+                  1 = Birth Weight < 2500g)
+Age of the Mother in Years                              AGE
+Weight in Pounds at the Last Menstrual Period           LWT
+Race (1 = White, 2 = Black, 3 = Other)                  RACE
+Smoking Status During Pregnancy (1 = Yes, 0 = No)       SMOKE
+History of Premature Labor (0 = None  1 = One, etc.)    PTL
+History of Hypertension (1 = Yes, 0 = No)               HT
+Presence of Uterine Irritability (1 = Yes, 0 = No)      UI
+Birth Weight in Grams                                   BWT
+-----------------------------------------------------------------
+
+The multiple neural network layer we will create will be composed of
+three fully connected hidden layers, with node sizes 50, 25, and 5
+
+"""
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import csv
 import os
-import random
 import numpy as np
-import random
 import requests
 from tensorflow.python.framework import ops
 
 # name of data file
 birth_weight_file = 'birth_weight.csv'
+birthdata_url = 'https://github.com/nfmcclure/tensorflow_cookbook/raw/master' \
+                '/01_Introduction/07_Working_with_Data_Sources/birthweight_data/birthweight.dat'
 
-# download data and create data file if file does not exist in current directory
+# Download data and create data file if file does not exist in current directory
 if not os.path.exists(birth_weight_file):
-    birthdata_url = 'https://github.com/nfmcclure/tensorflow_cookbook/raw/master/01_Introduction/07_Working_with_Data_Sources/birthweight_data/birthweight.dat'
     birth_file = requests.get(birthdata_url)
     birth_data = birth_file.text.split('\r\n')
     birth_header = birth_data[0].split('\t')
-    birth_data = [[float(x) for x in y.split('\t') if len(x)>=1] for y in birth_data[1:] if len(y)>=1]
+    birth_data = [[float(x) for x in y.split('\t') if len(x) >= 1]
+                  for y in birth_data[1:] if len(y) >= 1]
     with open(birth_weight_file, "w") as f:
         writer = csv.writer(f)
         writer.writerows([birth_header])
@@ -58,16 +60,15 @@ with open(birth_weight_file, newline='') as csvfile:
 
 birth_data = [[float(x) for x in row] for row in birth_data]
 
-
 # Extract y-target (birth weight)
 y_vals = np.array([x[8] for x in birth_data])
 
 # Filter for features of interest
 cols_of_interest = ['AGE', 'LWT', 'RACE', 'SMOKE', 'PTL', 'HT', 'UI']
-x_vals = np.array([[x[ix] for ix, feature in enumerate(birth_header) if feature in cols_of_interest] for x in birth_data])
+x_vals = np.array([[x[ix] for ix, feature in enumerate(birth_header) if feature in cols_of_interest]
+                   for x in birth_data])
 
-
-# reset the graph for new run
+# Reset the graph for new run
 ops.reset_default_graph()
 
 # Create graph session 
@@ -76,7 +77,7 @@ sess = tf.Session()
 # set batch size for training
 batch_size = 100
 
-# make results reproducible
+# Set random seed to make results reproducible
 seed = 3
 np.random.seed(seed)
 tf.set_random_seed(seed)
@@ -95,7 +96,7 @@ def normalize_cols(m):
     col_max = m.max(axis=0)
     col_min = m.min(axis=0)
     return (m-col_min) / (col_max - col_min)
-    
+
 x_vals_train = np.nan_to_num(normalize_cols(x_vals_train))
 x_vals_test = np.nan_to_num(normalize_cols(x_vals_test))
 
@@ -103,14 +104,13 @@ x_vals_test = np.nan_to_num(normalize_cols(x_vals_test))
 # Define Variable Functions (weights and bias)
 def init_weight(shape, st_dev):
     weight = tf.Variable(tf.random_normal(shape, stddev=st_dev))
-    return(weight)
-    
+    return weight
+
 
 def init_bias(shape, st_dev):
     bias = tf.Variable(tf.random_normal(shape, stddev=st_dev))
-    return(bias)
-    
-    
+    return bias
+
 # Create Placeholders
 x_data = tf.placeholder(shape=[None, 7], dtype=tf.float32)
 y_target = tf.placeholder(shape=[None, 1], dtype=tf.float32)
@@ -119,27 +119,26 @@ y_target = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 # Create a fully connected layer:
 def fully_connected(input_layer, weights, biases):
     layer = tf.add(tf.matmul(input_layer, weights), biases)
-    return(tf.nn.relu(layer))
+    return tf.nn.relu(layer)
 
-
-#--------Create the first layer (50 hidden nodes)--------
+# -------Create the first layer (50 hidden nodes)--------
 weight_1 = init_weight(shape=[7, 25], st_dev=10.0)
 bias_1 = init_bias(shape=[25], st_dev=10.0)
 layer_1 = fully_connected(x_data, weight_1, bias_1)
 
-#--------Create second layer (25 hidden nodes)--------
+# -------Create second layer (25 hidden nodes)--------
 weight_2 = init_weight(shape=[25, 10], st_dev=10.0)
 bias_2 = init_bias(shape=[10], st_dev=10.0)
 layer_2 = fully_connected(layer_1, weight_2, bias_2)
 
 
-#--------Create third layer (5 hidden nodes)--------
+# -------Create third layer (5 hidden nodes)--------
 weight_3 = init_weight(shape=[10, 3], st_dev=10.0)
 bias_3 = init_bias(shape=[3], st_dev=10.0)
 layer_3 = fully_connected(layer_2, weight_3, bias_3)
 
 
-#--------Create output layer (1 output value)--------
+# -------Create output layer (1 output value)--------
 weight_4 = init_weight(shape=[3, 1], st_dev=10.0)
 bias_4 = init_bias(shape=[1], st_dev=10.0)
 final_output = fully_connected(layer_3, weight_4, bias_4)
@@ -172,7 +171,6 @@ for i in range(200):
     if (i+1) % 25 == 0:
         print('Generation: ' + str(i+1) + '. Loss = ' + str(temp_loss))
 
-
 # Plot loss (MSE) over time
 plt.plot(loss_vec, 'k-', label='Train Loss')
 plt.plot(test_loss, 'r--', label='Test Loss')
@@ -181,3 +179,18 @@ plt.legend(loc='upper right')
 plt.xlabel('Generation')
 plt.ylabel('Loss')
 plt.show()
+
+# Model Accuracy
+actuals = np.array([x[0] for x in birth_data])
+test_actuals = actuals[test_indices]
+train_actuals = actuals[train_indices]
+test_preds = [x[0] for x in sess.run(final_output, feed_dict={x_data: x_vals_test})]
+train_preds = [x[0] for x in sess.run(final_output, feed_dict={x_data: x_vals_train})]
+test_preds = np.array([1.0 if x < 2500.0 else 0.0 for x in test_preds])
+train_preds = np.array([1.0 if x < 2500.0 else 0.0 for x in train_preds])
+# Print out accuracies
+test_acc = np.mean([x == y for x, y in zip(test_preds, test_actuals)])
+train_acc = np.mean([x == y for x, y in zip(train_preds, train_actuals)])
+print('On predicting the category of low birthweight from regression output (<2500g):')
+print('Test Accuracy: {}'.format(test_acc))
+print('Train Accuracy: {}'.format(train_acc))

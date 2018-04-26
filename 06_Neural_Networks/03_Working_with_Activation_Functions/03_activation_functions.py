@@ -1,13 +1,14 @@
-# Combining Gates and Activation Functions
-#----------------------------------
-#
-# This function shows how to implement
-# various gates with activation functions
-# in TensorFlow
-#
-# This function is an extension of the
-# prior gates, but with various activation
-# functions.
+"""
+Combining Gates and Activation Functions
+
+This function shows how to implement
+various gates with activation functions
+in TensorFlow
+
+This function is an extension of the
+prior gates, but with various activation
+functions.
+"""
 
 import tensorflow as tf
 import numpy as np
@@ -22,10 +23,10 @@ np.random.seed(42)
 
 batch_size = 50
 
-a1 = tf.Variable(tf.random_normal(shape=[1,1]))
-b1 = tf.Variable(tf.random_uniform(shape=[1,1]))
-a2 = tf.Variable(tf.random_normal(shape=[1,1]))
-b2 = tf.Variable(tf.random_uniform(shape=[1,1]))
+a1 = tf.Variable(tf.random_normal(shape=[1, 1]))
+b1 = tf.Variable(tf.random_uniform(shape=[1, 1]))
+a2 = tf.Variable(tf.random_normal(shape=[1, 1]))
+b2 = tf.Variable(tf.random_uniform(shape=[1, 1]))
 x = np.random.normal(2, 0.1, 500)
 x_data = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 
@@ -63,9 +64,9 @@ for i in range(500):
     sigmoid_output = np.mean(sess.run(sigmoid_activation, feed_dict={x_data: x_vals}))
     relu_output = np.mean(sess.run(relu_activation, feed_dict={x_data: x_vals}))
     
-    if i%50==0:
+    if i % 50 == 0:
         print('sigmoid = ' + str(np.mean(sigmoid_output)) + ' relu = ' + str(np.mean(relu_output)))
-        
+
 # Plot the loss
 plt.plot(loss_vec_sigmoid, 'k-', label='Sigmoid Activation')
 plt.plot(loss_vec_relu, 'r--', label='Relu Activation')

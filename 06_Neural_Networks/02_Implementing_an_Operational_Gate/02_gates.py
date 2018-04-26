@@ -46,24 +46,24 @@ train_step = my_opt.minimize(loss)
 
 # Run loop across gate
 print('Optimizing a Multiplication Gate Output to 50.')
-for i in range(10):
+for _ in range(10):
     sess.run(train_step, feed_dict={x_data: x_val})
     a_val = sess.run(a)
     mult_output = sess.run(multiplication, feed_dict={x_data: x_val})
     print(str(a_val) + ' * ' + str(x_val) + ' = ' + str(mult_output))
     
-#----------------------------------
-# Create a nested gate:
-#   f(x) = a * x + b
-#
-#  a --
-#      |
-#      |-- (multiply)--
-#  x --|              |
-#                     |-- (add) --> output
-#                 b --|
-#
-#
+'''
+Create a nested gate:
+   f(x) = a * x + b
+
+  a --
+      |
+      |-- (multiply)--
+  x --|              |
+                     |-- (add) --> output
+                 b --|
+
+'''
 
 # Start a New Graph Session
 ops.reset_default_graph()
@@ -90,7 +90,7 @@ train_step = my_opt.minimize(loss)
 
 # Run loop across gate
 print('\nOptimizing Two Gate Output to 50.')
-for i in range(10):
+for _ in range(10):
     sess.run(train_step, feed_dict={x_data: x_val})
     a_val, b_val = (sess.run(a), sess.run(b))
     two_gate_output = sess.run(two_gate, feed_dict={x_data: x_val})

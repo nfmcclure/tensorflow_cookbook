@@ -1,13 +1,14 @@
-# Implementing a one-layer Neural Network
-#---------------------------------------
-#
-# We will illustrate how to create a one hidden layer NN
-#
-# We will use the iris data for this exercise
-#
-# We will build a one-hidden layer neural network
-#  to predict the fourth attribute, Petal Width from
-#  the other three (Sepal length, Sepal width, Petal length).
+"""
+Implementing a one-layer Neural Network
+
+We will illustrate how to create a one hidden layer NN
+
+We will use the iris data for this exercise
+
+We will build a one-hidden layer neural network
+ to predict the fourth attribute, Petal Width from
+ the other three (Sepal length, Sepal width, Petal length).
+"""
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -36,6 +37,7 @@ x_vals_test = x_vals[test_indices]
 y_vals_train = y_vals[train_indices]
 y_vals_test = y_vals[test_indices]
 
+
 # Normalize by column (min-max norm)
 def normalize_cols(m):
     col_max = m.max(axis=0)
@@ -54,11 +56,10 @@ y_target = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 
 # Create variables for both NN layers
 hidden_layer_nodes = 10
-A1 = tf.Variable(tf.random_normal(shape=[3,hidden_layer_nodes])) # inputs -> hidden nodes
-b1 = tf.Variable(tf.random_normal(shape=[hidden_layer_nodes]))   # one biases for each hidden node
-A2 = tf.Variable(tf.random_normal(shape=[hidden_layer_nodes,1])) # hidden inputs -> 1 output
+A1 = tf.Variable(tf.random_normal(shape=[3, hidden_layer_nodes]))  # inputs -> hidden nodes
+b1 = tf.Variable(tf.random_normal(shape=[hidden_layer_nodes]))  # one biases for each hidden node
+A2 = tf.Variable(tf.random_normal(shape=[hidden_layer_nodes, 1]))  # hidden inputs -> 1 output
 b2 = tf.Variable(tf.random_normal(shape=[1]))   # 1 bias for the output
-
 
 # Declare model operations
 hidden_output = tf.nn.relu(tf.add(tf.matmul(x_data, A1), b1))
@@ -89,9 +90,8 @@ for i in range(500):
     
     test_temp_loss = sess.run(loss, feed_dict={x_data: x_vals_test, y_target: np.transpose([y_vals_test])})
     test_loss.append(np.sqrt(test_temp_loss))
-    if (i+1)%50==0:
+    if (i + 1) % 50 == 0:
         print('Generation: ' + str(i+1) + '. Loss = ' + str(temp_loss))
-
 
 # Plot loss (MSE) over time
 plt.plot(loss_vec, 'k-', label='Train Loss')

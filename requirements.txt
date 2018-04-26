@@ -1,4 +1,4 @@
-tensorflow==1.7.0
+tensorflow==1.8.0
 numpy==1.14.2
 scipy==1.0.0
 sklearn==0.19.1
