@@ -59,7 +59,7 @@ target_train = np.array([x for ix, x in enumerate(target) if ix in train_indices
 target_test = np.array([x for ix, x in enumerate(target) if ix in test_indices])
 
 # Load dictionary and embedding matrix
-dict_file = os.path.join( '..', '05_Working_With_CBOW_Embeddings', 'temp', 'movie_vocab.pkl')
+dict_file = os.path.join('..', '05_Working_With_CBOW_Embeddings', 'temp', 'movie_vocab.pkl')
 word_dictionary = pickle.load(open(dict_file, 'rb'))
 
 # Convert texts to lists of indices
@@ -76,8 +76,8 @@ embeddings = tf.Variable(tf.random_uniform([vocabulary_size, embedding_size], -1
 
 # Define model:
 # Create variables for logistic regression
-A = tf.Variable(tf.random_normal(shape=[embedding_size,1]))
-b = tf.Variable(tf.random_normal(shape=[1,1]))
+A = tf.Variable(tf.random_normal(shape=[embedding_size, 1]))
+b = tf.Variable(tf.random_normal(shape=[1, 1]))
 
 # Initialize placeholders
 x_data = tf.placeholder(shape=[None, max_words], dtype=tf.int32)
@@ -108,11 +108,10 @@ init = tf.global_variables_initializer()
 sess.run(init)
 
 # Load model embeddings
-model_checkpoint_path = os.path.join( '..', '05_Working_With_CBOW_Embeddings',
-                                     'temp','cbow_movie_embeddings.ckpt')
+model_checkpoint_path = os.path.join('..', '05_Working_With_CBOW_Embeddings',
+                                     'temp', 'cbow_movie_embeddings.ckpt')
 saver = tf.train.Saver({"embeddings": embeddings})
 saver.restore(sess, model_checkpoint_path)
-
 
 # Start Logistic Regression
 print('Starting Model Training')
@@ -128,8 +127,8 @@ for i in range(10000):
     sess.run(train_step, feed_dict={x_data: rand_x, y_target: rand_y})
     
     # Only record loss and accuracy every 100 generations
-    if (i+1)%100==0:
-        i_data.append(i+1)
+    if (i + 1) % 100 == 0:
+        i_data.append(i + 1)
         train_loss_temp = sess.run(loss, feed_dict={x_data: rand_x, y_target: rand_y})
         train_loss.append(train_loss_temp)
         
@@ -141,8 +140,8 @@ for i in range(10000):
     
         test_acc_temp = sess.run(accuracy, feed_dict={x_data: text_data_test, y_target: np.transpose([target_test])})
         test_acc.append(test_acc_temp)
-    if (i+1)%500==0:
-        acc_and_loss = [i+1, train_loss_temp, test_loss_temp, train_acc_temp, test_acc_temp]
+    if (i + 1) % 500 == 0:
+        acc_and_loss = [i + 1, train_loss_temp, test_loss_temp, train_acc_temp, test_acc_temp]
         acc_and_loss = [np.round(x,2) for x in acc_and_loss]
         print('Generation # {}. Train Loss (Test Loss): {:.2f} ({:.2f}). Train Acc (Test Acc): {:.2f} ({:.2f})'.format(*acc_and_loss))
 

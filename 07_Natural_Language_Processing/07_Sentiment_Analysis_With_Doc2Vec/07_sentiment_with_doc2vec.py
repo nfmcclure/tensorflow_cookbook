@@ -64,7 +64,7 @@ valid_words = ['love', 'hate', 'happy', 'sad', 'man', 'woman']
 
 # Load the movie review data
 print('Loading Data')
-texts, target = text_helpers.load_movie_data(data_folder_name)
+texts, target = text_helpers.load_movie_data()
 
 # Normalize text
 print('Normalizing Text Data')
@@ -259,7 +259,7 @@ for i in range(10000):
     sess.run(logistic_train_step, feed_dict=feed_dict)
     
     # Only record loss and accuracy every 100 generations
-    if (i+1)%100==0:
+    if (i + 1) % 100 == 0:
         rand_index_test = np.random.choice(text_data_test.shape[0], size=logistic_batch_size)
         rand_x_test = text_data_test[rand_index_test]
         # Append review index at the end of text data
@@ -282,11 +282,10 @@ for i in range(10000):
     
         test_acc_temp = sess.run(accuracy, feed_dict=test_feed_dict)
         test_acc.append(test_acc_temp)
-    if (i+1)%500==0:
-        acc_and_loss = [i+1, train_loss_temp, test_loss_temp, train_acc_temp, test_acc_temp]
+    if (i + 1) % 500 == 0:
+        acc_and_loss = [i + 1, train_loss_temp, test_loss_temp, train_acc_temp, test_acc_temp]
         acc_and_loss = [np.round(x,2) for x in acc_and_loss]
         print('Generation # {}. Train Loss (Test Loss): {:.2f} ({:.2f}). Train Acc (Test Acc): {:.2f} ({:.2f})'.format(*acc_and_loss))
-
 
 # Plot loss over time
 plt.plot(i_data, train_loss, 'k-', label='Train Loss')

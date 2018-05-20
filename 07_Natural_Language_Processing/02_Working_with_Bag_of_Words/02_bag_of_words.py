@@ -57,7 +57,7 @@ texts = [x[1] for x in text_data]
 target = [x[0] for x in text_data]
 
 # Relabel 'spam' as 1, 'ham' as 0
-target = [1 if x=='spam' else 0 for x in target]
+target = [1 if x == 'spam' else 0 for x in target]
 
 # Normalize text
 # Lower case
@@ -87,7 +87,8 @@ vocab_processor = learn.preprocessing.VocabularyProcessor(sentence_size, min_fre
 
 # Have to fit transform to get length of unique words.
 vocab_processor.transform(texts)
-embedding_size = len([x for x in vocab_processor.transform(texts)])
+transformed_texts = np.array([x for x in vocab_processor.transform(texts)])
+embedding_size = len(np.unique(transformed_texts))
 
 # Split up data set into train/test
 train_indices = np.random.choice(len(texts), round(len(texts)*0.8), replace=False)
@@ -138,13 +139,13 @@ train_acc_avg = []
 for ix, t in enumerate(vocab_processor.fit_transform(texts_train)):
     y_data = [[target_train[ix]]]
     
-    
+    # Run through each observation for training
     sess.run(train_step, feed_dict={x_data: t, y_target: y_data})
     temp_loss = sess.run(loss, feed_dict={x_data: t, y_target: y_data})
     loss_vec.append(temp_loss)
     
-    if (ix+1)%10==0:
-        print('Training Observation #' + str(ix+1) + ': Loss = ' + str(temp_loss))
+    if (ix + 1) % 10 == 0:
+        print('Training Observation #{}, Loss = {}'.format(ix+1, temp_loss))
         
     # Keep trailing average of past 50 observations accuracy
     # Get prediction of single observation
@@ -161,8 +162,8 @@ test_acc_all = []
 for ix, t in enumerate(vocab_processor.fit_transform(texts_test)):
     y_data = [[target_test[ix]]]
     
-    if (ix+1)%50==0:
-        print('Test Observation #' + str(ix+1))    
+    if (ix + 1) % 50 == 0:
+        print('Test Observation #{}'.format(str(ix+1)))
     
     # Keep trailing average of past 50 observations accuracy
     # Get prediction of single observation

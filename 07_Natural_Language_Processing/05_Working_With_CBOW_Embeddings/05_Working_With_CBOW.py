@@ -23,7 +23,11 @@ from nltk.corpus import stopwords
 from tensorflow.python.framework import ops
 ops.reset_default_graph()
 
-os.chdir(os.path.dirname(os.path.realpath(__file__)))
+# Set Random Seeds
+tf.set_random_seed(42)
+np.random.seed(42)
+
+# os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Make a saving directory if it doesn't exist
 data_folder_name = 'temp'
@@ -38,7 +42,7 @@ batch_size = 500
 embedding_size = 200
 vocabulary_size = 2000
 generations = 50000
-model_learning_rate = 0.5
+model_learning_rate = 0.25
 
 num_sampled = int(batch_size/2)    # Number of negative examples to sample.
 window_size = 3       # How many words to consider left and right.
@@ -130,7 +134,7 @@ loss_x_vec = []
 for i in range(generations):
     batch_inputs, batch_labels = text_helpers.generate_batch_data(text_data, batch_size,
                                                                   window_size, method='cbow')
-    feed_dict = {x_inputs : batch_inputs, y_target : batch_labels}
+    feed_dict = {x_inputs: batch_inputs, y_target: batch_labels}
 
     # Run the train step
     sess.run(optimizer, feed_dict=feed_dict)
@@ -147,7 +151,7 @@ for i in range(generations):
         sim = sess.run(similarity, feed_dict=feed_dict)
         for j in range(len(valid_words)):
             valid_word = word_dictionary_rev[valid_examples[j]]
-            top_k = 5 # number of nearest neighbors
+            top_k = 5  # number of nearest neighbors
             nearest = (-sim[j, :]).argsort()[1:top_k+1]
             log_str = "Nearest to {}:".format(valid_word)
             for k in range(top_k):
@@ -156,12 +160,12 @@ for i in range(generations):
             print(log_str)
             
     # Save dictionary + embeddings
-    if (i+1) % save_embeddings_every == 0:
+    if (i + 1) % save_embeddings_every == 0:
         # Save vocabulary dictionary
-        with open(os.path.join(data_folder_name,'movie_vocab.pkl'), 'wb') as f:
+        with open(os.path.join(data_folder_name, 'movie_vocab.pkl'), 'wb') as f:
             pickle.dump(word_dictionary, f)
         
         # Save embeddings
-        model_checkpoint_path = os.path.join(os.getcwd(),data_folder_name,'cbow_movie_embeddings.ckpt')
+        model_checkpoint_path = os.path.join(os.getcwd(), data_folder_name, 'cbow_movie_embeddings.ckpt')
         save_path = saver.save(sess, model_checkpoint_path)
         print('Model saved in file: {}'.format(save_path))

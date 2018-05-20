@@ -45,9 +45,9 @@ else:
     file = z.read('SMSSpamCollection')
     # Format Data
     text_data = file.decode()
-    text_data = text_data.encode('ascii',errors='ignore')
+    text_data = text_data.encode('ascii', errors='ignore')
     text_data = text_data.decode().split('\n')
-    text_data = [x.split('\t') for x in text_data if len(x)>=1]
+    text_data = [x.split('\t') for x in text_data if len(x) >= 1]
     
     # And write to csv
     with open(save_file_name, 'w') as temp_output_file:
@@ -59,7 +59,7 @@ texts = [x[1] for x in text_data]
 target = [x[0] for x in text_data]
 
 # Relabel 'spam' as 1, 'ham' as 0
-target = [1. if x=='spam' else 0. for x in target]
+target = [1. if x == 'spam' else 0. for x in target]
 
 # Normalize text
 # Lower case
@@ -73,6 +73,7 @@ texts = [''.join(c for c in x if c not in '0123456789') for x in texts]
 
 # Trim extra whitespace
 texts = [' '.join(x.split()) for x in texts]
+
 
 # Define tokenizer
 def tokenizer(text):
@@ -92,8 +93,8 @@ target_train = np.array([x for ix, x in enumerate(target) if ix in train_indices
 target_test = np.array([x for ix, x in enumerate(target) if ix in test_indices])
 
 # Create variables for logistic regression
-A = tf.Variable(tf.random_normal(shape=[max_features,1]))
-b = tf.Variable(tf.random_normal(shape=[1,1]))
+A = tf.Variable(tf.random_normal(shape=[max_features, 1]))
+b = tf.Variable(tf.random_normal(shape=[1, 1]))
 
 # Initialize placeholders
 x_data = tf.placeholder(shape=[None, max_features], dtype=tf.float32)
@@ -131,7 +132,7 @@ for i in range(10000):
     sess.run(train_step, feed_dict={x_data: rand_x, y_target: rand_y})
     
     # Only record loss and accuracy every 100 generations
-    if (i+1)%100==0:
+    if (i + 1) % 100 == 0:
         i_data.append(i+1)
         train_loss_temp = sess.run(loss, feed_dict={x_data: rand_x, y_target: rand_y})
         train_loss.append(train_loss_temp)
@@ -144,7 +145,7 @@ for i in range(10000):
     
         test_acc_temp = sess.run(accuracy, feed_dict={x_data: texts_test.todense(), y_target: np.transpose([target_test])})
         test_acc.append(test_acc_temp)
-    if (i+1)%500==0:
+    if (i + 1) % 500 == 0:
         acc_and_loss = [i+1, train_loss_temp, test_loss_temp, train_acc_temp, test_acc_temp]
         acc_and_loss = [np.round(x,2) for x in acc_and_loss]
         print('Generation # {}. Train Loss (Test Loss): {:.2f} ({:.2f}). Train Acc (Test Acc): {:.2f} ({:.2f})'.format(*acc_and_loss))

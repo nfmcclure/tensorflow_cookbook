@@ -54,6 +54,7 @@ print_valid_every = 5000
 valid_words = ['cliche', 'love', 'hate', 'silly', 'sad']
 # Later we will have to transform these into indices
 
+
 # Load the movie review data
 # Check if data was downloaded, otherwise download it and save for future use
 def load_movie_data():
@@ -80,23 +81,24 @@ def load_movie_data():
     pos_data = []
     with open(pos_file, 'r', encoding='latin-1') as f:
         for line in f:
-            pos_data.append(line.encode('ascii',errors='ignore').decode())
+            pos_data.append(line.encode('ascii', errors='ignore').decode())
     f.close()
     pos_data = [x.rstrip() for x in pos_data]
 
     neg_data = []
     with open(neg_file, 'r', encoding='latin-1') as f:
         for line in f:
-            neg_data.append(line.encode('ascii',errors='ignore').decode())
+            neg_data.append(line.encode('ascii', errors='ignore').decode())
     f.close()
     neg_data = [x.rstrip() for x in neg_data]
     
     texts = pos_data + neg_data
-    target = [1]*len(pos_data) + [0]*len(neg_data)
+    target = [1] * len(pos_data) + [0] * len(neg_data)
     
-    return(texts, target)
+    return texts, target
 
 texts, target = load_movie_data()
+
 
 # Normalize text
 def normalize_text(texts, stops):
@@ -110,18 +112,19 @@ def normalize_text(texts, stops):
     texts = [''.join(c for c in x if c not in '0123456789') for x in texts]
 
     # Remove stopwords
-    texts = [' '.join([word for word in x.split() if word not in (stops)]) for x in texts]
+    texts = [' '.join([word for word in x.split() if word not in stops]) for x in texts]
 
     # Trim extra whitespace
     texts = [' '.join(x.split()) for x in texts]
     
-    return(texts)
+    return texts
     
 texts = normalize_text(texts, stops)
 
 # Texts must contain at least 3 words
 target = [target[ix] for ix, x in enumerate(texts) if len(x.split()) > 2]
 texts = [x for x in texts if len(x.split()) > 2]
+
 
 # Build dictionary of words
 def build_dictionary(sentences, vocabulary_size):
@@ -133,7 +136,7 @@ def build_dictionary(sentences, vocabulary_size):
     count = [['RARE', -1]]
     
     # Now add most frequent words, limited to the N-most frequent (N=vocabulary size)
-    count.extend(collections.Counter(words).most_common(vocabulary_size-1))
+    count.extend(collections.Counter(words).most_common(vocabulary_size - 1))
     
     # Now create the dictionary
     word_dict = {}
@@ -142,7 +145,7 @@ def build_dictionary(sentences, vocabulary_size):
     for word, word_count in count:
         word_dict[word] = len(word_dict)
     
-    return(word_dict)
+    return word_dict
     
 
 # Turn text data into lists of integers from dictionary
@@ -159,7 +162,7 @@ def text_to_numbers(sentences, word_dict):
                 word_ix = 0
             sentence_data.append(word_ix)
         data.append(sentence_data)
-    return(data)
+    return data
 
 # Build our data set and dictionaries
 word_dictionary = build_dictionary(texts, vocabulary_size)
@@ -168,6 +171,7 @@ text_data = text_to_numbers(texts, word_dictionary)
 
 # Get validation word keys
 valid_examples = [word_dictionary[x] for x in valid_words]
+
 
 # Generate data randomly (N words behind, target, N words ahead)
 def generate_batch_data(sentences, batch_size, window_size, method='skip_gram'):
@@ -178,19 +182,19 @@ def generate_batch_data(sentences, batch_size, window_size, method='skip_gram'):
         # select random sentence to start
         rand_sentence = np.random.choice(sentences)
         # Generate consecutive windows to look at
-        window_sequences = [rand_sentence[max((ix-window_size),0):(ix+window_size+1)] for ix, x in enumerate(rand_sentence)]
+        window_sequences = [rand_sentence[max((ix - window_size), 0):(ix + window_size + 1)] for ix, x in enumerate(rand_sentence)]
         # Denote which element of each window is the center word of interest
-        label_indices = [ix if ix<window_size else window_size for ix,x in enumerate(window_sequences)]
+        label_indices = [ix if ix < window_size else window_size for ix, x in enumerate(window_sequences)]
         
         # Pull out center word of interest for each window and create a tuple for each window
-        if method=='skip_gram':
-            batch_and_labels = [(x[y], x[:y] + x[(y+1):]) for x,y in zip(window_sequences, label_indices)]
+        if method == 'skip_gram':
+            batch_and_labels = [(x[y], x[:y] + x[(y+1):]) for x, y in zip(window_sequences, label_indices)]
             # Make it in to a big list of tuples (target word, surrounding word)
-            tuple_data = [(x, y_) for x,y in batch_and_labels for y_ in y]
-        elif method=='cbow':
-            batch_and_labels = [(x[:y] + x[(y+1):], x[y]) for x,y in zip(window_sequences, label_indices)]
+            tuple_data = [(x, y_) for x, y in batch_and_labels for y_ in y]
+        elif method == 'cbow':
+            batch_and_labels = [(x[:y] + x[(y + 1):], x[y]) for x, y in zip(window_sequences, label_indices)]
             # Make it in to a big list of tuples (target word, surrounding word)
-            tuple_data = [(x_, y) for x,y in batch_and_labels for x_ in x]
+            tuple_data = [(x_, y) for x, y in batch_and_labels for x_ in x]
         else:
             raise ValueError('Method {} not implemented yet.'.format(method))
             
@@ -206,15 +210,15 @@ def generate_batch_data(sentences, batch_size, window_size, method='skip_gram'):
     batch_data = np.array(batch_data)
     label_data = np.transpose(np.array([label_data]))
     
-    return(batch_data, label_data)
-    
+    return batch_data, label_data
+
 
 # Define Embeddings:
 embeddings = tf.Variable(tf.random_uniform([vocabulary_size, embedding_size], -1.0, 1.0))
 
 # NCE loss parameters
 nce_weights = tf.Variable(tf.truncated_normal([vocabulary_size, embedding_size],
-                                               stddev=1.0 / np.sqrt(embedding_size)))
+                                              stddev=1.0 / np.sqrt(embedding_size)))
 nce_biases = tf.Variable(tf.zeros([vocabulary_size]))
 
 # Create data/target placeholders
@@ -237,12 +241,12 @@ loss = tf.reduce_mean(tf.nn.nce_loss(weights=nce_weights,
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=1.0).minimize(loss)
 
 # Cosine similarity between words
-norm = tf.sqrt(tf.reduce_sum(tf.square(embeddings), 1, keep_dims=True))
+norm = tf.sqrt(tf.reduce_sum(tf.square(embeddings), 1, keepdims=True))
 normalized_embeddings = embeddings / norm
 valid_embeddings = tf.nn.embedding_lookup(normalized_embeddings, valid_dataset)
 similarity = tf.matmul(valid_embeddings, normalized_embeddings, transpose_b=True)
 
-#Add variable initializer.
+# Add variable initializer.
 init = tf.global_variables_initializer()
 sess.run(init)
 
@@ -251,27 +255,28 @@ loss_vec = []
 loss_x_vec = []
 for i in range(generations):
     batch_inputs, batch_labels = generate_batch_data(text_data, batch_size, window_size)
-    feed_dict = {x_inputs : batch_inputs, y_target : batch_labels}
+    feed_dict = {x_inputs: batch_inputs, y_target: batch_labels}
 
     # Run the train step
     sess.run(optimizer, feed_dict=feed_dict)
 
     # Return the loss
-    if (i+1) % print_loss_every == 0:
+    if (i + 1) % print_loss_every == 0:
         loss_val = sess.run(loss, feed_dict=feed_dict)
         loss_vec.append(loss_val)
         loss_x_vec.append(i+1)
-        print("Loss at step {} : {}".format(i+1, loss_val))
+        print('Loss at step {} : {}'.format(i+1, loss_val))
       
     # Validation: Print some random words and top 5 related words
     if (i+1) % print_valid_every == 0:
         sim = sess.run(similarity, feed_dict=feed_dict)
         for j in range(len(valid_words)):
-            valid_word = word_dictionary_rev[valid_examples[j]]
-            top_k = 5 # number of nearest neighbors
+            valid_word = valid_words[j]
+            # top_k = number of nearest neighbors
+            top_k = 5
             nearest = (-sim[j, :]).argsort()[1:top_k+1]
             log_str = "Nearest to {}:".format(valid_word)
             for k in range(top_k):
                 close_word = word_dictionary_rev[nearest[k]]
-                log_str = "%s %s," % (log_str, close_word)
+                log_str = '{} {},'.format(log_str, close_word)
             print(log_str)
