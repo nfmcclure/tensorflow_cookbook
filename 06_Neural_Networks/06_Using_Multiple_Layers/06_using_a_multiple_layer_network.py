@@ -90,15 +90,16 @@ x_vals_test = x_vals[test_indices]
 y_vals_train = y_vals[train_indices]
 y_vals_test = y_vals[test_indices]
 
+# Record training column max and min for scaling of non-training data
+train_max = np.max(x_vals_train, axis=0)
+train_min = np.min(x_vals_train, axis=0)
 
 # Normalize by column (min-max norm to be between 0 and 1)
-def normalize_cols(m):
-    col_max = m.max(axis=0)
-    col_min = m.min(axis=0)
-    return (m-col_min) / (col_max - col_min)
+def normalize_cols(mat, max_vals, min_vals):
+    return (mat - min_vals) / (max_vals - min_vals)
 
-x_vals_train = np.nan_to_num(normalize_cols(x_vals_train))
-x_vals_test = np.nan_to_num(normalize_cols(x_vals_test))
+x_vals_train = np.nan_to_num(normalize_cols(x_vals_train, train_max, train_min))
+x_vals_test = np.nan_to_num(normalize_cols(x_vals_test, train_max, train_min))
 
 
 # Define Variable Functions (weights and bias)
@@ -194,3 +195,13 @@ train_acc = np.mean([x == y for x, y in zip(train_preds, train_actuals)])
 print('On predicting the category of low birthweight from regression output (<2500g):')
 print('Test Accuracy: {}'.format(test_acc))
 print('Train Accuracy: {}'.format(train_acc))
+
+# Evaluate new points on the model
+# Need vectors of 'AGE', 'LWT', 'RACE', 'SMOKE', 'PTL', 'HT', 'UI'
+new_data = np.array([[35, 185, 1., 0., 0., 0., 1.],
+                     [18, 160, 0., 1., 0., 0., 1.]])
+new_data_scaled = np.nan_to_num(normalize_cols(new_data, train_max, train_min))
+new_logits = [x[0] for x in sess.run(final_output, feed_dict={x_data: new_data_scaled})]
+new_preds = np.array([1.0 if x < 2500.0 else 0.0 for x in new_logits])
+
+print('New Data Predictions: {}'.format(new_preds))
