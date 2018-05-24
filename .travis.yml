@@ -1,5 +1,8 @@
 dist: trusty
 language: python
+addons:
+  apt:
+    update: true
 python:
   - "3.6"
 # command to install dependencies
