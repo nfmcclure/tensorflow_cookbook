@@ -35,7 +35,7 @@ y_vals = np.array([1 if y == 0 else -1 for y in iris.target])
 
 # Split data into train/test sets
 train_indices = np.random.choice(len(x_vals),
-                                 round(len(x_vals)*0.9),
+                                 int(round(len(x_vals)*0.9)),
                                  replace=False)
 test_indices = np.array(list(set(range(len(x_vals))) - set(train_indices)))
 x_vals_train = x_vals[train_indices]
