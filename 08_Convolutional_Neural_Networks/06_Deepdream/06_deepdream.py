@@ -187,6 +187,6 @@ if __name__=="__main__":
     showarray(img0/255.0)
 
     # Create deep dream
-    render_deepdream(T(layer)[:,:,:,channel], img0, iter_n=15)
+    render_deepdream(T(layer)[:, :, :, channel], img0, iter_n=15)
 
     sess.close()

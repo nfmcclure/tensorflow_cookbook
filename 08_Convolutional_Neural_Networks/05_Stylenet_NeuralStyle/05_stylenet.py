@@ -196,7 +196,7 @@ with tf.Graph().as_default():
         
         
         # Save final image
-        image_eval = init_image.eval()  # sess.run(image)
+        image_eval = init_image.eval()
         best_image_add_mean = image_eval.reshape(shape[1:]) + normalization_mean
         output_file = 'final_output.jpg'
         scipy.misc.imsave(output_file, best_image_add_mean)
