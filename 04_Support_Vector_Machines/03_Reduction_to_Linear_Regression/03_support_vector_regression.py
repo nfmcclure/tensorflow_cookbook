@@ -87,7 +87,7 @@ for i in range(200):
 # Extract Coefficients
 [[slope]] = sess.run(A)
 [[y_intercept]] = sess.run(b)
-[width] = sess.run(epsilon)
+width = sess.run(epsilon)
 
 # Get best fit line
 best_fit = []
