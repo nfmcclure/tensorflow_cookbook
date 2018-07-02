@@ -30,9 +30,9 @@ ops.reset_default_graph()
 graph = tf.Graph()
 sess = tf.InteractiveSession(graph=graph)
 
-os.chdir('/home/nick/Documents/tensorflow/inception-v1-model/')
+os.chdir('~/Documents/tensorflow/inception-v1-model/')
 
-# Model location
+# Model filename
 model_fn = 'tensorflow_inception_graph.pb'
 
 # Load graph parameters
@@ -101,7 +101,7 @@ def tffunc(*argtypes):
 def resize(img, size):
     img = tf.expand_dims(img, 0)
     # Change 'img' size by linear interpolation
-    return tf.image.resize_bilinear(img, size)[0,:,:,:]
+    return tf.image.resize_bilinear(img, size)[0, :, :, :]
 
 
 def calc_grad_tiled(img, t_grad, tile_size=512):

@@ -18,7 +18,10 @@ from tensorflow.python.framework import ops
 ops.reset_default_graph()
 
 # Change Directory
-abspath = os.path.abspath(__file__)
+try:
+    abspath = os.path.abspath(__file__)
+except NameError:
+    abspath = os.getcwd()
 dname = os.path.dirname(abspath)
 os.chdir(dname)
 
@@ -47,7 +50,6 @@ num_gens_to_wait = 250.
 # Extract model parameters
 image_vec_length = image_height * image_width * num_channels
 record_length = 1 + image_vec_length # ( + 1 for the 0-9 label)
-
 
 # Load data
 data_dir = 'temp'
@@ -94,7 +96,7 @@ def read_cifar_files(filename_queue, distort_images = True):
 
     # Normalize whitening
     final_image = tf.image.per_image_standardization(final_image)
-    return(final_image, image_label)
+    return final_image, image_label
 
 
 # Create a CIFAR image pipeline from reader
@@ -119,7 +121,7 @@ def input_pipeline(batch_size, train_logical=True):
                                                         capacity=capacity,
                                                         min_after_dequeue=min_after_dequeue)
 
-    return(example_batch, label_batch)
+    return example_batch, label_batch
 
     
 # Define the model architecture, this will return logits from images
@@ -191,7 +193,7 @@ def cifar_cnn_model(input_images, batch_size, train_logical=True):
         full_bias3 =  zero_var(name='full_bias3', shape=[num_targets], dtype=tf.float32)
         final_output = tf.add(tf.matmul(full_layer2, full_weight3), full_bias3)
         
-    return(final_output)
+    return final_output
 
 
 # Loss function
@@ -202,7 +204,7 @@ def cifar_loss(logits, targets):
     cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits, labels=targets)
     # Take the average loss across batch size
     cross_entropy_mean = tf.reduce_mean(cross_entropy, name='cross_entropy')
-    return(cross_entropy_mean)
+    return cross_entropy_mean
 
 
 # Train step
@@ -214,7 +216,7 @@ def train_step(loss_value, generation_num):
     my_optimizer = tf.train.GradientDescentOptimizer(model_learning_rate)
     # Initialize train step
     train_step = my_optimizer.minimize(loss_value)
-    return(train_step)
+    return train_step
 
 
 # Accuracy function
@@ -227,7 +229,7 @@ def accuracy_of_batch(logits, targets):
     predicted_correctly = tf.equal(batch_predictions, targets)
     # Average the 1's and 0's (True's and False's) across the batch size
     accuracy = tf.reduce_mean(tf.cast(predicted_correctly, tf.float32))
-    return(accuracy)
+    return accuracy
 
 # Get data
 print('Getting/Transforming Data.')

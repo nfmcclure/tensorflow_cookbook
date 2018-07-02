@@ -2,9 +2,9 @@
 #---------------------------------------
 #
 # In this script, we download the CIFAR-10 images and
-# transform/save them in the Inception Retrianing Format
+# transform/save them in the Inception Retraining Format
 #
-# The end purpose of the files is for retrianing the
+# The end purpose of the files is for re-training the
 # Google Inception tensorflow model to work on the CIFAR-10.
 
 import os
@@ -13,6 +13,8 @@ import _pickle as cPickle
 import numpy as np
 import urllib.request
 import scipy.misc
+from tensorflow.python.framework import ops
+ops.reset_default_graph()
 
 cifar_link = 'https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz'
 data_dir = 'temp'
@@ -55,7 +57,7 @@ def load_batch_from_file(file):
     file_conn = open(file, 'rb')
     image_dictionary = cPickle.load(file_conn, encoding='latin1')
     file_conn.close()
-    return(image_dictionary)
+    return image_dictionary
 
 
 def save_images_from_dict(image_dict, folder='data_dir'):
@@ -90,3 +92,7 @@ print('Writing labels file, {}'.format(cifar_labels_file))
 with open(cifar_labels_file, 'w') as labels_file:
     for item in objects:
         labels_file.write("{}\n".format(item))
+
+# After this is done, we proceed with the TensorFlow fine-tuning tutorial.
+
+# https://www.tensorflow.org/tutorials/image_retraining

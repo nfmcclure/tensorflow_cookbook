@@ -1,5 +1,5 @@
 # Introductory CNN Model: MNIST Digits
-#---------------------------------------
+# ---------------------------------------
 #
 # In this example, we will download the MNIST handwritten
 # digits and create a simple CNN network to predict the
@@ -8,7 +8,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
-from tensorflow.contrib.learn.python.learn.datasets.mnist import read_data_sets
+from tensorflow.examples.tutorials.mnist import input_data
 from tensorflow.python.framework import ops
 ops.reset_default_graph()
 
@@ -17,11 +17,11 @@ sess = tf.Session()
 
 # Load data
 data_dir = 'temp'
-mnist = read_data_sets(data_dir)
+mnist = input_data.read_data_sets(data_dir, one_hot=False)
 
 # Convert images into 28x28 (they are downloaded as 1x784)
-train_xdata = np.array([np.reshape(x, (28,28)) for x in mnist.train.images])
-test_xdata = np.array([np.reshape(x, (28,28)) for x in mnist.test.images])
+train_xdata = np.array([np.reshape(x, (28, 28)) for x in mnist.train.images])
+test_xdata = np.array([np.reshape(x, (28, 28)) for x in mnist.test.images])
 
 # Convert labels into one-hot encoded vectors
 train_labels = mnist.train.labels
@@ -33,14 +33,14 @@ learning_rate = 0.005
 evaluation_size = 500
 image_width = train_xdata[0].shape[0]
 image_height = train_xdata[0].shape[1]
-target_size = max(train_labels) + 1
-num_channels = 1 # greyscale = 1 channel
+target_size = np.max(train_labels) + 1
+num_channels = 1  # greyscale = 1 channel
 generations = 500
 eval_every = 5
 conv1_features = 25
 conv2_features = 50
-max_pool_size1 = 2 # NxN window for 1st max pool layer
-max_pool_size2 = 2 # NxN window for 2nd max pool layer
+max_pool_size1 = 2  # NxN window for 1st max pool layer
+max_pool_size2 = 2  # NxN window for 2nd max pool layer
 fully_connected_size1 = 100
 
 # Declare model placeholders
@@ -65,7 +65,7 @@ resulting_width = image_width // (max_pool_size1 * max_pool_size2)
 resulting_height = image_height // (max_pool_size1 * max_pool_size2)
 full1_input_size = resulting_width * resulting_height * conv2_features
 full1_weight = tf.Variable(tf.truncated_normal([full1_input_size, fully_connected_size1],
-                          stddev=0.1, dtype=tf.float32))
+                           stddev=0.1, dtype=tf.float32))
 full1_bias = tf.Variable(tf.truncated_normal([fully_connected_size1], stddev=0.1, dtype=tf.float32))
 full2_weight = tf.Variable(tf.truncated_normal([fully_connected_size1, target_size],
                                                stddev=0.1, dtype=tf.float32))
@@ -73,9 +73,9 @@ full2_bias = tf.Variable(tf.truncated_normal([target_size], stddev=0.1, dtype=tf
 
 
 # Initialize Model Operations
-def my_conv_net(input_data):
+def my_conv_net(conv_input_data):
     # First Conv-ReLU-MaxPool Layer
-    conv1 = tf.nn.conv2d(input_data, conv1_weight, strides=[1, 1, 1, 1], padding='SAME')
+    conv1 = tf.nn.conv2d(conv_input_data, conv1_weight, strides=[1, 1, 1, 1], padding='SAME')
     relu1 = tf.nn.relu(tf.nn.bias_add(conv1, conv1_bias))
     max_pool1 = tf.nn.max_pool(relu1, ksize=[1, max_pool_size1, max_pool_size1, 1],
                                strides=[1, max_pool_size1, max_pool_size1, 1], padding='SAME')
@@ -97,7 +97,7 @@ def my_conv_net(input_data):
     # Second Fully Connected Layer
     final_model_output = tf.add(tf.matmul(fully_connected1, full2_weight), full2_bias)
     
-    return(final_model_output)
+    return final_model_output
 
 model_output = my_conv_net(x_input)
 test_model_output = my_conv_net(eval_input)
@@ -109,11 +109,12 @@ loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(logits=mode
 prediction = tf.nn.softmax(model_output)
 test_prediction = tf.nn.softmax(test_model_output)
 
+
 # Create accuracy function
 def get_accuracy(logits, targets):
     batch_predictions = np.argmax(logits, axis=1)
     num_correct = np.sum(np.equal(batch_predictions, targets))
-    return(100. * num_correct/batch_predictions.shape[0])
+    return 100. * num_correct/batch_predictions.shape[0]
 
 # Create an optimizer
 my_optimizer = tf.train.MomentumOptimizer(learning_rate, 0.9)
@@ -152,7 +153,7 @@ for i in range(generations):
         train_acc.append(temp_train_acc)
         test_acc.append(temp_test_acc)
         acc_and_loss = [(i+1), temp_train_loss, temp_train_acc, temp_test_acc]
-        acc_and_loss = [np.round(x,2) for x in acc_and_loss]
+        acc_and_loss = [np.round(x, 2) for x in acc_and_loss]
         print('Generation # {}. Train Loss: {:.2f}. Train Acc (Test Acc): {:.2f} ({:.2f})'.format(*acc_and_loss))
     
     
@@ -177,16 +178,16 @@ plt.show()
 # Plot some samples
 # Plot the 6 of the last batch results:
 actuals = rand_y[0:6]
-predictions = np.argmax(temp_train_preds,axis=1)[0:6]
+predictions = np.argmax(temp_train_preds, axis=1)[0:6]
 images = np.squeeze(rand_x[0:6])
 
 Nrows = 2
 Ncols = 3
 for i in range(6):
     plt.subplot(Nrows, Ncols, i+1)
-    plt.imshow(np.reshape(images[i], [28,28]), cmap='Greys_r')
+    plt.imshow(np.reshape(images[i], [28, 28]), cmap='Greys_r')
     plt.title('Actual: ' + str(actuals[i]) + ' Pred: ' + str(predictions[i]),
-                               fontsize=10)
+              fontsize=10)
     frame = plt.gca()
     frame.axes.get_xaxis().set_visible(False)
     frame.axes.get_yaxis().set_visible(False)

@@ -2,7 +2,7 @@
 
 # [TensorFlow Machine Learning Cookbook](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
-## (Code is slowly becoming TensorFlow-v1.7 compliant.)
+## (Code is slowly becoming TensorFlow-v1.9 compliant.)
 
 ## [A Packt Publishing Book](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
