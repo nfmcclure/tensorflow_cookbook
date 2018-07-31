@@ -24,16 +24,15 @@ ops.reset_default_graph()
 sess = tf.Session()
 
 # Set RNN Parameters
-min_word_freq = 5 # Trim the less frequent words off
-rnn_size = 128 # RNN Model size
-embedding_size = 100 # Word embedding size
-epochs = 10 # Number of epochs to cycle through data
-batch_size = 100 # Train on this many examples at once
-learning_rate = 0.001 # Learning rate
-training_seq_len = 50 # how long of a word group to consider 
-embedding_size = rnn_size
-save_every = 500 # How often to save model checkpoints
-eval_every = 50 # How often to evaluate the test sentences
+min_word_freq = 5  # Trim the less frequent words off
+rnn_size = 128  # RNN Model size
+epochs = 10  # Number of epochs to cycle through data
+batch_size = 100  # Train on this many examples at once
+learning_rate = 0.001  # Learning rate
+training_seq_len = 50  # how long of a word group to consider
+embedding_size = rnn_size  # Word embedding size
+save_every = 500  # How often to save model checkpoints
+eval_every = 50  # How often to evaluate the test sentences
 prime_texts = ['thou art more', 'to be or not to', 'wherefore art thou']
 
 # Download/store Shakespeare data
@@ -81,22 +80,24 @@ else:
 # Clean text
 print('Cleaning Text')
 s_text = re.sub(r'[{}]'.format(punctuation), ' ', s_text)
-s_text = re.sub('\s+', ' ', s_text ).strip().lower()
+s_text = re.sub('\s+', ' ', s_text).strip().lower()
+
 
 # Build word vocabulary function
-def build_vocab(text, min_word_freq):
+def build_vocab(text, min_freq):
     word_counts = collections.Counter(text.split(' '))
     # limit word counts to those more frequent than cutoff
-    word_counts = {key:val for key, val in word_counts.items() if val>min_word_freq}
+    word_counts = {key: val for key, val in word_counts.items() if val > min_freq}
     # Create vocab --> index mapping
     words = word_counts.keys()
-    vocab_to_ix_dict = {key:(ix+1) for ix, key in enumerate(words)}
+    vocab_to_ix_dict = {key: (i_x+1) for i_x, key in enumerate(words)}
     # Add unknown key --> 0 index
-    vocab_to_ix_dict['unknown']=0
+    vocab_to_ix_dict['unknown'] = 0
     # Create index --> vocab mapping
-    ix_to_vocab_dict = {val:key for key,val in vocab_to_ix_dict.items()}
+    ix_to_vocab_dict = {val: key for key, val in vocab_to_ix_dict.items()}
     
-    return(ix_to_vocab_dict, vocab_to_ix_dict)
+    return ix_to_vocab_dict, vocab_to_ix_dict
+
 
 # Build Shakespeare vocabulary
 print('Building Shakespeare Vocab')
@@ -112,10 +113,9 @@ s_text_ix = []
 for ix, x in enumerate(s_text_words):
     try:
         s_text_ix.append(vocab2ix[x])
-    except:
+    except KeyError:
         s_text_ix.append(0)
 s_text_ix = np.array(s_text_ix)
-
 
 
 # Define LSTM RNN Model
@@ -156,14 +156,14 @@ class LSTM_Model():
         
         # If we are inferring (generating text), we add a 'loop' function
         # Define how to get the i+1 th input from the i th output
-        def inferred_loop(prev, count):
+        def inferred_loop(prev):
             # Apply hidden layer
             prev_transformed = tf.matmul(prev, W) + b
             # Get the index of the output (also don't run the gradient)
             prev_symbol = tf.stop_gradient(tf.argmax(prev_transformed, 1))
             # Get embedded vector
-            output = tf.nn.embedding_lookup(embedding_mat, prev_symbol)
-            return(output)
+            out = tf.nn.embedding_lookup(embedding_mat, prev_symbol)
+            return out
         
         decoder = tf.contrib.legacy_seq2seq.rnn_decoder
         outputs, last_state = decoder(rnn_inputs_trimmed,
@@ -177,8 +177,8 @@ class LSTM_Model():
         self.model_output = tf.nn.softmax(self.logit_output)
         
         loss_fun = tf.contrib.legacy_seq2seq.sequence_loss_by_example
-        loss = loss_fun([self.logit_output],[tf.reshape(self.y_output, [-1])],
-                [tf.ones([self.batch_size * self.training_seq_len])])
+        loss = loss_fun([self.logit_output], [tf.reshape(self.y_output, [-1])],
+                        [tf.ones([self.batch_size * self.training_seq_len])])
         self.cost = tf.reduce_sum(loss) / (self.batch_size * self.training_seq_len)
         self.final_state = last_state
         gradients, _ = tf.clip_by_global_norm(tf.gradients(self.cost, tf.trainable_variables()), 4.5)
@@ -191,7 +191,7 @@ class LSTM_Model():
         for word in word_list[:-1]:
             x = np.zeros((1, 1))
             x[0, 0] = vocab[word]
-            feed_dict = {self.x_data: x, self.initial_state:state}
+            feed_dict = {self.x_data: x, self.initial_state: state}
             [state] = sess.run([self.final_state], feed_dict=feed_dict)
 
         out_sentence = prime_text
@@ -199,14 +199,15 @@ class LSTM_Model():
         for n in range(num):
             x = np.zeros((1, 1))
             x[0, 0] = vocab[word]
-            feed_dict = {self.x_data: x, self.initial_state:state}
+            feed_dict = {self.x_data: x, self.initial_state: state}
             [model_output, state] = sess.run([self.model_output, self.final_state], feed_dict=feed_dict)
             sample = np.argmax(model_output[0])
             if sample == 0:
                 break
             word = words[sample]
             out_sentence = out_sentence + ' ' + word
-        return(out_sentence)
+        return out_sentence
+
 
 # Define LSTM Model
 lstm_model = LSTM_Model(embedding_size, rnn_size, batch_size, learning_rate,
@@ -263,7 +264,7 @@ for epoch in range(epochs):
         if iteration_count % save_every == 0:
             # Save model
             model_file_name = os.path.join(full_model_dir, 'model')
-            saver.save(sess, model_file_name, global_step = iteration_count)
+            saver.save(sess, model_file_name, global_step=iteration_count)
             print('Model Saved To: {}'.format(model_file_name))
             # Save vocabulary
             dictionary_file = os.path.join(full_model_dir, 'vocab.pkl')

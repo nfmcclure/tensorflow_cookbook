@@ -33,7 +33,7 @@ def create_typo(s):
     s_list = list(s)
     s_list[rand_ind]=random.choice(string.ascii_lowercase + '0123456789')
     s = ''.join(s_list)
-    return(s)
+    return s
 
 # Generate data
 street_names = ['abbey', 'baker', 'canal', 'donner', 'elm', 'fifth',
@@ -69,7 +69,7 @@ def get_batch(n):
     # Get target similarities (1's for similar, -1's for non-similar)
     target = [1]*(n-half_ix) + [-1]*half_ix
     reference = [[x,y] for x,y in zip(reference, target)]
-    return(reference)
+    return reference
     
 
 # Define vocabulary dictionary (remember to save '0' for padding)
@@ -86,7 +86,7 @@ def address2onehot(address,
 
     # Pad or crop to max_address_len
     address_ix = (address_ix + [0]*max_address_len)[0:max_address_len]
-    return(address_ix)
+    return address_ix
 
 
 # Define placeholders

@@ -42,7 +42,7 @@ if not os.path.isfile(os.path.join(data_dir, data_file)):
     file = z.read('SMSSpamCollection')
     # Format Data
     text_data = file.decode()
-    text_data = text_data.encode('ascii',errors='ignore')
+    text_data = text_data.encode('ascii', errors='ignore')
     text_data = text_data.decode().split('\n')
 
     # Save data to text file
@@ -57,7 +57,7 @@ else:
             text_data.append(row)
     text_data = text_data[:-1]
 
-text_data = [x.split('\t') for x in text_data if len(x)>=1]
+text_data = [x.split('\t') for x in text_data if len(x) >= 1]
 [text_data_target, text_data_train] = [list(x) for x in zip(*text_data)]
 
 
@@ -66,7 +66,8 @@ def clean_text(text_string):
     text_string = re.sub(r'([^\s\w]|_|[0-9])+', '', text_string)
     text_string = " ".join(text_string.split())
     text_string = text_string.lower()
-    return(text_string)
+    return text_string
+
 
 # Clean texts
 text_data_train = [clean_text(x) for x in text_data_train]
@@ -78,7 +79,7 @@ text_processed = np.array(list(vocab_processor.fit_transform(text_data_train)))
 
 # Shuffle and split data
 text_processed = np.array(text_processed)
-text_data_target = np.array([1 if x=='ham' else 0 for x in text_data_target])
+text_data_target = np.array([1 if x == 'ham' else 0 for x in text_data_target])
 shuffled_ix = np.random.permutation(np.arange(len(text_data_target)))
 x_shuffled = text_processed[shuffled_ix]
 y_shuffled = text_data_target[shuffled_ix]
@@ -98,14 +99,13 @@ y_output = tf.placeholder(tf.int32, [None])
 # Create embedding
 embedding_mat = tf.Variable(tf.random_uniform([vocab_size, embedding_size], -1.0, 1.0))
 embedding_output = tf.nn.embedding_lookup(embedding_mat, x_data)
-#embedding_output_expanded = tf.expand_dims(embedding_output, -1)
 
 # Define the RNN cell
-#tensorflow change >= 1.0, rnn is put into tensorflow.contrib directory. Prior version not test.
-if tf.__version__[0]>='1':
-    cell=tf.contrib.rnn.BasicRNNCell(num_units = rnn_size)
+# tensorflow change >= 1.0, rnn is put into tensorflow.contrib directory. Prior version not test.
+if tf.__version__[0] >= '1':
+    cell = tf.contrib.rnn.BasicRNNCell(num_units=rnn_size)
 else:
-    cell = tf.nn.rnn_cell.BasicRNNCell(num_units = rnn_size)
+    cell = tf.nn.rnn_cell.BasicRNNCell(num_units=rnn_size)
 
 output, state = tf.nn.dynamic_rnn(cell, embedding_output, dtype=tf.float32)
 output = tf.nn.dropout(output, dropout_keep_prob)
@@ -114,13 +114,12 @@ output = tf.nn.dropout(output, dropout_keep_prob)
 output = tf.transpose(output, [1, 0, 2])
 last = tf.gather(output, int(output.get_shape()[0]) - 1)
 
-
 weight = tf.Variable(tf.truncated_normal([rnn_size, 2], stddev=0.1))
 bias = tf.Variable(tf.constant(0.1, shape=[2]))
 logits_out = tf.matmul(last, weight) + bias
 
 # Loss function
-losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits_out, labels=y_output) # logits=float32, labels=int32
+losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits_out, labels=y_output)
 loss = tf.reduce_mean(losses)
 
 accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(logits_out, 1), tf.cast(y_output, tf.int64)), tf.float32))

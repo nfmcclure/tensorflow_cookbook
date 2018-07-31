@@ -24,15 +24,15 @@ ops.reset_default_graph()
 sess = tf.Session()
 
 # Set RNN Parameters
-num_layers = 3 # Number of RNN layers stacked
-min_word_freq = 5 # Trim the less frequent words off
-rnn_size = 128 # RNN Model size, has to equal embedding size
-epochs = 10 # Number of epochs to cycle through data
-batch_size = 100 # Train on this many examples at once
-learning_rate = 0.0005 # Learning rate
-training_seq_len = 50 # how long of a word group to consider 
-save_every = 500 # How often to save model checkpoints
-eval_every = 50 # How often to evaluate the test sentences
+num_layers = 3  # Number of RNN layers stacked
+min_word_freq = 5  # Trim the less frequent words off
+rnn_size = 128  # RNN Model size, has to equal embedding size
+epochs = 10  # Number of epochs to cycle through data
+batch_size = 100  # Train on this many examples at once
+learning_rate = 0.0005  # Learning rate
+training_seq_len = 50  # how long of a word group to consider
+save_every = 500  # How often to save model checkpoints
+eval_every = 50  # How often to evaluate the test sentences
 prime_texts = ['thou art more', 'to be or not to', 'wherefore art thou']
 
 # Download/store Shakespeare data
@@ -80,22 +80,24 @@ else:
 # Clean text
 print('Cleaning Text')
 s_text = re.sub(r'[{}]'.format(punctuation), ' ', s_text)
-s_text = re.sub('\s+', ' ', s_text ).strip().lower()
+s_text = re.sub('\s+', ' ', s_text).strip().lower()
 
 # Split up by characters
 char_list = list(s_text)
+
 
 # Build word vocabulary function
 def build_vocab(characters):
     character_counts = collections.Counter(characters)
     # Create vocab --> index mapping
     chars = character_counts.keys()
-    vocab_to_ix_dict = {key:(ix+1) for ix, key in enumerate(chars)}
+    vocab_to_ix_dict = {key: (inx + 1) for inx, key in enumerate(chars)}
     # Add unknown key --> 0 index
-    vocab_to_ix_dict['unknown']=0
+    vocab_to_ix_dict['unknown'] = 0
     # Create index --> vocab mapping
-    ix_to_vocab_dict = {val:key for key,val in vocab_to_ix_dict.items()}
-    return(ix_to_vocab_dict, vocab_to_ix_dict)
+    ix_to_vocab_dict = {val: key for key, val in vocab_to_ix_dict.items()}
+    return ix_to_vocab_dict, vocab_to_ix_dict
+
 
 # Build Shakespeare vocabulary
 print('Building Shakespeare Vocab by Characters')
@@ -110,10 +112,9 @@ s_text_ix = []
 for x in char_list:
     try:
         s_text_ix.append(vocab2ix[x])
-    except:
+    except KeyError:
         s_text_ix.append(0)
 s_text_ix = np.array(s_text_ix)
-
 
 
 # Define LSTM RNN Model
@@ -195,17 +196,26 @@ class LSTM_Model():
                 break
             char = words[sample]
             out_sentence = out_sentence + char
-        return(out_sentence)
+        return out_sentence
 
 
 # Define LSTM Model
-lstm_model = LSTM_Model(rnn_size, num_layers, batch_size, learning_rate,
-                        training_seq_len, vocab_size)
+lstm_model = LSTM_Model(rnn_size,
+                        num_layers,
+                        batch_size,
+                        learning_rate,
+                        training_seq_len,
+                        vocab_size)
 
 # Tell TensorFlow we are reusing the scope for the testing
 with tf.variable_scope(tf.get_variable_scope(), reuse=True):
-    test_lstm_model = LSTM_Model(rnn_size,num_layers, batch_size, learning_rate,
-                                 training_seq_len, vocab_size, infer_sample=True)
+    test_lstm_model = LSTM_Model(rnn_size,
+                                 num_layers,
+                                 batch_size,
+                                 learning_rate,
+                                 training_seq_len,
+                                 vocab_size,
+                                 infer_sample=True)
 
 # Create model saver
 saver = tf.train.Saver(tf.global_variables())
@@ -253,7 +263,7 @@ for epoch in range(epochs):
         if iteration_count % save_every == 0:
             # Save model
             model_file_name = os.path.join(full_model_dir, 'model')
-            saver.save(sess, model_file_name, global_step = iteration_count)
+            saver.save(sess, model_file_name, global_step=iteration_count)
             print('Model Saved To: {}'.format(model_file_name))
             # Save vocabulary
             dictionary_file = os.path.join(full_model_dir, 'vocab.pkl')
@@ -265,10 +275,6 @@ for epoch in range(epochs):
                 print(test_lstm_model.sample(sess, ix2vocab, vocab2ix, num=10, prime_text=sample))
                 
         iteration_count += 1
-
-#ydata[:-1] = xdata[1:]
-        #ydata[-1] = xdata[0]
-
 
 
 # Plot loss over time

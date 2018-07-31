@@ -6,3 +6,4 @@ jupyter==1.0.0
 matplotlib==2.2.2
 requests==2.18.4
 Pillow==5.0.0
+GitPython==2.1.11
