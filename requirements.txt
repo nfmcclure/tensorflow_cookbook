@@ -1,9 +1,9 @@
-tensorflow==1.8.0
-numpy==1.14.2
-scipy==1.0.0
-scikit-learn==0.19.1
+tensorflow==1.9.0
+numpy==1.15.0
+scipy==1.1.0
+scikit-learn==0.19.2
 jupyter==1.0.0
 matplotlib==2.2.2
 requests==2.18.4
-Pillow==5.0.0
+Pillow==5.1.0
 GitPython==2.1.11
