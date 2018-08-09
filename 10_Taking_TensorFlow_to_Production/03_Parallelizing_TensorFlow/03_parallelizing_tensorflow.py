@@ -14,7 +14,7 @@ cluster = tf.train.ClusterSpec({'local': ['localhost:2222', 'localhost:2223']})
 server = tf.train.Server(cluster, job_name="local", task_index=0)
 server = tf.train.Server(cluster, job_name="local", task_index=1)
 # Finish and add
-#server.join()
+# server.join()
 
 # Have each worker do a task
 # Worker 0 : create matrices

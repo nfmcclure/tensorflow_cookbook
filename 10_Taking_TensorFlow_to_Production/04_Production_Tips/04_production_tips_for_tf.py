@@ -63,10 +63,11 @@ loss = tf.reduce_mean(... , name='loss')
 #  to handle running and loading of arguments
 
 # At the beginning of the file, define the flags.
-tf.app.flags.DEFINE_string("worker_locations", "", "List of worker addresses.")
-tf.app.flags.DEFINE_float('learning_rate', 0.01, 'Initial learning rate.')
-tf.app.flags.DEFINE_integer('generations', 1000, 'Number of training generations.')
-tf.app.flags.DEFINE_boolean('run_unit_tests', False, 'If true, run tests.')
+tf.flags.DEFINE_string("worker_locations", "", "List of worker addresses.")
+tf.flags.DEFINE_float('learning_rate', 0.01, 'Initial learning rate.')
+tf.flags.DEFINE_integer('generations', 1000, 'Number of training generations.')
+tf.flags.DEFINE_boolean('run_unit_tests', False, 'If true, run tests.')
+FLAGS = tf.flags.FLAGS
 
 # Need to define a 'main' function for the app to run
 def main(_):
@@ -77,7 +78,10 @@ def main(_):
 
 # Run the TensorFlow app
 if __name__ == "__main__":
+    # The following is looking for a "main()" function to run and will pass.
     tf.app.run()
+    # Can modify this to be more custom:
+    tf.app.run(main=my_main_function(), argv=my_arguments)
 
 
 # Use of TensorFlow's built in logging:

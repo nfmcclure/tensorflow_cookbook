@@ -15,10 +15,10 @@ import tensorflow as tf
 from tensorflow.python.framework import ops
 ops.reset_default_graph()
 
-tf.app.flags.DEFINE_string("storage_folder", "temp", "Where to store model and data.")
-tf.app.flags.DEFINE_string('model_file', False, 'Model file location.')
-tf.app.flags.DEFINE_boolean('run_unit_tests', False, 'If true, run tests.')
-FLAGS = tf.app.flags.FLAGS
+tf.flags.DEFINE_string("storage_folder", "temp", "Where to store model and data.")
+tf.flags.DEFINE_bool('model_file', False, 'Model file location.')
+tf.flags.DEFINE_bool('run_unit_tests', False, 'If true, run tests.')
+FLAGS = tf.flags.FLAGS
 
 
 # Create a text cleaning function
@@ -26,14 +26,14 @@ def clean_text(text_string):
     text_string = re.sub(r'([^\s\w]|_|[0-9])+', '', text_string)
     text_string = " ".join(text_string.split())
     text_string = text_string.lower()
-    return(text_string)
+    return text_string
 
 
 # Load vocab processor
 def load_vocab():
     vocab_path = os.path.join(FLAGS.storage_folder, "vocab")
     vocab_processor = tf.contrib.learn.preprocessing.VocabularyProcessor.restore(vocab_path)
-    return(vocab_processor)
+    return vocab_processor
 
 
 # Process input data:
@@ -41,7 +41,7 @@ def process_data(input_data, vocab_processor):
     input_data = clean_text(input_data)
     input_data = input_data.split()
     processed_input = np.array(list(vocab_processor.transform(input_data)))
-    return(processed_input)
+    return processed_input
 
 
 # Get input function
@@ -52,7 +52,7 @@ def get_input_data():
     """
     input_text = input("Please enter a text message to evaluate: ")
     vocab_processor = load_vocab()
-    return(process_data(input_text, vocab_processor))
+    return process_data(input_text, vocab_processor)
 
 
 # Test clean_text function
@@ -94,6 +94,7 @@ def main(args):
             
             # Print output (Or save to file or DB connection?)
             print('Probability of Spam: {:.4}'.format(probability_prediction[1]))
+
 
 # Run main module/tf App
 if __name__ == "__main__":
