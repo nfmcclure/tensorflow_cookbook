@@ -58,7 +58,7 @@ top_vals, top_ind = tf.nn.top_k(fitness, k=pop_size)
 
 # Get best fit individual
 best_val = tf.reduce_min(top_vals)
-best_ind = tf.arg_min(top_vals, 0)
+best_ind = tf.argmin(top_vals, 0)
 best_individual = tf.gather(population, best_ind)
 
 # Get parents
@@ -108,8 +108,8 @@ for i in range(generations):
     best_individual_val = sess.run(best_individual, feed_dict=feed_dict)
     
     if i % 5 == 0:
-       best_fit = sess.run(best_val, feed_dict = feed_dict)
-       print('Generation: {}, Best Fitness (lowest MSE): {:.2}'.format(i, -best_fit))
+         best_fit = sess.run(best_val, feed_dict = feed_dict)
+         print('Generation: {}, Best Fitness (lowest MSE): {:.2}'.format(i, -best_fit))
 
 plt.plot(truth, label="True Values")
 plt.plot(np.squeeze(best_individual_val), label="Best Individual")

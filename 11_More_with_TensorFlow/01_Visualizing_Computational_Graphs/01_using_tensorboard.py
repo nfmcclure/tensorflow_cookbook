@@ -11,19 +11,21 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
+from tensorflow.python.framework import ops
+ops.reset_default_graph()
 
 # Initialize a graph session
 sess = tf.Session()
 
 # Create a visualizer object
-summary_writer = tf.summary.FileWriter('tensorboard', tf.get_default_graph())
+summary_writer = tf.summary.FileWriter('tensorboard', sess.graph)
 
 # Create tensorboard folder if not exists
 if not os.path.exists('tensorboard'):
     os.makedirs('tensorboard')
 print('Running a slowed down linear regression. '
       'Run the command: $tensorboard --logdir="tensorboard"  '
-      ' Then navigate to http://127.0.0.0:6006')
+      ' Then navigate to http://127.0.0.1:6006')
 
 # You can also specify a port option with --port 6006
 
@@ -69,9 +71,8 @@ with tf.name_scope('Slope_Estimate'):
     
 # Visualize a histogram (errors)
 with tf.name_scope('Loss_and_Residuals'):
-    tf.summary.histogram('Histogram_Errors', l1_loss)
-    tf.summary.histogram('Histogram_Residuals', residuals)
-
+    tf.summary.histogram('Histogram_Errors', tf.squeeze(l1_loss))
+    tf.summary.histogram('Histogram_Residuals', tf.squeeze(residuals))
 
 
 # Declare summary merging operation
@@ -92,7 +93,7 @@ for i in range(generations):
     test_loss, test_resids = sess.run([l1_loss, residuals], feed_dict={x_graph_input: x_data_test,
                                                                        y_graph_input: y_data_test})
     
-    if (i+1)%10==0:
+    if (i + 1) % 10 == 0:
         print('Generation {} of {}. Train Loss: {:.3}, Test Loss: {:.3}.'.format(i+1, generations, train_loss, test_loss))
 
     log_writer = tf.summary.FileWriter('tensorboard')
@@ -118,7 +119,7 @@ image = tf.image.decode_png(plot_buf.getvalue(), channels=4)
 # Add the batch dimension
 image = tf.expand_dims(image, 0)
 # Add image summary
-image_summary_op = tf.summary.image("Linear Plot", image)
+image_summary_op = tf.summary.image("Linear_Plot", image)
 image_summary = sess.run(image_summary_op)
 log_writer.add_summary(image_summary, i)
 log_writer.close()
