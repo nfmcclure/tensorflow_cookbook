@@ -94,9 +94,9 @@ best_fit = []
 best_fit_upper = []
 best_fit_lower = []
 for i in x_vals:
-  best_fit.append(slope*i+y_intercept)
-  best_fit_upper.append(slope*i+y_intercept+width)
-  best_fit_lower.append(slope*i+y_intercept-width)
+    best_fit.append(slope*i+y_intercept)
+    best_fit_upper.append(slope*i+y_intercept+width)
+    best_fit_lower.append(slope*i+y_intercept-width)
 
 # Plot fit with data
 plt.plot(x_vals, y_vals, 'o', label='Data Points')
@@ -105,8 +105,8 @@ plt.plot(x_vals, best_fit_upper, 'r--', linewidth=2)
 plt.plot(x_vals, best_fit_lower, 'r--', linewidth=2)
 plt.ylim([0, 10])
 plt.legend(loc='lower right')
-plt.title('Sepal Length vs Pedal Width')
-plt.xlabel('Pedal Width')
+plt.title('Sepal Length vs Petal Width')
+plt.xlabel('Petal Width')
 plt.ylabel('Sepal Length')
 plt.show()
 

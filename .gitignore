@@ -12,6 +12,8 @@
 *.xls
 *.xlsx
 *.gz
+vocab2ix.json
+vocab2ix_dict.json
 .gitignore~
 .Rhistory
 Readme.md~

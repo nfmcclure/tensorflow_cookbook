@@ -8,6 +8,7 @@
 import os
 import io
 import time
+import pathlib
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -17,9 +18,6 @@ ops.reset_default_graph()
 # Initialize a graph session
 sess = tf.Session()
 
-# Create a visualizer object
-summary_writer = tf.summary.FileWriter('tensorboard', sess.graph)
-
 # Create tensorboard folder if not exists
 if not os.path.exists('tensorboard'):
     os.makedirs('tensorboard')
@@ -28,6 +26,9 @@ print('Running a slowed down linear regression. '
       ' Then navigate to http://127.0.0.1:6006')
 
 # You can also specify a port option with --port 6006
+
+# Create a visualizer object
+summary_writer = tf.summary.FileWriter('tensorboard', sess.graph)
 
 # Wait a few seconds for user to run tensorboard commands
 time.sleep(3)
