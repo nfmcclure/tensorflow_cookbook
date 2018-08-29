@@ -149,7 +149,7 @@ for ix, t in enumerate(vocab_processor.fit_transform(texts_train)):
         
     # Keep trailing average of past 50 observations accuracy
     # Get prediction of single observation
-    [[temp_pred]] = sess.run(prediction, feed_dict={x_data:t, y_target:y_data})
+    [[temp_pred]] = sess.run(prediction, feed_dict={x_data: t, y_target: y_data})
     # Get True/False if prediction is accurate
     train_acc_temp = target_train[ix]==np.round(temp_pred)
     train_acc_all.append(train_acc_temp)

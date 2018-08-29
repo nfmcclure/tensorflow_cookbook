@@ -8,6 +8,8 @@
 *.rdata
 *.ppt
 *.pptx
+*.zip
+*.pb
 *.docx
 *.xls
 *.xlsx

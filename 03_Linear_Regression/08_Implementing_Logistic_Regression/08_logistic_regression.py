@@ -72,13 +72,15 @@ y_vals_train = y_vals[train_indices]
 y_vals_test = y_vals[test_indices]
 
 # Normalize by column (min-max norm)
-def normalize_cols(m):
-    col_max = m.max(axis=0)
-    col_min = m.min(axis=0)
-    return (m-col_min) / (col_max - col_min)
+def normalize_cols(m, col_min=np.array([None]), col_max=np.array([None])):
+    if not col_min[0]:
+        col_min = m.min(axis=0)
+    if not col_max[0]:
+        col_max = m.max(axis=0)
+    return (m-col_min) / (col_max - col_min), col_min, col_max
     
-x_vals_train = np.nan_to_num(normalize_cols(x_vals_train))
-x_vals_test = np.nan_to_num(normalize_cols(x_vals_test))
+x_vals_train, train_min, train_max = np.nan_to_num(normalize_cols(x_vals_train))
+x_vals_test, _, _ = np.nan_to_num(normalize_cols(x_vals_test, train_min, train_max))
 
 ###
 # Define Tensorflow computational graph¶

@@ -39,7 +39,6 @@ stops = stopwords.words('english')
 
 # Load Data
 print('Loading Data')
-data_folder_name = 'temp'
 texts, target = text_helpers.load_movie_data()
 
 # Normalize text

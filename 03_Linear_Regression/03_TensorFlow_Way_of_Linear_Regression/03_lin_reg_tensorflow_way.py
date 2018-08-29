@@ -76,8 +76,8 @@ for i in x_vals:
 plt.plot(x_vals, y_vals, 'o', label='Data Points')
 plt.plot(x_vals, best_fit, 'r-', label='Best fit line', linewidth=3)
 plt.legend(loc='upper left')
-plt.title('Sepal Length vs Pedal Width')
-plt.xlabel('Pedal Width')
+plt.title('Sepal Length vs Petal Width')
+plt.xlabel('Petal Width')
 plt.ylabel('Sepal Length')
 plt.show()
 

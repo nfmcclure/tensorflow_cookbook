@@ -82,7 +82,7 @@ word_dictionary_rev = dict(zip(word_dictionary.values(), word_dictionary.keys())
 text_data = text_helpers.text_to_numbers(texts, word_dictionary)
 
 # Get validation word keys
-valid_examples = [word_dictionary[x] for x in valid_words]    
+valid_examples = [word_dictionary[x] for x in valid_words]
 
 print('Creating Model')
 # Define Embeddings:

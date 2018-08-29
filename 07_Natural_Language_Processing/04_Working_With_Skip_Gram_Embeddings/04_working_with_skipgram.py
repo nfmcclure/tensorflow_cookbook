@@ -118,7 +118,8 @@ def normalize_text(texts, stops):
     texts = [' '.join(x.split()) for x in texts]
     
     return texts
-    
+
+
 texts = normalize_text(texts, stops)
 
 # Texts must contain at least 3 words
@@ -163,6 +164,7 @@ def text_to_numbers(sentences, word_dict):
             sentence_data.append(word_ix)
         data.append(sentence_data)
     return data
+
 
 # Build our data set and dictionaries
 word_dictionary = build_dictionary(texts, vocabulary_size)

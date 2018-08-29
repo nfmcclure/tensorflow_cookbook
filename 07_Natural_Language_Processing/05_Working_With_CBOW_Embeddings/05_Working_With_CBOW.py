@@ -112,7 +112,7 @@ loss = tf.reduce_mean(tf.nn.nce_loss(weights=nce_weights,
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=model_learning_rate).minimize(loss)
 
 # Cosine similarity between words
-norm = tf.sqrt(tf.reduce_sum(tf.square(embeddings), 1, keep_dims=True))
+norm = tf.sqrt(tf.reduce_sum(tf.square(embeddings), 1, keepdims=True))
 normalized_embeddings = embeddings / norm
 valid_embeddings = tf.nn.embedding_lookup(normalized_embeddings, valid_dataset)
 similarity = tf.matmul(valid_embeddings, normalized_embeddings, transpose_b=True)

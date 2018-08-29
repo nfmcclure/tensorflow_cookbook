@@ -46,7 +46,7 @@ model_output = tf.add(tf.matmul(x_data, A), b)
 # Declare Deming loss function
 deming_numerator = tf.abs(tf.subtract(y_target, tf.add(tf.matmul(x_data, A), b)))
 deming_denominator = tf.sqrt(tf.add(tf.square(A),1))
-loss = tf.reduce_mean(tf.truediv(demmng_numerator, deming_denominator))
+loss = tf.reduce_mean(tf.truediv(deming_numerator, deming_denominator))
 
 # Declare optimizer
 my_opt = tf.train.GradientDescentOptimizer(0.15)
@@ -82,8 +82,8 @@ for i in x_vals:
 plt.plot(x_vals, y_vals, 'o', label='Data Points')
 plt.plot(x_vals, best_fit, 'r-', label='Best fit line', linewidth=3)
 plt.legend(loc='upper left')
-plt.title('Sepal Length vs Pedal Width')
-plt.xlabel('Pedal Width')
+plt.title('Sepal Length vs Petal Width')
+plt.xlabel('Petal Width')
 plt.ylabel('Sepal Length')
 plt.show()
 

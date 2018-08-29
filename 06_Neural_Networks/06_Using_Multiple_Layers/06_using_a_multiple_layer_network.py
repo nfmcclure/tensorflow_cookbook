@@ -48,7 +48,6 @@ if not os.path.exists(birth_weight_file):
         writer = csv.writer(f)
         writer.writerows([birth_header])
         writer.writerows(birth_data)
-        f.close()
 
 # read birth weight data into memory
 birth_data = []
@@ -78,7 +77,7 @@ sess = tf.Session()
 batch_size = 100
 
 # Set random seed to make results reproducible
-seed = 3
+seed = 4
 np.random.seed(seed)
 tf.set_random_seed(seed)
 
@@ -90,13 +89,17 @@ x_vals_test = x_vals[test_indices]
 y_vals_train = y_vals[train_indices]
 y_vals_test = y_vals[test_indices]
 
-# Record training column max and min for scaling of non-training data
-train_max = np.max(x_vals_train, axis=0)
-train_min = np.min(x_vals_train, axis=0)
-
 # Normalize by column (min-max norm to be between 0 and 1)
-def normalize_cols(mat, max_vals, min_vals):
-    return (mat - min_vals) / (max_vals - min_vals)
+def normalize_cols(m, col_min=np.array([None]), col_max=np.array([None])):
+    if not col_min[0]:
+        col_min = m.min(axis=0)
+    if not col_max[0]:
+        col_max = m.max(axis=0)
+    return (m - col_min) / (col_max - col_min), col_min, col_max
+
+
+x_vals_train, train_min, train_max = np.nan_to_num(normalize_cols(x_vals_train))
+x_vals_test, _, _ = np.nan_to_num(normalize_cols(x_vals_test, train_min, train_max))
 
 x_vals_train = np.nan_to_num(normalize_cols(x_vals_train, train_max, train_min))
 x_vals_test = np.nan_to_num(normalize_cols(x_vals_test, train_max, train_min))
@@ -187,8 +190,8 @@ test_actuals = actuals[test_indices]
 train_actuals = actuals[train_indices]
 test_preds = [x[0] for x in sess.run(final_output, feed_dict={x_data: x_vals_test})]
 train_preds = [x[0] for x in sess.run(final_output, feed_dict={x_data: x_vals_train})]
-test_preds = np.array([1.0 if x < 2500.0 else 0.0 for x in test_preds])
-train_preds = np.array([1.0 if x < 2500.0 else 0.0 for x in train_preds])
+test_preds = np.array([0.0 if x < 2500.0 else 1.0 for x in test_preds])
+train_preds = np.array([0.0 if x < 2500.0 else 1.0 for x in train_preds])
 # Print out accuracies
 test_acc = np.mean([x == y for x, y in zip(test_preds, test_actuals)])
 train_acc = np.mean([x == y for x, y in zip(train_preds, train_actuals)])
