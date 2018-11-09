@@ -161,7 +161,7 @@ for i in range(generations):
         for j in range(len(valid_words)):
             valid_word = word_dictionary_rev[valid_examples[j]]
             top_k = 5 # number of nearest neighbors
-            nearest = (-sim[j, :]).argsort()[1:top_k+1]
+            nearest = (-sim[j, :len(word_dictionary_rev)]).argsort()[1:top_k+1]
             log_str = "Nearest to {}:".format(valid_word)
             for k in range(top_k):
                 close_word = word_dictionary_rev[nearest[k]]
