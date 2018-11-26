@@ -79,6 +79,7 @@ distance = tf.reduce_sum(tf.abs(tf.subtract(x_data_train, tf.expand_dims(x_data_
 # Predict: Get min distance index (Nearest neighbor)
 #prediction = tf.arg_min(distance, 0)
 top_k_xvals, top_k_indices = tf.nn.top_k(tf.negative(distance), k=k)
+top_k_xvals = tf.truediv(1.0, top_k_xvals)
 x_sums = tf.expand_dims(tf.reduce_sum(top_k_xvals, 1),1)
 x_sums_repeated = tf.matmul(x_sums,tf.ones([1, k], tf.float32))
 x_val_weights = tf.expand_dims(tf.div(top_k_xvals,x_sums_repeated), 1)
