@@ -4,7 +4,7 @@ requests==2.18.4
 tensorflow_serving_api==1.9.0
 numpy==1.14.5
 scipy==1.1.0
-tensorflow==1.10.0
+tensorflow==1.15.0
 grpcio==1.14.1
 jupyter_core==4.4.0
 Pillow==5.2.0
