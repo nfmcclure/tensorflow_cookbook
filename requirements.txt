@@ -12,6 +12,6 @@ GitPython==2.1.11
 grpc==0.3-19
 imageio==2.3.0
 jupyter==1.0.0
-nltk==3.3
+nltk==3.4.5
 skimage==0.0
 scikit_learn==0.19.2
