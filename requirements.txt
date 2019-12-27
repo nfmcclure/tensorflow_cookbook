@@ -1,6 +1,6 @@
 matplotlib==2.2.2
 six==1.11.0
-requests==2.18.4
+requests==2.20.0
 tensorflow_serving_api==1.9.0
 numpy==1.14.5
 scipy==1.1.0
