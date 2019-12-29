@@ -111,8 +111,9 @@ output, state = tf.nn.dynamic_rnn(cell, embedding_output, dtype=tf.float32)
 output = tf.nn.dropout(output, dropout_keep_prob)
 
 # Get output of RNN sequence
-output = tf.transpose(output, [1, 0, 2])
-last = tf.gather(output, int(output.get_shape()[0]) - 1)
+# output = tf.transpose(output, [1, 0, 2])
+# last = tf.gather(output, int(output.get_shape()[0]) - 1)
+last = output[:,-1,:]
 
 weight = tf.Variable(tf.truncated_normal([rnn_size, 2], stddev=0.1))
 bias = tf.Variable(tf.constant(0.1, shape=[2]))
