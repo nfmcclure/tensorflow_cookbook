@@ -1,4 +1,4 @@
-[![ak9pIf.png](https://s1.ax1x.com/2020/07/27/ak9pIf.png)](https://imgchr.com/i/ak9pIf)
+[![akPu2F.png](https://s1.ax1x.com/2020/07/27/akPu2F.png)](https://imgchr.com/i/akPu2F)
 
 # [TensorFlow Machine Learning Cookbook](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
