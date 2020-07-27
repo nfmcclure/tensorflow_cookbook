@@ -1,4 +1,4 @@
-<img src="https://github.com/nfmcclure/tensorflow_cookbook/raw/master/images/book_covers.jpg" data-canonical-src="https://github.com/nfmcclure/tensorflow_cookbook/raw/master/images/book_covers.jpg" width="400" height="250" />
+[![ak9pIf.png](https://s1.ax1x.com/2020/07/27/ak9pIf.png)](https://imgchr.com/i/ak9pIf)
 
 # [TensorFlow Machine Learning Cookbook](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
