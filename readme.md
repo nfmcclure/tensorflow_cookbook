@@ -1,19 +1,9 @@
-[![akPu2F.th.png](https://s1.ax1x.com/2020/07/27/akPu2F.th.png)](https://imgchr.com/i/akPu2F)
 
-# [TensorFlow Machine Learning Cookbook](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
+# [TensorFlow机器学习指南](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
 ## [A Packt Publishing Book](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
-### By Nick McClure
-
-=================
-
-Build: [![Build Status](https://travis-ci.org/nfmcclure/tensorflow_cookbook.svg?branch=master)](https://travis-ci.org/nfmcclure/tensorflow_cookbook)
-
-=================
-
-
-Table of Contents
+目录
 =================
 
   * [Ch 1: Getting Started with TensorFlow](#ch-1-getting-started-with-tensorflow)
