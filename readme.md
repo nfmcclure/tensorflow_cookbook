@@ -1,12 +1,10 @@
 
 # [TensorFlow机器学习指南](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
 
-## [A Packt Publishing Book](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
-
 目录
 =================
 
-  * [Ch 1: Getting Started with TensorFlow](#ch-1-getting-started-with-tensorflow)
+  * [第一章: 如何从TensorFlow开始](#ch-1-getting-started-with-tensorflow)
   * [Ch 2: The TensorFlow Way](#ch-2-the-tensorflow-way)
   * [Ch 3: Linear Regression](#ch-3-linear-regression)
   * [Ch 4: Support Vector Machines](#ch-4-support-vector-machines)
@@ -21,31 +19,6 @@
 ---
 
 ## [Ch 1: Getting Started with TensorFlow](01_Introduction#ch-1-getting-started-with-tensorflow)
-<kbd>
-  <a href="01_Introduction/01_How_TensorFlow_Works#introduction-to-how-tensorflow-graphs-work">
-    <img src="01_Introduction/images/01_outline.png" align="center" height="45" width="90">
-  </a>
-</kbd>
-<kbd>
-  <a href="01_Introduction/02_Creating_and_Using_Tensors#creating-and-using-tensors">
-    <img src="01_Introduction/images/02_variable.png" align="center" height="45" width="90">
-  </a>
-</kbd>
-<kbd>
-  <a href="01_Introduction/03_Using_Variables_and_Placeholders#variables-and-placeholders">
-    <img src="01_Introduction/images/03_placeholder.png" align="center" height="45" width="90">
-  </a>
-</kbd>
-<kbd>
-  <a href="01_Introduction/06_Implementing_Activation_Functions#activation-functions">
-    <img src="01_Introduction/images/06_activation_funs1.png" align="center" height="45" width="90">
-  </a>
-</kbd>
-<kbd>
-  <a href="01_Introduction/06_Implementing_Activation_Functions#activation-functions">
-    <img src="01_Introduction/images/06_activation_funs2.png" align="center" height="45" width="90">
-  </a>
-</kbd>
 
 This chapter intends to introduce the main objects and concepts in TensorFlow.  We also introduce how to access the data for the rest of the book and provide additional resources for learning about TensorFlow.
 
