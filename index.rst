@@ -4,7 +4,7 @@
 .. TensorFlow-ML documentation master file, created by
    Wei MEI on 1st August 20:30:46 2020.
 
-Tensorflow 机器学习 Cookbook
+TensorFlow 机器学习 Cookbook
 ============================
 
 TensorFlow在2015年的时候已经成为开源项目, 自从那之后它已经成为Github中starred最多的机器学习库.
