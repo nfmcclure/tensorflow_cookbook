@@ -1,7 +1,8 @@
 .. image:: https://readthedocs.org/projects/tensorflow-ml/badge/?version=latest  
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 
-
+.. TensorFlow-ML documentation master file, created by
+   Wei MEI on 1st August 20:30:46 2020.
 
 Tensorflow 机器学习 Cookbook
 ============================
