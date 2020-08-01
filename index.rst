@@ -11,9 +11,14 @@ TensorFlow在2015年的时候已经成为开源项目，自从那之后它已经
 TensorFlow的受欢迎度主要归功于它能帮助程序员创造computational graphs,automatic differentation 和 
 customizability。 由于这些特性，TensorFlow是一个强有力的灵活性高的工具，用于解决很多机器学习的问题。
 
-.. image:: GCC.png
-
 本教程阐述很多机器学习算法，以及如何把它们应用到实际情况中，以及如何诠释所得到的结果。
+
+.. attention:: 目录
+   
+   - 第一章: 从TensorFlow开始, 介绍主要tensorflow的对象与概念. 我们介绍张量, 变量和
+   占位符. 我们也会展示如何在tensorflow中使用矩阵和其他的数学操作. 在本章的末尾，我们
+   会展示如何获取数据资源.
+   - 第二章: TensorFlow算法, 
 
 .. toctree::
    :maxdepth: 2
