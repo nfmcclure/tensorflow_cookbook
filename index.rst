@@ -15,9 +15,8 @@ customizability。 由于这些特性，TensorFlow是一个强有力的灵活性
 
 .. attention:: 目录
    
-   - 第一章: 从TensorFlow开始, 介绍主要tensorflow的对象与概念. 我们介绍张量, 变量和
-   占位符. 我们也会展示如何在tensorflow中使用矩阵和其他的数学操作. 在本章的末尾，我们
-   会展示如何获取数据资源.
+   - 第一章: 从TensorFlow开始, 介绍主要tensorflow的对象与概念. 我们介绍张量, 变量和 占位符. 我们也会展示如何在tensorflow中使用矩阵和其他的数学操作. 在本章的末尾，我们会展示如何获取数据资源.
+   
    - 第二章: TensorFlow算法, 
 
 .. toctree::
