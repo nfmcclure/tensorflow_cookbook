@@ -1,12 +1,3 @@
-.. TensorFlow
-
-
-` Documentation Status <https://readthedocs.org/projects/tensorflow-ml/badge/?version=latest> `_
-
-
-
-
-
 Tensorflow 机器学习 Cookbook
 ============================
 
