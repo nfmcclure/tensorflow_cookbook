@@ -1,5 +1,5 @@
-.. image:: https://readthedocs.org/projects/tensorflow-ml/badge/?version=latest | 
-.. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat |
+.. image:: https://readthedocs.org/projects/tensorflow-ml/badge/?version=latest  
+.. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 
 
 Tensorflow 机器学习 Cookbook
