@@ -26,7 +26,7 @@ differentation) 和 可定制性 (customizability). 由于这些特性，TensorF
 
 .. toctree::
    :maxdepth: 2
-   :caption: 从TensorFlow开始 (Getting Started with TensorFlow)
+   :caption: 从TensorFlow开始 (Getting Started)
    
    01_Introduction/index
 
