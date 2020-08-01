@@ -17,112 +17,58 @@ customizability。 由于这些特性，TensorFlow是一个强有力的灵活性
    :maxdepth: 2
    :caption: TensorFlow算法 (The TensorFlow Way)
    
-   - Computational Graph
-   - 分层嵌套操作
-   - 多层操作
-   - 载入损失函数
-   - 载入向后传递
-   - 随机和批量训练
+   02_TensorFlow_Way/index
    
 .. toctree::
    :maxdepth: 2
    :caption: 线性回归 (Linear Regression)
    
-   - 矩阵转置
-   - 矩阵分解法
-   - TensorFLow的线性回归
-   - 线性回归的损失函数
-   - Deming回归(全回归)
-   - 套索(Lasso)回归和岭(Ridge)回归
-   - 弹性网(Elastic Net)回归
-   - 逻辑(Logistic)回归
+   03_Linear_Regression/index
    
 .. toctree::
    :maxdepth: 2
    :caption: 支持向量机(Support Vector Machines)
    
-   - 引言
-   - 线性支持向量机
-   - 回归线性回归
-   - TensorFlow中的核
-   - 非线性支持向量机
-   - 多类支持向量机
+   04_Support_Vector_Machines/index
    
 .. toctree::
    :maxdepth: 2
    :caption: 最近邻法 (Nearest Neighbor Methods)
    
-   - 引言
-   - 最近邻法的使用
-   - 文本距离函数
-   - 计算混合距离函数
-   - 地址匹配
-   - 图像处理的近邻法
+   05_Nearest_Neighbor_Methods/index
    
 .. toctree::
    :maxdepth: 2
    :caption: 神经元网络 (Neural Networks)
    
-   - 引言
-   - Implementing Operational Gates
-   - Working with Gates and Activation Functions
-   - Implementing a One Layer Neural Network
-   - Implementing Different Layers
-   - Using Multi-layer Neural Networks
-   - Improving Predictions of Linear Models
-   - Learning to Play Tic-Tac-Toe
+   06_Neural_Networks/index
    
 .. toctree::
    :maxdepth: 2
    :caption: Natural Language Processing
    
-   - Introduction
-   - Working with Bag-of-Words
-   - Implementing TF-IDF
-   - Working with Skip-Gram
-   - Working with CBOW
-   - Implementing Word2Vec Example 
-   - Performing Sentiment Analysis with Doc2Vec
+   07_Natural_Language_Processing/index
    
 .. toctree::
    :maxdepth: 2
    :caption: Convolutional Neural Networks
    
-   - Introduction
-   - Implementing a Simple CNN
-   - Implementing an Advanced CNN
-   - Retraining an Existing Architecture
-   - Using Stylenet/NeuralStyle
-   - Implementing Deep Dream
+   08_Convolutional_Neural_Networks/index
 
 .. toctree::
    :maxdepth: 2
    :caption: Recurrent Neural Networks
    
-   - Introduction
-   - Implementing an RNN Model for Spam Prediction
-   - Implementing an LSTM Model for Text Generation
-   - Stacking Multiple LSTM Layers
-   - Creating a Sequence to Sequence Translation Model (Seq2Seq)
-   - Training a Siamese Similarity Measure
+   09_Recurrent_Neural_Networks/index
 
 .. toctree::
    :maxdepth: 2
    :caption: Taking TensorFlow to Production
    
-   - Implementing Unit Tests
-   - Using Multiple Executors (Devices)
-   - Parallelizing TensorFlow
-   - Tips for TensorFlow in Production
-   - An Example of Productionalizing TensorFlow
+   10_Taking_TensorFlow_to_Production/index
 
 .. toctree::
    :maxdepth: 2
    :caption: More with TensorFlow
    
-   - Visualizing Computational Graphs (with Tensorboard)
-   - Working with a Genetic Algorithm
-   - Clustering Using K-means
-   - Solving a System of ODEs
-   - Using a Random Forest
-   - Using TensorFlow with Keras
+   11_More_with_TensorFlow/index
