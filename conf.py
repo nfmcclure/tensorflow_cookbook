@@ -4,12 +4,12 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath("../../tensorflowml/"))
 
-project = 'ml-ms'
-copyright = '- Wei MEI.'
+project = 'tensorflow'
+copyright = '- Wei MEI (Nick Cafferry) '
 author = 'wei_mei'
 
 version = '0.1.0'
-release = ''
+release = '0.1.0'
 
 extensions = [
     'sphinx.ext.todo',
