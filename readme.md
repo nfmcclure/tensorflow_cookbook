@@ -1,4 +1,4 @@
-[![Documentation Status](https://readthedocs.org/projects/advanced-design-project-plant-proposal/badge/?version=latest)](https://advanced-design-project-plant-proposal.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/tensorflow-ml/badge/?version=latest)](https://tensorflow-ml.readthedocs.io/zh/latest/?badge=latest)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
 
 # [TensorFlow机器学习指南](https://www.packtpub.com/big-data-and-business-intelligence/tensorflow-machine-learning-cookbook)
