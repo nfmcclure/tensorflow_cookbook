@@ -20,7 +20,7 @@ differentation) 和 可定制性 (customizability). 由于这些特性，TensorF
    
    - 第二章: TensorFlow算法, 阐述如何用多种方式将第一章中所有的算法成分关联成一个计算图并创造出一个简单的分类器. 在阐述的过程中, 我们会介绍计算图(computational graphs), 损失函数(loss functions), 反向传播(back propagation), 以及训练数据.
    
-   - 第三章: 线性回归(Linear Regression), 本章着重强调如何使用tensorflow来探索不同的线性回归技巧, 比如Deming, lasso, ridge, elastic net 和 logistic regression. 我们会在计算图中展示如何应用它们.
+   - 第三章: 线性回归 (Linear Regression), 本章着重强调如何使用tensorflow来探索不同的线性回归技巧, 比如Deming, lasso, ridge, elastic net 和 logistic regression. 我们会在计算图中展示如何应用它们.
    
    - 
 
