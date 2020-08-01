@@ -11,14 +11,7 @@ customizability。 由于这些特性，TensorFlow是一个强有力的灵活性
    :maxdepth: 2
    :caption: 从TensorFlow开始 (Getting Started with TensorFlow)
    
-   - TensorFlow如何工作
-   - 变量和张量的声明
-   - 使用占位符和变量
-   - 矩阵
-   - 操作符的声明
-   - 载入激活函数
-   - 数据资源
-   - 资源库
+   01_Introduction/index
 
 .. toctree::
    :maxdepth: 2
