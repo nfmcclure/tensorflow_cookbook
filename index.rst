@@ -32,7 +32,7 @@ differentation) 和 可定制性 (customizability). 由于这些特性，TensorF
 
 .. toctree::
    :maxdepth: 2
-   :caption: TensorFlow算法 (The TensorFlow Way)
+   :caption: TensorFlow算法 (TensorFlow Way)
    
    02_TensorFlow_Way/index
    
