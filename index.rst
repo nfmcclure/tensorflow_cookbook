@@ -1,8 +1,9 @@
 .. TensorFlow
 
-` Documentation Status <https://readthedocs.org/projects/tensorflow-ml/badge/?version=latest>`_
 
-<https://tensorflow-ml.readthedocs.io/zh/latest/?badge=latest>
+` Documentation Status <https://readthedocs.org/projects/tensorflow-ml/badge/?version=latest> `_
+
+
 
 
 
