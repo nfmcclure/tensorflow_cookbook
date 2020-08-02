@@ -4,6 +4,7 @@ computational graphs, and then move to loss functions and back propagation.  We 
 creating a simple classifier and then show an example of evaluating regression and classification 
 algorithms.
 
+.. _my-reference-label:
 计算图
 ===================
 
