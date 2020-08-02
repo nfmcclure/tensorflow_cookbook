@@ -1,8 +1,8 @@
 .. image:: https://readthedocs.org/projects/tensorflow-ml/badge/?version=latest  
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
-.. image:: https://img.shields.io/badge/python-3.7,3.8-green.svg
+.. image:: https://img.shields.io/badge/python-3.7,3.8-brightgreen.svg
 .. image:: https://img.shields.io/badge/platform-huawei%20cloud-blue
-.. image:: https://img.shields.io/badge/tensorflow-1.8-green.svg
+.. image:: https://img.shields.io/badge/tensorflow-1.8-brightgreen.svg
 
 
 TensorFlow 机器学习 Cookbook
