@@ -16,7 +16,7 @@ TensorFlow (i.e., TF)::
 
 .. important::
 
-   - ``第一章: 从TensorFlow开始 (Getting Started)``, 介绍主要tensorflow的对象与概念. 我们介绍张量, 变量和占位符. 我们也会展示如何在tensorflow中使用矩阵和其他的数学操作. 在本章的末尾，我们会展示如何获取数据资源.
+   - :ref:`第一章: 从TensorFlow开始 (Getting Started) <my-reference-label>`, 介绍主要tensorflow的对象与概念. 我们介绍张量, 变量和占位符. 我们也会展示如何在tensorflow中使用矩阵和其他的数学操作. 在本章的末尾，我们会展示如何获取数据资源.
    
    - ``第二章: TensorFlow方式 (TF Way)``, 阐述如何用多种方式将第一章中所有的算法成分关联成一个计算图并创造出一个简单的分类器. 在阐述的过程中, 我们会介绍计算图 (computational graphs), 损失函数 (loss functions), 反向传播 (back propagation), 以及训练数据.
    
@@ -38,7 +38,7 @@ TensorFlow (i.e., TF)::
    
    - ``第十一章: TensorFlow的更多功能``, 通过阐述如何运行k-means, genetic算法来展示TensorFlow的多面性, 解决系统的常微分方程. 我们也展示Tensorboard的多处使用, 以及如何显示计算图度量.
 
-
+.. _my-reference-label:
 .. toctree::
    :maxdepth: 2
    :caption: 从TensorFlow开始 (Getting Started)
