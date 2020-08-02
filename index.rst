@@ -14,7 +14,7 @@ TensorFlow在2015年的时候已经成为开源项目, 自从那之后它已经�
 
 .. important::
    
-   - 第一章: 从TensorFlow开始, 介绍主要tensorflow的对象与概念. 我们介绍张量, 变量和占位符. 我们也会展示如何在tensorflow中使用矩阵和其他的数学操作. 在本章的末尾，我们会展示如何获取数据资源.
+   - ``第一章: 从TensorFlow开始``, 介绍主要tensorflow的对象与概念. 我们介绍张量, 变量和占位符. 我们也会展示如何在tensorflow中使用矩阵和其他的数学操作. 在本章的末尾，我们会展示如何获取数据资源.
    
    - 第二章: TensorFlow方式, 阐述如何用多种方式将第一章中所有的算法成分关联成一个计算图并创造出一个简单的分类器. 在阐述的过程中, 我们会介绍计算图 (computational graphs), 损失函数 (loss functions), 反向传播 (back propagation), 以及训练数据.
    
