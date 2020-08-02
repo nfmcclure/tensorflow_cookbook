@@ -8,7 +8,7 @@
 TensorFlow 机器学习 Cookbook
 ============================
 
-TensorFlow (i.e., TF) ::
+TensorFlow (i.e., TF)::
    在2015年的时候已经成为开源项目, 自从那之后它已经成为Github中starred最多的机器学习库. TensorFlow的受欢迎度主要归功于它能帮助程序员创造计算图(computational graphs), 自动微分 (automatic differentation) 和 可定制性 (customizability). 由于这些特性，TensorFlow是一个强有力的灵活性高的工具,  用于解决很多机器学习的问题. 
 
 本教程阐述很多机器学习算法, 以及如何把它们应用到实际情况中, 以及如何诠释所得到的结果.
