@@ -1,24 +1,24 @@
-Implementing Unit Tests
+单元测试
 ========================
 
 We show how to implement different types of unit tests on tensors (placeholders and variables).
 
-Using Multiple Executors (Devices)
+使用多个执行器 (设备)
 ==================================
 
 How to use a machine with multiple devices.  E.g., a machine with a CPU, and one or more GPUs.
 
-Parallelizing TensorFlow
+TensorFlow平行化
 =========================
 
 How to setup and use TensorFlow distributed on multiple machines.
 
-Tips for TensorFlow in Production
+TensorFlow开发贴士
 ==================================
 
 Various tips for developing with TensorFlow
 
-An Example of Productionalizing TensorFlow
+TensorFlow开发实例
 ===========================================
 
 We show how to do take the RNN model for predicting ham/spam (from Chapter 9, recipe #2) and put 
