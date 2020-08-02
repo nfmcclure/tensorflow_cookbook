@@ -18,11 +18,17 @@ differentation) 和 可定制性 (customizability). 由于这些特性，TensorF
    
    - 第一章: 从TensorFlow开始, 介绍主要tensorflow的对象与概念. 我们介绍张量, 变量和占位符. 我们也会展示如何在tensorflow中使用矩阵和其他的数学操作. 在本章的末尾，我们会展示如何获取数据资源.
    
-   - 第二章: TensorFlow算法, 阐述如何用多种方式将第一章中所有的算法成分关联成一个计算图并创造出一个简单的分类器. 在阐述的过程中, 我们会介绍计算图(computational graphs), 损失函数(loss functions), 反向传播(back propagation), 以及训练数据.
+   - 第二章: TensorFlow算法, 阐述如何用多种方式将第一章中所有的算法成分关联成一个计算图并创造出一个简单的分类器. 在阐述的过程中, 我们会介绍计算图 (computational graphs), 损失函数(loss functions), 反向传播(back propagation), 以及训练数据.
    
    - 第三章: 线性回归 (Linear Regression), 本章着重强调如何使用tensorflow来探索不同的线性回归技巧, 比如Deming, lasso, ridge, elastic net 和 logistic regression. 我们会在计算图中展示如何应用它们.
    
-   - 
+   - 第四章: 支持向量机 (Support Vector Machine), 介绍支持向量机(SVMs)然后展示如何用tensorflow去运用线性SVMs, 非线性SVMs和多类SVMs.
+   
+   - 第五章: 最近邻方法, 展示如何运用数值度量，文本度量和比例距离函数使用最近邻技巧. 我们使用最近邻技巧来完成地址记录匹配和从MNIST数据库中对手写数字进行分类.
+   
+   - 第六章: 神经网络, 介绍了, 从操作门(operational gates)和激活函数(activation function)的概念开始, 在tensorflow中如何运用神经网络. 然后我们展示一个很浅神经元然后展示如何建立不同类型的层. 在本章的末尾, 我们会教tensorflow通过神经网络的方法玩井字棋(tic-tac-toe).
+   
+   - 第七章: 自然语言处理, 本章展示了运用tensorflow不同文本的处理方法. 我们会展示如何在文本处理中使用bag of words (BoW模型)和TF-IDF(Term Frequency-Inverse Document Frequency)模型. 
 
 .. toctree::
    :maxdepth: 2
