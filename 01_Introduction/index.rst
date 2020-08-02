@@ -2,7 +2,8 @@ This chapter intends to introduce the main objects and concepts in TensorFlow.  
 introduce how to access the data for the rest of the book and provide additional resources
 for learning about TensorFlow.  
 
-.. _tensorflow:
+.. _my-reference-label:
+
 TensorFlow如何工作
 =================
 
@@ -46,4 +47,4 @@ the data sources and where they come from.
 
 Mostly official resources and papers.  The papers are TensorFlow papers or Deep Learning resources.
 
-:ref: `tensorflow`
+:ref:`my-reference-label`
