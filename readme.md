@@ -10,16 +10,16 @@
 =================
 
   * [第一章: 如何从TensorFlow开始](#ch-1-getting-started-with-tensorflow)
-  * [Ch 2: The TensorFlow Way](#ch-2-the-tensorflow-way)
-  * [Ch 3: Linear Regression](#ch-3-linear-regression)
-  * [Ch 4: Support Vector Machines](#ch-4-support-vector-machines)
-  * [Ch 5: Nearest Neighbor Methods](#ch-5-nearest-neighbor-methods)
-  * [Ch 6: Neural Networks](#ch-6-neural-networks)
-  * [Ch 7: Natural Language Processing](#ch-7-natural-language-processing)
-  * [Ch 8: Convolutional Neural Networks](#ch-8-convolutional-neural-networks)
-  * [Ch 9: Recurrent Neural Networks](#ch-9-recurrent-neural-networks)
-  * [Ch 10: Taking TensorFlow to Production](#ch-10-taking-tensorflow-to-production)
-  * [Ch 11: More with TensorFlow](#ch-11-more-with-tensorflow)
+  * [第二章: TensorFlow方式](#ch-2-the-tensorflow-way)
+  * [第三章: 线性回归](#ch-3-linear-regression)
+  * [第四章: 支持向量机](#ch-4-support-vector-machines)
+  * [第五章: 最近邻法](#ch-5-nearest-neighbor-methods)
+  * [第六章: 神经网络](#ch-6-neural-networks)
+  * [第七章: 自然语言处理](#ch-7-natural-language-processing)
+  * [第八章: 卷积神经网络](#ch-8-convolutional-neural-networks)
+  * [第九章: 递归神经网络](#ch-9-recurrent-neural-networks)
+  * [第十章: TensorFlow应用技巧](#ch-10-taking-tensorflow-to-production)
+  * [第十一章: TensorFlow的更多功能](#ch-11-more-with-tensorflow)
 
 ---
 
