@@ -4,7 +4,7 @@ computational graphs, and then move to loss functions and back propagation.  We 
 creating a simple classifier and then show an example of evaluating regression and classification 
 algorithms.
 
-Computational Graph
+计算图
 ===================
 
 We show how to create an operation on a computational graph and how to visualize it using Tensorboard.
@@ -40,13 +40,13 @@ TensorFlow makes it easy to use both batch and stochastic training. We show how 
 about the benefits and limitations of each.
 
 
-Combining Everything Together
+结合训练
 ============================
 
 We now combine everything together that we have learned and create a simple classifier.
 
 
-Evaluating Models
+模型评估
 ==================
   
 Any model is only as good as it's evaluation.  Here we show two examples of (1) evaluating a regression 
