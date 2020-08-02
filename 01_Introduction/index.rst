@@ -18,7 +18,7 @@ How to create and initialize tensors in TensorFlow.  We also depict how these op
 
 How to create and use variables and placeholders in TensorFlow.  We also depict how these operations appear in Tensorboard.
 
-:ref:`my-reference-label`
+
 
 矩阵
 ======
@@ -46,3 +46,4 @@ the data sources and where they come from.
 
 Mostly official resources and papers.  The papers are TensorFlow papers or Deep Learning resources.
 
+:ref:`my-reference-label`
