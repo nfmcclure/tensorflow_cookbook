@@ -7,10 +7,7 @@
 TensorFlow 机器学习 Cookbook
 ============================
 
-TensorFlow在2015年的时候已经成为开源项目, 自从那之后它已经成为Github中starred最多的机器学习库.
-TensorFlow的受欢迎度主要归功于它能帮助程序员创造计算图(computational graphs), 自动微分 (automatic
-differentation) 和 可定制性 (customizability). 由于这些特性，TensorFlow是一个强有力的灵活性高的工具, 
-用于解决很多机器学习的问题. 
+TensorFlow在2015年的时候已经成为开源项目, 自从那之后它已经成为Github中starred最多的机器学习库.TensorFlow的受欢迎度主要归功于它能帮助程序员创造计算图(computational graphs), 自动微分 (automatic differentation) 和 可定制性 (customizability). 由于这些特性，TensorFlow是一个强有力的灵活性高的工具,  用于解决很多机器学习的问题. 
 
 本教程阐述很多机器学习算法, 以及如何把它们应用到实际情况中, 以及如何诠释所得到的结果.
 
@@ -45,7 +42,7 @@ differentation) 和 可定制性 (customizability). 由于这些特性，TensorF
    
    - 第十章: TensorFlow的应用技巧, 本章将会给出将TensorFlow应用到开发环境中, 如何利用多过程设备(比如GPUs), 然后将TensorFlow分布在多个机器上.
    
-   
+
    - 第十一章: TensorFlow的更多功能, 通过阐述如何运行k-means, genetic算法来展示TensorFlow的多面性, 解决系统的常微分方程. 我们也展示Tensorboard的多处使用, 以及如何显示计算图度量.
 
 
@@ -93,24 +90,24 @@ differentation) 和 可定制性 (customizability). 由于这些特性，TensorF
    
 .. toctree::
    :maxdepth: 2
-   :caption: Convolutional Neural Networks
+   :caption: 卷积神经网络
    
    08_Convolutional_Neural_Networks/index
 
 .. toctree::
    :maxdepth: 2
-   :caption: Recurrent Neural Networks
+   :caption: 递归神经网络
    
    09_Recurrent_Neural_Networks/index
 
 .. toctree::
    :maxdepth: 2
-   :caption: Taking TensorFlow to Production
+   :caption: TensorFlow的应用技巧
    
    10_Taking_TensorFlow_to_Production/index
 
 .. toctree::
    :maxdepth: 2
-   :caption: More with TensorFlow
+   :caption: TensorFlow的更多功能
    
    11_More_with_TensorFlow/index
