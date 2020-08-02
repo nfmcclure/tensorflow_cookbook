@@ -5,7 +5,7 @@ import os
 sys.path.insert(0, os.path.abspath("../../tensorflowml/"))
 
 project = 'tensorflow'
-copyright = '--- Wei MEI (Nick Cafferry).'
+copyright = '- Wei MEI (Nick Cafferry).'
 author = 'Wei MEI'
 author = 'Nick McClure'
 
