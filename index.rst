@@ -107,4 +107,4 @@ TensorFlow在2015年的时候已经成为开源项目, 自从那之后它已经�
 许可证(License)
 ==============
 
-请参见`MIT许可证 <https://github.com/nickcafferry/tensorflow/blob/master/LICENSE>`_
+MIT许可证请参见 `MIT LICENSE <https://github.com/nickcafferry/tensorflow/blob/master/LICENSE>`_
