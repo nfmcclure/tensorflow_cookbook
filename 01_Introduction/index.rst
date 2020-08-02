@@ -1,7 +1,8 @@
 This chapter intends to introduce the main objects and concepts in TensorFlow.  We also 
 introduce how to access the data for the rest of the book and provide additional resources
 for learning about TensorFlow.  
- 
+
+.. _my-reference-label:
 TensorFlow如何工作
 =================
 
@@ -17,6 +18,7 @@ How to create and initialize tensors in TensorFlow.  We also depict how these op
 
 How to create and use variables and placeholders in TensorFlow.  We also depict how these operations appear in Tensorboard.
 
+:ref:`my-reference-label`
 
 矩阵
 ======
