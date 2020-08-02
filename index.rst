@@ -4,6 +4,7 @@
 .. image:: https://img.shields.io/badge/platform-huawei%20cloud-blue
 .. image:: https://img.shields.io/badge/tensorflow-1.8-brightgreen.svg
 
+-------------------
 
 TensorFlow 机器学习 Cookbook
 ============================
