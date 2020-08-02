@@ -3,7 +3,7 @@
 
 from setuptools import setup
 
-with open('README.rst') as readme_file:
+with open('index.rst') as readme_file:
     readme = readme_file.read()
 
 #with open('HISTORY.rst') as history_file:
@@ -19,15 +19,15 @@ with open('README.rst') as readme_file:
 #]
 
 setup(
-    name='Machine Learning in Molecular Sciences',
+    name='TensorFlow Machine Learning',
     version='1.3.0',
-    description="Machine Learning in Molecular Sciences",
+    description="TensorFlow Machine Learning",
     author="Wei MEI",
-    url='https://Machine-Learning-in-the-Molecular-Sciences.ml',
+    url='https://tensorflow-ml.org',
     
     license="MIT license",
     zip_safe=False,
-    keywords='Machine-Learning-in-Molecular-Sciences',
+    keywords='TensorFlow Machine Learning',
     classifiers=[
         'Development Status :: 1 - Beta',
         'Intended Audience :: Developers',
