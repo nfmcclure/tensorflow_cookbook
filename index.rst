@@ -102,3 +102,9 @@ TensorFlow在2015年的时候已经成为开源项目, 自从那之后它已经�
    :caption: TensorFlow的更多功能
    
    11_More_with_TensorFlow/index
+
+
+许可证(License)
+==============
+
+请参见`MIT许可证 <https://github.com/nickcafferry/tensorflow/blob/master/LICENSE>`_
