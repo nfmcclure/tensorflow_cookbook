@@ -2,6 +2,17 @@ This chapter intends to introduce the main objects and concepts in TensorFlow.  
 introduce how to access the data for the rest of the book and provide additional resources
 for learning about TensorFlow.  
 
+.. image:: ../images/01_outline.png
+
+.. image:: images/02_variable.png
+
+.. image:: images/03_placeholder.png
+
+.. image:: images/06_activation_funs1.png
+
+.. image:: images/06_activation_funs2.png
+
+:download: `outline <../images/01_outline.png>`
 
 TensorFlow如何工作
 =================
