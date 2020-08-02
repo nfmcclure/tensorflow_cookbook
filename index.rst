@@ -31,7 +31,7 @@ differentation) 和 可定制性 (customizability). 由于这些特性，TensorF
    - 第五章: 最近邻方法, 展示如何运用数值度量，文本度量和比例距离函数使用最近邻技巧. 我们使用最近邻技巧来完成地址记录匹配和从MNIST数据库中对手写数字进行分类.
    
    
-   - 第六章: 神经网络, 介绍了, 从操作门 (operational gates) 和激活函数 (activation function) 的概念开始, 在tensorflow中如何运用神经网络. 然后我们展示一个很浅神经元然后展示如何建立不同类型的层. 在本章的末尾, 我们会教tensorflow通过神经网络的方法玩井字棋 (tic-tac-toe) .
+   - 第六章: 神经网络, 介绍了, 从操作门 (operational gates) 和激活函数 (activation function) 的概念开始, 在tensorflow中如何运用神经网络. 然后我们展示一个很浅神经元然后展示如何建立不同类型的层. 在本章的末尾, 我们会教tensorflow通过神经网络的方法玩井字棋(tic-tac-toe).
    
    
    - 第七章: 自然语言处理, 本章展示了运用tensorflow不同文本的处理方法. 我们会展示如何在文本处理中使用Bag of Words (BoW) 模型和TF-IDF (Term Frequency-Inverse Document Frequency) 模型. 我们然后会用CBOW (Continuous Bag of Words) 和Skip-Gram模型来介绍神经元完了文本表达, 然后运用这些技巧到Word2Vec和Doc2Vec上, 用于解决实际结果预测.
