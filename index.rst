@@ -32,7 +32,7 @@ TensorFlow (i.e., TF)::
    
    - :ref:`第八章: 卷积神经网络 (CNN) <label8>`, 通过展示如何通过使用卷积神经网络 (convolutional neural networks) CNNs模型将神经网络运用到图像处理上. 我们诠释了如何为MNIST数字识别构建一个简单卷积神经网络模型, 然后在CIFAR-10任务中把它扩展到颜色识别. 我们也会展示如何把之前训练过得图像识别模型扩展到自定义任务当中. 在本章的末尾，我们会在tensorflow中解释 stylenet/neural style和deep-dream 算法.
    
-   - :ref:`第九章: 递归神经网络 (RNN) <label9>``, 会展示如何在tensorflow中运用递归神经元(recurrent neural networks). 我们会展示如何进行垃圾文本预测, 然后将递归神经网络模型扩展到基于莎士比亚文本生成. 我们也会训练段对段模型 (sequence to sequence model), 用于德语英语的翻译. 在本章的末尾, 我们也会展示Siamese递归神经网络用于地址记录匹配的用法.
+   - :ref:`第九章: 递归神经网络 (RNN) <label9>`, 会展示如何在tensorflow中运用递归神经元(recurrent neural networks). 我们会展示如何进行垃圾文本预测, 然后将递归神经网络模型扩展到基于莎士比亚文本生成. 我们也会训练段对段模型 (sequence to sequence model), 用于德语英语的翻译. 在本章的末尾, 我们也会展示Siamese递归神经网络用于地址记录匹配的用法.
    
    - :ref:`第十章: TensorFlow的应用技巧 <label10>`, 本章将会给出将TensorFlow应用到开发环境中, 如何利用多过程设备(比如GPUs), 然后将TensorFlow分布在多个机器上.
    
