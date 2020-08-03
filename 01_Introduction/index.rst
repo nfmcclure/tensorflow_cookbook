@@ -3,7 +3,7 @@ introduce how to access the data for the rest of the book and provide additional
 for learning about TensorFlow.  
 
 
-See :download:`this example script <./images/03_placeholder.png>`
+See :download:`this example script </01_Introduction/images//03_placeholder.png>`
 
 
 TensorFlow如何工作
