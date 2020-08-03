@@ -12,7 +12,8 @@ for learning about TensorFlow.
 
 .. image:: images/06_activation_funs2.png
 
-:download: `outline <images/01_outline.png>`
+
+:download: `outline <_downloads/house-votes-84.data>`.
 
 TensorFlow如何工作
 =================
