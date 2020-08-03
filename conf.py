@@ -42,3 +42,7 @@ html_theme_options = {
     'logo_only': False,
     'style_nav_header_background': '#343131',
 }
+html_sidebars = {
+   '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
+   'using/windows': ['windowssidebar.html', 'searchbox.html'],
+}
