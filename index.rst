@@ -54,18 +54,7 @@ TensorFlow (i.e., TF)::
       embedding_mat = tf.Variable(tf.random_uniform([vocab_size, embedding_size],-1.0,1.0))
       embedding_output = tf.nn.embedding_lookup(embedding_mat, x_data_ph)
 
-.. Submodules
-.. ----------
-
-tensorflow\.nn module
----------------------------
-
-.. automodule:: tensorflow.nn
-    :members:
-    :undoc-members:
-    :show-inheritance:
-    
-    
+  
 .. _label1:
 .. toctree::
    :maxdepth: 2
