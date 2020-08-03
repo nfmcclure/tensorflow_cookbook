@@ -57,8 +57,6 @@ the data sources and where they come from.
 
 Mostly official resources and papers.  The papers are TensorFlow papers or Deep Learning resources.
 
-See :download:`this example script </01_Introduction/images//03_placeholder.png>`
-
 
 下载本章JN :download:`Jupyter Notebook </01_Introduction/01_How_TensorFlow_Works/01_How_TensorFlow_Works.ipynb>`
 
