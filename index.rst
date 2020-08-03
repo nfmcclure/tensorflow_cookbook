@@ -120,3 +120,8 @@ TensorFlow (i.e., TF)::
 ==============
 
 MIT许可证请参见 `MIT LICENSE <https://github.com/nickcafferry/tensorflow/blob/master/LICENSE>`_
+
+API
+===
+.. automodule:: run
+   :members:
