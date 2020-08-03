@@ -45,6 +45,10 @@ TensorFlow (i.e., TF)::
    
    - :ref:`第十一章: TensorFlow的更多功能 <label11>`, 通过阐述如何运行k-means, genetic算法来展示TensorFlow的多面性, 解决系统的常微分方程. 我们也展示Tensorboard的多处使用, 以及如何显示计算图度量.
 
+
+.. admonition:: 
+   在本书中，经常有很多类型的文本可以区分不同的类型的信息。比如，*We then set the* `batch_size` *variable*.
+
 .. Submodules
 .. ----------
 
