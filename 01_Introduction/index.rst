@@ -2,35 +2,32 @@ This chapter intends to introduce the main objects and concepts in TensorFlow.  
 introduce how to access the data for the rest of the book and provide additional resources
 for learning about TensorFlow.  
 
-.. image:: images/01_outline.png
 
-.. image:: images/02_variable.png
-
-.. image:: images/03_placeholder.png
-
-.. image:: images/06_activation_funs1.png
-
-.. image:: images/06_activation_funs2.png
-
-:download:`this example script <../images/03_placeholder.png>`
+:download:`this example script <./images/03_placeholder.png>`
 
 
 TensorFlow如何工作
 =================
 
 Here we introduce TensorFlow and the general outline of how most TensorFlow algorithms work.
+
+
+.. image:: images/01_outline.png
  
 变量和张量的声明
 ===============
 
 How to create and initialize tensors in TensorFlow.  We also depict how these operations appear in Tensorboard.
 
+.. image:: images/02_variable.png
+
+
 使用占位符和变量
 ===============
 
 How to create and use variables and placeholders in TensorFlow.  We also depict how these operations appear in Tensorboard.
 
-
+.. image:: images/03_placeholder.png
 
 矩阵
 ======
@@ -47,6 +44,10 @@ How to use various mathematical operations in TensorFlow.
 
 Activation functions are unique functions that TensorFlow has built in for your use in algorithms.
 
+.. image:: images/06_activation_funs1.png
+
+.. image:: images/06_activation_funs2.png
+
 数据资源
 =========
 
@@ -58,4 +59,4 @@ the data sources and where they come from.
 
 Mostly official resources and papers.  The papers are TensorFlow papers or Deep Learning resources.
 
-:ref:`计算图 <my-reference-label>`
+
