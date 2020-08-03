@@ -154,10 +154,6 @@ tensorflow\.random_uniform_initializer
 
 tensorflow\.random_normal_initializer
 ^^^^^^^^^^^^^^^^^
-.. automodule:: tensorflow.random_normal_initialer
+.. automodule:: tensorflow.random_normal_initializer
     :members:
     :undoc-members:
-
-tensorflow\.truncated_normal
-^^^^^^^^^^^^^^^^^   
-.. automethod:: tensorflow.truncated_normal
