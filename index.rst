@@ -47,15 +47,7 @@ TensorFlow (i.e., TF)::
 
 -------------
 
-.. admonition::
-      
-      在本书中，经常有很多类型的文本可以区分不同的类型的信息。比如，*We then set the* `batch_size` *variable*。还有一整块的代码一般都设置成以下形式：
-      :code: python
-            
-            embedding_mat = tf.Variable(tf.random_uniform([vocab_size, embedding_size],-1.0,1.0))
-            
-            embedding_output = tf.nn.embedding_lookup(embedding_mat, x_data_ph)
-
+.. title:: 目录
   
 .. _label1:
 .. toctree::
