@@ -88,53 +88,78 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 本章学习模块
 -----------
 
+.. Submodules
+.. ----------
+
+tensorflow\.zeros
+^^^^^^^^^^^^^^^^^
 .. automodule:: tensorflow.zeros
     :members:
     :undoc-members:
     :show-inheritance:
-    
+
+tensorflow\.ones
+^^^^^^^^^^^^^^^^^
 .. automodule:: tensorflow.ones
     :members:
     :undoc-members:
     :show-inheritance:
 
+tensorflow\.fill
+^^^^^^^^^^^^^^^^^
 .. automodule:: tensorflow.fill
     :members:
     :undoc-members:
     :show-inheritance:
 
+tensorflow\.constant
+^^^^^^^^^^^^^^^^^
 .. automodule:: tensorflow.constant
     :members:
     :undoc-members:
     :show-inheritance:
-    
+
+tensorflow\.zeros_like
+^^^^^^^^^^^^^^^^^
 .. automodule:: tensorflow.zeros_like
     :members:
     :undoc-members:
     :show-inheritance:
 
+tensorflow\.ones_like
+^^^^^^^^^^^^^^^^^
 .. automodule:: tensorflow.ones_like
     :members:
     :undoc-members:
     :show-inheritance:
-    
+
+tensorflow\.linspace
+^^^^^^^^^^^^^^^^^
 .. automodule:: tensorflow.linspace
     :members:
     :undoc-members:
     :show-inheritance:
-    
+
+tensorflow\.range
+^^^^^^^^^^^^^^^^^   
 .. automodule:: tensorflow.range
     :members:
     :undoc-members:
-    
+
+tensorflow\.random_uniform
+^^^^^^^^^^^^^^^^^
 .. automodule:: tensorflow.random_uniform
     :members:
     :undoc-members:
-    
+
+tensorflow\.random_normal
+^^^^^^^^^^^^^^^^^
 .. automodule:: tensorflow.random_normal
     :members:
     :undoc-members:
     
+tensorflow\.truncated_normal
+^^^^^^^^^^^^^^^^^   
 .. automodule:: tensorflow.truncated_normal
     :members:
     :undoc-members:
