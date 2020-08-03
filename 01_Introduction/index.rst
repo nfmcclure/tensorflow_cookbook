@@ -146,14 +146,18 @@ tensorflow\.range
     :members:
     :undoc-members:
 
-tensorflow\.random_uniform
+tensorflow\.random_uniform_initializer
 ^^^^^^^^^^^^^^^^^
-.. autoclass:: tensorflow.random_uniform
+.. automodule:: tensorflow.random_uniform_initializer
+    :members:
+    :undoc-members:
 
-tensorflow\.random_normal
+tensorflow\.random_normal_initializer
 ^^^^^^^^^^^^^^^^^
-.. autoclass:: tensorflow.random_normal
- 
+.. automodule:: tensorflow.random_normal_initialer
+    :members:
+    :undoc-members:
+
 tensorflow\.truncated_normal
 ^^^^^^^^^^^^^^^^^   
-.. autoclass:: tensorflow.truncated_normal
+.. automethod:: tensorflow.truncated_normal
