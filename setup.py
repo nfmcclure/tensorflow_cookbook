@@ -23,8 +23,7 @@ setup(
     version='1.3.0',
     description="TensorFlow Machine Learning",
     author="Wei MEI",
-    url='https://tensorflow-ml.org',
-    
+    url="https://tensorflow-ml.org/",
     license="MIT license",
     zip_safe=False,
     keywords='TensorFlow Machine Learning',
