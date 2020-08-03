@@ -13,7 +13,7 @@
 .. |TensorFlow| image:: https://img.shields.io/badge/tensorflow-1.8-brightgreen.svg
    :target: https://github.com/tensorflow/tensorflow
 
-TensorFlow 机器学习 Cookbook
+TensorFlow 机器学习 Cookbook (version : |version|)
 ============================
 
 TensorFlow (i.e., TF)::
