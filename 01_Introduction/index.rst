@@ -83,7 +83,7 @@ the data sources and where they come from.
 Mostly official resources and papers.  The papers are TensorFlow papers or Deep Learning resources.
 
 
-下载本章:download:`Jupyter Notebook </01_Introduction/01_How_TensorFlow_Works/01_How_TensorFlow_Works.ipynb>`
+下载本章 :download:`Jupyter Notebook </01_Introduction/01_How_TensorFlow_Works/01_How_TensorFlow_Works.ipynb>`
 
 本章学习模块
 -----------
