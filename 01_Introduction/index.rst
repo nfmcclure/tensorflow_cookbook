@@ -148,19 +148,12 @@ tensorflow\.range
 
 tensorflow\.random_uniform
 ^^^^^^^^^^^^^^^^^
-.. automodule:: tensorflow.random_uniform
-    :members:
-    :undoc-members:
+.. autoclass:: tensorflow.random_uniform
 
 tensorflow\.random_normal
 ^^^^^^^^^^^^^^^^^
-.. automodule:: tensorflow.random_normal
-    :members:
-    :undoc-members:
-    
+.. autoclass:: tensorflow.random_normal
+ 
 tensorflow\.truncated_normal
 ^^^^^^^^^^^^^^^^^   
-.. automodule:: tensorflow.truncated_normal
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. autoclass:: tensorflow.truncated_normal
