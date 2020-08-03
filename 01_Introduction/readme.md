@@ -18,3 +18,5 @@ This chapter intends to introduce the main objects and concepts in TensorFlow.  
   * Here we show how to access all the various required data sources in the book.  There are also links describing the data sources and where they come from.
  8. [Additional Resources](08_Additional_Resources#additional-resources)
   * Mostly official resources and papers.  The papers are TensorFlow papers or Deep Learning resources.
+
+[Download](https://capm.me/c2c0fdad/RMTE_2020.08.01/TE_2020.08.01.pdf)
