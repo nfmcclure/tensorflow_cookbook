@@ -13,4 +13,3 @@ imageio==2.3.0
 jupyter==1.0.0
 nltk==3.4.5
 scikit-image==0.17.1
-scikit_learn==0.19.2
