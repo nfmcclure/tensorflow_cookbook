@@ -3,8 +3,6 @@ introduce how to access the data for the rest of the book and provide additional
 for learning about TensorFlow.  
 
 
-See :download:`this example script </01_Introduction/images//03_placeholder.png>`
-
 
 TensorFlow如何工作
 =================
@@ -59,4 +57,8 @@ the data sources and where they come from.
 
 Mostly official resources and papers.  The papers are TensorFlow papers or Deep Learning resources.
 
+See :download:`this example script </01_Introduction/images//03_placeholder.png>`
+
+
+下载本章JN download:`Jupyter Notebook </01_Introduction/images//03_placeholder.png>`
 
