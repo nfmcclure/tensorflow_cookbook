@@ -1,6 +1,7 @@
-This chapter intends to introduce the main objects and concepts in TensorFlow.  We also 
-introduce how to access the data for the rest of the book and provide additional resources
-for learning about TensorFlow.  
+.. note::
+       
+       在这一章中，我们会介绍基本概念，以便理解TensorFlow是如何工作以及如何获得本书的数据和额外资源。
+
 
 
 
