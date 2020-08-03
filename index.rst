@@ -1,4 +1,4 @@
-|Documentation Status| |MIT License| |Python version| |Huawei Clodu| |TensorFlow|
+|Documentation Status| |MIT License| |Python version| |Huawei Clodu| |TensorFlow| | today |
 
 -------------------
 
