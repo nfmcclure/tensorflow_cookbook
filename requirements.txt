@@ -9,7 +9,6 @@ grpcio==1.14.1
 jupyter_core==4.4.0
 Pillow==6.2.0
 GitPython==2.1.11
-grpc==0.3-19
 imageio==2.3.0
 jupyter==1.0.0
 nltk==3.4.5
