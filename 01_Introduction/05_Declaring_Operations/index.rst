@@ -90,7 +90,7 @@ Here we will create a polynomial function:
   
   def custom_polynomial(x_val):
     # Return 3x^2 - x + 10
-    return(tf.subtract(3 * tf.square(x_val), x_val) + 10)
+      return(tf.subtract(3 * tf.square(x_val), x_val) + 10)
 
   print(sess.run(custom_polynomial(11)))
 
@@ -114,6 +114,7 @@ TensorFlow custom function output:
 
   for num in test_nums:
       print(sess.run(custom_polynomial(num)))
+
 
 the output::
   10
