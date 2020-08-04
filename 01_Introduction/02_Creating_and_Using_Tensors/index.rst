@@ -33,9 +33,10 @@ We can evaluate tensors with calling a run() method on our session.
     
     sess.run(my_tensor)
 
-.. code:: python
+the output::
     
-    array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0., 0.,  0.,  0.,  0.,  0.,  0.,  0.]], dtype=float32)
+    array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  
+    0.,  0.,  0., 0.,  0.,  0.,  0.,  0.,  0.,  0.]], dtype=float32)
     
 TensorFlow algorithms need to know which objects are variables and which are constants. The difference between these two objects will be explained later in the chapter. For now we create a variable using the TensorFlow function tf.Variable() as follows.
 
@@ -49,8 +50,11 @@ Note that you can not run `sess.run(my_var)`, this would result in an error. Bec
    sess.run(my_var.initializer)
    sess.run(my_var)
 
+the output::
+   
    array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
          0.,  0.,  0.,  0.,  0.,  0.,  0.]], dtype=float32)
+         
 Let's first start by creating variables of specific shape by declaring our row and column size.
 
 .. code:: python
@@ -73,6 +77,9 @@ Again, we can call the initializer method on our variables and run them to evalu
    sess.run(ones_var.initializer)
    print(sess.run(zero_var))
    print(sess.run(ones_var))
+   
+the output::
+
    [[ 0.  0.  0.]
    [ 0.  0.  0.]]
    [[ 1.  1.  1.]
@@ -91,6 +98,9 @@ If the shape of a tensor depends on the shape of another tensor, then we can use
    sess.run(zero_similar.initializer)
    print(sess.run(ones_similar))
    print(sess.run(zero_similar))
+   
+the output::
+
    [[ 1.  1.  1.]
    [ 1.  1.  1.]]
    [[ 0.  0.  0.]
@@ -105,6 +115,9 @@ Here is how we fill a tensor with a constant.
    fill_var = tf.Variable(tf.fill([row_dim, col_dim], -1))
    sess.run(fill_var.initializer)
    print(sess.run(fill_var))
+   
+the output::
+
    [[-1 -1 -1]
    [-1 -1 -1]]
    
@@ -121,6 +134,9 @@ We can also create a variable from an array or list of constants.
 
    print(sess.run(const_var))
    print(sess.run(const_fill_var))
+   
+the output::
+
    [8 6 7 5 3 0 9]
    [[-1 -1 -1]
    [-1 -1 -1]]
@@ -144,6 +160,9 @@ We can also create tensors from sequence generation functions in TensorFlow. The
 
    print(sess.run(linear_var))
    print(sess.run(sequence_var))
+
+the output::
+
    [ 0.   0.5  1. ]
    [ 6  9 12]
    
@@ -157,6 +176,9 @@ We can also initialize tensors that come from random numbers like the following.
 
    print(sess.run(rnorm_var))
    print(sess.run(runif_var))
+
+the output::
+
    [[ 1.1772728   1.36544371 -0.89566803]
     [-0.02099477 -0.17081328  0.2029814 ]]
    [[ 2.54200077  1.42822504  1.34831095]
