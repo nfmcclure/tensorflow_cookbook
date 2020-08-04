@@ -34,7 +34,7 @@ General TensorFlow Algorithm Outlines
 -------------------------------------
 Here we will introduce the general flow of Tensorflow Algorithms. Most recipes will follow this outline.
 
-Import or generate data.=
+Import or generate data
 ^^^^^^^^^^^^^^^^^^^^^^^^
 All of our machine learning algorithms will depend on data. In this book we will either generate data or use 
 an outside source of data. Sometimes it is better to rely on generated data because we will want to know the 
