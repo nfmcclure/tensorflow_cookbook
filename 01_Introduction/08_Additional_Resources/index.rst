@@ -13,7 +13,7 @@ Github Tutorials and Examples
  - `Tutorials by pkmital <https://github.com/pkmital/tensorflow_tutorials>`_
  - `Tutorials by nlintz <https://github.com/nlintz/TensorFlow-Tutorials>`_
  - `Examples by americdamien <https://github.com/aymericdamien/TensorFlow-Examples>`_
- - `TensorFlow Workshop by amygdala <https://github.com/amygdala/tensorflow-workshop`_
+ - `TensorFlow Workshop by amygdala <https://github.com/amygdala/tensorflow-workshop>`_
 
 Deep Learning Resources
 -----------------------
