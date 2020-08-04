@@ -1,6 +1,3 @@
-Tensors
--------
-
 This script introduces various ways to create tensors in TensorFlow
 First we start with loading TensorFlow and reseting the computational graph.
 
