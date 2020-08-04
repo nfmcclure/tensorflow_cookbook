@@ -79,7 +79,8 @@ How to use various mathematical operations in TensorFlow.
 
 .. toctree::
        :maxdepth: 3
-
+       
+       01_Introduction/06_Implementing_Activation_Functions/index
 
 Activation functions are unique functions that TensorFlow has built in for your use in algorithms.
 
