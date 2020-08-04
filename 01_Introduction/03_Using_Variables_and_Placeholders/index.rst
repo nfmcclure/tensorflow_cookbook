@@ -44,6 +44,9 @@ computational graph.
 
   # Print the output, feeding the value of x into the computational graph
   print(sess.run(y, feed_dict={x: rand_array}))
+
+the output::
+
   [[ 0.1175806   0.88121527  0.00815445  0.93555111]
   [ 0.97369134  0.14595009  0.16398087  0.76570976]
   [ 0.67633879  0.11748746  0.01266815  0.32564184]
