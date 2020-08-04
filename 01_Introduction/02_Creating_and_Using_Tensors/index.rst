@@ -218,6 +218,6 @@ We now run the following command in our command prompt:
 
 And it will tell us the URL we can navigate our browser to to see Tensorboard. The default should be: http://0.0.0.0:6006/
 
-.. image:: https://github.com/nfmcclure/tensorflow_cookbook/raw/master/01_Introduction/images/02_variable.png
+.. image:: /01_Introduction/images/02_variable.png
 
 
