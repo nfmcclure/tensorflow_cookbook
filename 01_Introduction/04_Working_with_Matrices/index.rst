@@ -8,6 +8,7 @@ This function introduces various ways to create matrices and how to use them in 
   ops.reset_default_graph()
 
 Start a graph session
+
 .. code:: python
   sess = tf.Session()
 
@@ -163,6 +164,7 @@ is an array of eigenvalues, the second is a matrix of the eigenvectors.
   print(eigenvectors)
   
  the output::
+ 
   [-10.65907521  -0.22750691   2.88658212]
   [[ 0.21749542  0.63250104 -0.74339638]
   [ 0.84526515  0.2587998   0.46749277]
