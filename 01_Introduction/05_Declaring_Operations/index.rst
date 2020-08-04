@@ -23,7 +23,7 @@ between ``div()``, ``truediv()`` and ``floordiv()``.
 
 ``div()`` : integer of division (similar to base python //)
 
- ``truediv()`` : will convert integer to floats.
+``truediv()`` : will convert integer to floats.
 
 ``floordiv()`` : float of div()
 
