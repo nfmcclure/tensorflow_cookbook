@@ -110,7 +110,8 @@ the data sources and where they come from.
 ^^^^^^
 .. toctree::
        :maxdepth: 3
-
+       
+       /01_Introduction/08_Additional_Resources/index.rst
 
 Mostly official resources and papers.  The papers are TensorFlow papers or Deep Learning resources.
 
