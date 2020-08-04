@@ -65,7 +65,8 @@ Understanding how TensorFlow can work with matrices is crucial to understanding 
 ^^^^^^^^^^^^
 .. toctree::
        :maxdepth: 3
-
+       
+      /01_Introduction/05_Declaring_Operations/index
 
 How to use various mathematical operations in TensorFlow.
 
