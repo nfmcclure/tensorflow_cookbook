@@ -4,7 +4,7 @@
 
 
 TensorFlow如何工作
-^^^^^^^^^^^^^^^^
+----------------
 .. toctree::
        :maxdepth: 3
 
@@ -19,7 +19,7 @@ Here we introduce TensorFlow and the general outline of how most TensorFlow algo
 ------------
 
 变量和张量的声明
-^^^^^^^^^^^^^^
+---------------
 .. toctree::
        :maxdepth: 3
        
@@ -34,7 +34,7 @@ How to create and initialize tensors in TensorFlow.  We also depict how these op
 -----
 
 使用占位符和变量
-^^^^^^^^^^^^^
+--------------
 .. toctree::
        :maxdepth: 3
        
@@ -49,7 +49,7 @@ How to create and use variables and placeholders in TensorFlow.  We also depict 
 -----------
 
 矩阵
-^^^^^
+----------
 .. toctree::
        :maxdepth: 3
        
@@ -62,7 +62,7 @@ Understanding how TensorFlow can work with matrices is crucial to understanding 
 -----------
 
 操作符的声明
-^^^^^^^^^^^^
+-------------
 .. toctree::
        :maxdepth: 3
        
@@ -75,7 +75,7 @@ How to use various mathematical operations in TensorFlow.
 -------------
 
 载入激活函数
-^^^^^^^^^^
+-----------
 
 .. toctree::
        :maxdepth: 3
@@ -93,7 +93,7 @@ Activation functions are unique functions that TensorFlow has built in for your 
 -----------
 
 数据资源
-^^^^^^^
+-------
 .. toctree::
        :maxdepth: 3
        
@@ -107,7 +107,7 @@ the data sources and where they come from.
 ------------
 
 资源库
-^^^^^^
+----------
 .. toctree::
        :maxdepth: 3
        
@@ -119,12 +119,13 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 
 
 本章学习模块
-^^^^^^^^^^
+-----------
 
 .. Submodules
 .. ----------
 
 *tensorflow\.zeros* 
+^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: tensorflow.zeros
     :members:
@@ -134,6 +135,7 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 ------
 
 *tensorflow\.ones*
+^^^^^^^^^^^^^^^^^^
 
 .. automodule:: tensorflow.ones
     :members:
@@ -143,6 +145,7 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 -------------
 
 *tensorflow\.fill*
+^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: tensorflow.fill
     :members:
@@ -152,6 +155,7 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 ----------------
 
 *tensorflow\.constant*
+^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: tensorflow.constant
     :members:
@@ -161,6 +165,7 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 -------------
 
 *tensorflow\.zeros_like*
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: tensorflow.zeros_like
     :members:
@@ -170,6 +175,7 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 -------------
 
 *tensorflow\.ones_like*
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: tensorflow.ones_like
     :members:
@@ -179,6 +185,7 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 -------------
 
 *tensorflow\.linspace*
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: tensorflow.linspace
     :members:
@@ -188,7 +195,8 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 -------------
 
 *tensorflow\.range*
-   
+^^^^^^^^^^^^^^^^^^^^
+
 .. automodule:: tensorflow.range
     :members:
     :undoc-members:
@@ -196,6 +204,7 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 ----------------
 
 *tensorflow\.random_uniform_initializer*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: tensorflow.random_uniform_initializer
     :members:
@@ -204,6 +213,7 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 ----------------
 
 *tensorflow\.random_normal_initializer*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: tensorflow.random_normal_initializer
     :members:
