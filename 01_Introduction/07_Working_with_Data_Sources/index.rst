@@ -156,6 +156,7 @@ the output::
   plt.imshow(img)
 
 the output::
+
   (50000, 32, 32, 3)
   (50000, 1)
   array([6], dtype=uint8)
