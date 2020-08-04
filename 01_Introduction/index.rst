@@ -6,26 +6,26 @@
 ----
 
 .. toctree::
-       :maxdepth: 2
+       :maxdepth: 3
        :caption: TensorFlow如何工作
        
        /01_Introduction/01_How_TensorFlow_Works/index
 
 .. toctree::
-       :maxdepth: 2
+       :maxdepth: 3
        :caption: 变量和张量的声明
 
 
 .. toctree::
-       :maxdepth: 2
+       :maxdepth: 3
        :caption: 使用占位符和变量
 
 .. toctree::
-       :maxdepth: 2
+       :maxdepth: 3
        :caption: 矩阵
 
 .. toctree::
-       :maxdepth: 2
+       :maxdepth: 3
        :caption: 操作符的声明
 
 
