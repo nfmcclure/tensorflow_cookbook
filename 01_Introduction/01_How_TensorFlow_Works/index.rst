@@ -48,6 +48,7 @@ to transform our data before we can use it. Most algorithms also expect normaliz
 here as well. Tensorflow has built in functions that can normalize the data for you.
 
 :code:python
+      
       data = tf.nn.batch_norm_with_global_normalization(...)
 
 Set algorithm parameters
@@ -57,6 +58,7 @@ this can be the number of iterations, the learning rate, or other fixed paramete
 considered good form to initialize these together so the reader or user can easily find them.
 
 :code:python
+      
       learning_rate = 0.01 
       iterations = 1000
 
@@ -103,16 +105,16 @@ to initialize the computational graph.
 
 :code:python
       
-      with tf.Session(graph=graph) as session:
-        ...
-      session.run(...)
-        ...
+     with tf.Session(graph=graph) as session:
+       ...
+     session.run(...)
+       ...
 
 Note that we can also initiate our graph with
 
 :code:python
       
-      session = tf.Session(graph=graph) session.run(…)
+     session = tf.Session(graph=graph) session.run(…)
 
 (Optional) Evaluate the model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
