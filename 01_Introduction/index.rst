@@ -24,6 +24,8 @@ Here we introduce TensorFlow and the general outline of how most TensorFlow algo
 ^^^^^^^^^^^^^^
 .. toctree::
        :maxdepth: 3
+       
+       /01_Introduction/02_Creating_and_Using_Tensors/index
 
 How to create and initialize tensors in TensorFlow.  We also depict how these operations appear in Tensorboard.
 
