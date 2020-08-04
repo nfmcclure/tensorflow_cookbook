@@ -10,7 +10,8 @@ This function introduces various ways to create matrices and how to use them in 
 Start a graph session
 
 .. code:: python
-  sess = tf.Session()
+    
+    sess = tf.Session()
 
 Declaring matrices
 ^^^^^^^^^^^^^^^^^^
@@ -31,7 +32,7 @@ the output::
   
 2x3 random norm matrix:
 
-,, code:: python
+.. code:: python
 
   A = tf.truncated_normal([2,3])
   print(sess.run(A))
@@ -69,6 +70,7 @@ the output::
 Create matrix from np array:
 
 .. code:: python
+  
   D = tf.convert_to_tensor(np.array([[1., 2., 3.], [-3., -7., -1.], [0., 5., -2.]]))
   print(sess.run(D))
 
@@ -124,6 +126,7 @@ Matrix Determinant:
 .. code:: python
 
   print(sess.run(tf.matrix_determinant(D)))
+
 the output::
 
   -38.0
