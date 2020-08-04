@@ -74,7 +74,7 @@ the output::
 
   -7.23998e-06
   -1.0
-  1.0
+   1.0
   
   
 Custom operations
@@ -83,6 +83,8 @@ Custom operations
 Here we will create a polynomial function:
 
 :math: 'f(x) = 3 \ast x^2-x+10'
+
+:math:`\boldsymbol{\alpha} = (\mathbf{K} + \lambda \mathbf{I})^{-1} \mathbf{y}`
 
 .. code:: python
 
