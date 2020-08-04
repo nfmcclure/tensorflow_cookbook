@@ -19,10 +19,10 @@ talk you through pseudocode of how a Tensorflow algorithm usually works.
 
 Tensorflow is now supported on all three major OS systems (Windows, Linux, and Mac). Throughout this book we 
 will only concern ourselves with the Python library wrapper of Tensorflow. This book will use 
-Python 3.X (https://www.python.org) and Tensorflow 0.12+ (https://www.tensorflow.org). While Tensorflow can 
+`Python 3.X <https://www.python.org>`_ and `Tensorflow 0.12+ <https://www.tensorflow.org>`_. While Tensorflow can 
 run on the CPU, it runs faster if it runs on the GPU, and it is supported on graphics cards with NVidia Compute
 Capability 3.0+. To run on a GPU, you will also need to download and install the 
-NVidia Cuda Toolkit (https://developer.nvidia.com/cuda-downloads). Some of the recipes will rely on a current 
+`NVidia Cuda Toolkit <https://developer.nvidia.com/cuda-downloads>`_. Some of the recipes will rely on a current 
 installation of the Python packages Scipy, Numpy, and Scikit-Learn as well.
 
 Please see the requirements.txt in the main directory of this repository and run a command similar to
