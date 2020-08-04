@@ -65,4 +65,4 @@ We run the following command at the prompt:
 Which will tell us where to navigate chrome to to visualize the computational graph.
 Default is http://0.0.0.0:6006/
 
-.. image:: https://github.com/nfmcclure/tensorflow_cookbook/raw/master/01_Introduction/images/03_placeholder.png
+.. image:: /01_Introduction/images/03_placeholder.png
