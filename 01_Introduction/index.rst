@@ -118,67 +118,68 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 .. ----------
 
 "tensorflow\.zeros"
+
 .. automodule:: tensorflow.zeros
     :members:
     :undoc-members:
     :show-inheritance:
 
-tensorflow\.ones
-^^^^^^^^^^^^^^^^^
+"tensorflow\.ones"
+
 .. automodule:: tensorflow.ones
     :members:
     :undoc-members:
     :show-inheritance:
 
-tensorflow\.fill
-^^^^^^^^^^^^^^^^^
+"tensorflow\.fill"
+
 .. automodule:: tensorflow.fill
     :members:
     :undoc-members:
     :show-inheritance:
 
-tensorflow\.constant
-^^^^^^^^^^^^^^^^^
+"tensorflow\.constant"
+
 .. automodule:: tensorflow.constant
     :members:
     :undoc-members:
     :show-inheritance:
 
-tensorflow\.zeros_like
-^^^^^^^^^^^^^^^^^
+"tensorflow\.zeros_like"
+
 .. automodule:: tensorflow.zeros_like
     :members:
     :undoc-members:
     :show-inheritance:
 
-tensorflow\.ones_like
-^^^^^^^^^^^^^^^^^
+"tensorflow\.ones_like"
+
 .. automodule:: tensorflow.ones_like
     :members:
     :undoc-members:
     :show-inheritance:
 
-tensorflow\.linspace
-^^^^^^^^^^^^^^^^^
+"tensorflow\.linspace"
+
 .. automodule:: tensorflow.linspace
     :members:
     :undoc-members:
     :show-inheritance:
 
-tensorflow\.range
-^^^^^^^^^^^^^^^^^   
+"tensorflow\.range"
+   
 .. automodule:: tensorflow.range
     :members:
     :undoc-members:
 
-tensorflow\.random_uniform_initializer
-^^^^^^^^^^^^^^^^^
+"tensorflow\.random_uniform_initializer"
+
 .. automodule:: tensorflow.random_uniform_initializer
     :members:
     :undoc-members:
 
-tensorflow\.random_normal_initializer
-^^^^^^^^^^^^^^^^^
+"tensorflow\.random_normal_initializer"
+
 .. automodule:: tensorflow.random_normal_initializer
     :members:
     :undoc-members:
