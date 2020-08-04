@@ -1,6 +1,3 @@
-
-Placeholders
------------
 We introduce how to use placeholders in TensorFlow.
 
 First we import the necessary libraries and reset the graph session.
