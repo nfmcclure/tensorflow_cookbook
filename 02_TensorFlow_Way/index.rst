@@ -87,7 +87,7 @@ and classification.
 TensorFlow makes it easy to use both batch and stochastic training. We show how to implement both and talk 
 about the benefits and limitations of each.
 
-.. image:: images/06_activation_funs2.png
+.. image::
 
 下载本章 :download:`Jupyter Notebook </01_Introduction/06_Implementing_Activation_Functions/06_activation_functions.ipynb>`
 
