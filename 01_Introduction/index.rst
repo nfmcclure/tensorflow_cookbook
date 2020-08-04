@@ -5,10 +5,11 @@
 章节
 ----
 
+TensorFlow如何工作
+^^^^^^^^^^^^^^^^
 .. toctree::
        :maxdepth: 3
-       :caption: TensorFlow如何工作
-       
+
        /01_Introduction/01_How_TensorFlow_Works/index
 
 Here we introduce TensorFlow and the general outline of how most TensorFlow algorithms work.
@@ -19,9 +20,10 @@ Here we introduce TensorFlow and the general outline of how most TensorFlow algo
 
 ------------
 
+变量和张量的声明
+^^^^^^^^^^^^^^
 .. toctree::
        :maxdepth: 3
-       :caption: 变量和张量的声明
 
 How to create and initialize tensors in TensorFlow.  We also depict how these operations appear in Tensorboard.
 
@@ -31,10 +33,11 @@ How to create and initialize tensors in TensorFlow.  We also depict how these op
 
 -----
 
+使用占位符和变量
+^^^^^^^^^^^^^
 .. toctree::
        :maxdepth: 3
-       :caption: 使用占位符和变量
-
+ 
 How to create and use variables and placeholders in TensorFlow.  We also depict how these operations appear in Tensorboard.
 
 .. image:: images/03_placeholder.png
@@ -43,20 +46,22 @@ How to create and use variables and placeholders in TensorFlow.  We also depict 
 
 -----------
 
+矩阵
+^^^^^
 .. toctree::
        :maxdepth: 3
-       :caption: 矩阵
-
-
+ 
 Understanding how TensorFlow can work with matrices is crucial to understanding how the algorithms work.
 
 下载本章 :download:`Jupyter Notebook </01_Introduction/04_Working_with_Matrices/04_matrices.ipynb>`
 
 -----------
 
+操作符的声明
+^^^^^^^^^^^^
 .. toctree::
        :maxdepth: 3
-       :caption: 操作符的声明
+
 
 How to use various mathematical operations in TensorFlow.
 
@@ -64,9 +69,12 @@ How to use various mathematical operations in TensorFlow.
 
 -------------
 
+载入激活函数
+^^^^^^^^^^
+
 .. toctree::
        :maxdepth: 3
-       :caption: 载入激活函数
+
 
 Activation functions are unique functions that TensorFlow has built in for your use in algorithms.
 
@@ -78,9 +86,10 @@ Activation functions are unique functions that TensorFlow has built in for your 
 
 -----------
 
+数据资源
+^^^^^^^
 .. toctree::
        :maxdepth: 3
-       :caption: 数据资源
 
 Here we show how to access all the various required data sources in the book. There are also links describing
 the data sources and where they come from.
@@ -89,9 +98,11 @@ the data sources and where they come from.
 
 ------------
 
+资源库
+^^^^^^
 .. toctree::
        :maxdepth: 3
-       :caption: 资源库
+
 
 Mostly official resources and papers.  The papers are TensorFlow papers or Deep Learning resources.
 
