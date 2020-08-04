@@ -39,6 +39,8 @@ How to create and initialize tensors in TensorFlow.  We also depict how these op
 ^^^^^^^^^^^^^
 .. toctree::
        :maxdepth: 3
+       
+       /01_Introduction/03_Using_Variables_and_Placeholders/index
  
 How to create and use variables and placeholders in TensorFlow.  We also depict how these operations appear in Tensorboard.
 
