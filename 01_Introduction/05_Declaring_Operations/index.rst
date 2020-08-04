@@ -82,7 +82,7 @@ Custom operations
 
 Here we will create a polynomial function:
 
-:math: `f(x) = 3 \ast x^2-x+10 `
+:math: 'f(x) = 3 \ast x^2-x+10'
 
 .. code:: python
 
@@ -95,6 +95,7 @@ Here we will create a polynomial function:
   print(sess.run(custom_polynomial(11)))
 
 the output::
+  
   362
   
 What should we get with list comprehension:
@@ -117,6 +118,7 @@ TensorFlow custom function output:
 
 
 the output::
+  
   10
   12
   20
