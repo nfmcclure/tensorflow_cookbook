@@ -96,6 +96,8 @@ Activation functions are unique functions that TensorFlow has built in for your 
 ^^^^^^^
 .. toctree::
        :maxdepth: 3
+       
+       /01_Introduction/07_Working_with_Data_Sources/index
 
 Here we show how to access all the various required data sources in the book. There are also links describing
 the data sources and where they come from.
