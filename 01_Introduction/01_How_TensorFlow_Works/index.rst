@@ -26,7 +26,8 @@ Capability 3.0+. To run on a GPU, you will also need to download and install the
 installation of the Python packages Scipy, Numpy, and Scikit-Learn as well.
 
 Please see the requirements.txt in the main directory of this repository and run a command similar to
-.. code::bash
+.. code:: bash
+
       pip install -r requirements.txt 
       
 to guarentee that all the necessary libraries are available.
@@ -48,7 +49,7 @@ The data is usually not in the correct dimension or type that our Tensorflow alg
 to transform our data before we can use it. Most algorithms also expect normalized data and we will do this 
 here as well. Tensorflow has built in functions that can normalize the data for you.
 
-.. code::python
+.. code:: python
       
       data = tf.nn.batch_norm_with_global_normalization(...)
 
@@ -58,7 +59,7 @@ Our algorithms usually have a set of parameters that we hold constant throughout
 this can be the number of iterations, the learning rate, or other fixed parameters of our choosing. It is 
 considered good form to initialize these together so the reader or user can easily find them.
 
-.. code::python
+.. code:: python
       
       learning_rate = 0.01 
       iterations = 1000
@@ -69,7 +70,7 @@ Tensorflow depends on us telling it what it can and cannot modify. Tensorflow wi
 optimization to minimize a loss function. To accomplish this, we feed in data through placeholders. We need to 
 initialize both of these, variables and placeholders with size and type, so that Tensorflow knows what to expect.
 
-.. code::python
+.. code:: python
       
       a_var = tf.constant(42) 
       x_input = tf.placeholder(tf.float32, [None, input_size]) 
@@ -82,7 +83,7 @@ done by building a computational graph. We tell Tensorflow what operations must 
 placeholders to arrive at our model predictions. We talk more in depth about computational graphs in chapter two, 
 section one of this book.
 
-.. code::python
+.. code:: python
       
       y_pred = tf.add(tf.mul(x_input, weight_matrix), b_matrix)
 
@@ -93,7 +94,7 @@ After defining the model, we must be able to evaluate the output. This is where 
 The loss function is very important as it tells us how far off our predictions are from the actual values. 
 The different types of loss functions are explored in greater detail in chapter two, section five.
 
-.. code::python
+.. code:: python
       
       loss = tf.reduce_mean(tf.square(y_actual – y_pred))
 
@@ -104,7 +105,7 @@ Now that we have everything in place, we create an instance or our graph and fee
 placeholders and let Tensorflow change the variables to better predict our training data. Here is one way 
 to initialize the computational graph.
 
-.. code::python
+.. code:: python
       
       with tf.Session(graph=graph) as session:
             ...
@@ -113,7 +114,7 @@ to initialize the computational graph.
 
 Note that we can also initiate our graph with
 
-.. code::python
+.. code:: python
       
       session = tf.Session(graph=graph) session.run(…)
 
