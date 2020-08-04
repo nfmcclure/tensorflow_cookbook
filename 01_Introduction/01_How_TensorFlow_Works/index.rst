@@ -26,8 +26,9 @@ Capability 3.0+. To run on a GPU, you will also need to download and install the
 installation of the Python packages Scipy, Numpy, and Scikit-Learn as well.
 
 Please see the requirements.txt in the main directory of this repository and run a command similar to
-.. code:: bash
 
+.. code:: sh
+      
       pip install -r requirements.txt 
       
 to guarentee that all the necessary libraries are available.
