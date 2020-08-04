@@ -52,6 +52,8 @@ How to create and use variables and placeholders in TensorFlow.  We also depict 
 ^^^^^
 .. toctree::
        :maxdepth: 3
+       
+       /01_Introduction/04_Working_with_Matrices/index
  
 Understanding how TensorFlow can work with matrices is crucial to understanding how the algorithms work.
 
