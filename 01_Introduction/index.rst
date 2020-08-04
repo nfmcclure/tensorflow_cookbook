@@ -27,6 +27,8 @@ How to create and initialize tensors in TensorFlow.  We also depict how these op
 
 .. image:: images/02_variable.png
 
+下载本章 :download:`Jupyter Notebook </01_Introduction/02_Creating_and_Using_Tensors/02_tensors.ipynb>`
+
 -----
 
 .. toctree::
@@ -37,6 +39,7 @@ How to create and use variables and placeholders in TensorFlow.  We also depict 
 
 .. image:: images/03_placeholder.png
 
+下载本章 :download:`Jupyter Notebook </01_Introduction/03_Using_Variables_and_Placeholders/03_placeholders.ipynb>`
 
 -----------
 
@@ -47,6 +50,8 @@ How to create and use variables and placeholders in TensorFlow.  We also depict 
 
 Understanding how TensorFlow can work with matrices is crucial to understanding how the algorithms work.
 
+下载本章 :download:`Jupyter Notebook </01_Introduction/04_Working_with_Matrices/04_matrices.ipynb>`
+
 -----------
 
 .. toctree::
@@ -54,6 +59,8 @@ Understanding how TensorFlow can work with matrices is crucial to understanding 
        :caption: 操作符的声明
 
 How to use various mathematical operations in TensorFlow.
+
+下载本章 :download:`Jupyter Notebook </01_Introduction/05_Declaring_Operations/05_operations.ipynb>`
 
 -------------
 
@@ -67,6 +74,8 @@ Activation functions are unique functions that TensorFlow has built in for your 
 
 .. image:: images/06_activation_funs2.png
 
+下载本章 :download:`Jupyter Notebook </01_Introduction/06_Implementing_Activation_Functions/06_activation_functions.ipynb>`
+
 -----------
 
 .. toctree::
@@ -75,6 +84,8 @@ Activation functions are unique functions that TensorFlow has built in for your 
 
 Here we show how to access all the various required data sources in the book. There are also links describing
 the data sources and where they come from.
+
+下载本章 :download:`Jupyter Notebook </01_Introduction/07_Working_with_Data_Sources/07_data_gathering.ipynb>`
 
 ------------
 
