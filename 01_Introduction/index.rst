@@ -117,7 +117,7 @@ Mostly official resources and papers.  The papers are TensorFlow papers or Deep 
 .. Submodules
 .. ----------
 
-"tensorflow\.zeros"
+*tensorflow\.zeros* 
 
 .. automodule:: tensorflow.zeros
     :members:
