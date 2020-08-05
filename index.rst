@@ -10,7 +10,7 @@
    :target: https://www.python.org/
 .. |Huawei Clodu| image:: https://img.shields.io/badge/platform-huawei%20cloud-blue
    :target: https://auth.huaweicloud.com/authui/login.html?service=https%3A%2F%2Fconsole.huaweicloud.com%2Fconsole%2F%3Flocale%3Dzh-cn#/login
-.. |TensorFlow| image:: https://img.shields.io/badge/tensorflow-1.8-brightgreen.svg
+.. |TensorFlow| image:: https://img.shields.io/badge/tensorflow-2.2-brightgreen.svg
    :target: https://github.com/tensorflow/tensorflow
 
 TensorFlow 机器学习 Cookbook (version : |version|)
