@@ -13,11 +13,13 @@
 ----------------
 .. toctree::
        :maxdepth: 3
-
+       
+       /02_TensorFlow_Way/01_Operations_as_a_Computational_Graph/index
+       
 We show how to create an operation on a computational graph and how to visualize it using Tensorboard.
 
 
-下载本章 :download:`Jupyter Notebook </01_Introduction/01_How_TensorFlow_Works/01_How_TensorFlow_Works.ipynb>`
+下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/01_Operations_as_a_Computational_Graph/01_operations_on_a_graph.ipynb>`
 
 ------------
 
