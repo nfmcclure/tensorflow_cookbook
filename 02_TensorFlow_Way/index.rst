@@ -60,11 +60,12 @@ in Tensorboard.
 .. toctree::
        :maxdepth: 3
        
+       /02_TensorFlow_Way/04_Implementing_Loss_Functions/index
 
 In order to train a model, we must be able to evaluate how well it is doing. This is given by loss functions.
 We plot various loss functions and talk about the benefits and limitations of some.
 
-下载本章 :download:`Jupyter Notebook </01_Introduction/04_Working_with_Matrices/04_matrices.ipynb>`
+下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/04_Implementing_Loss_Functions/04_loss_functions.ipynb>`
 
 -----------
 
