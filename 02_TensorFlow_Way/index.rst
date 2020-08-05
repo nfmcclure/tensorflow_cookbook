@@ -6,7 +6,7 @@
    creating a simple classifier and then show an example of evaluating regression and 
    classification algorithms.
 
-
+下载本章 :download:`Jupyter Notebook <https://github.com/qmlcode/qml/blob/master/qml/wrappers.py>`
 
 
 计算图
