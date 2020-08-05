@@ -27,14 +27,15 @@ We show how to create an operation on a computational graph and how to visualize
 ---------------
 .. toctree::
        :maxdepth: 3
-
+       
+       /02_TensorFlow_Way/02_Layering_Nested_Operations/index
 
 We show how to create multiple operations on a computational graph and how to visualize them using 
 Tensorboard.
 
 .. image:: 
 
-下载本章 :download:`Jupyter Notebook </01_Introduction/02_Creating_and_Using_Tensors/02_tensors.ipynb>`
+下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/02_Layering_Nested_Operations/02_layering_nested_operations.ipynb>`
 
 -----
 
