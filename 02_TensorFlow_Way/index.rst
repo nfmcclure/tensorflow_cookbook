@@ -69,17 +69,18 @@ We plot various loss functions and talk about the benefits and limitations of so
 
 -----------
 
-载入向后传递
+载入反向传播
 -------------
 .. toctree::
        :maxdepth: 3
        
+       /02_TensorFlow_Way/05_Implementing_Back_Propagation/index
 
 Here we show how to use loss functions to iterate through data and back propagate errors for regression 
 and classification.
 
 
-下载本章 :download:`Jupyter Notebook </01_Introduction/05_Declaring_Operations/05_operations.ipynb>`
+ 下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/05_Implementing_Back_Propagation/05_back_propagation.ipynb>`
 
 -------------
 
