@@ -21,7 +21,7 @@
   * [第十章: TensorFlow应用技巧](#ch-10-taking-tensorflow-to-production)
   * [第十一章: TensorFlow的更多功能](#ch-11-more-with-tensorflow)
 
-更多内容请查看[TensorFlow机器学习指南](https://tensorflow-ml.readthedocs.io/zh/latest/?badge=latest)
+中文版完整内容请查看[TensorFlow机器学习指南](https://tensorflow-ml.readthedocs.io/zh/latest/?badge=latest)
 
 ---
 
