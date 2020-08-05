@@ -11,13 +11,10 @@
 .. toctree::
        :maxdepth: 3
        
-       /03_Linear_Regression/01_Using_the_Matrix_Inverse_Method/index
+       /04_Support_Vector_Machines/01_Introduction/index
    
 
-We introduce the concept of SVMs and how we will go about implementing them in the TensorFlow 
-framework.
-
-下载本章 :download:`Jupyter Notebook </03_Linear_Regression/01_Using_the_Matrix_Inverse_Method/01_lin_reg_inverse.ipynb>`
+We introduce the concept of SVMs and how we will go about implementing them in the TensorFlow framework.
 
 ------------
 
@@ -26,14 +23,14 @@ framework.
 .. toctree::
        :maxdepth: 3
        
-       /03_Linear_Regression/02_Implementing_a_Decomposition_Method/index
+       /04_Support_Vector_Machines/02_Working_with_Linear_SVMs/index
 
 We create a linear SVM to separate I. setosa based on sepal length and pedal width in the Iris
 data set.
 
 .. image:: 
 
-下载本章 :download:`Jupyter Notebook </03_Linear_Regression/02_Implementing_a_Decomposition_Method/02_lin_reg_decomposition.ipynb>`
+下载本章 :download:`Jupyter Notebook </04_Support_Vector_Machines/02_Working_with_Linear_SVMs/02_linear_svm.ipynb>`
 
 -----
 
@@ -42,14 +39,13 @@ data set.
 .. toctree::
        :maxdepth: 3
        
-       /03_Linear_Regression/03_TensorFlow_Way_of_Linear_Regression/index
+       /04_Support_Vector_Machines/03_Reduction_to_Linear_Regression/index
 
-The heart of SVMs is separating classes with a line.  We change tweek the algorithm slightly
-to perform SVM regression.
+The heart of SVMs is separating classes with a line.  We change tweek the algorithm slightly to perform SVM regression.
 
 .. image:: 
 
-下载本章 :download:`Jupyter Notebook </03_Linear_Regression/03_TensorFlow_Way_of_Linear_Regression/03_lin_reg_tensorflow_way.ipynb>`
+下载本章 :download:`Jupyter Notebook </04_Support_Vector_Machines/03_Reduction_to_Linear_Regression/03_support_vector_regression.ipynb>`
 
 -----------
 
@@ -58,12 +54,12 @@ TensorFlow中的核
 .. toctree::
        :maxdepth: 3
        
-       /03_Linear_Regression/04_Loss_Functions_in_Linear_Regressions/index
+       /04_Support_Vector_Machines/04_Working_with_Kernels/index
 
 In order to extend SVMs into non-linear data, we explain and show how to implement different kernels 
 in TensorFlow.
 
-下载本章 :download:`Jupyter Notebook </03_Linear_Regression/04_Loss_Functions_in_Linear_Regressions/04_lin_reg_l1_vs_l2.ipynb>`
+下载本章 :download:`Jupyter Notebook </04_Support_Vector_Machines/04_Working_with_Kernels/04_svm_kernels.ipynb>`
 
 -----------
 
@@ -72,11 +68,11 @@ in TensorFlow.
 .. toctree::
        :maxdepth: 3
        
-       /03_Linear_Regression/05_Implementing_Deming_Regression/index
+       /04_Support_Vector_Machines/05_Implementing_Nonlinear_SVMs/index
 
 We use the Gaussian kernel (RBF) to separate non-linear classes.
 
-下载本章 :download:`Jupyter Notebook </03_Linear_Regression/05_Implementing_Deming_Regression/05_deming_regression.ipynb>`
+下载本章 :download:`Jupyter Notebook </04_Support_Vector_Machines/05_Implementing_Nonlinear_SVMs/05_nonlinear_svm.ipynb>`
 
 -------------
 
@@ -86,14 +82,14 @@ We use the Gaussian kernel (RBF) to separate non-linear classes.
 .. toctree::
        :maxdepth: 3
        
-       /03_Linear_Regression/06_Implementing_Lasso_and_Ridge_Regression/index
+       /04_Support_Vector_Machines/06_Implementing_Multiclass_SVMs/index
 
 SVMs are inherently binary predictors.  We show how to extend them in a one-vs-all strategy in 
 TensorFlow.     
 
 .. image::
 
-下载本章 :download:`Jupyter Notebook </03_Linear_Regression/06_Implementing_Lasso_and_Ridge_Regression/06_lasso_and_ridge_regression.ipynb>`
+下载本章 :download:`Jupyter Notebook </04_Support_Vector_Machines/06_Implementing_Multiclass_SVMs/06_multiclass_svm.ipynb>`
 
 -----------
 
