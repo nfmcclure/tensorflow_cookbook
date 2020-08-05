@@ -44,12 +44,14 @@ Tensorboard.
 .. toctree::
        :maxdepth: 3
        
+       /02_TensorFlow_Way/03_Working_with_Multiple_Layers/index
+       
 Here we extend the usage of the computational graph to create multiple layers and show how they appear 
 in Tensorboard.
 
 .. image:: 
 
-下载本章 :download:`Jupyter Notebook </01_Introduction/03_Using_Variables_and_Placeholders/03_placeholders.ipynb>`
+下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/03_Working_with_Multiple_Layers/03_multiple_layers.ipynb>`
 
 -----------
 
