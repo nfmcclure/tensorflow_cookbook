@@ -11,12 +11,12 @@
 .. toctree::
        :maxdepth: 3
        
-       /02_TensorFlow_Way/01_Operations_as_a_Computational_Graph/index
+       /03_Linear_Regression/01_Using_the_Matrix_Inverse_Method/index
        
        
 How to solve a 2D regression with a matrix inverse in TensorFlow.
 
-下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/01_Operations_as_a_Computational_Graph/01_operations_on_a_graph.ipynb>`
+下载本章 :download:`Jupyter Notebook </03_Linear_Regression/01_Using_the_Matrix_Inverse_Method/01_lin_reg_inverse.ipynb>`
 
 ------------
 
@@ -25,7 +25,7 @@ How to solve a 2D regression with a matrix inverse in TensorFlow.
 .. toctree::
        :maxdepth: 3
        
-       /02_TensorFlow_Way/02_Layering_Nested_Operations/index
+       /03_Linear_Regression/02_Implementing_a_Decomposition_Method/index
 
 
 Solving a 2D linear regression with Cholesky decomposition.
@@ -33,7 +33,7 @@ Solving a 2D linear regression with Cholesky decomposition.
 
 .. image:: 
 
-下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/02_Layering_Nested_Operations/02_layering_nested_operations.ipynb>`
+下载本章 :download:`Jupyter Notebook </03_Linear_Regression/02_Implementing_a_Decomposition_Method/02_lin_reg_decomposition.ipynb>`
 
 -----
 
@@ -42,7 +42,7 @@ TensorFLow的线性回归
 .. toctree::
        :maxdepth: 3
        
-       /02_TensorFlow_Way/03_Working_with_Multiple_Layers/index
+       /03_Linear_Regression/03_TensorFlow_Way_of_Linear_Regression/index
 
 Linear regression iterating through a computational graph with L2 Loss.
 Here we extend the usage of the computational graph to create multiple layers and show how they appear 
@@ -50,7 +50,7 @@ in Tensorboard.
 
 .. image:: 
 
-下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/03_Working_with_Multiple_Layers/03_multiple_layers.ipynb>`
+下载本章 :download:`Jupyter Notebook </03_Linear_Regression/03_TensorFlow_Way_of_Linear_Regression/03_lin_reg_tensorflow_way.ipynb>`
 
 -----------
 
@@ -59,13 +59,13 @@ in Tensorboard.
 .. toctree::
        :maxdepth: 3
        
-       /02_TensorFlow_Way/04_Implementing_Loss_Functions/index
+       /03_Linear_Regression/04_Loss_Functions_in_Linear_Regressions/index
 
 L2 vs L1 loss in linear regression.  We talk about the benefits and limitations of
 both.
 
 
-下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/04_Implementing_Loss_Functions/04_loss_functions.ipynb>`
+下载本章 :download:`Jupyter Notebook </03_Linear_Regression/04_Loss_Functions_in_Linear_Regressions/04_lin_reg_l1_vs_l2.ipynb>`
 
 -----------
 
@@ -74,12 +74,12 @@ Deming回归(全回归)
 .. toctree::
        :maxdepth: 3
        
-       /02_TensorFlow_Way/05_Implementing_Back_Propagation/index
+       /03_Linear_Regression/05_Implementing_Deming_Regression/index
 
 Deming (total) regression implemented in TensorFlow by changing the loss function.
 
 
-下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/05_Implementing_Back_Propagation/05_back_propagation.ipynb>`
+下载本章 :download:`Jupyter Notebook </03_Linear_Regression/05_Implementing_Deming_Regression/05_deming_regression.ipynb>`
 
 -------------
 
@@ -89,14 +89,14 @@ Deming (total) regression implemented in TensorFlow by changing the loss functio
 .. toctree::
        :maxdepth: 3
        
-       /02_TensorFlow_Way/06_Working_with_Batch_and_Stochastic_Training/index
+       /03_Linear_Regression/06_Implementing_Lasso_and_Ridge_Regression/index
        
 Lasso and Ridge regression are ways of regularizing the coefficients. We implement 
 both of these in TensorFlow via changing the loss functions.
 
 .. image::
 
-下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/06_Working_with_Batch_and_Stochastic_Training/06_batch_stochastic_training.ipynb>`
+下载本章 :download:`Jupyter Notebook </03_Linear_Regression/06_Implementing_Lasso_and_Ridge_Regression/06_lasso_and_ridge_regression.ipynb>`
 
 -----------
 
@@ -105,12 +105,12 @@ both of these in TensorFlow via changing the loss functions.
 .. toctree::
        :maxdepth: 3
        
-       /02_TensorFlow_Way/07_Combining_Everything_Together/index
+       /03_Linear_Regression/07_Implementing_Elasticnet_Regression/index
 
 Elastic net is a regularization technique that combines the L2 and L1 loss for coefficients. 
 We show how to implement this in TensorFlow.
 
-下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/07_Combining_Everything_Together/07_combining_everything_together.ipynb>`
+下载本章 :download:`Jupyter Notebook </03_Linear_Regression/07_Implementing_Elasticnet_Regression/07_elasticnet_regression.ipynb>`
 
 ------------
 
@@ -119,12 +119,12 @@ We show how to implement this in TensorFlow.
 .. toctree::
        :maxdepth: 3
        
-       /02_TensorFlow_Way/08_Evaluating_Models/index
+       /03_Linear_Regression/08_Implementing_Logistic_Regression/index
 
 We implement logistic regression by the use of an activation function in our computational graph.
 
 
-下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/08_Evaluating_Models/08_evaluating_models.ipynb>`
+下载本章 :download:`Jupyter Notebook </03_Linear_Regression/08_Implementing_Logistic_Regression/08_logistic_regression.ipynb>`
 
 
 本章学习模块
