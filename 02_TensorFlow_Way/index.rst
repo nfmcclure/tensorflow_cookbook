@@ -90,13 +90,15 @@ and classification.
 .. toctree::
        :maxdepth: 3
        
+       /02_TensorFlow_Way/06_Working_with_Batch_and_Stochastic_Training/index
+       
 
 TensorFlow makes it easy to use both batch and stochastic training. We show how to implement both and talk 
 about the benefits and limitations of each.
 
 .. image::
 
-下载本章 :download:`Jupyter Notebook </01_Introduction/06_Implementing_Activation_Functions/06_activation_functions.ipynb>`
+下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/06_Working_with_Batch_and_Stochastic_Training/06_batch_stochastic_training.ipynb>`
 
 -----------
 
@@ -105,9 +107,11 @@ about the benefits and limitations of each.
 .. toctree::
        :maxdepth: 3
        
+       /02_TensorFlow_Way/07_Combining_Everything_Together/index
+       
 We now combine everything together that we have learned and create a simple classifier.
 
-下载本章 :download:`Jupyter Notebook </01_Introduction/07_Working_with_Data_Sources/07_data_gathering.ipynb>`
+下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/07_Combining_Everything_Together/07_combining_everything_together.ipynb>`
 
 ------------
 
@@ -115,11 +119,13 @@ We now combine everything together that we have learned and create a simple clas
 ----------
 .. toctree::
        :maxdepth: 3
-  
+       
+       /02_TensorFlow_Way/08_Evaluating_Models/index
+ 
 Any model is only as good as it's evaluation.  Here we show two examples of (1) evaluating a regression 
 algorithm and (2) a classification algorithm.
 
-
+下载本章 :download:`Jupyter Notebook </02_TensorFlow_Way/08_Evaluating_Models/08_evaluating_models.ipynb>`
 
 
 本章学习模块
