@@ -51,6 +51,14 @@ Python 3.7 和 TensorFlow 1.8 版本)。虽然说TensorFlow可以在CPU上运行
       
       >>> data = tf.nn.batch_norm_with_global_normalization(...)
 
+*tensorflow.nn.batch_norm_with_global_normalization*
+
+.. automodule:: tensorflow.nn.batch_norm_with_global_normalization
+      :members:
+      :undoc-members:
+      :show-inheritance:
+
+
 设置算法参数
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -61,6 +69,7 @@ Python 3.7 和 TensorFlow 1.8 版本)。虽然说TensorFlow可以在CPU上运行
       
       >>> learning_rate = 0.01 
       >>> iterations = 1000
+
 
 变量和占位符的初始化
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,6 +84,20 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
       >>> x_input = tf.placeholder(tf.float32, [None, input_size]) 
       >>> y_input = tf.placeholder(tf.float32, [None, num_classes])
 
+*tensorflow.constant*
+
+.. automodule:: tensorflow.constant
+      :members:
+      :undoc-members:
+      :show-inheritance:
+
+*tensorflow.placeholder*
+
+.. automodule:: tensorflow.placeholder
+      :members:
+      :undoc-members:
+      :show-inheritance:
+
 定义模型结构
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -86,25 +109,49 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
       
       >>> y_pred = tf.add(tf.mul(x_input, weight_matrix), b_matrix)
 
+*tensorflow.add*
+
+.. automodule:: tensorflow.add
+      :members:
+      :undoc-members:
+      :show-inheritance:
+      
+*tensorflow.mul*
+
+.. automodule:: tensorflow.mul
+      :members:
+      :undoc-members:
+      :show-inheritance:
 
 声明损失函数
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-在定义模型之后，我们就可以用TensorFlow算出结果了。这时候，我们需要定义一个损失函数。损失函数是非常重要的，
-After defining the model, we must be able to evaluate the output. This is where we declare the loss function. 
-The loss function is very important as it tells us how far off our predictions are from the actual values. 
-The different types of loss functions are explored in greater detail in chapter two, section five.
+在定义模型之后，我们就可以用TensorFlow算出结果了。这时候，我们需要定义一个损失函数。损失函数是非常重要的，因为它告诉我们
+我们的预测离真实值差多少。在第二章第五节中，我们会对损失函数的类型进行详细的讲解。
 
 .. code:: python
       
       >>> loss = tf.reduce_mean(tf.square(y_actual – y_pred))
 
-Initialize and train the model
+*tensorflow.reduce_mean*
+
+.. automodule:: tensorflow.reduce_mean
+      :members:
+      :undoc-members:
+      :show-inheritance:
+
+*tensorflow.square*
+
+.. automodule:: tensorflow.square
+      :members:
+      :undoc-members:
+      :show-inheritance:
+
+模型的初始化和训练
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that we have everything in place, we create an instance or our graph and feed in the data through the
-placeholders and let Tensorflow change the variables to better predict our training data. Here is one way 
-to initialize the computational graph.
+既然我们现在设置好了一切，我们可以创建一个实例或者计算图，然后通过占位符将数据传入，并通过训练让TensorFlow改变变量
+来更好预测我们的训练数据。这里举出一个初始化计算图的一种方式：
 
 .. code:: python
       
@@ -112,36 +159,50 @@ to initialize the computational graph.
                ...
       >>> session.run(...)
                ...
+               
+*tensorflow.Session*
 
-Note that we can also initiate our graph with
+.. automodule:: tensorflow.Session
+      :members:
+      :undoc-members:
+      :show-inheritance:
+
+*tensorflow.run*
+
+.. automodule:: tensorflow.run
+      :members:
+      :undoc-members:
+      :show-inheritance:
+
+需要注意的是，我们也可以这样初始化计算图：
 
 .. code:: python
       
-      >>> session = tf.Session(graph=graph) session.run(…)
+      >>> session = tf.Session(graph=graph) 
+      >>> session.run(…)
 
-Evaluate the model(可选)
+
+模型的评估(可选)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once we have built and trained the model, we should evaluate the model by looking at how well it does on 
-new data through some specified criteria.
+一旦我们建立并训练模型，我们应当通过查看它的新数据的预测情况，来评估这个模型。
 
-Predict new outcomes(可选)
+
+预测新结果(可选)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is also important to know how to make predictions on new, unseen, data. We can do this with all of 
-our models, once we have them trained.
+同样，知道如何预测性新的，不可知的数据也很重要。幸运的是，如果我们完成模型的训练之后，我们可以通过训练后的模型
+来做这些事情。
+
 
 总结
 -------
 
-In Tensorflow, we have to setup the data, variables, placeholders, and model before we tell the program
-to train and change the variables to improve the predictions. Tensorflow accomplishes this through the
-computational graph. We tell it to minimize a loss function and Tensorflow does this by modifying the 
-variables in the model. Tensorflow knows how to modify the variables because it keeps track of the 
-computations in the model and automatically computes the gradients for every variable. Because of this,
-we can see how easy it can be to make changes and try different data sources.
+在TensorFlow中，我们在程序进行训练并改变变量来预测变量之前，必须先建立数据，变量，占位符以及模型。 TensorFlow通过
+计算图来完成这些。我们告诉它去最小化损失函数，而TensorFlow要通过改变变量来实现这一目标。TensorFlow知道如何改变变量，
+这是因为它一直在关注模型的计算，然后自动计算每个变量的梯度。也正因为如此，我们也就知道改变它以及尝试不同数据的类型又
+多么简单。
 
-Overall, algorithms are designed to be cyclic in TensorFlow. We set up this cycle as a computational 
-graph and (1) feed in data through the placeholders, (2) calculate the output of the computational graph, 
-(3) compare the output to the desired output with a loss function, (4) modify the model variables 
-according to the automatic back propagation, and finally (5) repeat the process until a stopping criteria is met.
+总的来说，算法在TensorFlow中会被设计成为循环的算法。我们把这个循环建成计算图，然后通过占位符来输入数据，计算计算图的
+输出结果，用损失函数来比较输出结果，通过自动反向传播来改变模型中的变量，最后不断重复整个过程，直到达到设定的标准。
+
