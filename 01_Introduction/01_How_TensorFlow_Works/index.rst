@@ -16,16 +16,13 @@ TensorFlow是如何运行的
 在一开始的时候, TensorFlow中的计算可能看起来毫无必要的复杂. 但其实其中是有原因的: 也正因为TensorFlow处理计算的方式，发展
 更为复杂的计算也就相对来说更为简单。这一节呢，会带领你领略一个TensorFlow算法通常工作的方式. 
 
-现在呢，TensorFlow已经被所有的主流操作系统(Windows, Linux 和 Mac)所支持。通过这本书呢，我们只关心TensorFlow的Python语言
-Tensorflow is now supported on all three major OS systems (Windows, Linux, and Mac). Throughout this book we 
-will only concern ourselves with the Python library wrapper of Tensorflow. This book will use 
-`Python 3.X <https://www.python.org>`_ and `Tensorflow 0.12+ <https://www.tensorflow.org>`_. While Tensorflow can 
-run on the CPU, it runs faster if it runs on the GPU, and it is supported on graphics cards with NVidia Compute
-Capability 3.0+. To run on a GPU, you will also need to download and install the 
-`NVidia Cuda Toolkit <https://developer.nvidia.com/cuda-downloads>`_. Some of the recipes will rely on a current 
-installation of the Python packages Scipy, Numpy, and Scikit-Learn as well.
+现在呢，TensorFlow已经被所有的主流操作系统(Windows, Linux 和 Mac)所支持。通过这本书呢，我们只关心TensorFlow的Python库
+这本书呢，会用到`Python 3.X <https://www.python.org>`_和 `Tensorflow 0.12 + <https://www.tensorflow.org>`_(我们这里会用
+Python 3.7 和 TensorFlow 1.8 版本)。虽然说TensorFlow可以在CPU上运行，但是它在GPU(Graphic Processing Unit)运行得更快。
+英伟达(Nvidia) Compute Capability 3.0+的显卡现在也支持TensorFlow。如果你想要在GPU上运行，你需要下载并安装`NVidia Cuda Toolkit <https://developer.nvidia.com/cuda-downloads>`_。 有些章节可能还依赖安装Scipy, Numpy和Scikit-learn。你可以通过下载下面的requirements.txt, 然后运行下面的命令，
+来满足这些条件。
 
-Please see the requirements.txt in the main directory of this repository and run a command similar to
+下载
 
 .. code:: sh
       
