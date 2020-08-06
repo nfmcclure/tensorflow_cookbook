@@ -10,7 +10,7 @@ Python API的架构。这些都使得程序员用TensorFlow来解决实际问题
 Google的TensorFlow引擎有一个解决问题的独特方式。这种独特的方式使得解决机器学习问题非常有效。下面，我们会介绍TensorFlow
 如何运行的基本步骤。
 
-How TensorFlow Operates
+TensorFlow是如何运行的
 -----------------------
 
 At first, computation in Tensorflow may seem needlessly complicated. But there is a reason for it: because of 
@@ -29,7 +29,7 @@ Please see the requirements.txt in the main directory of this repository and run
 
 .. code:: sh
       
-      pip install -r requirements.txt 
+      $ pip install -r requirements.txt 
       
 to guarentee that all the necessary libraries are available.
 
