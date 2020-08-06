@@ -27,10 +27,8 @@ Python 3.7 和 TensorFlow 1.8 版本)。虽然说TensorFlow可以在CPU上运行
 .. code:: sh
       
       $ pip install -r requirements.txt 
-      
-to guarentee that all the necessary libraries are available.
 
-General TensorFlow Algorithm Outlines
+通用TensorFlow算法概览
 -------------------------------------
 Here we will introduce the general flow of Tensorflow Algorithms. Most recipes will follow this outline.
 
