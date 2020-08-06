@@ -12,7 +12,7 @@
 .. toctree::
        :maxdepth: 3
        
-       /05_Nearest_Neighbor_Methods/01_Introduction/index
+       /06_Neural_Networks/01_Introduction/index
  
 We introduce the concept of neural networks and how TensorFlow is built to easily handle these algorithms.
 
@@ -23,7 +23,7 @@ We introduce the concept of neural networks and how TensorFlow is built to easil
 .. toctree::
        :maxdepth: 3
        
-       /05_Nearest_Neighbor_Methods/02_Working_with_Nearest_Neighbors/index
+       /06_Neural_Networks/02_Implementing_an_Operational_Gate/index
 
 We implement an operational gate with one operation. Then we show how to extend this to multiple nested 
 operations.
@@ -31,7 +31,7 @@ operations.
 
 .. image:: 
 
-下载本章 :download:`Jupyter Notebook </05_Nearest_Neighbor_Methods/02_Working_with_Nearest_Neighbors/02_nearest_neighbor.ipynb>`
+下载本章 :download:`Jupyter Notebook </06_Neural_Networks/02_Implementing_an_Operational_Gate/02_gates.ipynb>`
 
 -----
 
@@ -40,14 +40,14 @@ operations.
 .. toctree::
        :maxdepth: 3
        
-       /05_Nearest_Neighbor_Methods/03_Working_with_Text_Distances/index
+       /06_Neural_Networks/03_Working_with_Activation_Functions/index
 
 Now we have to introduce activation functions on the gates.  We show how different activation functions 
 operate.
 
 .. image:: 
 
-下载本章 :download:`Jupyter Notebook </05_Nearest_Neighbor_Methods/03_Working_with_Text_Distances/03_text_distances.ipynb>`
+下载本章 :download:`Jupyter Notebook </06_Neural_Networks/03_Working_with_Activation_Functions/03_activation_functions.ipynb>`
 
 -----------
 
