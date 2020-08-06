@@ -13,10 +13,10 @@ Google的TensorFlow引擎有一个解决问题的独特方式。这种独特的�
 TensorFlow是如何运行的
 -----------------------
 
-At first, computation in Tensorflow may seem needlessly complicated. But there is a reason for it: because of 
-how Tensorflow treats computation, developing more complicated algorithms is relatively easy. This recipe will 
-talk you through pseudocode of how a Tensorflow algorithm usually works.
+在一开始的时候, TensorFlow中的计算可能看起来毫无必要的复杂. 但其实其中是有原因的: 也正因为TensorFlow处理计算的方式，发展
+更为复杂的计算也就相对来说更为简单。这一节呢，会带领你领略一个TensorFlow算法通常工作的方式. 
 
+现在呢，TensorFlow已经被所有的主流操作系统(Windows, Linux 和 Mac)所支持。通过这本书呢，我们只关心TensorFlow的Python语言
 Tensorflow is now supported on all three major OS systems (Windows, Linux, and Mac). Throughout this book we 
 will only concern ourselves with the Python library wrapper of Tensorflow. This book will use 
 `Python 3.X <https://www.python.org>`_ and `Tensorflow 0.12+ <https://www.tensorflow.org>`_. While Tensorflow can 
@@ -52,7 +52,7 @@ here as well. Tensorflow has built in functions that can normalize the data for 
 
 .. code:: python
       
-      data = tf.nn.batch_norm_with_global_normalization(...)
+      >>> data = tf.nn.batch_norm_with_global_normalization(...)
 
 Set algorithm parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -62,8 +62,8 @@ considered good form to initialize these together so the reader or user can easi
 
 .. code:: python
       
-      learning_rate = 0.01 
-      iterations = 1000
+      >>> learning_rate = 0.01 
+      >>> iterations = 1000
 
 Initialize variables and placeholders
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -73,9 +73,9 @@ initialize both of these, variables and placeholders with size and type, so that
 
 .. code:: python
       
-      a_var = tf.constant(42) 
-      x_input = tf.placeholder(tf.float32, [None, input_size]) 
-      y_input = tf.placeholder(tf.float32, [None, num_classes])
+      >>> a_var = tf.constant(42) 
+      >>> x_input = tf.placeholder(tf.float32, [None, input_size]) 
+      >>> y_input = tf.placeholder(tf.float32, [None, num_classes])
 
 Define the model structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,7 +86,7 @@ section one of this book.
 
 .. code:: python
       
-      y_pred = tf.add(tf.mul(x_input, weight_matrix), b_matrix)
+      >>> y_pred = tf.add(tf.mul(x_input, weight_matrix), b_matrix)
 
 
 Declare the loss functions
@@ -97,7 +97,7 @@ The different types of loss functions are explored in greater detail in chapter 
 
 .. code:: python
       
-      loss = tf.reduce_mean(tf.square(y_actual – y_pred))
+      >>> loss = tf.reduce_mean(tf.square(y_actual – y_pred))
 
 Initialize and train the model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,16 +108,16 @@ to initialize the computational graph.
 
 .. code:: python
       
-      with tf.Session(graph=graph) as session:
-            ...
-      session.run(...)
-            ...
+      >>> with tf.Session(graph=graph) as session:
+      >>>      ...
+      >>> session.run(...)
+      >>>      ...
 
 Note that we can also initiate our graph with
 
 .. code:: python
       
-      session = tf.Session(graph=graph) session.run(…)
+      >>> session = tf.Session(graph=graph) session.run(…)
 
 (Optional) Evaluate the model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
