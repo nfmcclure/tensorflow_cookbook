@@ -5,7 +5,7 @@ Google在2015年11月完成了对TensorFlow的开源。自从那之后，`Tensor
 已经是Github上机器学习starred最多的仓库。
 
 为什么选择TensorFlow ? TensorFlow的受欢迎程度归因于很多方面，但是主要是因为它的计算图概念，自动微分和TensorFlow的
-Python API的架构。这些都使得程序员用TensorFlow来解决实际问题更加便捷。
+Python API 的架构。这些都使得程序员用TensorFlow来解决实际问题更加便捷。
 
 Google的TensorFlow引擎有一个解决问题的独特方式。这种独特的方式使得解决机器学习问题非常有效。下面，我们会介绍TensorFlow
 如何运行的基本步骤。
@@ -19,7 +19,7 @@ TensorFlow是如何运行的
 现在呢，TensorFlow已经被所有的主流操作系统(Windows, Linux 和 Mac)所支持。通过这本书呢，我们只关心TensorFlow的Python库
 这本书呢，会用到 `Python 3.x <https://www.python.org>`_ 和 `Tensorflow 0.12 + <https://www.tensorflow.org>`_ (我们这里会用
 Python 3.7 和 TensorFlow 1.8 版本)。虽然说TensorFlow可以在CPU上运行，但是它在GPU(Graphic Processing Unit)运行得更快。
-英伟达(Nvidia) Compute Capability 3.0+的显卡现在也支持TensorFlow。如果你想要在GPU上运行，你需要下载并安装 `NVidia Cuda Toolkit <https://developer.nvidia.com/cuda-downloads>`_。 有些章节可能还依赖安装Scipy, Numpy和Scikit-learn。你可以通过下载下面的requirements.txt, 然后运行下面的命令，
+英伟达(Nvidia) Compute Capability 3.0+的显卡现在也支持TensorFlow。如果你想要在GPU上运行，你需要下载并安装 `Nvidia Cuda Toolkit <https://developer.nvidia.com/cuda-downloads>`_。 有些章节可能还依赖安装Scipy, Numpy和Scikit-learn。你可以通过下载下面的requirements.txt, 然后运行下面的命令，
 来满足这些条件。
 
 下载 :download:`requirements.txt</requirements.txt>`
@@ -54,9 +54,9 @@ Python 3.7 和 TensorFlow 1.8 版本)。虽然说TensorFlow可以在CPU上运行
       # TensorFlow 2.2的用法
       >>> data = tf.nn.batch_normalization(...)
 
-*tensorflow.nn.batch_normalization*
+--------------------------------------
 
----------------------------------
+.. attention:: tensorflow.nn.batch_normalization
 
 .. automodule:: tensorflow.nn.batch_normalization
       :members:
@@ -89,27 +89,17 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
       >>> x_input = tf.placeholder(tf.float32, [None, input_size]) 
       >>> y_input = tf.placeholder(tf.float32, [None, num_classes])
 
-*tensorflow.constant*
-
 -------------------------
+
+.. attention:: tensorflow.constant
 
 .. automodule:: tensorflow.constant
       :members:
       :undoc-members:
       :show-inheritance:
 
-*tensorflow.placeholder*
-
 ----------------------
-
-.. autoclass:: tensorflow.placeholder
-      :members:
-      :undoc-members:
-      :show-inheritance:
-
-*tensorflow.float32*
-
-----------------------
+.. attention:: tensorflow.float32
 
 .. autoclass:: tensorflow.float32
       :members:
@@ -131,18 +121,18 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
       # TensorFlow2.2的用法
       >>> y_pred = tf.add(tf.multiply(x_input, weight_matrix), b_matrix)
 
-*tensorflow.add*
-
 -----------------------------
+
+.. attention:: tensorflow.add
 
 .. automodule:: tensorflow.add
       :members:
       :undoc-members:
       :show-inheritance:
-      
-*tensorflow.multiply*
 
 --------------------
+
+.. attention:: tensorflow.multiply
 
 .. automodule:: tensorflow.multiply
       :members:
@@ -159,18 +149,18 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
       
       >>> loss = tf.reduce_mean(tf.square(y_actual – y_pred))
 
-*tensorflow.reduce_mean*
-
 -----------------------------
+
+.. attention:: tensorflow.reduce_mean
 
 .. automodule:: tensorflow.reduce_mean
       :members:
       :undoc-members:
       :show-inheritance:
 
-*tensorflow.square*
-
 -----------------------
+
+.. attention:: tensorflow.square
 
 .. automodule:: tensorflow.square
       :members:
@@ -190,24 +180,6 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
       >>> session.run(...)
                ...
                
-*tensorflow.Session*
-
-----------------------
-
-.. autoclass:: tensorflow.Session
-      :members:
-      :undoc-members:
-      :show-inheritance:
-
-*tensorflow.run*
-
-------------------
-
-.. autoclass:: tensorflow.run
-      :members:
-      :undoc-members:
-      :show-inheritance:
-
 需要注意的是，我们也可以这样初始化计算图：
 
 .. code:: python
