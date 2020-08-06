@@ -102,7 +102,7 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 .. attention:: tensorflow.float32
 
-.. autoclass:: tensorflow.float32
+.. automodule:: tensorflow.float32
       :members:
       :undoc-members:
       :show-inheritance:
