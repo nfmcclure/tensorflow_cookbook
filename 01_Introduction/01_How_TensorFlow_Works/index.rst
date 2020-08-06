@@ -22,7 +22,7 @@ Python 3.7 和 TensorFlow 1.8 版本)。虽然说TensorFlow可以在CPU上运行
 英伟达(Nvidia) Compute Capability 3.0+的显卡现在也支持TensorFlow。如果你想要在GPU上运行，你需要下载并安装`NVidia Cuda Toolkit <https://developer.nvidia.com/cuda-downloads>`_。 有些章节可能还依赖安装Scipy, Numpy和Scikit-learn。你可以通过下载下面的requirements.txt, 然后运行下面的命令，
 来满足这些条件。
 
-下载
+下载:download:`requirements.txt </requirements.txt>`
 
 .. code:: sh
       
