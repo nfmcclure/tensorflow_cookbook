@@ -1,4 +1,4 @@
-.. note::
+.. note::概要
        
        在这一章中，我们会介绍基本概念，以便理解TensorFlow是如何工作以及如何获得本书的数据和额外资源。
 
@@ -10,11 +10,11 @@ TensorFlow如何工作
 
        /01_Introduction/01_How_TensorFlow_Works/index
 
-Here we introduce TensorFlow and the general outline of how most TensorFlow algorithms work.
+这里我们会介绍TensorFlow以及TensorFlow的算法是如何工作的。
 
 .. image:: images/01_outline.png
 
-下载本章 :download:`Jupyter Notebook </01_Introduction/01_How_TensorFlow_Works/01_How_TensorFlow_Works.ipynb>`
+下载本节 :download:`Jupyter Notebook </01_Introduction/01_How_TensorFlow_Works/01_How_TensorFlow_Works.ipynb>`
 
 ------------
 
@@ -25,11 +25,11 @@ Here we introduce TensorFlow and the general outline of how most TensorFlow algo
        
        /01_Introduction/02_Creating_and_Using_Tensors/index
 
-How to create and initialize tensors in TensorFlow.  We also depict how these operations appear in Tensorboard.
+本节主要介绍在TensorFlow中创建张量以及如何将它们进行初始化。我们也会介绍这些操作如何在Tensorboard中表征出来。
 
 .. image:: images/02_variable.png
 
-下载本章 :download:`Jupyter Notebook </01_Introduction/02_Creating_and_Using_Tensors/02_tensors.ipynb>`
+下载本节 :download:`Jupyter Notebook </01_Introduction/02_Creating_and_Using_Tensors/02_tensors.ipynb>`
 
 -----
 
