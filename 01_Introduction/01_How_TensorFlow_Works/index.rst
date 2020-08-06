@@ -49,11 +49,16 @@ Python 3.7 和 TensorFlow 1.8 版本)。虽然说TensorFlow可以在CPU上运行
 
 .. code:: python
       
+      # 低版本TensorFlow的用法
       >>> data = tf.nn.batch_norm_with_global_normalization(...)
+      # TensorFlow 2.2的用法
+      >>> data = tf.nn.batch_normalization(...)
 
-*tensorflow.nn.batch_norm_with_global_normalization*
+*tensorflow.nn.batch_normalization*
 
-.. automodule:: tensorflow.nn.batch_norm_with_global_normalization
+---------------------------------
+
+.. automodule:: tensorflow.nn.batch_normalization
       :members:
       :undoc-members:
       :show-inheritance:
@@ -86,6 +91,8 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 *tensorflow.constant*
 
+-------------------------
+
 .. automodule:: tensorflow.constant
       :members:
       :undoc-members:
@@ -93,10 +100,22 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 *tensorflow.placeholder*
 
-.. automodule:: tensorflow.placeholder
+----------------------
+
+.. autoclass:: tensorflow.placeholder
       :members:
       :undoc-members:
       :show-inheritance:
+
+*tensorflow.float32*
+
+----------------------
+
+.. autoclass:: tensorflow.float32
+      :members:
+      :undoc-members:
+      :show-inheritance:
+
 
 定义模型结构
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,18 +126,25 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 .. code:: python
       
+      # 低版本TensorFlow的用法
       >>> y_pred = tf.add(tf.mul(x_input, weight_matrix), b_matrix)
+      # TensorFlow2.2的用法
+      >>> y_pred = tf.add(tf.multiply(x_input, weight_matrix), b_matrix)
 
 *tensorflow.add*
+
+-----------------------------
 
 .. automodule:: tensorflow.add
       :members:
       :undoc-members:
       :show-inheritance:
       
-*tensorflow.mul*
+*tensorflow.multiply*
 
-.. automodule:: tensorflow.mul
+--------------------
+
+.. automodule:: tensorflow.multiply
       :members:
       :undoc-members:
       :show-inheritance:
@@ -135,12 +161,16 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 *tensorflow.reduce_mean*
 
+-----------------------------
+
 .. automodule:: tensorflow.reduce_mean
       :members:
       :undoc-members:
       :show-inheritance:
 
 *tensorflow.square*
+
+-----------------------
 
 .. automodule:: tensorflow.square
       :members:
@@ -162,14 +192,18 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
                
 *tensorflow.Session*
 
-.. automodule:: tensorflow.Session
+----------------------
+
+.. autoclass:: tensorflow.Session
       :members:
       :undoc-members:
       :show-inheritance:
 
 *tensorflow.run*
 
-.. automodule:: tensorflow.run
+------------------
+
+.. autoclass:: tensorflow.run
       :members:
       :undoc-members:
       :show-inheritance:
