@@ -13,6 +13,15 @@
 .. |TensorFlow| image:: https://img.shields.io/badge/tensorflow-2.2-brightgreen.svg
    :target: https://github.com/tensorflow/tensorflow
 
+Copyright |copy| Wei MEI, |MLMS (TM)| |---|
+all rights reserved.
+
+.. |copy| unicode:: 0xA9 .. copyright sign
+.. |MLMS (TM)| unicode:: BogusMegaCorp U+2122
+   .. with trademark sign
+.. |---| unicode:: U+02014 .. em dash
+   :trim:
+
 TensorFlow 机器学习 Cookbook (version : |version|)
 ============================
 
