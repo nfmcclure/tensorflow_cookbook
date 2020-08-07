@@ -77,7 +77,7 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
 .. |zero filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，需要代入具体数字才可以输出。
 .. |one filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，同样需要代入具体数字才可以输出。
 .. |constant filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，同样需要代入具体数字才可以输出。
-.. |existing filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，同样需要代入具体数字才可以输出。
+.. |existing tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，同样需要代入具体数字才可以输出。
 
 TensorFlow算法需要知道哪些对象是变量哪些是常数。两个对象的区别我们在这一章中会解释，现在我们用TensorFlow的函数``tf.variable``来创建一个变量。
 
