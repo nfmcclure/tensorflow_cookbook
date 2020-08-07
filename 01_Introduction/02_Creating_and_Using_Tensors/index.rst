@@ -258,14 +258,14 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
 .. |with sess as session| replace:: :literal:`with sess as session`
 .. |session| replace:: :literal:`session`
 
-TensorFlow算法需要知道哪些对象是变量哪些是常数。两个对象的区别我们在这一章中会解释，现在我们用TensorFlow的函数:literal:`tf.variable`来创建一个变量。
+TensorFlow算法需要知道哪些对象是变量哪些是常数。两个对象的区别我们在这一章中会解释，现在我们用TensorFlow的函数 :literal:`tf.variable` 来创建一个变量。
 
 .. code:: python
       
       >>> my_var = tf.Variable(tf.zeros([1,20]))
 
-需要注意的是，直接运行:literal:`sess.run(my_var)`会产生一个错误。因为TensorFlows是运用计算图来运作的，我们需要对变量进行初始化才能输出结果。后面，我们可能会碰到很多
-初始化操作。对于这个代码来说，我们可以调用:literal:`my_var.initializer`来对一个变量初始化。
+需要注意的是，直接运行 :literal:`sess.run(my_var)` 会产生一个错误。因为TensorFlows是运用计算图来运作的，我们需要对变量进行初始化才能输出结果。后面，我们可能会碰到很多
+初始化操作。对于这个代码来说，我们可以调用 :literal:`my_var.initializer` 来对一个变量初始化。
 
 .. code:: python
    
