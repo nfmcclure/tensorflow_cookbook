@@ -16,9 +16,9 @@
 
 --------------
 
-.. attention:: tensorflow.python.framework模块介绍
+.. attention:: tensorflow.python.framework.ops模块介绍
 
-.. automodule:: tensorflow.python.framework
+.. automodule:: tensorflow.python.framework.ops
    :members:
    :undoc-members:
    :show-inheritance:
@@ -52,16 +52,20 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
 
 ---------------
 
-.. hint:: 几种类型的张量
+.. hint:: 几种类型的张量:
    
-   - 创建零填充张量：
+   - 创建0填充张量：
      |zero filled tensor|
+   - 创建1填充张量:
+     |one filled tensor|
+   - 创建常数填充张量:
+     |constant filled tensor|
    - 
 
-.. |zero filled tensor| code:: python
-   
-   >>> import tensorflow as tf
-   >>> zero_tsr = tf.zeros([row_dim, col_dim])
+.. |zero filled tensor| role:: python(code)
+   :language:
+      >>> import tensorflow as tf
+      >>> zero_tsr = tf.zeros([row_dim, col_dim])
    
 
 
