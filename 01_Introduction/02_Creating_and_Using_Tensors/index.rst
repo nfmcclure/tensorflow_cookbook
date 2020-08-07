@@ -1,16 +1,12 @@
 .. important::
 
-   张量是TensorFlow在计算图上用于处理的主要数据源。我们可以把这些张量声明为变量，并
-   将它们像占位符一样导入。首先，我们必须知道如何创建张量。
+   张量是TensorFlow在计算图上用于处理的主要数据源。我们可以把这些张量声明为变量，并将它们像占位符一样导入。首先，我们必须知道如何创建张量。
    
 .. attention::
    
-   但我们创建一个张量，然后声明它为变量之后，TensorFlow在计算图中创建出了多个图结构。
-   值得注意的是通过创建张量，TensorFlow并没有在计算图增加任何东西。我们下一节会讲到
-   这点。
+   但我们创建一个张量，然后声明它为变量之后，TensorFlow在计算图中创建出了多个图结构。值得注意的是通过创建张量，TensorFlow并没有在计算图增加任何东西。我们下一节会讲到这点。
    
-   这一节主要讲解在TensorFlow中创建张量的方法。首先，我们开始加载TensorFlow并开始
-   重设计算图。
+这一节主要讲解在TensorFlow中创建张量的方法。首先，我们开始加载TensorFlow并开始重设计算图。
 
 .. code:: python
    
@@ -31,15 +27,13 @@
 创建张量
 ^^^^^^^^^^^^^^^^^
 
-TensorFlow has built in function to create tensors for use in variables. 
-For example, we can create a zero filled tensor of predefined shape using 
-the `tf.zeros()` function as follows.
+TensorFlow有一些内置函数可以用创建变量张量。例如我们可以通过``tf.zeros()``来创建一个预设形状的零张量。比如：
 
 .. code:: python
     
     >>> my_tensor = tf.zeros([1,20])
     
-We can evaluate tensors with calling a run() method on our session.
+然后，我们可以通过``run()``方法的调用来输出张量。
 
 .. code:: python
     
@@ -47,7 +41,8 @@ We can evaluate tensors with calling a run() method on our session.
     
     array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  
     0.,  0.,  0., 0.,  0.,  0.,  0.,  0.,  0.,  0.]], dtype=float32)
-    
+ 
+TensorFlow算法
 TensorFlow algorithms need to know which objects are variables and which are constants. The difference between these two objects will be explained later in the chapter. For now we create a variable using the TensorFlow function tf.Variable() as follows.
 
 .. code:: python
@@ -60,8 +55,6 @@ Note that you can not run `sess.run(my_var)`, this would result in an error. Bec
    
    >>> sess.run(my_var.initializer)
    >>> sess.run(my_var)
-
-the output::
    
    array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
          0.,  0.,  0.,  0.,  0.,  0.,  0.]], dtype=float32)
@@ -107,7 +100,7 @@ If the shape of a tensor depends on the shape of another tensor, then we can use
    >>> print(sess.run(ones_similar))
    [[ 1.  1.  1.]
    [ 1.  1.  1.]] 
-   >>>print(sess.run(zero_similar))
+   >>> print(sess.run(zero_similar))
    [[ 0.  0.  0.]
    [ 0.  0.  0.]]
    
