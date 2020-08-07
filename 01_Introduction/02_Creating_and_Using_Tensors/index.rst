@@ -14,6 +14,15 @@
     >>> from tensorflow.python.framework import ops
     >>> ops.reset_default_graph()
 
+--------------
+
+.. attention:: tensorflow.python.framework模块介绍
+
+.. automodule:: tensorflow.python.framework
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 计算图
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -40,21 +49,36 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
     >>> sess.run(my_tensor)
     array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  
     0.,  0.,  0., 0.,  0.,  0.,  0.,  0.,  0.,  0.]], dtype=float32)
- 
-TensorFlow算法需要知道哪些对象是变量哪些是常数。
-TensorFlow algorithms need to know which objects are variables and which are constants. The difference between these two objects will be explained later in the chapter. For now we create a variable using the TensorFlow function tf.Variable() as follows.
+
+---------------
+
+.. hint:: 几种类型的张量
+   
+   - 创建零填充张量：
+     |zero filled tensor|
+   - 
+
+.. |zero filled tensor| code:: python
+   
+   >>> import tensorflow as tf
+   >>> zero_tsr = tf.zeros([row_dim, col_dim])
+   
+
+
+
+TensorFlow算法需要知道哪些对象是变量哪些是常数。两个对象的区别我们在这一章中会解释，现在我们用TensorFlow的函数``tf.variable``来创建一个变量。
 
 .. code:: python
       
       >>> my_var = tf.Variable(tf.zeros([1,20]))
-      
+
+
 Note that you can not run `sess.run(my_var)`, this would result in an error. Because TensorFlow operates with computational graphs, we have to create a variable intialization operation in order to evaluate variables. We will see more of this later on. For this script, we can initialize one variable at a time by calling the variable method my_var.initializer.
 
 .. code:: python
    
    >>> sess.run(my_var.initializer)
    >>> sess.run(my_var)
-   
    array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
          0.,  0.,  0.,  0.,  0.,  0.,  0.]], dtype=float32)
          
