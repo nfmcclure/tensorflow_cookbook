@@ -58,19 +58,26 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
       
       >>> import tensorflow as tf
       >>> zero_tsr = tf.zeros([row_dim, col_dim])
-     |zero filled tensor|
-     
+    |zero filled tensor|
    - 创建1填充张量::
       
+      >>> import tensorflow as tf
+      >>> ones_tsr = tf.ones([row_dim, col_dim])
+    |one filled tensor|  
+   - 创建常数填充张量::
       
+      >>> import tensorflow as tf
+      >>> filled_tsr = tf.fill([row_dim, col_dim], 42)
+    |constant filled tensor|
+   - 由给定的数创建一个张量::
       
-   - 创建常数填充张量:
-     |constant filled tensor|
-   - 由给定的数创建一个张量：
-
-   
-.. |zero filled tensor| replace:: :literal:`[row_dim, col_dim]` 需要代入具体数字才可以输出。
-
+      >>> import tensorflow as tf
+      >>> constant_tsr = tf.constant([1,2,3])
+    |existing tensor|
+.. |zero filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，需要代入具体数字才可以输出。
+.. |one filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，同样需要代入具体数字才可以输出。
+.. |constant filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，同样需要代入具体数字才可以输出。
+.. |existing filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，同样需要代入具体数字才可以输出。
 
 TensorFlow算法需要知道哪些对象是变量哪些是常数。两个对象的区别我们在这一章中会解释，现在我们用TensorFlow的函数``tf.variable``来创建一个变量。
 
