@@ -260,12 +260,14 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
 .. |with sess as session| replace:: :literal:`with sess as session`
 .. |session| replace:: :literal:`session`
 
-创建变量
+创建变量和占位符
 ^^^^^^^^^^^^^^^^^
 
-:guilabel:`&Cancel`
-
 现在我们知道如何创建张量，我们可以进一步探讨如何将张量用 :literal:`Variable()` 函数打包来创建相应的变量。
+
+我们也可以将任何 :literal:`numpy array` 转变成Python的列表，或者将常数用 :literal: `convert_to_tensor()` 转化成张量。值得注意的是， :literal:`convert_to_tensor` 也接受张量，以便我们想通过函数来计算。
+
+区分占位符和变量是十分重要的。变量是算法的参数而TensorFlow一直都在改变这些变量来优化算法。占位符是允许你输入特定类型和大小的数据的一类对象，这类对象的结果取决于计算图的计算结果，比如计算结果的期望值。
 
 .. code:: python
       
@@ -285,7 +287,19 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
    >>> sess.run(my_var)
    array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
          0.,  0.,  0.,  0.,  0.,  0.,  0.]], dtype=float32)
-       
+
+初始化是用对应的方法将变量放在计算图上。这里有一简单初始化的实例::
+   
+   >>> my_var1 = tf.Variable(tf.zeros([2,3]))
+   >>> sess = tf.compat.v1.Session()
+   # 初始化全局变量
+   >>> initialize_op = tf.compat.v1.global_variables_initializer()
+   >>> sess.run(initialize_op)
+
+可以通过Tensorboard来查看创建并初始化变量之后的计算图。
+
+占位符，顾名思义，就是占据一定的位置，用于在计算图中输入数据。占位符可以通过 :literal:`feed_dict` 参数来输入数据。为了将占位符放在计算图上，我们至少对占位符进行一次运算。我们初始化图谱，把 :literal:`x` 声明成一个占位符，将 :literal:`y` 定义成与 :literal:`x` 相等，也就是返回 :literal:`x` ，然后将数据传入 :literal:`x` 的占位符并运行等式操作(y=x)。
+
 Let's first start by creating variables of specific shape by declaring our row and column size.
 
 .. code:: python
@@ -434,7 +448,7 @@ We now run the following command in our command prompt:
    
    $ tensorboard --logdir=/tmp
 
-And it will tell us the URL we can navigate our browser to to see Tensorboard. The default should be: http://0.0.0.0:6006/
+And it will tell us the URL we can navigate our browser to to see Tensorboard. The default should be: http://localhost:6006/
 
 .. image:: /01_Introduction/images/02_variable.png
 
