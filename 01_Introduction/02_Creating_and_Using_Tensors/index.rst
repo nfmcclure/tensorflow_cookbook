@@ -26,7 +26,9 @@
 计算图
 ^^^^^^^^^^^^^^^^^^^^^
 
-用 :literal:`tf.Session()` 开始吧！
+用 :literal:`tf.Session()` 开始吧！|simle|
+
+.. |simle| unicode:: 1F600 .. emoticons
 
 
 .. code:: python
