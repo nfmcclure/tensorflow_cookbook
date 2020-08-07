@@ -31,7 +31,12 @@
 
 .. code:: python
      
+     # 适用于低版本Tensorflow运行
      >>> sess = tf.Session()
+     # 适用于2.0版本TensorFlow运行, 由于版本不同，必须先运行下面的命令run才能工作
+     >>> tf.compat.v1.disable_eager_execution()
+     # compat指的是兼容v1版本的Tensorflow
+     >>> sess = tf.compat.v1.Session()
      
 创建张量
 ^^^^^^^^^^^^^^^^^
@@ -57,27 +62,84 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
    - 创建0填充张量::
       
       >>> import tensorflow as tf
+      >>> row_dim, col_dim = 3, 5
       >>> zero_tsr = tf.zeros([row_dim, col_dim])
+      >>> sess.run(zero_tsr)
+      array([[0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.]], dtype=float32)
     |zero filled tensor|
    - 创建1填充张量::
       
       >>> import tensorflow as tf
+      >>> row_dim, col_dim = 6, 7
       >>> ones_tsr = tf.ones([row_dim, col_dim])
+      >>> sess.run(ones_tsr)
+      array([[1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1.]], dtype=float32)
     |one filled tensor|  
    - 创建常数填充张量::
       
       >>> import tensorflow as tf
-      >>> filled_tsr = tf.fill([row_dim, col_dim], 42)
+      >>> row_dim, col_dim = 6, 7
+      >>> filled_tsr = tf.fill([row_dim, col_dim],42)
+      >>> sess.run(filled_tsr)
+      array([[42, 42, 42, 42, 42, 42, 42],
+       [42, 42, 42, 42, 42, 42, 42],
+       [42, 42, 42, 42, 42, 42, 42],
+       [42, 42, 42, 42, 42, 42, 42],
+       [42, 42, 42, 42, 42, 42, 42],
+       [42, 42, 42, 42, 42, 42, 42]], dtype=int32)
     |constant filled tensor|
    - 由给定的数创建一个张量::
       
       >>> import tensorflow as tf
-      >>> constant_tsr = tf.constant([1,2,3])
+      >>> constant1_tsr = tf.constant([1,2,3])
+      >>> sess.run(constant1_tsr)
+      [1 2 3]
+      >>> constant2_tsr = tf.constant([[1,2,3],[4,5,6],[7,8,9]])
+      >>> sess.run(constant2_tsr)
+      [[1 2 3]
+       [4 5 6]
+       [7 8 9]]
     |existing tensor|
+   - 创建相似类型的张量::
+      
+      >>> zeros_similar = tf.zeros_like(constant1_tsr)
+      >>> sess.run(zeros_similar)
+      array([0, 0, 0], dtype=int32)
+      >>> ones_similar = tf.ones_like(constant2_tsr)
+      >>> sess.run(ones_similar)
+      array([[1, 1, 1],
+       [1, 1, 1],
+       [1, 1, 1]], dtype=int32)
+   - 创建序列张量::
+      
+      # linspace必须规定start的数是bfloat16, float16, float32, float64当中的一种
+      >>> linear_tsr = tf.linspace(start=0.0,stop=100,num=11)
+      # stop=100，最后一位数包括100
+      >>> sess.run(linear_tsr)
+      array([  0.,  10.,  20.,  30.,  40.,  50.,  60.,  70.,  80.,  90., 100.],
+      dtype=float32)
+      
+      # range的start比较宽松，可以是整数。
+      >>> integer_seq_tsr = tf.range(start=6,limit=15,delta=3)
+      # limit=15, 最后一位数不包括15
+      >>> sess.run(integer_seq_tsr)
+      array([ 6,  9, 12], dtype=int32)
+   
+   - 创建随机张量::
+      
+      # 下面创建一个符合正太分布的随机数
+      
 .. |zero filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，需要代入具体数字才可以输出。
 .. |one filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，同样需要代入具体数字才可以输出。
 .. |constant filled tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，同样需要代入具体数字才可以输出。
-.. |existing tensor| replace:: :literal:`[row_dim, col_dim]` row_dim是行维度，col_dim是列维度，同样需要代入具体数字才可以输出。
+.. |existing tensor| replace:: :literal:`tf.constant([...])` 可以改变输入常数的维度来输出对应的维度的常数张量。
 
 TensorFlow算法需要知道哪些对象是变量哪些是常数。两个对象的区别我们在这一章中会解释，现在我们用TensorFlow的函数``tf.variable``来创建一个变量。
 
