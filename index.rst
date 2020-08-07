@@ -1,6 +1,4 @@
-|Documentation Status| |MIT License| |Python version| |Huawei Clodu| |TensorFlow| |time|
-
-.. |time| date:: %H:%M
+|Documentation Status| |MIT License| |Python version| |Huawei Clodu| |TensorFlow| |Today|
 
 -------------------
 
