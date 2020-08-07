@@ -56,7 +56,7 @@ Python 3.7 和 TensorFlow 1.8 版本)。虽然说TensorFlow可以在CPU上运行
 
 --------------------------------------
 
-.. attention:: tensorflow.nn.batch_normalization
+.. attention:: tensorflow.nn.batch_normalization用法介绍
 
 .. automodule:: tensorflow.nn.batch_normalization
       :members:
@@ -91,7 +91,7 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 -------------------------
 
-.. attention:: tensorflow.constant
+.. attention:: tensorflow.constant用法介绍
 
 .. automodule:: tensorflow.constant
       :members:
@@ -100,7 +100,7 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 ----------------------
 
-.. attention:: tensorflow.float32
+.. attention:: tensorflow.float32用法介绍
 
 .. automodule:: tensorflow.float32
       :members:
@@ -124,7 +124,7 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 -----------------------------
 
-.. attention:: tensorflow.add
+.. attention:: tensorflow.add用法介绍
 
 .. automodule:: tensorflow.add
       :members:
@@ -133,7 +133,7 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 --------------------
 
-.. attention:: tensorflow.multiply
+.. attention:: tensorflow.multiply用法介绍
 
 .. automodule:: tensorflow.multiply
       :members:
@@ -152,7 +152,7 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 -----------------------------
 
-.. attention:: tensorflow.reduce_mean
+.. attention:: tensorflow.reduce_mean用法介绍
 
 .. automodule:: tensorflow.reduce_mean
       :members:
@@ -161,7 +161,7 @@ TensorFlow是需要我们告诉它，哪些是可以改变的，哪些是不可�
 
 -----------------------
 
-.. attention:: tensorflow.square
+.. attention:: tensorflow.square用法介绍
 
 .. automodule:: tensorflow.square
       :members:
