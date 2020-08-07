@@ -269,10 +269,10 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
       
       >>> my_var = tf.Variable(tf.zeros([1,20]))
       >>> sess.run(my_var)
-      |FailedPreconditionError|: 2 root error(s) found.
+      |FailedPreconditionError: 2 root error(s) found.|
 
-.. |FailedPreconditionError| replace:: FailedPreconditionError
-   :Color: red 
+.. |FailedPreconditionError: 2 root error(s) found.| replace:: FailedPreconditionError: 2 root error(s) found.
+   :color: red 
 
 需要注意的是，直接运行 :literal:`sess.run(my_var)` 会产生一个错误。因为TensorFlows是运用计算图来运作的，我们需要对变量进行初始化才能输出结果。后面，我们可能会碰到很多
 初始化操作。对于这个代码来说，我们可以调用 :literal:`my_var.initializer` 来对一个变量初始化。
