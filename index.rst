@@ -17,7 +17,7 @@ Copyright |copy| Wei MEI, |MLMS (TM)| |---|
 all rights reserved.
 
 .. |copy| unicode:: 0xA9 .. copyright sign
-.. |MLMS (TM)| unicode:: BogusMegaCorp U+2122
+.. |MLMS (TM)| unicode:: MLMS U+2122
    .. with trademark sign
 .. |---| unicode:: U+02014 .. em dash
    :trim:
