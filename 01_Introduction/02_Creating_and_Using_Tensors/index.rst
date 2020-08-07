@@ -38,11 +38,10 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
 .. code:: python
     
     >>> sess.run(my_tensor)
-    
     array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  
     0.,  0.,  0., 0.,  0.,  0.,  0.,  0.,  0.,  0.]], dtype=float32)
  
-TensorFlow算法
+TensorFlow算法需要知道哪些对象是变量哪些是常数。
 TensorFlow algorithms need to know which objects are variables and which are constants. The difference between these two objects will be explained later in the chapter. For now we create a variable using the TensorFlow function tf.Variable() as follows.
 
 .. code:: python
