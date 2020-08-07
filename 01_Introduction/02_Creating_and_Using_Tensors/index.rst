@@ -16,9 +16,9 @@
 
 --------------
 
-.. attention:: tensorflow.python.framework.ops模块介绍
+.. attention:: tensorflow.python.framework.ops.reset_default_graph模块介绍
 
-.. automodule:: tensorflow.python.framework.ops
+.. automodule:: tensorflow.python.framework.ops.reset_default_graph
    :members:
    :undoc-members:
    :show-inheritance:
@@ -26,7 +26,7 @@
 计算图
 ^^^^^^^^^^^^^^^^^^^^^
 
-用``tf.Session()``开始吧！
+用 :literal:`tf.Session()` 开始吧！
 
 
 .. code:: python
@@ -36,7 +36,7 @@
 创建张量
 ^^^^^^^^^^^^^^^^^
 
-TensorFlow有一些内置函数可以用创建变量张量。例如我们可以通过``tf.zeros()``来创建一个预设形状的零张量。比如：
+TensorFlow有一些内置函数可以用创建变量张量。例如我们可以通过:literal:`tf.zeros()`来创建一个预设形状的零张量。比如：
 
 .. code:: python
     
@@ -60,12 +60,10 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
      |one filled tensor|
    - 创建常数填充张量:
      |constant filled tensor|
-   - 
+   - 由给定的数创建一个张量：
 
 .. |zero filled tensor| role:: python(code)
-   :language:
-      >>> import tensorflow as tf
-      >>> zero_tsr = tf.zeros([row_dim, col_dim])
+   :language: >>> import tensorflow as tf >>> zero_tsr = tf.zeros([row_dim, col_dim])
    
 
 
