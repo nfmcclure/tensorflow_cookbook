@@ -1,4 +1,31 @@
-This function introduces various ways to create matrices and how to use them in TensorFlow
+.. important::
+
+   理解TensorFlow如何处理矩阵对于理解计算图中的数据流动是很重要的。
+   
+   很多算法都依赖与矩阵运算。TensorFlow可以给我们一个简单操作来完成矩阵运算。对于下面所有的例子，我们通过运行下面的命令都先建立一个 :code:`graph session` :
+   
+   |code region 1|
+   
+   |code region 2|
+   
+   |code region 3|
+   
+   |code region 4|
+   
+   |code region 5|
+   
+.. |code region 1| replace:: :code:`>>> import tensorflow as tf`
+.. |code region 2| replace:: :code:`>>> sess = tf.compat.v1.Session()`
+.. |code region 3| replace:: :code:`>>> from tensorflow.python.framework import ops`
+.. |code region 4| replace:: :code:`>>> ops.reset_default_graph()`
+.. |code region 5| replace:: :code:`>>> tf.compat.v1.disable_eager_execution()`
+
+创建一个矩阵 |caution|
+-----------
+
+.. |caution| image:: https://img.shields.io/badge/tensorflow-2.2-brightgreen.svg
+             :alt: Warning!
+
 
 .. code:: python
 
