@@ -244,7 +244,7 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
 张量裁剪
 ^^^^^^^
 
-第二个参数cropped_size必须是[n,m]格式
+第二个参数 :code:`cropped_size` 必须是 :code:`[n,m]` 格式.
 
 .. code:: python
 
