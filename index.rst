@@ -14,13 +14,16 @@
    :target: https://github.com/tensorflow/tensorflow
 
 Copyright |copy| Wei MEI, |MLMS (TM)| |---|
-all rights reserved.
+all rights reserved. 
+|bamboo|
 
 .. |copy| unicode:: 0xA9 .. copyright sign
 .. |MLMS (TM)| unicode:: MLMS U+2122
    .. with trademark sign
 .. |---| unicode:: U+02014 .. em dash
    :trim:
+
+.. |bamboo| unicode:: 0x1F024 .. bamboo
 
 TensorFlow 机器学习 Cookbook (version : |version|)
 ============================
