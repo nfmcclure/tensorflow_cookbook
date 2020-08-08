@@ -33,6 +33,10 @@ TensorFlow对张量有标准的运算符：:code:`add()` , :code:`sub()` , :code
   >>> print(sess.run(tf.compat.v1.floordiv(3.0,4.0)))
   0.0
 
+
+:code:`mod()` 函数
+------------------------------
+
 另外一个重要的函数就是 :code:`mod()` . 这个函数返回除法的余数。如下：
 
 .. code:: python
@@ -41,6 +45,9 @@ TensorFlow对张量有标准的运算符：:code:`add()` , :code:`sub()` , :code
    2
    >>> print(sess.run(tf.compat.v1.mod(22.0,5)))
    2.0
+
+:code:`cross()` 函数
+------------------------------
 
 两个张量的叉乘可以通过调用 :py:func:`tensorflow.compat.v1.cross` 函数来实现。记住，这里的叉乘只定义到俩个三维向量，所以它仅支持俩个三维向量。如下：
 
@@ -56,9 +63,7 @@ TensorFlow对张量有标准的运算符：:code:`add()` , :code:`sub()` , :code
 
    Compute the pairwise cross product.
    
-   `a` and `b` must be the same shape; they can either be simple 3-element vectors,
-    or any shape where the innermost dimension is 3. In the latter case, each pair
-    of corresponding 3-element vectors is cross-multiplied independently.
+   `a` and `b` must be the same shape; they can either be simple 3-element vectors, or any shape where the innermost dimension is 3. In the latter case, each pair of corresponding 3-element vectors is cross-multiplied independently.
 
    :param a: Must be one of the following types: `float32`, `float64`, `int32`, `uint8`, `int16`, `int8`, `int64`, `bfloat16`, `uint16`, `half`, `uint32`, `uint64`. A tensor containing 3-element vectors.
    :type a: Tensor
@@ -67,6 +72,18 @@ TensorFlow对张量有标准的运算符：:code:`add()` , :code:`sub()` , :code
    :param name: A name for the operation (optional).
    :rtype: Tensor. Has the same type as `a`.
    
+常用的数学函数列表
+---------------
+
+.. attention:: 所有这些函数都是element-wise式运行。
+
++------------------------+------------------------------------+
+| Common math functions  |        Description                 |                       
++========================+============+=======================+
+| :py:function:`abs()`   | Absolute value of one input tensor |
++------------------------+------------------------------------+
+| body row 2             |                                    |
++------------------------+------------------------------------+
 
   
 
