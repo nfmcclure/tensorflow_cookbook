@@ -1,13 +1,53 @@
-This function introduces various operations in TensorFlow
-Declaring Operations
+现在我们必须知道可以加到TensorFlow计算图上的其他计算工具。
+除了标准的算式运算外，TensorFlow提供给我们更多需要注意的运算符，我们应当在继续之前知道如何使用它们。同样，我们需要运行一下下面的命令来创建一个 :code:`graph session`:
 
 .. code:: python
 
-  import matplotlib.pyplot as plt
-  import numpy as np
-  import tensorflow as tf
-  from tensorflow.python.framework import ops
-  ops.reset_default_graph()
+  >>> import numpy as np
+  >>> import tensorflow as tf
+  >>> from tensorflow.python.framework import ops
+  >>> ops.reset_default_graph()
+  >>> tf.compat.v1.disable_eager_execution()
+  >>> sess = tf.compat.v1.Session()
+
+TensorFlow对张量有标准的运算符：:code:`add()` , :code:`sub()` , :code:`mul()` , 和 :code:`div()` . 需要指出的是，这部分所有的运算除了特别说明外，都会输出element-wise式输出结果。
+
+:code:`div()` 函数及其相关的函数
+------------------------------
+
+:code:`div()` 返回与输出结果类型相同的结果。这意味着如果输入的是整数的话，它返回 :emphasis:`the floor of the division` (是 :code:`Python 2` 的近亲)。为了产生 :code:`Python 3` 版本的结果，TensorFlow提供了 :code:`truediv()` 函数，如下：
+
+.. code:: python
+  
+  >>> print(sess.run(tf.compat.v1.div(3,4)))
+  0
+  >>> print(sess.run(tf.compat.v1.truediv(3,4)))
+  0.75
+  >>> print(sess.run(tf.compat.v1.div(3.0,4)))
+  0.75
+  
+如果我们浮点数然后希望做一个整数除法，我们可以用 :code:`floordiv()` 函数。 需要注意的是，我们仍然返回一个浮点数，但是已经被近似成最近邻的整数。如下：
+
+.. code:: python
+  
+  >>> print(sess.run(tf.compat.v1.floordiv(3.0,4.0)))
+  0.0
+
+另外一个重要的函数就是 :code:`mod()` . 这个函数返回除法的余数。如下：
+
+.. py:function:: format_exception(etype, value, tb[, limit=None])
+
+   Format the exception with a traceback.
+
+   :param etype: exception type
+   :param value: exception value
+   :param tb: traceback object
+   :param limit: maximum number of stack frames to show
+   :type limit: integer or None
+   :rtype: list of strings
+
+  
+
 
 Open graph session
 ------------------
