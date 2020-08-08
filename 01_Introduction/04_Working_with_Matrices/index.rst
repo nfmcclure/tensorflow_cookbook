@@ -3,36 +3,46 @@
    理解TensorFlow如何处理矩阵对于理解计算图中的数据流动是很重要的。
    
    很多算法都依赖与矩阵运算。TensorFlow可以给我们一个简单操作来完成矩阵运算。对于下面所有的例子，我们通过运行下面的命令都先建立一个 :code:`graph session` :
-   
-   |code region 1|
-   
-   |code region 2|
-   
-   |code region 3|
-   
-   |code region 4|
-   
-   |code region 5|
-   
-.. |code region 1| replace:: :code:`>>> import tensorflow as tf`
-.. |code region 2| replace:: :code:`>>> sess = tf.compat.v1.Session()`
-.. |code region 3| replace:: :code:`>>> from tensorflow.python.framework import ops`
-.. |code region 4| replace:: :code:`>>> ops.reset_default_graph()`
-.. |code region 5| replace:: :code:`>>> tf.compat.v1.disable_eager_execution()`
 
-创建一个矩阵 |caution|
+.. code:: python
+   :number-lines: 1
+   
+   >>> import tensorflow as tf
+   >>> sess = tf.compat.v1.Session()
+   >>> from tensorflow.python.framework import ops
+   >>> ops.reset_default_graph()
+   >>> tf.compat.v1.disable_eager_execution()
+   
+创建一个矩阵 
 -----------
-
-.. |caution| image:: https://img.shields.io/badge/tensorflow-2.2-brightgreen.svg
-             :alt: Warning!
 
 
 .. code:: python
-
-  import numpy as np
-  import tensorflow as tf
-  from tensorflow.python.framework import ops
-  ops.reset_default_graph()
+   
+   >>> identiy_matrix = tf.compat.v1.diag([1.0, 1.0, 1.0])
+   >>> print(sess.run(identiy_matrix))
+   [[1. 0. 0.]
+    [0. 1. 0.]
+    [0. 0. 1.]]
+   >>> A = tf.compat.v1.truncated_normal([2,3])
+   >>> print(sess.run(A))
+   [[ 0.19759183 -1.436814   -1.107715  ]
+    [-0.6905967  -0.19711868  0.6596967 ]]
+   >>> B = tf.fill([2,3],5.0)
+   >>> print(sess.run(B))
+   [[5. 5. 5.]
+    [5. 5. 5.]]
+   >>> C = tf.compat.v1.random_uniform([3,2])
+   >>> print(sess.run(C))
+   [[0.3477279  0.39023817]
+    [0.38307    0.8967395 ]
+    [0.8217212  0.32184577]]
+   >>> D = tf.compat.v1.convert_to_tensor(np.array([[1.,2.,3.],[-3.,-7.,-1.],[0.,5.,-2.]]))
+   >>> print(sess.run(D))
+   [[ 1.  2.  3.]
+    [-3. -7. -1.]
+    [ 0.  5. -2.]]
+   
 
 Start a graph session
 
