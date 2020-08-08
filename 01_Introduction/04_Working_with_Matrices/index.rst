@@ -208,3 +208,30 @@
    :undoc-members:
    :show-inheritance:
 
+.. attention:: tf.compat.v1.convert_to_tensor模块介绍
+
+.. automodule:: tf.compat.v1.convert_to_tensor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tf.matmul模块介绍
+
+.. automodule:: tf.matmul
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tf.transpose模块介绍
+
+.. automodule:: tf.transpose
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tf.compat.v1.matrix_determinant模块介绍
+
+.. automodule:: tf.compat.v1.matrix_determinant
+   :members:
+   :undoc-members:
+   :show-inheritance:
