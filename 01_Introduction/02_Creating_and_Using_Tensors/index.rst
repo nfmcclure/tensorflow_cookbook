@@ -323,3 +323,94 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
    :undoc-members:
    :show-inheritance:
 
+.. attention:: tensorflow.fill模块介绍
+
+.. automodule:: tensorflow.fill
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tensorflow.constant模块介绍
+
+.. automodule:: tensorflow.xonstant
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.zeros_like模块介绍
+
+.. automodule:: tensorflow.zeros_like
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.ones_like模块介绍
+
+.. automodule:: tensorflow.ones_like
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.linspace模块介绍
+
+.. automodule:: tensorflow.linspace
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.range模块介绍
+
+.. automodule:: tensorflow.range
+   :members:
+   :undoc-members:
+   :show-inheritance:
+  
+.. attention:: tensorflow.compat.v1.random_uniform模块介绍
+
+.. automodule:: tensorflow.compat.v1.random_uniform
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.random_normal模块介绍
+
+.. automodule:: tensorflow.compat.v1.random_normal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tensorflow.compat.v1.truncated_normal模块介绍
+
+.. automodule:: tensorflow.compat.v1.truncated_normal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tensorflow.compat.v1.random_shuffle模块介绍
+
+.. automodule:: tensorflow.compat.v1.random_shuffle
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tensorflow.compat.v1.random_crop模块介绍
+
+.. automodule:: tensorflow.compat.v1.random_crop
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tensorflow.compat.v1.gfile.GFile模块介绍(选修)
+
+.. automodule:: tensorflow.compat.v1.gfile.GFile
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tensorflow.image.decode_jpeg模块介绍(选修)
+
+.. automodule:: tensorflow.image.decode_jpeg
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
