@@ -35,6 +35,15 @@ TensorFlow对张量有标准的运算符：:code:`add()` , :code:`sub()` , :code
 
 另外一个重要的函数就是 :code:`mod()` . 这个函数返回除法的余数。如下：
 
+.. code:: python
+    
+   >>> print(sess.run(tf.compat.v1.mod(22,5)))
+   2
+   >>> print(sess.run(tf.compat.v1.mod(22.0,5)))
+   2.0
+
+两个张量的叉乘可以通过调用 :py:func:`tensorflow.compat.v1.cross`
+
 .. py:function:: format_exception(etype, value, tb[, limit=None])
 
    Format the exception with a traceback.
