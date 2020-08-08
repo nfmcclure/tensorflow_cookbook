@@ -16,7 +16,7 @@
 创建一个矩阵 
 -----------
 
-我们可以通过 :code:`numpy` 数组或者嵌套列表来创建一个二维矩阵，就像我们在张量那一节所描述的那样 ( :code:`convert_to_tensor` )。我们也可以使用张量创建函数并为这些函数( :code:`zeros() ones() truncated_normal()` 等等)设定一个二维的形状(因为矩阵就是二维张量)。 TensorFlow也允许我们用 :code:`diag()` 从一维数组或者列表中创建一个对角矩阵。例如：
+我们可以通过 :code:`numpy` 数组或者嵌套列表来创建一个二维矩阵，就像我们在张量那一节所描述的那样 ( :code:`convert_to_tensor` )。我们也可以使用张量创建函数并为这些函数( :code:`zeros()ones()truncated_normal()` 等等)设定一个二维的形状(因为矩阵就是二维张量)。 TensorFlow也允许我们用 :code:`diag()` 从一维数组或者列表中创建一个对角矩阵。例如：
 
 .. code:: python
    
