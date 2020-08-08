@@ -39,8 +39,9 @@ TensorFlow如何工作
        :maxdepth: 3
        
        /01_Introduction/03_Using_Variables_and_Placeholders/index
- 
-How to create and use variables and placeholders in TensorFlow.  We also depict how these operations appear in Tensorboard.
+       
+本节我们将会展示如何在TensorFlow创建变量和占位符，我们会在Tensorboard中展示出来。
+
 
 .. image:: images/03_placeholder.png
 
@@ -55,7 +56,7 @@ How to create and use variables and placeholders in TensorFlow.  We also depict 
        
        /01_Introduction/04_Working_with_Matrices/index
  
-Understanding how TensorFlow can work with matrices is crucial to understanding how the algorithms work.
+理解TensorFlow如何用矩阵进行工作，对理解算法很重要。
 
 下载本章 :download:`Jupyter Notebook </01_Introduction/04_Working_with_Matrices/04_matrices.ipynb>`
 
@@ -68,7 +69,7 @@ Understanding how TensorFlow can work with matrices is crucial to understanding 
        
       /01_Introduction/05_Declaring_Operations/index
 
-How to use various mathematical operations in TensorFlow.
+本节将会介绍如何在TensorFlow中使用数学算式。
 
 下载本章 :download:`Jupyter Notebook </01_Introduction/05_Declaring_Operations/05_operations.ipynb>`
 
@@ -82,7 +83,7 @@ How to use various mathematical operations in TensorFlow.
        
        /01_Introduction/06_Implementing_Activation_Functions/index
 
-Activation functions are unique functions that TensorFlow has built in for your use in algorithms.
+激活函数是TensorFlow为你定制的特殊函数。
 
 .. image:: images/06_activation_funs1.png
 
@@ -99,8 +100,7 @@ Activation functions are unique functions that TensorFlow has built in for your 
        
        /01_Introduction/07_Working_with_Data_Sources/index
 
-Here we show how to access all the various required data sources in the book. There are also links describing
-the data sources and where they come from.
+在这里我们会展示如何获取数据资源，这里也有一些有用的链接供你使用。
 
 下载本章 :download:`Jupyter Notebook </01_Introduction/07_Working_with_Data_Sources/07_data_gathering.ipynb>`
 
@@ -113,9 +113,7 @@ the data sources and where they come from.
        
        /01_Introduction/08_Additional_Resources/index.rst
 
-Mostly official resources and papers.  The papers are TensorFlow papers or Deep Learning resources.
-
-
+大多数都是官方资源和文章，文章都是TensorFlow的文章和深度学习的资源。
 
 
 本章学习模块
