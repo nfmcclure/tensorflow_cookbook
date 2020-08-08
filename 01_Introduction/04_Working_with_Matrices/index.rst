@@ -135,16 +135,7 @@
    >>> help(tf.matmul)
    Help on function matmul in module tensorflow.python.ops.math_ops:
    ...
-   Args:
-      a: `tf.Tensor` of type `float16`, `float32`, `float64`, `int32`, `complex64`, `complex128` and rank > 1.
-      b: `tf.Tensor` with same type and rank as `a`.
-      transpose_a: If `True`, `a` is transposed before multiplication.
-      transpose_b: If `True`, `b` is transposed before multiplication.
-      adjoint_a: If `True`, `a` is conjugated and transposed before multiplication.
-      adjoint_b: If `True`, `b` is conjugated and transposed before multiplication.
-      a_is_sparse: If `True`, `a` is treated as a sparse matrix.
-      b_is_sparse: If `True`, `b` is treated as a sparse matrix.
-      name: Name for the operation (optional).
+   ...
 
 矩阵的转置
 ^^^^^^^^^^
@@ -203,35 +194,56 @@
 
 .. attention:: tf.compat.v1.diag模块介绍
 
-.. automodule:: tf.compat.v1.diag
+.. automodule:: tensorflow.compat.v1.diag
    :members:
    :undoc-members:
    :show-inheritance:
 
 .. attention:: tf.compat.v1.convert_to_tensor模块介绍
 
-.. automodule:: tf.compat.v1.convert_to_tensor
+.. automodule:: tensorflow.compat.v1.convert_to_tensor
    :members:
    :undoc-members:
    :show-inheritance:
 
 .. attention:: tf.matmul模块介绍
 
-.. automodule:: tf.matmul
+.. automodule:: tensorflow.matmul
    :members:
    :undoc-members:
    :show-inheritance:
 
 .. attention:: tf.transpose模块介绍
 
-.. automodule:: tf.transpose
+.. automodule:: tensorflow.transpose
    :members:
    :undoc-members:
    :show-inheritance:
    
 .. attention:: tf.compat.v1.matrix_determinant模块介绍
 
-.. automodule:: tf.compat.v1.matrix_determinant
+.. automodule:: tensorflow.compat.v1.matrix_determinant
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tf.compat.v1.matrix_inverse模块介绍
+
+.. automodule:: tensorflow.compat.v1.matrix_inverse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tf.compat.v1.cholesky模块介绍
+
+.. automodule:: tensorflow.compat.v1.cholesky
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tf.compat.v1.self_adjoint_eigvals模块介绍
+
+.. automodule:: tensorflow.compat.v1.self_adjoint_eig
    :members:
    :undoc-members:
    :show-inheritance:
