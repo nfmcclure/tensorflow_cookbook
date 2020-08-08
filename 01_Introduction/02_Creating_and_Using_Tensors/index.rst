@@ -332,7 +332,7 @@ TensorFlow有一些内置函数可以用创建变量张量。例如我们可以�
 
 .. attention:: tensorflow.constant模块介绍
 
-.. automodule:: tensorflow.xonstant
+.. automodule:: tensorflow.constant
    :members:
    :undoc-members:
    :show-inheritance:
