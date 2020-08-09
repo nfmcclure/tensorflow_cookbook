@@ -70,7 +70,7 @@ TensorFlow对张量有标准的运算符：:code:`add()` , :code:`sub()` , :code
    :param b: Must have the same type as `a`. 
    :type b: Tensor
    :param name: A name for the operation (optional).
-   :rtype: Tensor. 
+   :rtype: Tensor 
    :returns: Has the same type as `a`.
    
 常用的数学函数列表
