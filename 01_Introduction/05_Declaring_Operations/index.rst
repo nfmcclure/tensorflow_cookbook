@@ -263,21 +263,21 @@ TensorFlow对张量有标准的运算符：:code:`add()` , :code:`sub()` , :code
 +-------------------------------------------------------+--------------------------------------------------------+
 | 特殊数学函数                                          | 描述                                                   |
 +=======================================================+========================================================+
-| :code:``tensorflow.compat.v1.digamma()``              | :code:``Psi`` 函数，是 :code:``lgamma()`` 函数的导数   |
+| :code:`tensorflow.compat.v1.digamma()`                | :code:`Psi` 函数，是 :code:`lgamma()` 函数的导数       |
 +-------------------------------------------------------+--------------------------------------------------------+
-| :code:``tensorflow.compat.v1.erf()``                  | 输入张量的高斯误差函数(元素式运行)                     |
+| :code:`tensorflow.compat.v1.erf()`                    | 输入张量的高斯误差函数(元素式运行)                     |
 +-------------------------------------------------------+--------------------------------------------------------+
-| :code:``tensorflow.compat.v1.erfc()``                 | 输入张量的高斯误差补余函数                             |
+| :code:`tensorflow.compat.v1.erfc()`                   | 输入张量的高斯误差补余函数                             |
 +-------------------------------------------------------+--------------------------------------------------------+
-| :code:``tensorflow.compat.v1.igamma()``               | 下正则不完全伽玛函数                                   |
+| :code:`tensorflow.compat.v1.igamma()`                 | 下正则不完全伽玛函数                                   |
 +-------------------------------------------------------+--------------------------------------------------------+
-| :code:``tensorflow.compat.v1.igammac()``              | 上正则不完全伽玛函数                                   |
+| :code:`tensorflow.compat.v1.igammac()`                | 上正则不完全伽玛函数                                   |
 +-------------------------------------------------------+--------------------------------------------------------+
-| :code:``tensorflow.compat.v1.lbeta()``                | :code:``beta`` 函数绝对值的自然对数                    |
+| :code:`tensorflow.compat.v1.lbeta()`                  | :code:`beta` 函数绝对值的自然对数                      |
 +-------------------------------------------------------+--------------------------------------------------------+
-| :code:``tensorflow.compat.v1.lgamma()``               | :code:``gamma`` 函数绝对值的自然对数                   |
+| :code:`tensorflow.compat.v1.lgamma()`                 | :code:`gamma` 函数绝对值的自然对数                     |
 +-------------------------------------------------------+--------------------------------------------------------+
-| :code:``tensorflow.compat.v1.squared_difference()``   | 两个张量差值的平方                                     |
+| :code:`tensorflow.compat.v1.squared_difference()`     | 两个张量差值的平方                                     |
 +-------------------------------------------------------+--------------------------------------------------------+
 
 下面给出这些函数的实例，详情请看本节学习模块：
@@ -334,107 +334,123 @@ TensorFlow对张量有标准的运算符：:code:`add()` , :code:`sub()` , :code
 自定义函数
 ---------------
 
-如果我们想
-
-Open graph session
-------------------
+如果我们想在计算图中加一些没在表格中出现的函数，我们可以通过前面的函数来创建自己想要的函数。这里一个函数例子，我们可以加到我们的计算图中：
 
 .. code:: python
-
-  >>> sess = tf.Session()
-  
-Arithmetic Operations
----------------------
-TensorFlow has multiple types of arithmetic functions. Here we illustrate the differences
-between ``div()``, ``truediv()`` and ``floordiv()``.
-
-``div()`` : integer of division (similar to base python //)
-
-``truediv()`` : will convert integer to floats.
-
-``floordiv()`` : float of div()
-
-.. code:: python
-
-  >>> print(sess.run(tf.div(3,4)))
-  0.0
-  >>> print(sess.run(tf.truediv(3,4)))
-  0.75
-  >>> print(sess.run(tf.floordiv(3.0,4.0)))
-  0.0
-  
-Mod function:
-
-.. code:: python
-
-  >>> print(sess.run(tf.mod(22.0,5.0)))
-  2.0
-
-Cross Product:
-
-.. code:: python
-
-  >>> print(sess.run(tf.cross([1.,0.,0.],[0.,1.,0.])))
-  [ 0.  0.  1.]
-  
-Trig functions
----------------
-
-Sine, Cosine, and Tangent:
-
-.. code:: python
-
-  >>> print(sess.run(tf.sin(3.1416)))
-  -7.23998e-06
-  >>> print(sess.run(tf.cos(3.1416)))
-  -1.0
-  >>> print(sess.run(tf.div(tf.sin(3.1416/4.), tf.cos(3.1416/4.))))
-  1.0
     
-Custom operations
-------------------
+    >>> def custom_polynomial(value):
+    ...   return (tf.compat.v1.subtract(3*tf.compat.v1.square(value),value)+10)
+    >>> print(sess.run(custom_polynomial(11)))
+    362
 
-Here we will create a polynomial function:
-
+这里我们创建了一个多项式函数：
 :math:`f(x) = 3 \ast x^2-x+10`
 
-.. code:: python
 
-  >>> test_nums = range(15)
-  >>> def custom_polynomial(x_val):
-  ...      
-  ...   # Return 3x^2 - x + 10
-  ...   return(tf.subtract(3 * tf.square(x_val), x_val) + 10)
+本节学习模块
+------------
 
-  >>> print(sess.run(custom_polynomial(11)))
-  362
+.. attention:: tensorflow.compat.v1.div函数介绍
+
+.. automodule:: tensorflow.compat.v1.div
+   :members:
+   :undoc-members:
+   :show-inheritance:
   
-What should we get with list comprehension:
+.. attention:: tensorflow.compat.v1.truediv函数介绍
 
-.. code:: python
-  
-  >>> expected_output = [3*x*x-x+10 for x in test_nums]
-  >>> print(expected_output)
-  [10, 12, 20, 34, 54, 80, 112, 150, 194, 244, 300, 362, 430, 504, 584]
-  
-TensorFlow custom function output:
+.. automodule:: tensorflow.compat.v1.truediv
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-.. code:: python
+.. attention:: tensorflow.compat.v1.floordiv函数介绍
 
-  >>> for num in test_nums:
-  ...   print(sess.run(custom_polynomial(num)))
-  10
-  12
-  20
-  34
-  54
-  80
-  112
-  150
-  194
-  244
-  300
-  362
-  430
-  504
-  584
+.. automodule:: tensorflow.compat.v1.floordiv
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. attention:: tensorflow.compat.v1.mod函数介绍
+
+.. automodule:: tensorflow.compat.v1.mod
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.cross函数介绍
+
+.. automodule:: tensorflow.compat.v1.cross
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.pow函数介绍
+
+.. automodule:: tensorflow.compat.v1.pow
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.rsqrt函数介绍
+
+.. automodule:: tensorflow.compat.v1.rsqrt
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.digamma函数介绍
+
+.. automodule:: tensorflow.compat.v1.digamma
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.erf函数介绍
+
+.. automodule:: tensorflow.compat.v1.erf
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.erfc函数介绍
+
+.. automodule:: tensorflow.compat.v1.erfc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.igamma函数介绍
+
+.. automodule:: tensorflow.compat.v1.igamma
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.igammac函数介绍
+
+.. automodule:: tensorflow.compat.v1.igammac
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.lbeta函数介绍
+
+.. automodule:: tensorflow.compat.v1.lbeta
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.lgamma函数介绍
+
+.. automodule:: tensorflow.compat.v1.lgamma
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+.. attention:: tensorflow.compat.v1.squared_difference函数介绍
+
+.. automodule:: tensorflow.compat.v1.squared_difference
+   :members:
+   :undoc-members:
+   :show-inheritance:
