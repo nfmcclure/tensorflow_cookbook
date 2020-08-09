@@ -223,7 +223,7 @@ TensorFlow对张量有标准的运算符：:code:`add()` , :code:`sub()` , :code
            [-1.,  0.,  0.],
            [ 0., -1., -1.]], dtype=float32)
     
-以下是 :py:function:`tensorflow.compat.v1.sign` 的详细介绍：
+以下是 :code:`tensorflow.compat.v1.sign` 的详细介绍：
 
 
 .. py:function:: sign(x,name=None)
