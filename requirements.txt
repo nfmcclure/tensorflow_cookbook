@@ -1,1 +1,16 @@
+argparse
+colour
+numpy
+Pillow
+progressbar
+scipy
+tqdm
+opencv-python
+pycairo
+pydub
+pygments
+pyreadline; sys_platform == 'win32'
+sphinx
+sphinx_rtd_theme
+jieba
 tensorflow==2.2.0
