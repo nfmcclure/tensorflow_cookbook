@@ -17,7 +17,7 @@ jobs:
     - name: Clone pre repositories
       run: |
         cd ..
-        git clone -b push https://github.com/nickcafferry/tensorflow-doc-zh.git manim
+        git clone -b manim https://github.com/nickcafferry/tensorflow-doc-zh.git manim
         cd manim
     
     - name: Install setuptools
