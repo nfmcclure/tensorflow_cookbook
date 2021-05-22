@@ -49,7 +49,7 @@ x_vals = (x_vals - x_vals.min(0)) / x_vals.ptp(0)
 
 ## Create distance metric weight matrix weighted by standard deviation
 weight_diagonal = x_vals.std(0)
-weight_matrix = tf.cast(tf.diag(weight_diagonal), dtype=tf.float32)
+weight_matrix = tf.cast(tf.expand_dims(weight_diagonal,1), dtype=tf.float32)
 
 # Split the data into train and test sets
 np.random.seed(13)   # reproducible results
@@ -73,9 +73,8 @@ y_target_test = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 # Declare weighted distance metric
 # Weighted L2 = sqrt((x-y)^T * A * (x-y))
 subtraction_term =  tf.subtract(x_data_train, tf.expand_dims(x_data_test,1))
-first_product = tf.matmul(subtraction_term, tf.tile(tf.expand_dims(weight_matrix,0), [batch_size,1,1]))
-second_product = tf.matmul(first_product, tf.transpose(subtraction_term, perm=[0,2,1]))
-distance = tf.sqrt(tf.matrix_diag_part(second_product))
+product = tf.matmul(tf.square(subtraction_term), tf.tile(tf.expand_dims(weight_matrix,0), [batch_size,1,1]))
+distance = tf.sqrt(tf.squeeze(product,axis=2))
 
 # Predict: Get min distance index (Nearest neighbor)
 top_k_xvals, top_k_indices = tf.nn.top_k(tf.negative(distance), k=k)
